@@ -1,4 +1,4 @@
-package ch5;
+package ch5_classes;
 public class Date {
 	public int month;
 	public int day;

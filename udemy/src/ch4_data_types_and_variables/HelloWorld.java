@@ -1,4 +1,4 @@
-package ch3;
+package ch4_data_types_and_variables;
 public class HelloWorld
 {
 	@SuppressWarnings("unused")

@@ -1,4 +1,4 @@
-package ch5;
+package ch5_classes;
 public class Name
 {
 		private String first;
@@ -42,16 +42,10 @@ public class Name
 		public String getMiddle() {
 			return middle;
 		}
-		
-		public void setName(String f, String m, String l) {
-			first = f;
-			middle = m;
-			last = l;
-		}
-		
-		public String getLast() {
-			return last;
-		}
+
+        public String getLast() {
+            return last;
+        }
 		
 		public void setFirst(String fname) {
 			first = fname;
@@ -67,6 +61,12 @@ public class Name
 		
 		public String displayName() {
 			return first + " " + middle + " " + last;
+		}
+		
+        public void setName(String f, String m, String l) {
+			first = f;
+			middle = m;
+			last = l;
 		}
 
 		public String getInitials() {
