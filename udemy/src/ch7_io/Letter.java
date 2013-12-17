@@ -1,3 +1,5 @@
+package ch7_io;
+
 import java.util.Scanner;
 
 public class Letter
