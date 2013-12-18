@@ -1,3 +1,5 @@
+package ch10_methods;
+
 import java.util.Scanner;
 
 public class Calculator
