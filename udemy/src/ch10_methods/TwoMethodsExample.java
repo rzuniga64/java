@@ -2,7 +2,7 @@ package ch10_methods;
 
 import java.util.Scanner;
 
-public class ThreeMethodsExample
+public class TwoMethodsExample
 {
    public static void main(String[] args) 
    {
