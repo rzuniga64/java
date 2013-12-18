@@ -2,6 +2,8 @@ package ch10_methods;
 
 import java.util.Scanner;
 
+// A predicate method returns a Boolean type and checks the condition 
+// of the data passed into it.
 public class PredicateMethods
 {
    public static void main(String[] args) 
