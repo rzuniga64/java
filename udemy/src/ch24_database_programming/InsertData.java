@@ -1,14 +1,15 @@
+package ch24_database_programming;
+
 import java.sql.*;
 
 public class InsertData {
    public static void main(String[] args) {
-      Connection conn = null;
       try {
          String userName = "root";
          String password = "aggies92";
          String url = "jdbc:mysql://localhost:3306/coisorcl?zeroDateTimeBehavior=convertToNull";
          Class.forName("com.mysql.jdbc.Driver").newInstance();
-         conn = DriverManager.getConnection(url, userName, password);
+        Connection conn = DriverManager.getConnection(url, userName, password);
          Statement stmt = conn.createStatement();
          stmt.executeUpdate(
             "insert into books(isbn,title,author,publisher)" +

@@ -1,14 +1,15 @@
+package ch24_database_programming;
+
 import java.sql.*;
 
 public class SimpleQuery {
    public static void main(String[] args) {
-      Connection conn = null;
       try {
          String userName = "root";
          String password = "aggies92";
          String url = "jdbc:mysql://localhost:3306/sakila?zeroDateTimeBehavior=convertToNull";
          Class.forName("com.mysql.jdbc.Driver").newInstance();
-         conn = DriverManager.getConnection(url, userName, password);
+         Connection conn = DriverManager.getConnection(url, userName, password);
          Statement stmt = conn.createStatement();
          ResultSet rset = stmt.executeQuery("select * from actor");
          while (rset.next()) {
