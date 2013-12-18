@@ -1,3 +1,5 @@
+package ch7_io;
+
 public class Printf
 {
    public static void main(String[] args)
