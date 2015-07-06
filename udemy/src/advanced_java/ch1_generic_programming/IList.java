@@ -1,4 +1,4 @@
-package generic_programming;
+package advanced_java.ch1_generic_programming;
 
 /*  Interface provides us with a means to build upon
     a hierarchy of objects. We can do this generically

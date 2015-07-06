@@ -1,4 +1,4 @@
-package generic_programming;
+package advanced_java.ch1_generic_programming;
 
 public class PairDriver {
     public static void main(String[] args) {

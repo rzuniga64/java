@@ -1,4 +1,4 @@
-package generic_programming;
+package advanced_java.ch1_generic_programming;
 
 public class LinkedList {
     public static void main(String[] args) {

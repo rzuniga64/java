@@ -12,8 +12,7 @@ public class InsertData {
             Statement stmt; // use to formulate SQL
             ResultSet result;
             stmt = connection.createStatement();
-            stmt.executeUpdate("insert into books(isbn, title, author, publisher)" +
-                               " values" +
+            stmt.executeUpdate("insert into books(isbn, title, author, publisher) values" +
                                 "('007160630', 'Java-The Complete Reference','Herbert Schildt', 'Oracle Press')," +
                                 "('032135668', 'Effective Java', 'Joshua Bloch', 'Addison-Wesley')");
             System.out.println("Record added");
