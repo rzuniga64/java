@@ -5,8 +5,8 @@ import java.beans.*;
 public class TempInspection {
     public static void main(String[] args) {
         try {
-            Class cl = Class.forName("Temperature");
-            BeanInfo beanInfo = Introspector.getBeanInfo(cl);
+            Class c1 = Temperature.class;
+            BeanInfo beanInfo = Introspector.getBeanInfo(c1);
             System.out.println("Properties of Temperature class: ");
             PropertyDescriptor propertyDescriptor[] =
                     beanInfo.getPropertyDescriptors();
