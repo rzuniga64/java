@@ -1,0 +1,10 @@
+<HTML>
+<HEAD>
+<TITLE>Play a sound and display an image </TITLE>
+</HEAD>
+<BODY>
+<APPLET CODE="PlaySound.class" WIDTH=460 HEIGHT=160>
+Display this line if your browser does not handle applets!
+</APPLET>
+</BODY>
+</HTML>
