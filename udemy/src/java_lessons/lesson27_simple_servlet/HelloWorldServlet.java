@@ -9,7 +9,7 @@ package java_lessons.lesson27_simple_servlet;
  */
 
 import java.io.*;
-import javax.servlet.*;
+/*import javax.servlet.*;
 
 public class HelloWorldServlet extends GenericServlet {
     public void service(ServletRequest request, ServletResponse response)
@@ -19,5 +19,5 @@ public class HelloWorldServlet extends GenericServlet {
         pw.println("Hello, world!");
         pw.close();
     }
-}
+} */
       

@@ -1,7 +1,7 @@
 package java_lessons.lesson27_simple_servlet;
 
 import java.io.*;
-import javax.servlet.*;
+/*import javax.servlet.*;
 import javax.servlet.http.*;
 
 public class PostSelServlet extends HttpServlet {
@@ -14,4 +14,4 @@ public class PostSelServlet extends HttpServlet {
         writer.println("You selected " + language + " as your favorite.");
         writer.close();
     }
-}
+} */

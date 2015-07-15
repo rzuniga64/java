@@ -1,7 +1,7 @@
 package java_lessons.lesson27_simple_servlet;
 
 import java.io.*;
-import javax.servlet.*;
+/*import javax.servlet.*;
 import javax.servlet.http.*;
 
 // pass information from a form to a java servelt using a GET request
@@ -27,4 +27,4 @@ public class RetrieveFieldsServlet   extends HttpServlet {
         writer.println("Zip code: " + zip);
         writer.close();
     }
-}
+} */
