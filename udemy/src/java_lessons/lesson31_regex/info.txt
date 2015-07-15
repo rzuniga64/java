@@ -1,0 +1,19 @@
+Regular Expressions are strings of characters that represent a character sequence.
+
+We call that character sequence with a regex a character class.
+For example if the word that is looked for is the word 'Java'
+in a text then the word 'Java' would be the character class.
+The character class would specify the pattern we are looking for.
+
+character class - {Java}
+wildcard character = . (dot) matches any character
+
+quantifiers specify matches that can be made.
++ match one or more of the character class
+Example: Ja+ match one or more character sequences of 'Ja'
+
+* match zero or more
+Example: ie* match zero or more character sequences of 'ie'
+
+? match zero or more
+Example: J?? match any two characters after 'J'
