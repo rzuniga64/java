@@ -31,6 +31,7 @@ import java.util.*;
     */
 public class Worker {
     private Random random = new Random();
+
     private Object lock1 = new Object();
     private Object lock2 = new Object();
 
