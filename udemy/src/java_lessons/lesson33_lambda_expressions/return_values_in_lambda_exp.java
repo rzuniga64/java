@@ -18,11 +18,11 @@ class Runner3 {
 }
 
 /**
- * With the lambda expression we can just put it in a return value.
- * We don’t need to specify the return type anymore, and in fact
- * there’s no way to do that. All we’ve got to do is just literally
- * return a value. Java knows what the return type is going to be,
- * because it knows what the corresponding interface looks like.
+ *  With the lambda expression we can just put it in a return value.
+ *  We don’t need to specify the return type anymore, and in fact
+ *  there’s no way to do that. All we’ve got to do is just literally
+ *  return a value. Java knows what the return type is going to be,
+ *  because it knows what the corresponding interface looks like.
  *
  *  Now, sometimes all you want to return is either a literal value,
  *  or more likely, the results of a method call that returns a value.
