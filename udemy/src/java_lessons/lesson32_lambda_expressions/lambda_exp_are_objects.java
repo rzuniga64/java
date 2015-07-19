@@ -18,6 +18,11 @@ package java_lessons.lesson32_lambda_expressions;
  *  What is nice is that if you’re passing some code to a button or a
  *  thread or something, you can do it without typing out a lot of
  *  unnecessary stuff.
+ *
+ *  A really use of lambda expressions to implement the Comparable interface.
+ *  In previous versions of Java, ArrayLists didn’t have a sort method, but now
+ *  they do. You can pass the sort() method of ArrayList a lambda expression
+ *  that specifies how to sort the list, which is rather nice.
  */
 
 interface Executable7 {
