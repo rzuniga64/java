@@ -13,7 +13,8 @@ interface Executable3 {
 
 class Runner3 {
     public void run(Executable3 e) {
-        e.execute();
+        int value =  e.execute();
+        System.out.println("Return value is: " + value);
     }
 }
 
