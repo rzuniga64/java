@@ -1,0 +1,118 @@
+Hibernate and Object Relational Mapping
+-   Understand the objectives of object relational mapping (ORM)
+-   Taking an instance of an object in Java and persisting its stateto a database so you can access beyond the lifetime
+    of your application.
+-   Learn how Hibernate works in general:
+    1.  How Hibernate connects to a database
+    2.  Providing Hibernate with metadata mappings so that it can construct SQL.
+    3.  Then using a session to persist objects.
+-   Hibernate history, benefits and availability
+
+Important lesson notes
+-   Pay attention to the big picture.
+-   Data persistence refers to persisting the state of an application so it can be obtained once the application has
+    stopped.
+-   Java Database Connectivity (JDBC) API is used to persist information to a relational database.
+
+Hibernate Framework Overview
+-   Hibernate is an Object Relational Mapping Framework that implements the Java Persistence API (JPA) specification.
+-   Automates the persistence of objects in Java applications to the tables in a relational database, using metadata
+    that describes the mapping  between the objects and the database. We no longer have to deal with JDBC and we longer
+    manually creating SQL statements.
+-   Contains Hibernate Query Language (HQL) which is used to query entities. It is similar to SQL. However, it allows us
+    to query objects that are created within object oriented design.
+
+Technical Overview
+-   Hibernate Configuration (hibernate.cfg.xml or hibernate.properties).
+    -   Can be specifiede in three manners
+        1. Through a properties file.
+        2. Through an XML file(preferred).
+        3. Configuration through Java code or programmatic configuration.
+-   Annotate entities with mapping metadata (XML or Annotations). Tell Hibernate how to map our entities to a relational
+    database.
+-   Obtain a Session from teh SessionFactory and invoke persistence methods (session.save(entity). These methods will
+    perform all the CRUD operations for each of the entities. Create session and invoke Persistence Methods.
+
+Benefits
+-   Removes unwieldy SQL.
+-   Reduces development time.
+-   Reduces lines of code.
+-   Increases maintainability.
+-   Increases portability by abstracting the RDMS.
+-   Well document and established framework
+
+Where to Find Hibernate
+-   Maven Central Repository (Preferred).
+-   Hibernate Website: http://hibernate.org/orm/downloads.
+-   JBoss Application Server. Packaged as part of the application's persistence engine.
+
+Cross Cutting Concerns in Applications
+-   What are some Common Application Concerns
+    -   Security
+    -   Validation
+    -   Error Handling
+    -   Logging
+    -   Data Persistence - Persistence refers to the characteristics of state that outlives the process that created it.
+        Without this capability, state would only exist in RAM, and would be lost when the RAM loses power.
+
+Relational Databases
+    -   Collective set of multiple data sets organized by tables, records, and columns.
+    -   Records in one table relate to one or many records in another table to form functional dependencies established
+        by keys.
+
+Data Model vs Object Model
+                            Data Model      Object Model
+                            -------------   ------------
+    Identity                Primary Keys    equals()/Memory
+    Associations            Foreign Keys    Object References
+    Association Navigation  Joins           Accessors/References
+    Inheritance             Not Available   Available
+
+Challenges with JDBC: Data Persistence with JDBC allows us to perform CRUD Operations
+-   Error Handling
+-   Key Management
+-   Implementation of JDBC code varies by organization or team so lot of inconsistency when writing JDBC code.
+    Developers solve the same problem in different ways.  This increases the potential for low quality code/errors.
+    Embeds SQL throughout the application. Queries could be embedded throughout an application in violation of the
+    DRY principle.
+-   Potential for errors
+-   Verbose Code
+-   Does not protect us from writing bad SQL
+-   JDBC does not require us to use prepared statements so that could cause security issues
+-   Lack of layered architecture/unorganized code
+
+Solutions:
+    Custom Persistence Layer
+-   Developers build a custom framework for persisting data/object.  This is resource
+    intensive: Time/Cost.
+-   Quality Assurance: Unit Testing
+-   Training and Documentation
+
+    Object Relational Mapping (ORM) such as Hibernate
+-   ORM is a technique which uses metadata to connect to object oriented code to a relational database
+-   Reduces persistence code, development time and maintenance.
+-   Bridges the gap between the data model and object model
+-   Removes SQL from application logic, supporting the DRY(don't repeat yourself) principle
+-   Facilitates building sound persistence layers
+-   Key Management
+-   Familiar persistence implementation
+-   Open source, well tested solution
+
+Getting Started with Hibernate - Hibernate Basics
+-   Build the first Hibernate application
+-   Setup a project and configure Hibernate
+    -   Create a Maven project
+    -   Add dependencies to POM.xml file:
+        -   hibernate-core
+        -   lf4j-api
+        -   slf4j-log4j12
+        -   mysql-connector-java
+-   Provide basic mapping metadata for an entity
+    -   Create a java class file with the name of a table and each of its fields and generate getters and setters
+    -   Map the user entity to the underlying domain model using annotations. Annotations provide mapping metadata that
+        is required to transform the types within our object oriented application to the relational representations
+        that we store in the database.
+-   Use a session to perform persistence operations
+
+
+

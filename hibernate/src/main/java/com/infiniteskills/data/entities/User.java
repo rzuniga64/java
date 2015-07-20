@@ -1,0 +1,134 @@
+package com.infiniteskills.data.entities;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+/**
+ * 	An entity is a lightweight persistence domain object
+ * 	which represents a table within a database. The state
+ * 	of an entity is represented through its fields.  The
+ * 	fields are mapped to the underlying database using
+ * 	annotations. The entity annotation signals to hibernate
+ * 	that the current type may participate in a session an
+ * 	be persisted to the underling relational database.*/
+@Entity
+@Table(name = "finances_user")
+public class User {
+
+    /** @Id must always be in placed within an entity. Denotes a
+     * field that corresponds to the primary key in the
+     * table that this object is associated with. */
+    @Id
+    /** @GeneratedValue is used to specify how we obtain the value
+     * 	value of the primary key for a particular field. Some
+     * 	databases use auto numbers, some use sequences. There is
+     * 	also the option for Hibernate to provide this value and
+     * 	we can use the @GneratedValue to specify that. */
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    /**	 @Column allows us to specify the corresponding column for this field. */
+    @Column(name="USER_ID")
+    private Long userId;
+
+    @Column(name="FIRST_NAME")
+    private String firstName;
+
+    @Column(name="LAST_NAME")
+    private String lastName;
+
+    @Column(name="BIRTH_DATE")
+    private Date birthDate;
+
+    @Column(name="EMAIL_ADDRESS")
+    private String emailAddress;
+
+    @Column(name="LAST_UPDATED_DATE")
+    private Date lastUpdatedDate;
+
+    @Column(name="LAST_UPDATED_BY")
+    private String lastUpdatedBy;
+
+    @Column(name="CREATED_DATE")
+    private Date createdDate;
+
+    @Column(name="CREATED_BY")
+    private String createdBy;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public Date getLastUpdatedDate() {
+        return lastUpdatedDate;
+    }
+
+    public void setLastUpdatedDate(Date lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
+
+    public String getLastUpdatedBy() {
+        return lastUpdatedBy;
+    }
+
+    public void setLastUpdatedBy(String lastUpdatedBy) {
+        this.lastUpdatedBy = lastUpdatedBy;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+}
