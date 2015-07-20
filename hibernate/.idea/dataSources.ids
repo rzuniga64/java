@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - ifinances@localhost" uuid="be5944b5-cf19-4f13-8183-b7cc2b170460">
+    <database-info product="MySQL" version="5.6.25-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="ifinances"/>
+    <table name="account" schema="" catalog="ifinances" type="TABLE">
+      <column name="ACCOUNT_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="BANK_ID" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="ACCOUNT_TYPE" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="INITIAL_BALANCE" sqlType="DECIMAL" precision="10" scale="2" nullable="false" jdbcType="3"/>
+      <column name="CURRENT_BALANCE" sqlType="DECIMAL" precision="10" scale="2" nullable="false" jdbcType="3"/>
+      <column name="OPEN_DATE" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="CLOSE_DATE" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="LAST_UPDATED_BY" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="LAST_UPDATED_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="CREATED_BY" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CREATED_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="ACCOUNT_ID"/>
+      <foreign-key name="BANK_FK" columns="BANK_ID" ref-table="bank" ref-schema="" ref-catalog="ifinances" ref-columns="BANK_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="ACCOUNT_FK2" table="transaction" schema="" catalog="ifinances" columns="ACCOUNT_ID"/>
+      <exported-key name="ACCOUNT_FK" table="user_account" schema="" catalog="ifinances" columns="ACCOUNT_ID"/>
+      <index name="ACCOUNT_TYPE_FK_idx" unique="false" columns="ACCOUNT_TYPE"/>
+      <index name="BANK_FK" unique="false" columns="BANK_ID"/>
+    </table>
+    <table name="account_type" schema="" catalog="ifinances" type="TABLE">
+      <column name="ACCOUNT_TYPE_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="LAST_UPDATED_DATE" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="LAST_UPDATED_BY" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CREATED_DATE" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="CREATED_BY" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ACCOUNT_TYPE_ID"/>
+    </table>
+    <table name="bank" schema="" catalog="ifinances" type="TABLE">
+      <column name="BANK_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ADDRESS_LINE_1" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ADDRESS_LINE_2" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CITY" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="STATE" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ZIP_CODE" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12"/>
+      <column name="IS_INTERNATIONAL" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="LAST_UPDATED_BY" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="LAST_UPDATED_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="CREATED_BY" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CREATED_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="ADDRESS_TYPE" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="BANK_ID"/>
+      <exported-key name="BANK_FK" table="account" schema="" catalog="ifinances" columns="BANK_ID"/>
+    </table>
+    <table name="bank_contact" schema="" catalog="ifinances" type="TABLE">
+      <column name="BANK_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="NAME" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="POSITION_TYPE" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="BANK_ID,NAME"/>
+    </table>
+    <table name="bond" schema="" catalog="ifinances" type="TABLE">
+      <column name="BOND_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ISSUER" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PURCHASE_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="VALUE" sqlType="DECIMAL" precision="10" scale="2" nullable="false" jdbcType="3"/>
+      <column name="INTEREST_RATE" sqlType="DECIMAL" precision="10" scale="2" nullable="false" jdbcType="3"/>
+      <column name="MATURITY_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="PORTFOLIO_ID" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="BOND_ID"/>
+      <foreign-key name="PORTFOLIO_FK2" columns="PORTFOLIO_ID" ref-table="portfolio" ref-schema="" ref-catalog="ifinances" ref-columns="PORTFOLIO_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="PORTFOLIO_FK2_idx" unique="false" columns="PORTFOLIO_ID"/>
+    </table>
+    <table name="budget" schema="" catalog="ifinances" type="TABLE">
+      <column name="BUDGET_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="GOAL_AMOUNT" sqlType="DECIMAL" precision="10" scale="2" nullable="false" jdbcType="3"/>
+      <column name="PERIOD" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="BUDGET_ID"/>
+      <exported-key name="BUDGET_FK" table="budget_transaction" schema="" catalog="ifinances" columns="BUDGET_ID"/>
+    </table>
+    <table name="budget_transaction" schema="" catalog="ifinances" type="TABLE">
+      <column name="TRANSACTION_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="BUDGET_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="TRANSACTION_ID,BUDGET_ID"/>
+      <foreign-key name="BUDGET_FK" columns="BUDGET_ID" ref-table="budget" ref-schema="" ref-catalog="ifinances" ref-columns="BUDGET_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="TRANSACTION_FK2" columns="TRANSACTION_ID" ref-table="transaction" ref-schema="" ref-catalog="ifinances" ref-columns="TRANSACTION_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="TRANSACTION_ID_UNIQUE" unique="true" columns="TRANSACTION_ID"/>
+      <index name="BUDGET_FK_idx" unique="false" columns="BUDGET_ID"/>
+    </table>
+    <table name="credential" schema="" catalog="ifinances" type="TABLE">
+      <column name="CREDENTIAL_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="USER_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="USERNAME" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="CREDENTIAL_ID"/>
+      <foreign-key name="FINANCES_USER_FK" columns="USER_ID" ref-table="finances_user" ref-schema="" ref-catalog="ifinances" ref-columns="USER_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="USER_ID_UNIQUE" unique="true" columns="USER_ID"/>
+    </table>
+    <table name="currency" schema="" catalog="ifinances" type="TABLE">
+      <column name="NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="COUNTRY_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="SYMBOL" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="NAME,COUNTRY_NAME"/>
+      <exported-key name="CURRENCY_FK" table="market" schema="" catalog="ifinances" columns="CURRENCY_NAME,COUNTRY_NAME"/>
+    </table>
+    <table name="finances_user" schema="" catalog="ifinances" type="TABLE">
+      <column name="USER_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="FIRST_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="LAST_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="BIRTH_DATE" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="EMAIL_ADDRESS" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="LAST_UPDATED_BY" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="LAST_UPDATED_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="CREATED_BY" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CREATED_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="USER_ADDRESS_LINE_1" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="USER_ADDRESS_LINE_2" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CITY" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="STATE" sqlType="VARCHAR" precision="2" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ZIP_CODE" sqlType="VARCHAR" precision="5" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="USER_ID"/>
+      <exported-key name="FINANCES_USER_FK" table="credential" schema="" catalog="ifinances" columns="USER_ID"/>
+      <exported-key name="USER_FK" table="user_account" schema="" catalog="ifinances" columns="USER_ID"/>
+    </table>
+    <table name="ifinances_keys" schema="" catalog="ifinances" type="TABLE">
+      <column name="PK_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PK_VALUE" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="PK_NAME"/>
+      <index name="PK_VALUE_UNIQUE" unique="true" columns="PK_VALUE"/>
+    </table>
+    <table name="investment" schema="" catalog="ifinances" type="TABLE">
+      <column name="INVESTMENT_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="PORTFOLIO_ID" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="NAME" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ISSUER" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PURCHASE_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="VALUE" sqlType="DECIMAL" precision="10" scale="2" nullable="true" jdbcType="3"/>
+      <column name="INTEREST_RATE" sqlType="DECIMAL" precision="10" scale="2" nullable="true" jdbcType="3"/>
+      <column name="MATURITY_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="SHARE_PRICE" sqlType="DECIMAL" precision="10" scale="2" nullable="true" jdbcType="3"/>
+      <column name="QUANTITY" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="INVESTMENT_TYPE" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="INVESTMENT_ID"/>
+    </table>
+    <table name="market" schema="" catalog="ifinances" type="TABLE">
+      <column name="MARKET_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="CURRENCY_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="COUNTRY_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="MARKET_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="MARKET_ID"/>
+      <foreign-key name="CURRENCY_FK" columns="CURRENCY_NAME,COUNTRY_NAME" ref-table="currency" ref-schema="" ref-catalog="ifinances" ref-columns="NAME,COUNTRY_NAME" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="CURRENCY_FK_idx" unique="false" columns="CURRENCY_NAME,COUNTRY_NAME"/>
+    </table>
+    <table name="portfolio" schema="" catalog="ifinances" type="TABLE">
+      <column name="PORTFOLIO_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="PORTFOLIO_ID"/>
+      <exported-key name="PORTFOLIO_FK2" table="bond" schema="" catalog="ifinances" columns="PORTFOLIO_ID"/>
+      <exported-key name="PORTFOLIO_FK" table="stock" schema="" catalog="ifinances" columns="PORTFOLIO_ID"/>
+    </table>
+    <table name="stock" schema="" catalog="ifinances" type="TABLE">
+      <column name="STOCK_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ISSUER" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PURCHASE_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="SHARE_PRICE" sqlType="DECIMAL" precision="10" scale="2" nullable="false" jdbcType="3"/>
+      <column name="QUANTITY" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="PORTFOLIO_ID" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="STOCK_ID"/>
+      <foreign-key name="PORTFOLIO_FK" columns="PORTFOLIO_ID" ref-table="portfolio" ref-schema="" ref-catalog="ifinances" ref-columns="PORTFOLIO_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="PORTFOLIO_FK_idx" unique="false" columns="PORTFOLIO_ID"/>
+    </table>
+    <table name="time_test" schema="" catalog="ifinances" type="TABLE">
+      <column name="TIME_TEST_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="DATETIME_COLUMN" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="TIMESTAMP_COLUMN" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="DATE_COLUMN" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="TIME_COLUMN" sqlType="TIME" precision="8" scale="0" nullable="true" jdbcType="92"/>
+      <column name="SQL_DATETIME_COLUMN" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="SQL_TIMESTAMP_COLUMN" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="SQL_DATE_COLUMN" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="SQL_TIME_COLUMN" sqlType="TIME" precision="8" scale="0" nullable="true" jdbcType="92"/>
+      <primary-key name="PRIMARY" columns="TIME_TEST_ID"/>
+    </table>
+    <table name="transaction" schema="" catalog="ifinances" type="TABLE">
+      <column name="TRANSACTION_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="ACCOUNT_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="TRANSACTION_TYPE" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TITLE" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="AMOUNT" sqlType="DECIMAL" precision="10" scale="2" nullable="false" jdbcType="3"/>
+      <column name="INITIAL_BALANCE" sqlType="DECIMAL" precision="10" scale="2" nullable="false" jdbcType="3"/>
+      <column name="CLOSING_BALANCE" sqlType="DECIMAL" precision="10" scale="2" nullable="false" jdbcType="3"/>
+      <column name="NOTES" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="LAST_UPDATED_BY" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="LAST_UPDATED_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="CREATED_BY" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CREATED_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="TRANSACTION_ID"/>
+      <foreign-key name="ACCOUNT_FK2" columns="ACCOUNT_ID" ref-table="account" ref-schema="" ref-catalog="ifinances" ref-columns="ACCOUNT_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="TRANSACTION_FK2" table="budget_transaction" schema="" catalog="ifinances" columns="TRANSACTION_ID"/>
+      <index name="ACCOUNT_FK2_idx" unique="false" columns="ACCOUNT_ID"/>
+    </table>
+    <table name="user_account" schema="" catalog="ifinances" type="TABLE">
+      <column name="USER_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="ACCOUNT_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="USER_ID,ACCOUNT_ID"/>
+      <foreign-key name="ACCOUNT_FK" columns="ACCOUNT_ID" ref-table="account" ref-schema="" ref-catalog="ifinances" ref-columns="ACCOUNT_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="USER_FK" columns="USER_ID" ref-table="finances_user" ref-schema="" ref-catalog="ifinances" ref-columns="USER_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="ACCOUNT_FK_idx" unique="false" columns="ACCOUNT_ID"/>
+    </table>
+    <table name="user_address" schema="" catalog="ifinances" type="TABLE">
+      <column name="USER_ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="USER_ADDRESS_LINE_1" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="USER_ADDRESS_LINE_2" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CITY" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="STATE" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ZIP_CODE" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ADDRESS_TYPE" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="USER_ID,USER_ADDRESS_LINE_1,USER_ADDRESS_LINE_2,CITY,STATE,ZIP_CODE"/>
+    </table>
+    <table name="v_user_credential" schema="" catalog="ifinances" type="VIEW">
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" def="MA=="/>
+      <column name="FIRST_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="USERNAME" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+    </table>
+  </data-source>
+</component>
