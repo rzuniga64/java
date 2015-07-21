@@ -1,7 +1,6 @@
 package com.infiniteskills.data.entities;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,28 +9,32 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * 	An entity is a lightweight persistence domain object
- * 	which represents a table within a database. The state
- * 	of an entity is represented through its fields.  The
- * 	fields are mapped to the underlying database using
- * 	annotations. The entity annotation signals to hibernate
- * 	that the current type may participate in a session an
- * 	be persisted to the underling relational database.*/
+ * 	The class and fields are annotated with these annotations that provide with the
+ * 	information needed to instruct SQL to persist this object within a database.
+ * 	The annotations on this class such as the @Entity, @Table and @Column can also be
+ * 	used to perform other types of operations such as SELECT, UPDATE or DELETE.
+ *
+ * 	Another best practice when it comes to entities is to follow Javabean naming
+ * 	conventions. So when we create those POJO we will have these private fields
+ * 	and we will create the accessors for these fields. The accessors reflect the
+ * 	field name prefixed with set or get and we camelcase the fieldname.
+ */
+
 @Entity
 @Table(name = "finances_user")
-public class User {
-
+public class User2 {
     /** @Id must always be in placed within an entity. Denotes a
      * field that corresponds to the primary key in the
      * table that this object is associated with. */
-    @Id
     /** @GeneratedValue is used to specify how we obtain the value
      * 	value of the primary key for a particular field. Some
      * 	databases use auto numbers, some use sequences. There is
      * 	also the option for Hibernate to provide this value and
      * 	we can use the @GneratedValue to specify that. */
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     /**	 @Column allows us to specify the corresponding column for this field. */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="USER_ID")
     private Long userId;
 
@@ -130,5 +133,4 @@ public class User {
     public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
     }
-
 }

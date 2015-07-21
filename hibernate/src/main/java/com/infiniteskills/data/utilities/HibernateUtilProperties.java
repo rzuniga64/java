@@ -1,5 +1,6 @@
 package com.infiniteskills.data.utilities;
 
+import com.infiniteskills.data.entities.User2;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -24,7 +25,7 @@ public class HibernateUtilProperties {
 
 			/** Add an annotated class to our configuration that corresponds with the User
 			 * class that we have provided the mapping metadata for.*/
-			configuration.addAnnotatedClass(User.class);
+			configuration.addAnnotatedClass(User2.class);
 
 			return configuration.buildSessionFactory(new StandardServiceRegistryBuilder().build());
 		} catch (Exception e) {
