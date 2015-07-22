@@ -7,5 +7,14 @@
            <constructor-arg name="id" value="777"></constructor-arg>
            <constructor-arg name="name" value="Mary"></constructor-arg>
            <property name="taxId" value="123"></property>
+          <!--  the name of the property is determined by the setter of
+                the Person class. ref allows you to type the id for another \
+                existing bean that will then be injected into this bean -->
+           <property name="address" ref="address"></property>
        </bean>
+
+      <bean id="address" class="basic_bean_configuration.Address">
+        <constructor-arg name="street" value="1 Church Lane"></constructor-arg>
+        <constructor-arg name="postcode" value="9876"></constructor-arg>
+    </bean>
 </beans>
