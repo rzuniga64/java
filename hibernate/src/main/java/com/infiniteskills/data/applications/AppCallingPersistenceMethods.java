@@ -1,6 +1,6 @@
 package com.infiniteskills.data.applications;
 
-import com.infiniteskills.data.entities.User2;
+import com.infiniteskills.data.entities.User;
 import com.infiniteskills.data.utilities.HibernateUtil;
 import org.hibernate.Session;
 
@@ -12,7 +12,7 @@ public class AppCallingPersistenceMethods {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
 
-        User2 user = new User2();
+        User user = new User();
         user.setBirthDate(new Date());
         user.setCreatedDate(new Date());
         user.setCreatedBy("Kevin");
@@ -23,6 +23,13 @@ public class AppCallingPersistenceMethods {
         user.setLastUpdatedBy("Kevin");
 
         session.save(user);
+        session.getTransaction().commit();
+
+        session.beginTransaction(); // another way to start a transaction
+        User dbUser = (User) session.get(User.class, user.getUserId());
+        dbUser.setFirstName("Joe");
+        session.update(dbUser);
+
         session.getTransaction().commit();
         session.close();
     }

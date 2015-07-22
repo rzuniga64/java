@@ -21,8 +21,12 @@ public class HibernateUtil {
              *  So it's going to know how we want Hibernate to perform.  Another purpose of
              *  our configuration is to hold all of the mapping information. */
             Configuration configuration = new Configuration();
-
-            /** Need to pass in the configuration to the StandardServerRegistryBuilder() */
+            configuration.configure();
+            //configuration.addAnnotatedClass(User.class);
+            /** Need to pass in the configuration to the StandardServerRegistryBuilder()
+             *  and then that builder pattern invoke the build method and pass
+             *  the ServiceRegistry into the BuildSessionFactoryMethod and eventually
+             *  we'll end up with a SessionFactory.*/
             return configuration.buildSessionFactory(new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties())
                     .build());
