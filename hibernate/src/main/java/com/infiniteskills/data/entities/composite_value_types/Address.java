@@ -1,4 +1,4 @@
-package com.infiniteskills.data.applications;
+package com.infiniteskills.data.entities.composite_value_types;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -21,8 +21,7 @@ public class Address {
 	@Column(name="ZIP_CODE")
 	private String zipCode;
 
-	public Address() {
-	}
+	public Address() {}
 
 	public String getAddressLine1() {
 		return addressLine1;

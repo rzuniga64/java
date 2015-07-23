@@ -1,4 +1,4 @@
-package com.infiniteskills.data.entities;
+package com.infiniteskills.data.entities.basic_value_types;
 
 import java.util.Date;
 

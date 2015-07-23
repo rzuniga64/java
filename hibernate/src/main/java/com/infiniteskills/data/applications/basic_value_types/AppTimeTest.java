@@ -1,7 +1,7 @@
-package com.infiniteskills.data.applications;
+package com.infiniteskills.data.applications.basic_value_types;
 
 import com.infiniteskills.data.utilities.HibernateUtil;
-import com.infiniteskills.data.entities.TimeTest;
+import com.infiniteskills.data.entities.basic_value_types.TimeTest;
 import java.util.Date;
 import org.hibernate.Session;
 

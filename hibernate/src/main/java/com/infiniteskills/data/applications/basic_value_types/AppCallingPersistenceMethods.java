@@ -1,6 +1,6 @@
-package com.infiniteskills.data.applications;
+package com.infiniteskills.data.applications.basic_value_types;
 
-import com.infiniteskills.data.entities.User;
+import com.infiniteskills.data.entities.basic_value_types.User;
 import com.infiniteskills.data.utilities.HibernateUtil;
 import org.hibernate.Session;
 

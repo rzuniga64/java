@@ -1,4 +1,4 @@
-package com.infiniteskills.data.applications;
+package com.infiniteskills.data.applications.basic_value_types;
 
 import java.util.Date;
 import java.util.Properties;
@@ -8,7 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-import com.infiniteskills.data.entities.AccountType;
+import com.infiniteskills.data.entities.basic_value_types.AccountType;
 
 public class App {
 

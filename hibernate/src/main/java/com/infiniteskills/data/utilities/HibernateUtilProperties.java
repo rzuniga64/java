@@ -1,6 +1,6 @@
 package com.infiniteskills.data.utilities;
 
-import com.infiniteskills.data.entities.User;
+import com.infiniteskills.data.entities.basic_value_types.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
