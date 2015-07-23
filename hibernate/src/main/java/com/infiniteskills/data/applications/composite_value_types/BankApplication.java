@@ -28,8 +28,10 @@ public class BankApplication {
 			bank.setCreatedDate(new Date());
 			bank.setLastUpdatedBy("Kevin");
 			bank.setLastUpdatedDate(new Date());
-			bank.getContacts().add("Joe");
-			bank.getContacts().add("Mary");
+			//bank.getContacts().add("Joe");
+			//bank.getContacts().add("Mary");
+			bank.getContacts().put("MANAGER","Joe");
+            bank.getContacts().put("TELLER", "Mary");
 			session.save(bank);
 			
 			transaction.commit();

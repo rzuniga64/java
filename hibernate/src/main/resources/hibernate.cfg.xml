@@ -20,8 +20,11 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-        <mapping class="com.infiniteskills.data.entities.User"/>
-        <mapping class="com.infiniteskills.data.entities.TimeTest"/>
+        <mapping class="com.infiniteskills.data.entities.basic_value_types.User"/>
+        <mapping class="com.infiniteskills.data.entities.basic_value_types.TimeTest"/>
+        <mapping class="com.infiniteskills.data.entities.composite_value_types.User2"/>
+        <mapping class="com.infiniteskills.data.entities.composite_value_types.UserMapACollectionOfCompositeValues"/>
+        <mapping class="com.infiniteskills.data.entities.composite_value_types.Bank"/>
 
     </session-factory>
 

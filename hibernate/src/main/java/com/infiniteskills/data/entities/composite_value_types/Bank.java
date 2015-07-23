@@ -1,8 +1,6 @@
 package com.infiniteskills.data.entities.composite_value_types;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
+import java.util.*;
 
 import javax.persistence.*;
 
@@ -44,12 +42,17 @@ public class Bank {
      *  @CollectionTable this is how we are going to provide Hibernate the mapping metadata for the table that was
      *  created to hold the bank contact information.
      *  @Column specifies the actual column that will hold the name of our contacts.  This is the column within
-     *  the BANK_CONTACT table.
+     *  the BANK_CONTACT table.  We needed to add a POSITION_TYPE column to the BANK_CONTACT table that holds the
+     *  key for the map.
      */
     @ElementCollection
     @CollectionTable(name="BANK_CONTACT", joinColumns = @JoinColumn(name="BANK_ID"))
+    // name of the column that holds our key for the map
+    @MapKeyColumn(name="POSITION_TYPE")
+    // name will be the name of the column that holds the value for the map
     @Column(name="NAME")
-    private Collection<String> contacts = new ArrayList<String>();
+    //private Collection<String> contacts = new ArrayList<String>();
+    private Map<String, String> contacts = new HashMap<String, String>();
 
 	public Long getBankId() {
 		return bankId;
@@ -139,19 +142,16 @@ public class Bank {
 		this.createdDate = createdDate;
 	}
 
-	public String getCreatedBy() {
-		return createdBy;
-	}
+	public String getCreatedBy() { return createdBy; }
 
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
 
-    public Collection<String> getContacts() {
-        return contacts;
-    }
+    // public Collection<String> getContacts() { return contacts; }
+    // public void setContacts(Collection<String> contacts) { this.contacts = contacts; }
 
-    public void setContacts(Collection<String> contacts) {
-        this.contacts = contacts;
-    }
+    public Map<String,String> getContacts() { return contacts; }
+
+    public void setContacts(Map<String, String> contacts) { this.contacts = contacts; }
 }
