@@ -25,7 +25,7 @@ public class App {
 
 		configuration.setProperties(new Properties() {
 			{
-				put("hibernate.connection.username", "rzuniga64");
+				put("hibernate.connection.username", "ifinances");
 				put("hibernate.connection.password", "aggies92");
 				put("hibernate.connection.driver_class",
 						"com.mysql.jdbc.Driver");
