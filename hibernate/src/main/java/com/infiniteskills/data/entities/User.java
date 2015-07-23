@@ -1,7 +1,7 @@
 package com.infiniteskills.data.entities;
 
+import org.hibernate.annotations.Formula;
 import java.util.Date;
-
 import javax.persistence.*;
 
 @Entity
@@ -17,7 +17,7 @@ public class User {
 	 	objects don't need to be the same instance but are the values of
 	 	these objects the same.  We'll use surrogate keys because they are
 	 	the preferred method of keying tables when we are using hibernate*/
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)  // we are going to generate the key value using 'strategy'.
+	@GeneratedValue(strategy=GenerationType.IDENTITY)  // we are going to generate the key value using 'strategy'.
 
 	/** When Hibernate needs to obtain the primary key for an entity it searches
 	 * that table to find the associated record that stores the next value for the key.*/
@@ -30,7 +30,7 @@ public class User {
      *  AUTO is very compatible because we then don't need to change our GeneratedValue annotation if
      *  the database vendor is changed.
      */
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    //@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="USER_ID")
 	private Long userId;
 
@@ -58,12 +58,11 @@ public class User {
 	@Column(name="CREATED_BY", updatable = false)
 	private String createdBy;
 
-    // Hibernate checks the different fields within the class and it applies defaults to them. So although we haven't
-    // annotated it with the @COLUMN annotation by default HIbernate tries to add a valid column to all of our  INSERTs
-    // UPDATEs or DELETEs. To ignore this field add the @Transient annotation.  When you do not want to include a field
-    // in Hibernate's mapping metadata yet you want to put it within the entity class annotate it with @Transient so
-    // Hibernate doesn't try to treat that field as a column when it tries to create the different SQL statements.
-
+    /** Hibernate checks the different fields within the class and it applies defaults to them. So although we haven't
+     *  annotated it with the @COLUMN annotation by default Hibernate tries to add a valid column to all of our  INSERTs
+     *  UPDATEs or DELETEs. To ignore this field add the @Transient annotation.  When you do not want to include a field
+     *  in Hibernates mapping metadata yet you want to put it within the entity class annotate it with @Transient so
+     *  Hibernate doesn't try to treat that field as a column when it tries to create the different SQL statements.*/
     @Transient
     private boolean valid;
 
@@ -75,6 +74,26 @@ public class User {
         this.valid = valid;
     }
 
+    /**Hibernate annotation!
+     * Caution: When specifying native SQL we have the ability to tie ourself to the underlying database.
+     * Important to use standard SQL when writing these formula annotations.
+     *
+     * When we run a SELECT statement for the User entity, when the columns are listed in the SQL statement, instead
+     *  of just having the normal column name this calculation will be inserted into that SELECT clause. We will
+     *  not see this calculation for inserts or updates. It's important to note that this is only after a SELECT has
+     *  been executed against the database.*/
+    @Formula("lower(datediff(curdate(), birth_date)/365)")
+    private int age;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    /****************************************/
     public Long getUserId() {
 		return userId;
 	}
