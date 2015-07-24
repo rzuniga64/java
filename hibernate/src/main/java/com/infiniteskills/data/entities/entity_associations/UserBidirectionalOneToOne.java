@@ -1,31 +1,35 @@
 package com.infiniteskills.data.entities.entity_associations;
 
+import org.hibernate.annotations.Formula;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.CollectionTable;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.Formula;
-
 @Entity
 @Table(name = "FINANCES_USER")
-public class UserUnidirectionalOneToOne {
+public class UserBidirectionalOneToOne {
 
 	@Id
 	@GeneratedValue
 	@Column(name = "USER_ID")
 	private Long userId;
+
+    /** Source Entity
+     *  Here we reference the owning entity by the non-owning entity so
+     *  we can retrieve the credentialUniDirectionalOneToOne associated with this user even
+     *  though that association is mapped over in the credentialUniDirectionalOneToOne entity.
+     *
+     *  Never specify a join column or cascade on the source entity
+     *  because if both sides have a cascade present when you psersist
+     *  an entity you will go into a loop where they keep persisting
+     *  each other.
+     *
+     *  'user' is the field on the owning entity that maps the relationship.*/
+
+	@OneToOne(mappedBy= "user")
+	private CredentialBiDirectionalOneToOne credential;
 	
 	@Column(name = "FIRST_NAME")
 	private String firstName;
@@ -140,9 +144,11 @@ public class UserUnidirectionalOneToOne {
 		this.createdDate = createdDate;
 	}
 
-	public String getCreatedBy() {
-		return createdBy;
-	}
+	public String getCreatedBy() { return createdBy; }
 
 	public void setCreatedBy(String createdBy) { this.createdBy = createdBy; }
+
+    public CredentialBiDirectionalOneToOne getCredential() { return credential; }
+
+    public void setCredential(CredentialBiDirectionalOneToOne credential) { this.credential = credential; }
 }

@@ -1,18 +1,10 @@
 package com.infiniteskills.data.entities.entity_associations;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="CREDENTIAL")
-public class Credential {
+public class CredentialBiDirectionalOneToOne {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -22,11 +14,12 @@ public class Credential {
     /** @oneToOne is a JPA annotation. Cascade means that when we persist the credential we also want to persist the
      * user that is stored within this field.  This will cause both entities to be persisted at the same time.*/
 	@OneToOne(cascade=CascadeType.ALL)
-    /** @JoinColumn is a JPA annotation. It specifies the columns that should be used to join the tables. So it is
-     * the foreign key column within Credential. that was the USER_ID column. */
+    /** @JoinColumn is a JPA annotation. It specifies the column that should be used to join the tables. So it is
+     * the foreign key column within CredentialUniDirectionalOneToOne. that was the USER_ID column. */
 	@JoinColumn(name="USER_ID")
-	/** user is our target entity. Credential is the source because it holds the foreign key in the Credential table.*/
-	public UserUnidirectionalOneToOne userUnidirectionalOneToOne;
+	/** user is our target entity. Credential is the source because it holds the foreign key in the Credential table.
+		Unidirectional we can only access the user from the credential */
+	public UserBidirectionalOneToOne user;
 	
 	@Column(name="USERNAME")
 	private String username;
@@ -34,9 +27,9 @@ public class Credential {
 	@Column(name="PASSWORD")
 	private String password;
 
-	public UserUnidirectionalOneToOne getUserUnidirectionalOneToOne() { return userUnidirectionalOneToOne; }
+	public UserBidirectionalOneToOne getUser() { return user; }
 
-	public void setUserUnidirectionalOneToOne(UserUnidirectionalOneToOne userUnidirectionalOneToOne) { this.userUnidirectionalOneToOne = userUnidirectionalOneToOne; }
+	public void setUser(UserBidirectionalOneToOne user) { this.user = user; }
 
 	public Long getCredentialId() { return credentialId; }
 
