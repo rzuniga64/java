@@ -22,7 +22,7 @@ public class HibernateUtil {
              *  our configuration is to hold all of the mapping information. */
             Configuration configuration = new Configuration();
             configuration.configure();
-            //configuration.addAnnotatedClass(User3.class);
+            //configuration.addAnnotatedClass(User.class);
             /** Need to pass in the configuration to the StandardServerRegistryBuilder()
              *  and then that builder pattern invoke the build method and pass
              *  the ServiceRegistry into the BuildSessionFactoryMethod and eventually

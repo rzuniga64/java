@@ -20,14 +20,14 @@ import org.hibernate.annotations.Formula;
 
 @Entity
 @Table(name = "FINANCES_USER")
-public class User3 {
+public class UserUnidirectionalOneToOne {
 
 	@Id
 	@GeneratedValue
 	@Column(name = "USER_ID")
 	private Long userId;
 
-	@OneToOne(mappedBy="user3")
+	@OneToOne(mappedBy= "userUnidirectionalOneToOne")
 	private Credential credential;
 	
 	@Column(name = "FIRST_NAME")
@@ -71,11 +71,9 @@ public class User3 {
 		return address;
 	}
 
-
 	public void setAddress(List<Address> address) {
 		this.address = address;
 	}
-
 
 	public void setAge(int age) {
 		this.age = age;
