@@ -78,7 +78,7 @@ public class User {
      * Caution: When specifying native SQL we have the ability to tie ourself to the underlying database.
      * Important to use standard SQL when writing these formula annotations.
      *
-     * When we run a SELECT statement for the User entity, when the columns are listed in the SQL statement, instead
+     * When we run a SELECT statement for the User3 entity, when the columns are listed in the SQL statement, instead
      *  of just having the normal column name this calculation will be inserted into that SELECT clause. We will
      *  not see this calculation for inserts or updates. It's important to note that this is only after a SELECT has
      *  been executed against the database.*/

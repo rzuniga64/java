@@ -25,6 +25,8 @@
         <mapping class="com.infiniteskills.data.entities.composite_value_types.User2"/>
         <mapping class="com.infiniteskills.data.entities.composite_value_types.UserMapACollectionOfCompositeValues"/>
         <mapping class="com.infiniteskills.data.entities.composite_value_types.Bank"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.Credential"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.User3"/>
 
     </session-factory>
 
