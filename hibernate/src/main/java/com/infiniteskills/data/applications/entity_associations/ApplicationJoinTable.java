@@ -25,14 +25,13 @@ public class ApplicationJoinTable {
 			budget.setGoalAmount(new BigDecimal("10000.00"));
 			budget.setName("Emergency Fund");
 			budget.setPeriod("Yearly");
-			
+
 			budget.getTransactions().add(createNewBeltPurchase(account));
 			budget.getTransactions().add(createShoePurchase(account));
 
             session.save(account);
 			session.save(budget);
 			transaction.commit();
-			
 			
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -24,13 +24,7 @@ public class AccountBiDirectionalOneToMany {
      *  to specify the join column. In this case the join column would go on the Transaction field. Point to the
      *  ACCOUNT_ID on the transaction table. Hibernate is smart enough to know that we need to inspect the transaction
      *  entity to find out what table we will be joining to and then determine that need to use the ACCOUNT_ID
-     *  column within our join clause.
-     *
-     *  Not Well Documented:
-     *  Because we are using a unidirectional relationship we have not mapped the inverse side of the relationship.
-     *  That causes the foreign key column ACCOUNT_ID not to be populated. Hibernate's constraints kick in an throw
-     *  an error. We add the nullable attribute.  By default when you map a one-to-many unidirectional association
-     *  the nullable attribute on the join column is set to true. In this case, we don't want that to occur. */
+     *  column within our join clause.*/
 	List<TransactionBiDirectionalOneToMany> transactions = new ArrayList<TransactionBiDirectionalOneToMany>();
 	
 	@Column(name = "NAME")

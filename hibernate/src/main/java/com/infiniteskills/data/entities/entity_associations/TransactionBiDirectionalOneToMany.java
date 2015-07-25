@@ -16,7 +16,7 @@ public class TransactionBiDirectionalOneToMany {
     /** Many transactions to one account */
     @ManyToOne
     /** Since we now have an inverse relationship put the join column on the owning side of the relationship. */
-    @JoinColumn(name="ACCOUNT_ID")
+    @JoinColumn(name="ACCOUNT_ID", nullable = false)
 	private AccountBiDirectionalOneToMany account;
 
 	@Column(name = "TRANSACTION_TYPE")
