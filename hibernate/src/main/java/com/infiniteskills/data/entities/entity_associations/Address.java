@@ -21,8 +21,7 @@ public class Address {
 	@Column(name="ZIP_CODE")
 	private String zipCode;
 
-	public Address() {
-	}
+	public Address() {}
 
 	public String getAddressLine1() {
 		return addressLine1;

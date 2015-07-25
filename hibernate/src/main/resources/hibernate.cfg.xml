@@ -34,6 +34,8 @@
         <mapping class="com.infiniteskills.data.entities.entity_associations.TransactionUniDirectionalOneToMany"/>
         <mapping class="com.infiniteskills.data.entities.entity_associations.TransactionBiDirectionalOneToMany"/>
         <mapping class="com.infiniteskills.data.entities.entity_associations.BudgetJoinTable"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.AccountUniDirectionalManyToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.TransactionUniDirectionalManyToMany"/>
 
     </session-factory>
 
