@@ -30,7 +30,9 @@
         <mapping class="com.infiniteskills.data.entities.entity_associations.UserUnidirectionalOneToOne"/>
         <mapping class="com.infiniteskills.data.entities.entity_associations.UserBidirectionalOneToOne"/>
         <mapping class="com.infiniteskills.data.entities.entity_associations.AccountUniDirectionalOneToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.AccountBiDirectionalOneToMany"/>
         <mapping class="com.infiniteskills.data.entities.entity_associations.TransactionUniDirectionalOneToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.TransactionBiDirectionalOneToMany"/>
 
     </session-factory>
 
