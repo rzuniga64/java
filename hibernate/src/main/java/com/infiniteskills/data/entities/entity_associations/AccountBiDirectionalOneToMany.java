@@ -31,7 +31,6 @@ public class AccountBiDirectionalOneToMany {
      *  That causes the foreign key column ACCOUNT_ID not to be populated. Hibernate's constraints kick in an throw
      *  an error. We add the nullable attribute.  By default when you map a one-to-many unidirectional association
      *  the nullable attribute on the join column is set to true. In this case, we don't want that to occur. */
-	@JoinColumn(name="ACCOUNT_ID", nullable=false)
 	List<TransactionBiDirectionalOneToMany> transactions = new ArrayList<TransactionBiDirectionalOneToMany>();
 	
 	@Column(name = "NAME")
