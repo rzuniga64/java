@@ -33,6 +33,7 @@
         <mapping class="com.infiniteskills.data.entities.entity_associations.AccountBiDirectionalOneToMany"/>
         <mapping class="com.infiniteskills.data.entities.entity_associations.TransactionUniDirectionalOneToMany"/>
         <mapping class="com.infiniteskills.data.entities.entity_associations.TransactionBiDirectionalOneToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.BudgetJoinTable"/>
 
     </session-factory>
 
