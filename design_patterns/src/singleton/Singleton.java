@@ -57,7 +57,7 @@ public class Singleton {
             }
 
             // This makes this a synchronized method until the first object is created.
-            // There after it will not be considered to be a synchronized class.
+            // Thereafter it will not be considered to be a synchronized class.
             synchronized(Singleton.class) {
                 if (firstInstance == null) {
                     firstInstance = new Singleton();    // Lazy instantiation: if the instance it isn't created
