@@ -25,13 +25,14 @@ public class AppBiDirectionalManyToMany {
 			account.getUsers().add(user2);
 			user.getAccounts().add(account);
 			user2.getAccounts().add(account);
-			
+
+            /** Establish relationship from Account to User */
 			account2.getUsers().add(user);
 			account2.getUsers().add(user2);
+            /** Establish relationship from User to Account. If not done there will be errors! */
 			user.getAccounts().add(account2);
 			user2.getAccounts().add(account2);
 
-			
 			session.save(user);
 			session.save(user2);
 			
@@ -40,7 +41,6 @@ public class AppBiDirectionalManyToMany {
             UserBiDirectionalManyToMany dbUser = (UserBiDirectionalManyToMany) session.
 					get(UserBiDirectionalManyToMany.class, user.getUserId());
 			System.out.println(dbUser.getAccounts().iterator().next().getName());
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
