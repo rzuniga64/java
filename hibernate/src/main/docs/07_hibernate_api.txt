@@ -6,8 +6,7 @@ Hibernate API: 3 major pillars that make up a Hibernate application
 -   Learn to invoke persistence manager methods that manage CRUD operations and transactions.  Within Hibernate the
     main interface that we will be looking at is the Session interface which will allow us to perform those database
     operations and manage the persistence lifecycle.
--   Understand the persistence lifecycle or the different states our entities transition into and out of. Depending
-    on where the sit within that lifecycle will determine if we can sync their state with the database.
+-   Understand the persistence lifecycle or the different states our entities transition into and out of.
 -   Become familiar with interfaces in the Hibernate API.
 
 Important Lesson Notes
@@ -15,6 +14,30 @@ Important Lesson Notes
 -   populate.sql will truncate all of the tables so all the records will be lost. It will then insert a few records
     into the Bank table that we can work against.
 
+Persistence Lifecycle
+Depending on where the sit within that lifecycle will determine if we can sync their state with the database.
 
+Lifecycles
+-   States money can be in: earned, saved, available, spent
+-   Actions is how money gets into those states. An action is invoked: deposit, withdrawal, purchase
+-   Objects are the things we perform actions on
 
+                                Account:object
+                                ____________
+               deposit():action |           |  withdrawal():action
+       $ earned: -------------> |  Saved:   | -------------------->   Available:state
+         object                 |  state    |
+                                -------------
+                                    |
+                             purchase():action
+                                    |
+                                    V
+                               Spent: state
+
+Hibernate Lifecycle
+                                Persistence Context
+                                ---------------------
+        Transient:  ----------> |   Persistent &    | ------------> Detached:
+        state                   |   Removed: states |               state
+                                ---------------------
 

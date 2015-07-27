@@ -25,6 +25,21 @@
         <mapping class="com.infiniteskills.data.entities.composite_value_types.User2"/>
         <mapping class="com.infiniteskills.data.entities.composite_value_types.UserMapACollectionOfCompositeValues"/>
         <mapping class="com.infiniteskills.data.entities.composite_value_types.Bank"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.CredentialUniDirectionalOneToOne"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.CredentialBiDirectionalOneToOne"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.UserUnidirectionalOneToOne"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.UserBidirectionalOneToOne"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.AccountUniDirectionalOneToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.AccountBiDirectionalOneToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.TransactionUniDirectionalOneToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.TransactionBiDirectionalOneToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.BudgetJoinTable"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.AccountUniDirectionalManyToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.TransactionUniDirectionalManyToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.UserBiDirectionalManyToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.CredentialBiDirectionalManyToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.AccountBiDirectionalManyToMany"/>
+        <mapping class="com.infiniteskills.data.entities.entity_associations.TransactionBiDirectionalManyToMany"/>
 
     </session-factory>
 
