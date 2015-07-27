@@ -1,0 +1,20 @@
+Hibernate API: 3 major pillars that make up a Hibernate application
+1.  Hibernate configuration
+2.  Mapping metadata on the entities
+3.  Invoking persistence operations
+
+-   Learn to invoke persistence manager methods that manage CRUD operations and transactions.  Within Hibernate the
+    main interface that we will be looking at is the Session interface which will allow us to perform those database
+    operations and manage the persistence lifecycle.
+-   Understand the persistence lifecycle or the different states our entities transition into and out of. Depending
+    on where the sit within that lifecycle will determine if we can sync their state with the database.
+-   Become familiar with interfaces in the Hibernate API.
+
+Important Lesson Notes
+-   Hibernate Session vs JPA EntityManager
+-   populate.sql will truncate all of the tables so all the records will be lost. It will then insert a few records
+    into the Bank table that we can work against.
+
+
+
+
