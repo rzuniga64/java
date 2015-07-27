@@ -8,39 +8,44 @@ import com.infiniteskills.data.entities._07_hibernate_api.*;
 import com.infiniteskills.data.utilities.HibernateUtil;
 import org.hibernate.Session;
 
-public class ApplicationSavingEntities {
+public class ApplicationReattachingDetachedEntities {
 
 	public static void main(String[] args) {
-
-		// Persistence Context 1
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		
-		AccountHibernateAPI account = createNewAccount(); // transient
-		TransactionHibernateAPI trans1 = createNewBeltPurchase(account); // transient
-		TransactionHibernateAPI trans2 = createShoePurchase(account); // transient
-		account.getTransactions().add(trans1);
-		account.getTransactions().add(trans2);
-
-        // See if the objects are associated with the persistent context.
-		System.out.println(session.contains(account));
-		System.out.println(session.contains(trans1));
-		System.out.println(session.contains(trans1));
-		
 		try {
-            // Need to fully qualify Transaction since we have two objects named transaction
+            // Open Persistence Context 1
+			Session session = HibernateUtil.getSessionFactory().openSession();
 			org.hibernate.Transaction transaction = session.beginTransaction();
-			session.save(account); // persistent, will cascade the transactions associated with the account
+			// Put the entity in the persistence context
+			BankHibernateAPI bank = (BankHibernateAPI) session.get(BankHibernateAPI.class, 1L);
+			// Persist the entity to the database
+            transaction.commit();
+            // Close Persistent Context 1. Our bank entity is detached. It is not attached to any persistence context.
+			session.close();
 
-            // See if the objects get transitioned over to the persistent state.
-			System.out.println(session.contains(account));
-			System.out.println(session.contains(trans1));
-			System.out.println(session.contains(trans1));
+            // Open Persistence Context 2
+			Session session2 = HibernateUtil.getSessionFactory().openSession();
+			org.hibernate.Transaction transaction2 = session2.beginTransaction();
 
-			transaction.commit();
+            // Bank entity is not contained within the second persistence context.
+			System.out.println(session2.contains(bank));
+            // Update will cause bank entity to be reattached to the persistence context causing it to go from a
+            // a detached state to a persistent state.  Once an entity is reattached Hibernate will think its dirty
+            // (entity has a different state or some of the fields have been changed).An update statement to the
+            // database which  will cause the database to be synched to the new state of the entity.
+			session2.update(bank);
+            // Set one of the fields on the bank entity after we have reattached it.
+			bank.setName("Test Bank");
+			System.out.println("Update Method Invoked");
+            // Bank entity is now contained within the second persistence context.
+			System.out.println(session2.contains(bank));
+
+            // Persist the entity to the database
+			transaction2.commit();
+			session2.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
-			session.close(); // Close Persistence Context 1
 			HibernateUtil.getSessionFactory().close();
 		}
 	}
