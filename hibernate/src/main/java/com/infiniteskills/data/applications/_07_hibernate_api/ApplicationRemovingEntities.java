@@ -8,30 +8,34 @@ import com.infiniteskills.data.entities._07_hibernate_api.*;
 import com.infiniteskills.data.utilities.HibernateUtil;
 import org.hibernate.Session;
 
-public class ApplicationModifyingEntities {
+public class ApplicationRemovingEntities {
 
 	public static void main(String[] args) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		
 		try {
+            // Open Persistence Context 1
 			org.hibernate.Transaction transaction = session.beginTransaction();
 
-			// Get a bank entity from the session with the ID of 1.
+            // Put the entity in the persistent context
 			BankHibernateAPI bank = (BankHibernateAPI) session.get(BankHibernateAPI.class, 1L);
-			// Make changes to the bank entity. Hibernate will track those changes to the entity
-			// and when we commit our transaction those changes will be updated on that entity.
-			bank.setName("New Hope Bank");
-			bank.setLastUpdatedBy("Kevin Bowersox");
-			bank.setLastUpdatedDate(new Date());
+			
+			System.out.println(session.contains(bank));
 
-			// Once commit is called Hibernate realizes changes have been made to the entity and
-			// is no longer is synch with the database. Hibernate issues an update statement to
-			// synch up the object model changes with the database.
+			// When deleting an entity Hibernate will change the state of the entity to remove which will remove the
+            // entity from the persistence context. No longer use the entity within our code!
+            // Let garbage collection remove the object from the application.
+			session.delete(bank);
+			System.out.println("Method Invoked");
+			System.out.println(session.contains(bank));
+
+            // The entity will subsequently be removed from the database when we commit our transaction or flush
+            // our session.
 			transaction.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
-			session.close();
+			session.close(); // Close Persistence Context 1
 			HibernateUtil.getSessionFactory().close();
 		}
 	}
