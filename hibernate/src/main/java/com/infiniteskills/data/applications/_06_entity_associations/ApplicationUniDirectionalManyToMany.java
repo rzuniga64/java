@@ -70,8 +70,8 @@ public class ApplicationUniDirectionalManyToMany {
 
 	private static Address createAddress() {
 		Address address = new Address();
-		address.setAddressLine1("101 Address Line");
-		address.setAddressLine2("102 Address Line");
+		address.setAddressLine1("101 AddressHibernateAPI Line");
+		address.setAddressLine2("102 AddressHibernateAPI Line");
 		address.setCity("New York");
 		address.setState("PA");
 		address.setZipCode("10000");
@@ -116,7 +116,7 @@ public class ApplicationUniDirectionalManyToMany {
 		account.setOpenDate(new Date());
 		account.setCreatedBy("Kevin Bowersox");
 		account.setInitialBalance(new BigDecimal("50.00"));
-		account.setName("Savings Account");
+		account.setName("Savings AccountHibernateAPI");
 		account.setCurrentBalance(new BigDecimal("100.00"));
 		account.setLastUpdatedBy("Kevin Bowersox");
 		account.setLastUpdatedDate(new Date());

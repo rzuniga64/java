@@ -18,10 +18,10 @@ public class AccountBiDirectionalOneToMany {
 	/** @OneToMany is a JPA annotation. Cascade means that when we persist the credential we also want to persist the
 	 *  transactions that are stored within this field. This will cause both entities to be persisted at the same time.*/
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="account")
-    /** Account is our target entity. Transactions is the source because it holds the foreign key in the Transaction
+    /** AccountHibernateAPI is our target entity. Transactions is the source because it holds the foreign key in the TransactionHibernateAPI
      *  table. @OneToMany unidirectional annotation. There is no inverse association from transaction to account.
-     *  So we would not have an Account field on Transaction in a unidirectional relationship. We need someplace
-     *  to specify the join column. In this case the join column would go on the Transaction field. Point to the
+     *  So we would not have an AccountHibernateAPI field on TransactionHibernateAPI in a unidirectional relationship. We need someplace
+     *  to specify the join column. In this case the join column would go on the TransactionHibernateAPI field. Point to the
      *  ACCOUNT_ID on the transaction table. Hibernate is smart enough to know that we need to inspect the transaction
      *  entity to find out what table we will be joining to and then determine that need to use the ACCOUNT_ID
      *  column within our join clause.*/

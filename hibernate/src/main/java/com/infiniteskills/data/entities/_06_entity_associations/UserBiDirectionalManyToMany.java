@@ -31,9 +31,9 @@ public class UserBiDirectionalManyToMany {
 	@Column(name = "USER_ID")
 	private Long userId;
 
-	/** Non-owning entity User. Establish an association back to account. Establishing an inverse association making
+	/** Non-owning entity UserHibernateAPI. Establish an association back to account. Establishing an inverse association making
 	 *  the relationship bidirectional.
-     *  mappedBy specifies what field on the owning entity maps this relationship. We see in Account entity that it is
+     *  mappedBy specifies what field on the owning entity maps this relationship. We see in AccountHibernateAPI entity that it is
      *  'users'. */
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "users")
 	private Set<AccountBiDirectionalManyToMany> accounts = new HashSet<AccountBiDirectionalManyToMany>();

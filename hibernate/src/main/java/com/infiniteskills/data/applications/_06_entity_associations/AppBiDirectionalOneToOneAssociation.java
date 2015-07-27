@@ -32,16 +32,16 @@ public class AppBiDirectionalOneToOneAssociation {
 			credential.setUsername("kmb385");
 
 			/** Now we have a bidirectional relationship so we need to manage both sides of the relationship.
-			 * 	We set the user field on the credential and set the credential field on the user. */
+			 * 	We set the userHibernateAPI field on the credential and set the credential field on the userHibernateAPI. */
 			credential.setUser(user);
             user.setCredential(credential);
 
 			session.save(credential);
 			transaction.commit();
 
-            /** To prove that bidirectional relationship is working we are going to pull a user from the database and
-             *  grab the user from the credential that we are persisting and then get the userid.  We are demonstrating
-             *  that we are grabbing the user and proving that we are able to access that other side of the
+            /** To prove that bidirectional relationship is working we are going to pull a userHibernateAPI from the database and
+             *  grab the userHibernateAPI from the credential that we are persisting and then get the userid.  We are demonstrating
+             *  that we are grabbing the userHibernateAPI and proving that we are able to access that other side of the
              *  relationship. So we can access the source entity from the target and print some information out.
              */
 			UserBidirectionalOneToOne dbUser = (UserBidirectionalOneToOne)

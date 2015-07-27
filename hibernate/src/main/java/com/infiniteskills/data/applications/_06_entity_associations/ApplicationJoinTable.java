@@ -79,7 +79,7 @@ public class ApplicationJoinTable {
 		account.setOpenDate(new Date());
 		account.setCreatedBy("Kevin Bowersox");
 		account.setInitialBalance(new BigDecimal("50.00"));
-		account.setName("Savings Account");
+		account.setName("Savings AccountHibernateAPI");
 		account.setCurrentBalance(new BigDecimal("100.00"));
 		account.setLastUpdatedBy("Kevin Bowersox");
 		account.setLastUpdatedDate(new Date());

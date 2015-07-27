@@ -41,6 +41,12 @@
         <mapping class="com.infiniteskills.data.entities._06_entity_associations.AccountBiDirectionalManyToMany"/>
         <mapping class="com.infiniteskills.data.entities._06_entity_associations.TransactionBiDirectionalManyToMany"/>
 
+        <mapping class="com.infiniteskills.data.entities._07_hibernate_api.AccountHibernateAPI"/>
+        <mapping class="com.infiniteskills.data.entities._07_hibernate_api.BankHibernateAPI"/>
+        <mapping class="com.infiniteskills.data.entities._07_hibernate_api.CredentialHibernateAPI"/>
+        <mapping class="com.infiniteskills.data.entities._07_hibernate_api.TransactionHibernateAPI"/>
+        <mapping class="com.infiniteskills.data.entities._07_hibernate_api.UserHibernateAPI"/>
+
     </session-factory>
 
 </hibernate-configuration>

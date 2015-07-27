@@ -1,4 +1,4 @@
-package com.infiniteskills.data.entities._06_entity_associations;
+package com.infiniteskills.data.entities._07_hibernate_api;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -16,31 +16,30 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "ACCOUNT")
-public class AccountUniDirectionalManyToMany {
+public class AccountHibernateAPI {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ACCOUNT_ID")
 	private Long accountId;
 
-    /** When we model a many to many relationship we have to pick which side will be the owning side.  It can be either
-     *  side. Let's choose this entity, AccountHibernateAPI.
-     *
-     * @ManyToMany is a JPA annotation.
-     * @JoinTable is USER_ACCOUNT. join column is ACCOUNT_ID within AccountHibernateAPI entity. Inverse join column is USER_ID from
-     * UserHibernateAPI entity. */
 	@ManyToMany(cascade=CascadeType.ALL)
 	@JoinTable(name="USER_ACCOUNT", joinColumns=@JoinColumn(name="ACCOUNT_ID"), 
 		inverseJoinColumns=@JoinColumn(name="USER_ID"))
-	private Set<UserBidirectionalOneToOne> users = new HashSet<UserBidirectionalOneToOne>();
+	private Set<UserHibernateAPI> users = new HashSet<UserHibernateAPI>();
+
+	@ManyToOne
+	@JoinColumn(name="BANK_ID")
+	private BankHibernateAPI bank;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "account")
-	List<TransactionBiDirectionalOneToMany> transactions = new ArrayList<TransactionBiDirectionalOneToMany>();
+	List<TransactionHibernateAPI> transactions = new ArrayList<TransactionHibernateAPI>();
 
 	@Column(name = "NAME")
 	private String name;
@@ -133,37 +132,23 @@ public class AccountUniDirectionalManyToMany {
 		this.lastUpdatedBy = lastUpdatedBy;
 	}
 
-	public Date getCreatedDate() {
-		return createdDate;
-	}
+	public Date getCreatedDate() { return createdDate; }
 
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
+	public void setCreatedDate(Date createdDate) { this.createdDate = createdDate; }
 
-	public String getCreatedBy() {
-		return createdBy;
-	}
+	public String getCreatedBy() { return createdBy; }
 
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
+	public Set<UserHibernateAPI> getUsers() { return users; }
 
-	public List<TransactionBiDirectionalOneToMany> getTransactions() {
-		return transactions;
-	}
+	public void setUsers(Set<UserHibernateAPI> users) { this.users = users; }
 
-	public void setTransactions(List<TransactionBiDirectionalOneToMany> transactions) {
-		this.transactions = transactions;
-	}
+	public List<TransactionHibernateAPI> getTransactions() { return transactions; }
 
-	public Set<UserBidirectionalOneToOne> getUsers() {
-		return users;
-	}
+	public void setTransactions(List<TransactionHibernateAPI> transactions) { this.transactions = transactions; }
 
-	public void setUsers(Set<UserBidirectionalOneToOne> users) {
-		this.users = users;
-	}
+	public void setCreatedBy(String createdBy) { this.createdBy = createdBy; }
 
-	
+	public BankHibernateAPI getBank() { return bank; }
+
+	public void setBank(BankHibernateAPI bank) { this.bank = bank; }
 }

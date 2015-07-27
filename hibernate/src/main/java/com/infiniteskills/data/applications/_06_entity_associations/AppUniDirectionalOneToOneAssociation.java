@@ -32,8 +32,8 @@ public class AppUniDirectionalOneToOneAssociation {
             credential.setUsername("kmb385");
 
             credential.setUser(user);
-			/** Only persist the credential. Because we have @OneToOne(cascade=CascadeType.ALL) in Credential class
-			 *  both credentialUniDirectionalOneToOne and user will both be persisted. */
+			/** Only persist the credential. Because we have @OneToOne(cascade=CascadeType.ALL) in CredentialHibernateAPI class
+			 *  both credentialUniDirectionalOneToOne and userHibernateAPI will both be persisted. */
 			session.save(credential);
 			transaction.commit();
 			

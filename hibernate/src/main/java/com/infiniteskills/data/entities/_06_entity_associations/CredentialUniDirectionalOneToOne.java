@@ -12,13 +12,13 @@ public class CredentialUniDirectionalOneToOne {
 	public Long credentialId;
 
     /** @oneToOne is a JPA annotation. Cascade means that when we persist the credential we also want to persist the
-     * user that is stored within this field.  This will cause both entities to be persisted at the same time.*/
+     * userHibernateAPI that is stored within this field.  This will cause both entities to be persisted at the same time.*/
 	@OneToOne(cascade=CascadeType.ALL)
     /** @JoinColumn is a JPA annotation. It specifies the column that should be used to join the tables. So it is
      * the foreign key column within CredentialUniDirectionalOneToOne. that was the USER_ID column. */
 	@JoinColumn(name="USER_ID")
-	/** user is our target entity. Credential is the source because it holds the foreign key in the Credential table.
-		Unidirectional we can only access the user from the credential */
+	/** userHibernateAPI is our target entity. CredentialHibernateAPI is the source because it holds the foreign key in the CredentialHibernateAPI table.
+		Unidirectional we can only access the userHibernateAPI from the credential */
 	public UserUnidirectionalOneToOne user;
 	
 	@Column(name="USERNAME")

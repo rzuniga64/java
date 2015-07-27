@@ -35,7 +35,7 @@ public class BudgetJoinTable {
 	@OneToMany(cascade=CascadeType.ALL)
 	/** @JoinTable is a JPA annotation
      *  Start with join column of the owning entity(Budget). You can choose which side you want to place the
-     *  @JoinTable annotation. Then specify the inverse join column of Transaction entity. */
+     *  @JoinTable annotation. Then specify the inverse join column of TransactionHibernateAPI entity. */
 	@JoinTable(name="BUDGET_TRANSACTION", joinColumns=@JoinColumn(name="BUDGET_ID"), 
 		inverseJoinColumns=@JoinColumn(name="TRANSACTION_ID"))
 	private List<TransactionBiDirectionalOneToMany> transactions = new ArrayList<TransactionBiDirectionalOneToMany>();

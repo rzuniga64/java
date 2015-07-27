@@ -41,3 +41,66 @@ Hibernate Lifecycle
         state                   |   Removed: states |               state
                                 ---------------------
 
+Entity States
+-   Transient: object constructed with the new operation that is not associated with any database row.
+-   Persistent: an entity instance associated with a database row and contianed within a persistence context.
+-   Removed: an object scheduled for deletion
+-   Detached: object references to an entity once associated with a closed persistence context.
+
+Persistence Context
+-   Cache of all persistent entity instances. A persistence context is usually created with a Session. Invoke Hibernate
+    operations on our entities. Maybe we build an object with the new operator and constructor and then we invoke the
+    save method on that object. At that point the object gets placed into the persistence context. Or we query for
+    some objects from the database. Hibernate goes and fetches some rows from the database, changes them into objects
+    and now those objects are stored within the persistence context.  If we makes changes to those object the
+    persistence context will be aware of those changes and it is able to perform all these operations that synch
+    our object model with the database model.
+-   Corresponds with a session (Persistence Manager). Invoke operations on the session that will manipulate our
+    persistence context and the entities stored within it.
+
+    SessionFactory factory = HibernateUtil.getSessionFactory();
+    Session session = factory.openSession();
+    // perform operations on entities
+    session.close();
+
+Hibernate API actions
+
+Initial State           Action          End State
+--------------------------------------------------
+None                    get()           Persistent
+                        load
+--------------------------------------------------
+Transient               save()          Persistent
+                        saveOrUpdate()
+--------------------------------------------------
+Persistent              delete()        Removed
+--------------------------------------------------
+Detached                update()        Persistent
+                        saveOrUpdate()
+--------------------------------------------------
+Persistent              evict()         Detached
+--------------------------------------------------
+
+Example
+
+Bank bank = new Bank(); //transient
+// bank.setAllProperties();
+SessionFactory factory = Hibernate.getSessionFactory();
+
+Session session = factory.openSession(); // Persistence Context 1
+Transaction transaction = session.beginTransaction();
+session.save(bank); // persistent
+transaction.commit();
+session.close(); // Close Persistence Context 1
+
+// bank is now detached
+Session session2 = factory.openSession(); // Persistence Context 2
+Transaction transaction2 = session2.beginTransaction();
+session2.delete(bank); // removed (Hibernate only)
+transaction2.commit();
+session.close(); // Close Persistence Context 2
+
+
+
+
+

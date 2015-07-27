@@ -1,36 +1,42 @@
-package com.infiniteskills.data.entities._06_entity_associations;
+package com.infiniteskills.data.entities._07_hibernate_api;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.Formula;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 @Entity
 @Table(name = "FINANCES_USER")
-public class UserBidirectionalOneToOne {
+public class UserHibernateAPI {
 
 	@Id
 	@GeneratedValue
 	@Column(name = "USER_ID")
 	private Long userId;
 
-    /** Source Entity
-     *  Here we reference the owning entity by the non-owning entity so
-     *  we can retrieve the credentialUniDirectionalOneToOne associated with this userHibernateAPI even
-     *  though that association is mapped over in the credentialUniDirectionalOneToOne entity.
-     *
-     *  Never specify a join column or cascade on the source entity
-     *  because if both sides have a cascade present when you psersist
-     *  an entity you will go into a loop where they keep persisting
-     *  each other.
-     *
-     *  'userHibernateAPI' is the field on the owning entity that maps the relationship.*/
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "users")
+	private Set<AccountHibernateAPI> accounts = new HashSet<AccountHibernateAPI>();
 
-	@OneToOne(mappedBy= "user")
-	private CredentialBiDirectionalOneToOne credential;
-	
+	@OneToOne(mappedBy = "user")
+	private CredentialHibernateAPI credential;
+
 	@Column(name = "FIRST_NAME")
 	private String firstName;
 
@@ -44,10 +50,11 @@ public class UserBidirectionalOneToOne {
 	private String emailAddress;
 
 	@ElementCollection
-	@CollectionTable(name="USER_ADDRESS", joinColumns=@JoinColumn(name="USER_ID"))
-	@AttributeOverrides({@AttributeOverride(name="addressLine1", column=@Column(name="USER_ADDRESS_LINE_1")),
-		@AttributeOverride(name="addressLine2", column=@Column(name="USER_ADDRESS_LINE_2"))})
-	private List<Address> address = new ArrayList<Address>();
+	@CollectionTable(name = "USER_ADDRESS", joinColumns = @JoinColumn(name = "USER_ID"))
+	@AttributeOverrides({
+			@AttributeOverride(name = "addressLine1", column = @Column(name = "USER_ADDRESS_LINE_1")),
+			@AttributeOverride(name = "addressLine2", column = @Column(name = "USER_ADDRESS_LINE_2")) })
+	private List<AddressHibernateAPI> addresses = new ArrayList<AddressHibernateAPI>();
 
 	@Column(name = "LAST_UPDATED_DATE")
 	private Date lastUpdatedDate;
@@ -64,17 +71,11 @@ public class UserBidirectionalOneToOne {
 	@Formula("lower(datediff(curdate(), birth_date)/365)")
 	private int age;
 
-	public int getAge() {
-		return age;
-	}
+	public int getAge() { return age; }
 
-	public List<Address> getAddress() {
-		return address;
-	}
+	public List<AddressHibernateAPI> getAddresses() { return addresses; }
 
-	public void setAddress(List<Address> address) {
-		this.address = address;
-	}
+	public void setAddresses(List<AddressHibernateAPI> addresses) { this.addresses = addresses; }
 
 	public void setAge(int age) {
 		this.age = age;
@@ -144,11 +145,17 @@ public class UserBidirectionalOneToOne {
 		this.createdDate = createdDate;
 	}
 
-	public String getCreatedBy() { return createdBy; }
+	public String getCreatedBy() {
+		return createdBy;
+	}
 
 	public void setCreatedBy(String createdBy) { this.createdBy = createdBy; }
 
-    public CredentialBiDirectionalOneToOne getCredential() { return credential; }
+	public CredentialHibernateAPI getCredential() { return credential; }
 
-    public void setCredential(CredentialBiDirectionalOneToOne credential) { this.credential = credential; }
+	public void setCredential(CredentialHibernateAPI credential) { this.credential = credential;}
+
+	public Set<AccountHibernateAPI> getAccounts() { return accounts; }
+
+	public void setAccounts(Set<AccountHibernateAPI> accounts) { this.accounts = accounts; }
 }

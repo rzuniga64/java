@@ -26,10 +26,10 @@ public class AppBiDirectionalManyToMany {
 			user.getAccounts().add(account);
 			user2.getAccounts().add(account);
 
-            /** Establish relationship from Account to User */
+            /** Establish relationship from AccountHibernateAPI to UserHibernateAPI */
 			account2.getUsers().add(user);
 			account2.getUsers().add(user2);
-            /** Establish relationship from User to Account. If not done there will be errors! */
+            /** Establish relationship from UserHibernateAPI to AccountHibernateAPI. If not done there will be errors! */
 			user.getAccounts().add(account2);
 			user2.getAccounts().add(account2);
 
@@ -75,8 +75,8 @@ public class AppBiDirectionalManyToMany {
 
 	private static Address createAddress() {
 		Address address = new Address();
-		address.setAddressLine1("101 Address Line");
-		address.setAddressLine2("102 Address Line");
+		address.setAddressLine1("101 AddressHibernateAPI Line");
+		address.setAddressLine2("102 AddressHibernateAPI Line");
 		address.setCity("New York");
 		address.setState("PA");
 		address.setZipCode("10000");
@@ -121,7 +121,7 @@ public class AppBiDirectionalManyToMany {
 		account.setOpenDate(new Date());
 		account.setCreatedBy("Kevin Bowersox");
 		account.setInitialBalance(new BigDecimal("50.00"));
-		account.setName("Savings Account");
+		account.setName("Savings AccountHibernateAPI");
 		account.setCurrentBalance(new BigDecimal("100.00"));
 		account.setLastUpdatedBy("Kevin Bowersox");
 		account.setLastUpdatedDate(new Date());

@@ -14,11 +14,11 @@ public class AccountBiDirectionalManyToMany {
 	private Long accountId;
 
 	/** When we model a many to many relationship we have to pick which side will be the owning side.  It can be either
-	 *  side. Let's choose this entity, Account.
+	 *  side. Let's choose this entity, AccountHibernateAPI.
      *
      * @ManyToMany is a JPA annotation.
-     * @JoinTable is USER_ACCOUNT. join column is ACCOUNT_ID within Account entity. Inverse join column is USER_ID from
-     * User entity. */
+     * @JoinTable is USER_ACCOUNT. join column is ACCOUNT_ID within AccountHibernateAPI entity. Inverse join column is USER_ID from
+     * UserHibernateAPI entity. */
 	@ManyToMany(cascade=CascadeType.ALL)
 	@JoinTable(name="USER_ACCOUNT", joinColumns=@JoinColumn(name="ACCOUNT_ID"), 
 		inverseJoinColumns=@JoinColumn(name="USER_ID"))

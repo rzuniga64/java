@@ -37,7 +37,7 @@ public class Bank {
 	@Column(name="CREATED_BY")
 	private String createdBy;
 
-    /** add a list of Bank contacts
+    /** add a list of BankHibernateAPI contacts
      *  @ElementCollection says we are trying to map a collection of instances that are a basic or embeddable class.
      *  @CollectionTable this is how we are going to provide Hibernate the mapping metadata for the table that was
      *  created to hold the bank contact information.

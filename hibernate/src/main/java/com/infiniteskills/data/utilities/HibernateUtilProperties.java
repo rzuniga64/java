@@ -23,7 +23,7 @@ public class HibernateUtilProperties {
 			 *  our configuration is to hold all of the mapping information. */
 			Configuration configuration = new Configuration();
 
-			/** Add an annotated class to our configuration that corresponds with the User
+			/** Add an annotated class to our configuration that corresponds with the UserHibernateAPI
 			 * class that we have provided the mapping metadata for.*/
 			configuration.addAnnotatedClass(User.class);
 
