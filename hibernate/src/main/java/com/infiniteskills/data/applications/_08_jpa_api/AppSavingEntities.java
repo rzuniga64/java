@@ -11,7 +11,7 @@ import javax.persistence.Persistence;
 
 import com.infiniteskills.data.entities._07_hibernate_api.*;
 
-public class ApplicationSavingEntities {
+public class AppSavingEntities {
 
 	public static void main(String[] args) {
 

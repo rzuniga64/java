@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
 
-public class ApplicationRetrievingEntities {
+public class AppModifyingEntities {
 
 	public static void main(String[] args) {
 
@@ -30,19 +30,12 @@ public class ApplicationRetrievingEntities {
 
 			// Return an entity from the database. We are executing a SELECT against the database and having that
 			// result set turned into either a list of entities or a single entity.
-            //BankHibernateAPI bank = em.find(BankHibernateAPI.class, 1L);
-
-            // Gives a NPE because using a JPA method. Find or get method are generic so we don't have to cast
-            // them to the type or our entity.
-            // BankHibernateAPI bank = em.find(BankHibernateAPI.class, 123L);
-
-            // Similar to the load method within Hibernate. The method will not return a null reference but will
-            // throw an ObjectNotFoundException if the entity does not exist. That is because Hibernate always tries
-            // to return a proxy.
-            // BankHibernateAPI bank = em.getReference(BankHibernateAPI.class, 123L);
-			   BankHibernateAPI bank = em.getReference(BankHibernateAPI.class, 1L);
+			BankHibernateAPI bank = em.getReference(BankHibernateAPI.class, 1L);
 			System.out.println(em.contains(bank));
-            System.out.println(bank.getName());
+
+            // The entity is dirty so when we commit our transaction Hibernate will synch our entity model with the
+            // database.
+            bank.setName("Another Demonstration");
 
             // Cause the persistence manager to flush all of the changes to the database and it will synchronize
             // our entity model and our database.
