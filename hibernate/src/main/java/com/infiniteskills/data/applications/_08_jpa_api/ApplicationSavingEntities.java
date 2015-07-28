@@ -1,4 +1,4 @@
-package com.infiniteskills.data.applications;
+package com.infiniteskills.data.applications._08_jpa_api;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -11,29 +11,38 @@ import javax.persistence.Persistence;
 
 import com.infiniteskills.data.entities._07_hibernate_api.*;
 
-public class AppJPAConfiguration {
+public class ApplicationSavingEntities {
 
 	public static void main(String[] args) {
 
-        // Create an EntityManagerFactory
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("infinite-finances");
-		// Create an entity manager which is like a session
-        EntityManager em = emf.createEntityManager();
-		
-		EntityTransaction tx =  em.getTransaction();
+        EntityManagerFactory factory = null;
+        EntityManager em = null;
+        EntityTransaction tx = null;
 
-		tx.begin();
-		
-		BankHibernateAPI bank = createBank();
+        try{
+            // Create an EntityManagerFactory
+            factory = Persistence.createEntityManagerFactory("infinite-finances");
+            // Create an entity manager which is like a session
+            em = factory.createEntityManager();
 
-        // Persist an new instance of a bank entity into the database
-		em.persist(bank);
-		
-		tx.commit();
-		
-		em.close();
-		emf.close();
-		
+            tx =  em.getTransaction();
+
+            tx.begin();
+
+            BankHibernateAPI bank = createBank(); // transient instance of our entity
+
+            // Persist an new instance of a bank entity into the database. Insert till be fired to database at some pt.
+            em.persist(bank);
+
+            // Cause the persistence manager to flush all of the changes to the database and it will synchronize
+            // our entity model and our database.
+            tx.commit();
+        } catch (Exception e) {
+            tx.rollback();
+        }finally {
+            em.close();
+            factory.close();
+        }
 	}
 
 	private static BankHibernateAPI createBank() {
