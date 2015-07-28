@@ -1,0 +1,59 @@
+A Class is a blueprint
+Fields (instance variables) - What an object knows
+Methods- What an object does
+
+What do classes have in common
+-   Superclass
+    -   Contains all common fields and methods. Meant to abstract out features
+- Subclass
+    -   Can override a superclass method
+    -   Can extend the superclass by adding a new method
+
+Inheritance
+-   Subclass can extend a superclass but only one super class.
+-   When a superclass is extended all fields and methods are already defined when you extned the superclass.
+-   A subclass only defines the changes.
+-   Don't use inheritance just to reuse code, or they don't have a Is a relationship.
+
+Why use inheritance?
+-   Avoid duplicate code.
+-   Changes to superclass code is instantly reflected in subclasses.
+-   User knows that all subclasses have all of the methods of the superclass.
+
+Main function
+-   main creates the objects and then they interact.
+
+Encapsulation
+-   access to fields can only be done through getter/setter methods to protect the data.
+-   certain types of checks can be performed in these methods.
+
+Instance & local variables
+-   Instance variables are fields declared inside of a class.
+-   Local variables are declared inside of a method.
+
+When should a class extend a superclass?
+-   Is A? Helps you decide if a class should extend another class. Is a "Dog" an "Animal"?
+-   Has A? Helps you decide if something is a field. "Dog" has a "Height".
+
+What is Polymorphism?
+-   Polymorphism allows you to write methods that don't need to change if new subclasses are created.
+-   A subclass can add a new method without changing the superclass.
+-   If a subclass wants to override a superclass method, it can without affecting the superclass
+-   You can put different subclasses in one array.  You can't access methods this way if they are only in the subclass
+    though.
+
+Abstract Class
+-   If you want the power of polymorphism with the work.
+-   abstract public class Creature
+-   public abstract void setName();
+-   There are no abstract fields
+-   All methods don't have to be abstract
+-   You can have static methods
+
+Interface
+-   A class with only abstract methods
+-   You can add as many interfaces to a class using implements as you want
+-   You can only use public static and final fields.
+-   Interfaces provide the ultimate in flexibility.
+    -   Classes from different inheritance trees can use a common interface.
+
