@@ -1,4 +1,4 @@
-package oop_review;
+package _01_oop_review;
 
 public class Monkey implements Living {
     @Override
