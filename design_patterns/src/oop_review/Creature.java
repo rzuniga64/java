@@ -1,4 +1,4 @@
-package _01_oop_review;
+package oop_review;
 
 //If you don't want the user to create objects from a class mark it as abstract.
 //Subclasses can still extend it

@@ -1,4 +1,4 @@
-package _01_oop_review;
+package oop_review;
 
 
 public class WorkWithAnimals{
