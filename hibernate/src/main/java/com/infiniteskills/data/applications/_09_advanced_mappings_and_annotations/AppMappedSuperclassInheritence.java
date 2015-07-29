@@ -1,12 +1,10 @@
 package com.infiniteskills.data.applications._09_advanced_mappings_and_annotations;
 
-import com.infiniteskills.data.entities._07_hibernate_api.BankHibernateAPI;
-import com.infiniteskills.data.entities._07_hibernate_api.UserHibernateAPI;
 import com.infiniteskills.data.entities._07_hibernate_api.AddressHibernateAPI;
+import com.infiniteskills.data.entities._07_hibernate_api.BankHibernateAPI;
 import com.infiniteskills.data.entities._07_hibernate_api.CredentialHibernateAPI;
-import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.AccountEnumeratedTypes;
-import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.AccountType;
-import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.TransactionEnumeratedTypes;
+import com.infiniteskills.data.entities._07_hibernate_api.UserHibernateAPI;
+import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.*;
 import com.infiniteskills.data.utilities.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,7 +13,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Date;
 
-public class AppEnumerations {
+public class AppMappedSuperclassInheritence {
 
 	public static void main(String[] args) {
 
@@ -30,18 +28,16 @@ public class AppEnumerations {
             session = sessionFactory.openSession();
             tx = session.beginTransaction();
 
-           	AccountEnumeratedTypes account = createNewAccount();
-            account.setAccountType(AccountType.SAVINGS);
-
+         	Stock stock = createStock();
             // make persistent, will cascade the transactions associated with the account
-            session.save(account);
+            session.save(stock);
+
+            Bond bond = createBond();
+            session.save(bond);
+
             // Persist the entity to the database
             tx.commit();
 
-            AccountEnumeratedTypes dbAccount = (AccountEnumeratedTypes) session.
-                    get(AccountEnumeratedTypes.class, account.getAccountId());
-            System.out.println(dbAccount.getName());
-            System.out.println(dbAccount.getAccountType());
         } catch (Exception e) {
             e.printStackTrace();
             tx.rollback();
@@ -51,6 +47,27 @@ public class AppEnumerations {
             sessionFactory.close();
         }
 	}
+
+    private static Bond createBond() {
+        Bond bond = new Bond();
+        bond.setInterestRate(new BigDecimal("123.22"));
+        bond.setIssuer("JP Morgan Chase");
+        bond.setMaturityDate(new Date());
+        bond.setPurchaseDate(new Date());
+        bond.setName("Long Term Bond Purchases");
+        bond.setValue(new BigDecimal("10.22"));
+        return bond;
+    }
+
+    private static Stock createStock(){
+        Stock stock = new Stock();
+        stock.setIssuer("Allen Edmonds");
+        stock.setName("Private American Stock Purchases");
+        stock.setPurchaseDate(new Date());
+        stock.setQuantity(new BigDecimal("1922"));
+        stock.setSharePrice(new BigDecimal("100.00"));
+        return stock;
+    }
 
 	private static BankHibernateAPI createBank() {
 		BankHibernateAPI bankHibernateAPI = new BankHibernateAPI();

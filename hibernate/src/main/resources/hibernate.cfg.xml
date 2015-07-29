@@ -53,6 +53,10 @@
         <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.AccountType"/>
         <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.ids.CurrencyId"/>
 
+        <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.Bond"/>
+        <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.Stock"/>
+        <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.Investment"/>
+
     </session-factory>
 
 </hibernate-configuration>
