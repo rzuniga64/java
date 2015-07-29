@@ -1,0 +1,11 @@
+Advanced Mapping and Configuration
+
+-   Composite Keys
+-   Enumerations
+-   Inheritance
+-   Persistence Layers
+-   Complex Queries
+-   Schema Generation
+
+Important Lesson Notes
+-   Schema Changes
