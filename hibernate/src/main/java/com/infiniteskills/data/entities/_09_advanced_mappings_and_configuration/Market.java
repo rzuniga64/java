@@ -43,5 +43,6 @@ public class Market {
 	public final Currency getCurrency() { return currency; }
 
 	public final void setCurrency(Currency currency) { this.currency = currency; }
+
 }
 

@@ -49,6 +49,8 @@
 
         <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.Currency"/>
         <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.Market"/>
+        <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.AccountEnumeratedTypes"/>
+        <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.AccountType"/>
         <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.ids.CurrencyId"/>
 
     </session-factory>
