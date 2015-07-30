@@ -42,20 +42,15 @@ public class PortfolioTablePerClassInheritance {
 		this.portfolioId = portfolioId;
 	}
 
-	public String getName() {
-		return name;
-	}
+	public String getName() { return name; }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+	public void setName(String name) { this.name = name; }
 
-	public List<InvestmentTablePerClassInheritance> getInvestements() {
-		return investments;
-	}
+    public List<InvestmentTablePerClassInheritance> getInvestments() {
+        return investments;
+    }
 
-	public void setInvestements(List<InvestmentTablePerClassInheritance> investements) {
-		this.investments = investements;
-	}
-
+    public void setInvestments(List<InvestmentTablePerClassInheritance> investments) {
+        this.investments = investments;
+    }
 }
