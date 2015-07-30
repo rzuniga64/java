@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "STOCK")
-public class Stock extends Investment {
+public class StockMappedSuperclass extends InvestmentMappedSuperclass {
 
 	@Id
 	@GeneratedValue

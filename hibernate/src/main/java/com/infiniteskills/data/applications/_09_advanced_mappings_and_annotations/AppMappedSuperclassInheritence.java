@@ -28,11 +28,11 @@ public class AppMappedSuperclassInheritence {
             session = sessionFactory.openSession();
             tx = session.beginTransaction();
 
-         	Stock stock = createStock();
+         	StockMappedSuperclass stock = createStock();
             // make persistent, will cascade the transactions associated with the account
             session.save(stock);
 
-            Bond bond = createBond();
+            BondMappedSuperclass bond = createBond();
             session.save(bond);
 
             // Persist the entity to the database
@@ -48,8 +48,8 @@ public class AppMappedSuperclassInheritence {
         }
 	}
 
-    private static Bond createBond() {
-        Bond bond = new Bond();
+    private static BondMappedSuperclass createBond() {
+		BondMappedSuperclass bond = new BondMappedSuperclass();
         bond.setInterestRate(new BigDecimal("123.22"));
         bond.setIssuer("JP Morgan Chase");
         bond.setMaturityDate(new Date());
@@ -59,8 +59,8 @@ public class AppMappedSuperclassInheritence {
         return bond;
     }
 
-    private static Stock createStock(){
-        Stock stock = new Stock();
+    private static StockMappedSuperclass createStock(){
+		StockMappedSuperclass stock = new StockMappedSuperclass();
         stock.setIssuer("Allen Edmonds");
         stock.setName("Private American Stock Purchases");
         stock.setPurchaseDate(new Date());

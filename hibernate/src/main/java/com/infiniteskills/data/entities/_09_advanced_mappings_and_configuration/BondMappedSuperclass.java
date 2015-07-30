@@ -13,7 +13,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "BOND")
-public class Bond extends Investment{
+public class BondMappedSuperclass extends InvestmentMappedSuperclass{
 
 	@Id
 	@GeneratedValue
@@ -61,5 +61,4 @@ public class Bond extends Investment{
 	public void setMaturityDate(Date maturityDate) {
 		this.maturityDate = maturityDate;
 	}
-
 }

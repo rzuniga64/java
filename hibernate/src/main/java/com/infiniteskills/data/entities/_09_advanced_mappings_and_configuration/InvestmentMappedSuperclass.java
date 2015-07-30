@@ -22,7 +22,7 @@ import javax.persistence.MappedSuperclass;
 // of investments.  If you have that need within the application then you need to steer away from the mapped
 // class.
 @MappedSuperclass
-public abstract class Investment {
+public abstract class InvestmentMappedSuperclass {
 
 	@Column(name = "NAME")
 	protected String name;
