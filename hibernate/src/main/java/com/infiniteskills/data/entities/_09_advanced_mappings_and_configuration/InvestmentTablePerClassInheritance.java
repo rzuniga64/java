@@ -1,59 +1,87 @@
 package com.infiniteskills.data.entities._09_advanced_mappings_and_configuration;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.Date;
 
-// @MappedSuperclass annotation will cause all the fields within a parent class to be recognized by the persistence
-// provider Hibernate. When persistence operations are performed they will be taken into consideration and be
-// persisted to the database. We make the class abstract to prevent it from being instantiated.
-
-// There are some limitations to this approach. The mapped superclass is great when we want to share some state between
-// our different entities so they have the same fields and we want to reuse those field throughout different entities.
-// One of the problems is this is much like an abstract class. We cannot create an instance of an abstract class.
-// The mapped superclass is similar in that you cannot create an entity from a mapped superclass. So the Investment
-// class cannot be used as the target of one of our associations. So you can't have a list of investments.
-// Investment will never have its own persistence lifecycle. So whenever you are using the mapped superclass
-// annotation you need to ask two questions. First, will you ever need to query across the class hierarchy. So would
-// need a bond and a stock be pulled back in the same query.  If the answer is yes, the mapped superclass is not for
-// you. Second, will you ever need to use just the type of the parent class as an abstract type for our concrete
-// classes. Would you ever refer to the investment as opposed to the stock and the bond? Maybe you'll have a list
-// of investments.  If you have that need within the application then you need to steer away from the mapped
-// class.
-@MappedSuperclass
+@Entity
+// @Inheritance is a JPA annotation.  The TABLE_PER_CLASS strategy mean that we will have a table for each of our
+// concrete classes. We will have a table for Bond and a table for Stock. This very similar to using the mapped
+// superclass strategy but now we will be able to use the Investment type within associations and queries.
+@Inheritance(strategy= InheritanceType.TABLE_PER_CLASS)
 public abstract class InvestmentTablePerClassInheritance {
 
-	@Column(name = "NAME")
-	protected String name;
+    // TABLE_PER_CLASS strategy requires us to put a few other things in place within our abstract class.  We need to
+    // specify our @Id within the abstract class Investment.  This will serve as the identifier for the bond and
+    // stock entities.
+    //
+    // Disadvantage: Hibernate has to perform a union. When we have just two records that is not a big deal. But
+    // if there were thousands of records the union operation is going to get expensive. So there is a price to
+    // pay with table per class inheritance.
+    @Id
+    // We are going to use a different type of strategy to generate a value for this field. We are
+    // going to use a key generator. We are going to specify the strategy as table.
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
+    // Then we need to create the table generator.  If you remember, within the database we have the ifinances_
+    // key table so specify the information for that table from the database. We put a table generator in place
+    // because we cannot use the standard identity generator that is used by MySQL. We need to use a table generator
+    // when using the TABLE_PER_CLASS strategy.
+    @TableGenerator(table="ifinances_keys", pkColumnName = "pk_name",
+            valueColumnName = "pk_value", name="key_generator")
+    // Finally, put the column name in place.
+    @Column(name="INVESTMENT_ID")
+    private Long investmentId;
 
-	@Column(name = "ISSUER")
-	protected String issuer;
+    // Add portfolio field to this abstract class. We are going to make the association with this field bidirectional
+    // because we need to provide the mapping information for the association within the abstract class. We always
+    // have to specify our @JoinColumn annotation column here because the investment will actually be the owning entity.
+    @JoinColumn(name="PORTFOLIO_ID")
+    @ManyToOne(cascade=CascadeType.ALL)
+    private PortfolioTablePerClassInheritance portfolio;
 
-	@Column(name = "PURCHASE_DATE")
-	protected Date purchaseDate;
+    @Column(name = "NAME")
+    protected String name;
 
-	public String getName() {
-		return name;
-	}
+    @Column(name = "ISSUER")
+    protected String issuer;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    @Column(name = "PURCHASE_DATE")
+    protected Date purchaseDate;
 
-	public String getIssuer() {
-		return issuer;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setIssuer(String issuer) {
-		this.issuer = issuer;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Date getPurchaseDate() {
-		return purchaseDate;
-	}
+    public String getIssuer() {
+        return issuer;
+    }
 
-	public void setPurchaseDate(Date purchaseDate) {
-		this.purchaseDate = purchaseDate;
-	}
+    public void setIssuer(String issuer) {
+        this.issuer = issuer;
+    }
 
+    public Date getPurchaseDate() {
+        return purchaseDate;
+    }
+
+    public void setPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public Long getInvestmentId() { return investmentId; }
+
+    public void setInvestmentId(Long investmentId) {
+        this.investmentId = investmentId;
+    }
+
+    public PortfolioTablePerClassInheritance getPortfolio() {
+        return portfolio;
+    }
+
+    public void setPortfolio(PortfolioTablePerClassInheritance portfolio) {
+        this.portfolio = portfolio;
+    }
 }
