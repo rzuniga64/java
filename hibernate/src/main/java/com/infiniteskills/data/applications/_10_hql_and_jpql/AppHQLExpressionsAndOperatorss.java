@@ -1,14 +1,14 @@
 package com.infiniteskills.data.applications._10_hql_and_jpql;
 
-import java.util.List;
-
 import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.TransactionEnumeratedTypes;
 import com.infiniteskills.data.utilities.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class AppHQL {
+import java.util.List;
+
+public class AppHQLExpressionsAndOperatorss {
 
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
@@ -22,7 +22,9 @@ public class AppHQL {
             session = factory.openSession();
             tx = session.beginTransaction();
 
-            Query query = session.createQuery("select t from TransactionEnumeratedTypes t");
+            // Expressions and operators allow add more logic to queries.
+            Query query = session.createQuery("select t from TransactionEnumeratedTypes t "
+                    + "where t.amount > 75 and t.transactionType = 'Withdrawl'");
 
             List<TransactionEnumeratedTypes> transactions = query.list();
 

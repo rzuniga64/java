@@ -2,17 +2,11 @@ package com.infiniteskills.data.applications._10_hql_and_jpql;
 
 import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.TransactionEnumeratedTypes;
 
+import javax.persistence.*;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
-import javax.persistence.Query;
 
-
-public class AppJPQL {
+public class AppJPQLExpressionsAndOperators {
 
 	public static void main(String[] args) {
 
@@ -29,7 +23,9 @@ public class AppJPQL {
             //Query query = em.createQuery("from TransactionEnumeratedTypes t order by t.title");
 
 			TypedQuery<TransactionEnumeratedTypes> query = em.createQuery(
-					"from TransactionEnumeratedTypes t order by t.title", TransactionEnumeratedTypes.class);
+					"from TransactionEnumeratedTypes t"
+							+ " where (t.amount between 75 and 100) and t.title like '%s'"
+							+ " order by t.title", TransactionEnumeratedTypes.class);
 			
 			List<TransactionEnumeratedTypes> transactions = query.getResultList();
 
