@@ -1,0 +1,12 @@
+Hibernate Query (HQL) and Java Persistence Query (JPQL) Language
+
+-   Learn how t retrieve entities via HQL/JPQL queries
+-   Explore the interfaces supporting query execution
+-   Discover query capabilities provided by functions and expressions
+
+Important Lesson Notes
+-   Tandem JPQL/HQL Lessons
+-   populate.sql
+-   JPQL is just defining a specification
+-   HQL is a superset of JPQL. Anything you can do in JPQL you can do in HQL.
+
