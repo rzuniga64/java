@@ -57,6 +57,14 @@
         <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.StockMappedSuperclass"/>
         <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.InvestmentMappedSuperclass"/>
 
+        <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.InvestmentTablePerClassInheritance"/>
+        <!--mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.BondTablePerClassInheritance"/-->
+        <!--mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.StockTablePerClassInheritance"/-->
+        <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.PortfolioTablePerClassInheritance"/>
+        <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.InvestmentSingleTableInheritance"/>
+        <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.BondSingleTableInheritance"/>
+        <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.StockSingleTableInheritance"/>
+        <mapping class="com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.PortfolioSingleTableInheritance"/>
     </session-factory>
 
 </hibernate-configuration>
