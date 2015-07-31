@@ -11,12 +11,7 @@ import com.infiniteskills.data.entities._07_hibernate_api.AddressHibernateAPI;
 import com.infiniteskills.data.entities._07_hibernate_api.BankHibernateAPI;
 import com.infiniteskills.data.entities._07_hibernate_api.CredentialHibernateAPI;
 import com.infiniteskills.data.entities._07_hibernate_api.UserHibernateAPI;
-import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.PortfolioTablePerClassInheritance;
-import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.InvestmentTablePerClassInheritance;
-import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.StockTablePerClassInheritance;
-import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.BondTablePerClassInheritance;
-import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.TransactionEnumeratedTypes;
-import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.AccountEnumeratedTypes;
+import com.infiniteskills.data.entities._09_advanced_mappings_and_configuration.*;
 import com.infiniteskills.data.utilities.HibernateUtil;
 
 public class AppTablePerClassInheritance {
