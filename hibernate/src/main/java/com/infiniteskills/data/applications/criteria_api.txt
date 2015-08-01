@@ -1,0 +1,27 @@
+Hibernate and JPA Criteria APIs
+
+-   Explore the Hibernate and JPA criteria APIs
+-   Appy filters to criteria queries
+-   Paginate query results
+
+Criteria API
+
+-   Allows complex queries to be created programmatically via the Criteria(Hibernate) and CriteriaQuery(JPA)
+    interfaces.
+-   Beneficial for writing dynamic queries
+-   JPA Criteria API provides typesafe queries
+
+Criteria API
+    String jpqHql = "select t from Transaction t";
+
+    CriteriaBuilder cb = em.getCriteriaBuilder();
+    CriteriaQuery<Transaction> criteriaQuery = cb.createQuery<Transaction.class);
+
+    Root<Transaction> root = criteriaQuery.from(Transaction.class);
+    criteriaQuery.select(root);
+
+Important Lesson Notes
+-   Learning both APIs in tandem
+-   Developer preference
+
+
