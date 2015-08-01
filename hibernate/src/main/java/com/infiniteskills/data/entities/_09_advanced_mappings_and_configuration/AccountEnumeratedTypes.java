@@ -36,7 +36,7 @@ public class AccountEnumeratedTypes {
 	@JoinTable(name = "USER_ACCOUNT", joinColumns = @JoinColumn(name = "ACCOUNT_ID"), inverseJoinColumns = @JoinColumn(name = "USER_ID"))
 	private Set<UserHibernateAPI> users = new HashSet<UserHibernateAPI>();
 
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "BANK_ID")
 	private BankHibernateAPI bank;
 
@@ -162,7 +162,11 @@ public class AccountEnumeratedTypes {
 		this.transactions = transactions;
 	}
 
-	public Set<UserHibernateAPI> getUsers() {
+    public BankHibernateAPI getBank() { return bank; }
+
+    public void setBank(BankHibernateAPI bank) { this.bank = bank; }
+
+    public Set<UserHibernateAPI> getUsers() {
 		return users;
 	}
 
@@ -177,5 +181,4 @@ public class AccountEnumeratedTypes {
 	public final void setAccountType(AccountType accountType) {
 		this.accountType = accountType;
 	}
-
 }
