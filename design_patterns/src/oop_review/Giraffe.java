@@ -4,68 +4,23 @@ public class Giraffe extends Creature{
 
     private String name;
 
-    @Override
-    public String getName() {
-        // TODO Auto-generated method stub
-        return name;
-    }
-
-    @Override
+    public String getName() { return name; }
     public void setName(String newName) {
         name = newName;
     }
-
-    @Override
-    public double getHeight() {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public void setHeight(double newHeight) {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public double getWeight() {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public void setWeight(double newWeight) {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public String getFavFood() {
-        // TODO Auto-generated method stub
-        return favFood;
-    }
-
-    @Override
+    public double getHeight() { return 0; }
+    public void setHeight(double newHeight) { }
+    public double getWeight() { return 0; }
+    public void setWeight(double newWeight) { }
+    public String getFavFood() { return favFood; }
     public void setFavFood(String newFood) {
         name = newFood;
     }
-
-    @Override
-    public double getSpeed() {
-        // TODO Auto-generated method stub
-        return speed;
-    }
-
-    @Override
+    public double getSpeed() { return speed; }
     public void setSpeed(double newSpeed) {
         speed = newSpeed;
     }
-
-    @Override
-    public String getSound() {
-        // TODO Auto-generated method stub
-        return sound;
-    }
-
-    @Override
+    public String getSound() { return sound; }
     public void setSound(String newSound) {
         sound = newSound;
     }

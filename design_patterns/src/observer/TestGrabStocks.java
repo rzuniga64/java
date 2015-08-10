@@ -1,6 +1,6 @@
 package observer;
 
-public class GrabStocks{
+public class TestGrabStocks {
 
     public static void main(String[] args){
 

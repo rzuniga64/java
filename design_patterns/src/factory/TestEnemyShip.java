@@ -2,7 +2,7 @@ package factory;
 
 import java.util.Scanner;
 
-public class EnemyShipTesting {
+public class TestEnemyShip {
 
     public static void main(String[] args){
 

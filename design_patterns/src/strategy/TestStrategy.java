@@ -1,6 +1,6 @@
 package strategy;
 
-public class AnimalPlay{
+public class TestStrategy {
 
     public static void main(String[] args){
 
