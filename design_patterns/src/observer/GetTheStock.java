@@ -7,7 +7,7 @@ public class GetTheStock implements Runnable{
 
     // Could be used to set how many seconds to wait in Thread.sleep() below
 
-    //private int startTime;
+    private int startTime;
     private String stock;
     private double price;
 
@@ -19,7 +19,7 @@ public class GetTheStock implements Runnable{
         // Store the reference to the stockGrabber object so I can make calls to its methods
         this.stockGrabber = stockGrabber;
 
-        // startTime = newStartTime;  Not used to have variable sleep time
+        startTime = newStartTime;  // Not used to have variable sleep time
         stock = newStock;
         price = newPrice;
     }
@@ -36,7 +36,7 @@ public class GetTheStock implements Runnable{
                 e.printStackTrace();
             }
 
-            // Generates a random number between -.03 and .03
+            // Generates a random number between -.03 and .03 cents
             double randNum = (Math.random() * (.06)) - .03;
 
             // Formats decimals to 2 places
@@ -45,9 +45,9 @@ public class GetTheStock implements Runnable{
             // Change the price and then convert it back into a double
             price = Double.valueOf(df.format((price + randNum)));
 
-            if(stock == "IBM") ((StockGrabber) stockGrabber).setIBMPrice(price);
-            if(stock == "AAPL") ((StockGrabber) stockGrabber).setAAPLPrice(price);
-            if(stock == "GOOG") ((StockGrabber) stockGrabber).setGOOGPrice(price);
+            if(stock.equals("IBM")) ((StockGrabber) stockGrabber).setIBMPrice(price);
+            if(stock.equals("AAPL")) ((StockGrabber) stockGrabber).setAAPLPrice(price);
+            if(stock.equals("GOOG")) ((StockGrabber) stockGrabber).setGOOGPrice(price);
 
             System.out.println(stock + ": " + df.format((price + randNum)) + " " + df.format(randNum));
             System.out.println();
