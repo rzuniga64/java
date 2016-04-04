@@ -3,8 +3,7 @@ package mvc2;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-// The Controller coordinates interactions
-// between the View and Model
+// The Controller coordinates interactions between the View and Model
 
 public class CalculatorController {
 
@@ -15,9 +14,8 @@ public class CalculatorController {
         this.theView = theView;
         this.theModel = theModel;
 
-        // Tell the View that when ever the calculate button
-        // is clicked to execute the actionPerformed method
-        // in the CalculateListener inner class
+        // Tell the View that when ever the calculate button is clicked to execute the actionPerformed method in the
+        // CalculateListener inner class
 
         this.theView.addCalculateListener(new CalculateListener());
     }
@@ -28,9 +26,7 @@ public class CalculatorController {
 
             int firstNumber, secondNumber = 0;
 
-            // Surround interactions with the view with
-            // a try block in case numbers weren't
-            // properly entered
+            // Surround interactions with the view with a try block in case numbers weren't properly entered
             try{
 
                 firstNumber = theView.getFirstNumber();
