@@ -22,7 +22,7 @@ public class CalculatorController {
         this.theView.addCalculateListener(new CalculateListener());
     }
 
-    class CalculateListener implements ActionListener{
+    private class CalculateListener implements ActionListener{
 
         public void actionPerformed(ActionEvent e) {
 
