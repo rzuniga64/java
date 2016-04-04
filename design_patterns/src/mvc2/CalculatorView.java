@@ -51,8 +51,7 @@ public class CalculatorView extends JFrame{
         calcSolution.setText(Integer.toString(solution));
     }
 
-    // If the calculateButton is clicked execute a method
-    // in the Controller named actionPerformed
+    // If the calculateButton is clicked execute a method in the Controller named actionPerformed
     void addCalculateListener(ActionListener listenForCalcButton){
         calculateButton.addActionListener(listenForCalcButton);
     }
