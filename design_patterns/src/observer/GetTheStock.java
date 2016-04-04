@@ -45,6 +45,7 @@ public class GetTheStock implements Runnable{
             // Change the price and then convert it back into a double
             price = Double.valueOf(df.format((price + randNum)));
 
+            // stockGrabber is a Subject while setXXXPrice is a member of StockGrabber so have to cast to StockGrabber.
             if(stock.equals("IBM")) ((StockGrabber) stockGrabber).setIBMPrice(price);
             if(stock.equals("AAPL")) ((StockGrabber) stockGrabber).setAAPLPrice(price);
             if(stock.equals("GOOG")) ((StockGrabber) stockGrabber).setGOOGPrice(price);
