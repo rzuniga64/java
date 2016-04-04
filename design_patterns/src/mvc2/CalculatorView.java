@@ -39,12 +39,8 @@ public class CalculatorView extends JFrame{
         return Integer.parseInt(firstNumber.getText());
     }
 
-    public int getSecondNumber(){
+    public int getSecondNumber() {
         return Integer.parseInt(secondNumber.getText());
-    }
-
-    public int getCalcSolution(){
-        return Integer.parseInt(calcSolution.getText());
     }
 
     public void setCalcSolution(int solution){
