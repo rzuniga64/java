@@ -33,40 +33,32 @@ public class CalculatorView extends JFrame{
         calcPanel.add(calcSolution);
 
         this.add(calcPanel);
-        // End of setting up the components --------
     }
 
     public int getFirstNumber(){
-
         return Integer.parseInt(firstNumber.getText());
     }
 
     public int getSecondNumber(){
-
         return Integer.parseInt(secondNumber.getText());
     }
 
     public int getCalcSolution(){
-
         return Integer.parseInt(calcSolution.getText());
     }
 
     public void setCalcSolution(int solution){
-
         calcSolution.setText(Integer.toString(solution));
     }
 
     // If the calculateButton is clicked execute a method
     // in the Controller named actionPerformed
     void addCalculateListener(ActionListener listenForCalcButton){
-
         calculateButton.addActionListener(listenForCalcButton);
     }
 
     // Open a popup that contains the error message passed
-
     void displayErrorMessage(String errorMessage){
-
         JOptionPane.showMessageDialog(this, errorMessage);
     }
 }
