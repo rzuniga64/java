@@ -16,13 +16,13 @@ public class LessonTwentySeven extends JFrame{
     private String outputString = "";
 
     // A Tree contains nodes that can contain other nodes
-    JTree theTree;
+    private JTree theTree;
 
     // If a node holds other nodes it is called a parent node. The nodes inside of a parent node are children nodes
     // Nodes on the same level are called siblings
 
-    DefaultMutableTreeNode documents, work, games, emails;
-    DefaultMutableTreeNode fileSystem = new DefaultMutableTreeNode("C Drive");
+    private DefaultMutableTreeNode documents, work, games, emails;
+    private DefaultMutableTreeNode fileSystem = new DefaultMutableTreeNode("C Drive");
 
     public static void main(String[] args){
         new LessonTwentySeven();
