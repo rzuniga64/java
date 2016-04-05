@@ -4,7 +4,11 @@ import javax.swing.*;
 
 import java.awt.event.*;
 
+/*
+ *  About JCombobox
+ */
 public class LessonTwentyFour extends JFrame{
+
     private JComboBox favoriteShows;
     private JButton button1;
     private String infoOnComponent = "";
