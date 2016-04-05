@@ -84,6 +84,7 @@ public class LessonTwentySeven extends JFrame{
         this.setVisible(true);
     }
 
+    // Add a node called 'filename' to the node it going to be held in.
     private DefaultMutableTreeNode addAFile(String fileName, DefaultMutableTreeNode parentFolder){
 
         // Creates a new node for the tree
@@ -100,8 +101,7 @@ public class LessonTwentySeven extends JFrame{
 
         public void actionPerformed(ActionEvent e){
             if(e.getSource() == button1){
-                // How to get the selected node
-                // Returns the last selected node in the tree
+                // How to get the selected node. Returns the last selected node in the tree
                 Object treeObject = theTree.getLastSelectedPathComponent();
 
                 // Cast the Object into a DefaultMutableTreeNode
@@ -138,7 +138,8 @@ public class LessonTwentySeven extends JFrame{
                     outputString += indivNodes + "\n";
                 }
 
-                JOptionPane.showMessageDialog(LessonTwentySeven.this, outputString, "Information", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(LessonTwentySeven.this, outputString, "Information",
+                                                JOptionPane.INFORMATION_MESSAGE);
                 outputString = "";
             }
         }
