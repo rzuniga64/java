@@ -13,24 +13,17 @@ import javax.swing.*;
  */
 public class LessonTwentyNine extends JFrame{
 
-    private JButton but1, but2, but3, but4, but5, but6,
-            but7, but8, but9, but0, butPlus, butMinus,
-            clearAll;
-
+    private JButton but1, but2, but3, but4, but5, but6, but7, but8, but9, but0, butPlus, butMinus, clearAll;
     private JTextField textResult;
-
     private int num1, num2;
 
     public static void main(String[] args){
-
         new LessonTwentyNine();
-
     }
 
     public LessonTwentyNine(){
 
         // Create the frame, position it and handle closing it
-
         this.setSize(400,400);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,66 +31,38 @@ public class LessonTwentyNine extends JFrame{
 
         JPanel thePanel = new JPanel();
 
-        // Create a Grid Layout with as many rows as needed
-        // and 3 columns. The last 2 parameters create a
-        // horizontal gap of 2 pixels and a vertical gap of
-        // 2 pixels.
+        // Create a Grid Layout with as many rows as needed and 3 columns. The last 2 parameters create a horizontal
+        // gap of 2 pixels and a vertical gap of 2 pixels.
 
         // thePanel.setLayout(new GridLayout(0,3,2,2));
-
         thePanel.setLayout(new GridBagLayout());
 
-        // You create a GridBagContraints object that defines
-        // defaults for your components
-
+        // You create a GridBagContraints object that defines defaults for your components
         GridBagConstraints gridConstraints = new GridBagConstraints();
 
-        // Define the x position of the component
+        gridConstraints.gridx = 1;          // Define the x position of the component
+        gridConstraints.gridy = 1;          // Define the y position of the component
+        gridConstraints.gridwidth = 1;      // Number of columns the component takes up
+        gridConstraints.gridheight = 1;     // Number of rows the component takes up
 
-        gridConstraints.gridx = 1;
-
-        // Define the y position of the component
-
-        gridConstraints.gridy = 1;
-
-        // Number of columns the component takes up
-
-        gridConstraints.gridwidth = 1;
-
-        // Number of rows the component takes up
-
-        gridConstraints.gridheight = 1;
-
-        // Gives the layout manager a hint on how to adjust
-        // component width (0 equals fixed)
-
+        // Gives the layout manager a hint on how to adjust component width (0 equals fixed)
         gridConstraints.weightx = 50;
 
-        // Gives the layout manager a hint on how to adjust
-        // component height (0 equals fixed)
-
+        // Gives the layout manager a hint on how to adjust component height (0 equals fixed)
         gridConstraints.weighty = 100;
 
         // Defines padding top, left, bottom, right
-
         gridConstraints.insets = new Insets(5,5,5,5);
 
-        // Defines where to place components if they don't
-        // fill the space: CENTER, NORTH, SOUTH, EAST, WEST
-        // NORTHEAST, etc.
-
+        // Defines where to place components if they don't fill the space:
+        // CENTER, NORTH, SOUTH, EAST, WEST, NORTHEAST, etc.
         gridConstraints.anchor = GridBagConstraints.CENTER;
 
-        // How should the component be stretched to fill the
-        // space: NONE, HORIZONTAL, VERTICAL, BOTH
-
+        // How should the component be stretched to fill the space: NONE, HORIZONTAL, VERTICAL, BOTH
         gridConstraints.fill = GridBagConstraints.BOTH;
 
         textResult = new JTextField("0",20);
-
-        // Defines the font to use in the text field
-
-        Font font = new Font("Helvetica", Font.PLAIN, 18);
+        Font font = new Font("Helvetica", Font.PLAIN, 18);   // Defines the font to use in the text field
         textResult.setFont(font);
 
         but1 = new JButton("1");
@@ -148,9 +113,7 @@ public class LessonTwentyNine extends JFrame{
         gridConstraints.gridx = 9;
         thePanel.add(butMinus,gridConstraints);
 
-
         // Adding buttons using the Grid Layout
-
 		/*
 		thePanel.add(but1);
 		thePanel.add(but2);
@@ -167,9 +130,6 @@ public class LessonTwentyNine extends JFrame{
 		*/
 
         this.add(thePanel);
-
         this.setVisible(true);
-
     } // END OF Lesson29 CONSTRUCTOR
-
 } // END OF Lesson29 CLASS
