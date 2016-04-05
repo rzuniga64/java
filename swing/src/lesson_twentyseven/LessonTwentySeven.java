@@ -13,7 +13,7 @@ import java.util.Enumeration;
 import javax.swing.tree.*;
 
 /*
- *  About JTree
+ *  About JTree component.
  */
 public class LessonTwentySeven extends JFrame{
 

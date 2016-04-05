@@ -6,6 +6,10 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
+/*
+ *  About 3 different Swing layout managers. I revisit the the layout manager we have been using by default being
+ *  Flow Layout. As well I introduce the Border and Box layout managers.
+ */
 public class LessonTwentyEight extends JFrame{
 
     private JButton button1, button2, button3, button4, button5;

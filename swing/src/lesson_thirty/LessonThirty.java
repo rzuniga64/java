@@ -8,7 +8,11 @@ import javax.swing.event.*;
 import java.util.Calendar;
 import java.util.Date;
 
-
+/*
+ *  About a complicated Java Swing layout. Set up everything in a GridBagLayout, but add a Box and  FlowLayout to it.
+ *  I then show you how to use all of these components: JLabel, JTextField, JComboBox, JSpinner, JSlider, JRadioButton,
+ *  ButtonGroup, JCheckBox, JTextArea, JScrollPane, ChangeListener, pack and more.
+ */
 public class LessonThirty extends JFrame{
 
     private JLabel nameLabel, streetLabel, stateLabel, dateLabel,

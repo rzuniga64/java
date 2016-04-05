@@ -8,6 +8,9 @@ import java.awt.Insets;
 
 import javax.swing.*;
 
+/*
+ *  about GridLayout, GridBagLayout, GridBagConstraints, Font, Insets and much more.
+ */
 public class LessonTwentyNine extends JFrame{
 
     private JButton but1, but2, but3, but4, but5, but6,

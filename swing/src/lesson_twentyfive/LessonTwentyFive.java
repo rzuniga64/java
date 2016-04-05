@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 /*
- *  About JList
+ *  About JLists, DefaultListModel, using JScrollpane with JList
  */
 public class LessonTwentyFive extends JFrame{
 

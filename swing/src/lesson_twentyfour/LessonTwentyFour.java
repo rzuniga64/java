@@ -5,7 +5,8 @@ import javax.swing.*;
 import java.awt.event.*;
 
 /*
- *  About JCombobox
+ *  I implement the Swing event listeners. I then cover how to format numbers in Java so that they have commas or are
+ *  displayed as currency. JOptionPane, a useful popup window in Java is introduced.
  */
 public class LessonTwentyFour extends JFrame{
 

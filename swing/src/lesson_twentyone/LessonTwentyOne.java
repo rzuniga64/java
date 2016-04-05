@@ -6,6 +6,9 @@ import javax.swing.*;
 
 import java.awt.event.*;
 
+/*
+ *  About event handlers for Window, Mouse and Keyboard
+ */
 public class LessonTwentyOne extends JFrame{
     private JButton button1;
     private JTextField textField1;

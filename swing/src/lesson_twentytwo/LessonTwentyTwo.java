@@ -10,7 +10,8 @@ import javax.swing.event.ChangeListener;
 import java.text.NumberFormat;                  // Allows me to format the numbers
 
 /*
- *  About change listener, more GUI components and formatting numbers
+ *  About a new GUI listener called the ChangeListener.
+ *  About check boxes, radio buttons, groups, borders and sliders.
  */
 public class LessonTwentyTwo extends JFrame{
     private JButton button1;

@@ -6,7 +6,9 @@ import java.awt.Toolkit;    // ask different questions of the operation system
 
 import javax.swing.*;
 
-// You must extend the JFrame class to make a frame
+/*
+ *  About JPanel, JLabel, JButton, JTextField, and JTextArea
+ */
 public class LessonTwenty extends JFrame{
     public static void main(String[] args){
         new LessonTwenty();

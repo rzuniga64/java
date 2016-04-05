@@ -10,7 +10,7 @@ import java.util.Date;                  // Used to get todays date to use with C
 import java.util.Calendar;              // Calendar provides methods that make it easy to work with dates
 
 /*
- *  About JList
+ *  About JSpinner component. Cycling through numbers and dates. Revisit the Dimension, Date and Calendar libraries.
  */
 public class LessonTwentySix extends JFrame{
 
