@@ -132,4 +132,4 @@ public class LessonTwentyNine extends JFrame{
         this.add(thePanel);
         this.setVisible(true);
     } // END OF Lesson29 CONSTRUCTOR
-} // END OF Lesson29 CLASS
+}
