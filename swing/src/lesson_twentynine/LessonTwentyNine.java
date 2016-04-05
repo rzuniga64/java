@@ -4,7 +4,7 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Insets;
+import java.awt.Insets;     // helps to define padding of components
 
 import javax.swing.*;
 
@@ -83,6 +83,7 @@ public class LessonTwentyNine extends JFrame{
         gridConstraints.gridwidth = 20;
         gridConstraints.gridx = 5;
         thePanel.add(textResult,gridConstraints);
+
         gridConstraints.gridwidth = 1;
         gridConstraints.gridx = 1;
         gridConstraints.gridy = 2;
