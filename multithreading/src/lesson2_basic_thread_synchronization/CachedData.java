@@ -32,6 +32,15 @@ import java.util.Scanner;
 
 */
 class Processor extends Thread {
+    // This thread may decide to cache the variable 'running' at the starrt so it will never see
+    // the changed value of it.  This thread is just reading the variable 'running'. One single
+    // threads does not expect does not expect other threads to modify its data.  In this thread
+    // it doesn't see the value of 'running' change because it does not call shutdown in this thread.
+    // So in this case it may optimize by never bothering to check the value of running.  So 'running'
+    // will always be true. To prevent that from happening use the volatile keyword.  This program is
+    // now guaranteed to work on all implementations of Java.  Volative keyword is used to prevent threads
+    // from caching variables.
+
     private volatile boolean running = true;
 
     public void run() {
@@ -51,6 +60,8 @@ class Processor extends Thread {
 }
 
 public class CachedData {
+    // This main program has its own thread and we are spawning off another thread.
+    // Both threads are accessing the same variable 'running'
     public static void main(String[] args){
         Processor proc1 = new Processor();
         // start will tell the Thread class to run the code in
@@ -62,6 +73,9 @@ public class CachedData {
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
 
+
+        // The main thread is writing to 'running' variable in the main thread
         proc1.shutdown();
     }
 }
+
