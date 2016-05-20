@@ -30,6 +30,11 @@ public class LinkList{
     // Returns true if LinkList is empty
     private boolean isEmpty(){ return(firstLink == null); }
 
+    //  To add a New Link
+    //  - New link is created
+    //  - It's Next is assigned the reference to the previous Link created
+    //  - The LinkList's firstLink is assigned a reference to the newest Link added.
+
     public void insertFirstLink(String bookName, int millionsSold){
 
         Link newLink = new Link(bookName, millionsSold);
@@ -73,7 +78,6 @@ public class LinkList{
                 if(theLink.next == null)
                     // Got to the end of the Links in LinkedList without finding a match
                     return null;
-
                 else
                     // Found a matching Link in the LinkedList
                     theLink = theLink.next;
