@@ -1,4 +1,4 @@
-public class Arrays {
+public class Searach {
 
     private int[] theArray = new int[50];   // Creates an array with 50 indexes
     private int arraySize = 10;             // Elements in theArray
@@ -159,7 +159,7 @@ public class Arrays {
 
     public static void main(String[] args){
 		
-		Arrays newArray = new Arrays();
+		Searach newArray = new Searach();
 		
 		newArray.generateRandomArray();
 		
