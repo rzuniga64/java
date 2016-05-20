@@ -2,7 +2,6 @@ public class LinkList{
 
     private class Link {
 
-        // Set to public so getters & setters aren't needed
         private String bookName;
         private int millionsSold;
 
