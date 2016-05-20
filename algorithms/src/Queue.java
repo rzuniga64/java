@@ -7,7 +7,7 @@ public class Queue {
 
     // Sets stack as empty
     private int front, numberOfItems, rear = 0;
-    Queue(int size){
+    private Queue(int size){
         queueSize = size;
         queueArray = new String[size];
 
@@ -15,7 +15,7 @@ public class Queue {
         Arrays.fill(queueArray, "-1");
     }
 
-    public void insert(String input){
+    private void insert(String input){
         if(numberOfItems + 1 <= queueSize){
             queueArray[rear] = input;
             rear++;
@@ -26,7 +26,7 @@ public class Queue {
     }
 
     // This priority insert will add items in order from high to low
-    public void priorityInsert(String input){
+    private void priorityInsert(String input){
         int i;
 
         if(numberOfItems == 0){
@@ -43,7 +43,7 @@ public class Queue {
         }
     }
 
-    public void remove(){
+    private void remove(){
 
         if(numberOfItems > 0){
             System.out.println("REMOVE " + queueArray[front] + " Was Removed From the Queue\n");
@@ -56,11 +56,11 @@ public class Queue {
         }
     }
 
-    public void peek(){
+    private void peek(){
         System.out.println("The First Element is " + queueArray[front]);
     }
 
-    public void displayTheQueue(){
+    private void displayTheQueue(){
 
         for(int n = 0; n < 61; n++)System.out.print("-");
         System.out.println();

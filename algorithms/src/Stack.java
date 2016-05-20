@@ -19,7 +19,7 @@ public class Stack {
     // Sets stack as empty
     private int topOfStack = -1;
 
-    Stack(int size){
+    private Stack(int size){
         stackSize = size;
         stackArray = new String[size];
 
@@ -27,7 +27,7 @@ public class Stack {
         Arrays.fill(stackArray, "-1");
     }
 
-    public void push(String input){
+    private void push(String input){
 
         if(topOfStack+1 < stackSize){
             topOfStack++;
@@ -39,7 +39,7 @@ public class Stack {
         System.out.println("PUSH " + input + " Was Added to the Stack\n");
     }
 
-    public String pop(){
+    private String pop(){
 
         if(topOfStack >= 0){
             displayTheStack();
@@ -54,27 +54,27 @@ public class Stack {
         }
     }
 
-    public String peek(){
+    private String peek(){
 
         displayTheStack();
         System.out.println("PEEK " + stackArray[topOfStack] + " Is at the Top of the Stack\n");
         return stackArray[topOfStack];
     }
 
-    public void pushMany(String multipleValues){
+    private void pushMany(String multipleValues){
         String[] tempString = multipleValues.split(" ");
 
         for(int i = 0; i < tempString.length; i++)
             push(tempString[i]);
     }
 
-    public void popAll(){
+    private void popAll(){
 
         for(int i = topOfStack; i >= 0; i--)
             pop();
     }
 
-    public void popDisplayAll(){
+    private void popDisplayAll(){
         String theReverse = "";
 
         for(int i = topOfStack; i >= 0; i--)
@@ -84,7 +84,7 @@ public class Stack {
         popAll();
     }
 
-    public void displayTheStack(){
+    private void displayTheStack(){
 
         for(int n = 0; n < 61; n++)System.out.print("-");
         System.out.println();
