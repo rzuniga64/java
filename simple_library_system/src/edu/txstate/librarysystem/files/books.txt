@@ -1,0 +1,7 @@
+Title						Publisher		date			ISBN			Copies	Author					Location						Call Number
+Java Programming$			CRC Press$		09/12/2005$		9780203166178$	02$		Jo Wood$				General Collection, Floor 6$	QA76.73.J39 M388 2014 
+Hadoop Big data$			Yahoo press$	10/15/2010$		1449389732$		04$		White Tom$				General Collection, Floor 6$	QA76.73.J39 D83 2014 
+Database Systems$			CRC Press$		10/10/2013$		1111969604$		05$		Rob Smith$				General Collection, Floor 6$	QA76.73.J38 P665 2014 
+Advanced Networking$		John Wiley$		12/09/2009$		9780470534052$	11$		Doug Lowe,Chris Wang$	General Collection, Floor 7$	TK5105.5 .A327 2002
+Artificial Intelligence$	Newness$		04/17/2009$		9780080499451$	12$		Nils J. Nilsson$		General Collection, Floor 6$	QA76.76.E95 N445 2011
+Distributed Algorithms$		MIT Press3$		06/12/2013$		9780262318952$	06$		Tom Gedeon$				General Collection, Floor 6$	QA76.9.A43 L96 1996
