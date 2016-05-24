@@ -6,7 +6,7 @@ public class DoubleEndedLinkedList {
     Neighbor firstLink;
     Neighbor lastLink;
 
-    public void insertInFirstPosition(String homeOwnerName, int houseNumber){
+    private void insertInFirstPosition(String homeOwnerName, int houseNumber){
 
         Neighbor theNewLink = new Neighbor(homeOwnerName, houseNumber);
 
@@ -28,7 +28,7 @@ public class DoubleEndedLinkedList {
         firstLink = theNewLink;
     }
 
-    public void insertInLastPosition(String homeOwnerName, int houseNumber){
+    private void insertInLastPosition(String homeOwnerName, int houseNumber){
         Neighbor theNewLink = new Neighbor(homeOwnerName, houseNumber);
 
         // If empty put the new Neighbor in first position
@@ -47,7 +47,7 @@ public class DoubleEndedLinkedList {
     // DOUBLY LINKED LIST ADDITION
     // Insert after the provided key
 
-    public boolean insertAfterKey(String homeOwnerName, int houseNumber, int key){
+    private boolean insertAfterKey(String homeOwnerName, int houseNumber, int key){
         Neighbor theNewLink = new Neighbor(homeOwnerName, houseNumber);
         Neighbor currentNeighbor = firstLink; // Starts search at first link
 
@@ -115,7 +115,7 @@ public class DoubleEndedLinkedList {
     }
 
     // Returns true if LinkList is empty
-    public boolean isEmpty(){
+    private boolean isEmpty(){
         return(firstLink == null);
     }
 
@@ -148,7 +148,7 @@ public class DoubleEndedLinkedList {
         theNewLink.next = currentNeighbor;
     }
 
-    public void display(){
+    private void display(){
 
         Neighbor theLink = firstLink;
 
