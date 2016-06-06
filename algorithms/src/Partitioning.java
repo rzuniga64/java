@@ -19,7 +19,7 @@ public class Partitioning {
         System.out.println(Arrays.toString(Partitioning.theArray));
     }
 
-    public void partitionArray(int pivot) {
+    private void partitionArray(int pivot) {
 
         // If leftPointer finds an item that is greater than pivot it stops and waits for the rightPointer
         // to find a value less than pivot. Then the items are switched
@@ -65,20 +65,20 @@ public class Partitioning {
         }
     }
 
-    public void swapValues(int indexOne, int indexTwo) {
+    private void swapValues(int indexOne, int indexTwo) {
 
         int temp = theArray[indexOne];
         theArray[indexOne] = theArray[indexTwo];
         theArray[indexTwo] = temp;
     }
 
-    Partitioning(int newArraySize) {
+    private Partitioning(int newArraySize) {
         arraySize = newArraySize;
         theArray = new int[arraySize];
         generateRandomArray();
     }
 
-    public void generateRandomArray() {
+    private void generateRandomArray() {
 
         for (int i = 0; i < arraySize; i++) {
             // Generate a random array with values between 10 and 59
@@ -86,7 +86,7 @@ public class Partitioning {
         }
     }
 
-    static void printHorzArray(int i, int j) {
+    private static void printHorzArray(int i, int j) {
 
         for (int n = 0; n < 61; n++)
             System.out.print("-");
