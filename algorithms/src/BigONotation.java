@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Big O notation is a way to measure how well a computer algorithm scales as the amount of data involved increases.
  * It is not always a measure of speed as you'll see below. This is a rough overview of Big O and doesn't cover topics
@@ -21,48 +23,47 @@ public class BigONotation {
 
     public static void main(String[] args) {
 
-		/*
-		 * 0(1) Test BigONotation testAlgo = new BigONotation(10);
-		 * testAlgo.addItemToArray(10);
-		 * System.out.println(Arrays.toString(testAlgo.theArray));
-		 */
+		//0(1) Test
+		 BigONotation testAlgo = new BigONotation(10);
+		 testAlgo.addItemToArray(10);
+		 System.out.println(Arrays.toString(testAlgo.theArray));
 
-        BigONotation testAlgo2 = new BigONotation(100000);
+        BigONotation testAlgo2 = new BigONotation(10000);
         testAlgo2.generateRandomArray();
 
-        BigONotation testAlgo3 = new BigONotation(200000);
+        BigONotation testAlgo3 = new BigONotation(20000);
         testAlgo3.generateRandomArray();
 
-        BigONotation testAlgo4 = new BigONotation(30000);
+        BigONotation testAlgo4 = new BigONotation(3000);
         testAlgo4.generateRandomArray();
 
-        BigONotation testAlgo5 = new BigONotation(400000);
+        BigONotation testAlgo5 = new BigONotation(40000);
         testAlgo5.generateRandomArray();
 
-		/*
-		 * O(N) Test
-		 * testAlgo2.linearSearchForValue(20);
-		 * testAlgo3.linearSearchForValue(20);
-		 * testAlgo4.linearSearchForValue(20);
-		 * testAlgo5.linearSearchForValue(20);
-		 */
+        // O(N) Test (linear search) : time to complete is in direct proportion to the amount of data
+        testAlgo2.linearSearchForValue(20);
+        testAlgo3.linearSearchForValue(20);
+        testAlgo4.linearSearchForValue(20);
+        testAlgo5.linearSearchForValue(20);
 
-        /*
-         * O(N^2) Test
-		 * testAlgo2.bubbleSort();
-		 * testAlgo3.bubbleSort();
-		 * testAlgo4.bubbleSort();
-		 *
-		 * // 0 (log N) Test
-		 * testAlgo2.binarySearchForValue(20);
-		 * testAlgo3.binarySearchForValue(20);
-		 */
+        //O(N^2) Test (bubbleSort) : time to complete is in direct proportion to the square of the amount of data
+        testAlgo2.bubbleSort();
+        testAlgo3.bubbleSort();
+        testAlgo4.bubbleSort();
 
-        // O (n log n) Test
+
+        // 0 (log N) Test (binary search): data being used is decreased roughly 50% each time through the algorithm.
+        testAlgo2.binarySearchForValue(20);
+        testAlgo3.binarySearchForValue(20);
+
+        // O (n log n) Test (quick sort): N because must sort every element in array at ;east one time.
+        // Quicksort compares and moves values without shifting so values are going to be compared only once.
+        // Each comparison will reduce the possible final sorted list in half.
+        // Comparisons = log n! = log n + log(n-1) + ... + log(1) = n log n
         startTime = System.currentTimeMillis();
         testAlgo2.quickSort(0, testAlgo2.itemsInArray);
         endTime = System.currentTimeMillis();
-        System.out.println("Quick Sort Took " + (endTime - startTime));
+        System.out.println("Quick Sort Took " + (endTime - startTime) + " milliseconds");
     }
 
     /**
@@ -102,7 +103,7 @@ public class BigONotation {
 
         System.out.println("Value Found: " + valueInArray);
         endTime = System.currentTimeMillis();
-        System.out.println("Linear Search Took " + (endTime - startTime));
+        System.out.println("Linear Search Took " + (endTime - startTime) + " milliseconds");
     }
 
     /**
@@ -126,7 +127,7 @@ public class BigONotation {
         }
 
         endTime = System.currentTimeMillis();
-        System.out.println("Bubble Sort Took " + (endTime - startTime));
+        System.out.println("Bubble Sort Took " + (endTime - startTime) + " milliseconds");
     }
 
     /**
@@ -155,8 +156,7 @@ public class BigONotation {
             else if (theArray[middleIndex] > value)
                 highIndex = middleIndex - 1;
             else {
-                System.out.println("\nFound a Match for " + value
-                        + " at Index " + middleIndex);
+                System.out.println("\nFound a Match for " + value + " at Index " + middleIndex);
                 lowIndex = highIndex + 1;
             }
             timesThrough++;
@@ -164,7 +164,7 @@ public class BigONotation {
 
         // This doesn't really show anything because the algorithm is so fast
         endTime = System.currentTimeMillis();
-        System.out.println("Binary Search Took " + (endTime - startTime));
+        System.out.println("Binary Search Took " + (endTime - startTime) + " milliseconds.");
         System.out.println("Times Through: " + timesThrough);
     }
 
