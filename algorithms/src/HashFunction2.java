@@ -1,11 +1,37 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * What we'll cover
+ * Why we use primes
+ * How to increase hash table size
+ * How to avoid clustering
+ * How double hashing works
+ * How to find values in double hashed hash table
+ *
+ * Why we use primes:
+ * arrayIndex = newElementVal % arraySize
+ * We want to avoid collisions.  Collisions occur when storing similar data.  N values that are similar
+ * causes N times as many collisions. Using a prime nuber for the array size helps minimize collisions.
+ *
+ * How to increase hash table size:
+ * Find a prime sized array bigger than what we need.
+ * Store values in current array and eliminate empty spaces
+ * Increase the size of the current array
+ * Using a hash function fill newly sized array with the original values.
+ *
+ * How to avoid clustering:
+ * Clustering occurs because if there is a collision we just move to the next index.
+ * Each time this occurs it increases the chance it will hit this bigger target.
+ * To avoid this use a double hashed hash table.
+ * Change the step distance to get the distance to skip down in the array after a collision occurs to a random index.
+ * We do this to avoid creating clusters.
+ */
 public class HashFunction2 {
 
-    String[] theArray;
-    int arraySize;
-    int itemsInArray = 0;
+    private String[] theArray;
+    private int arraySize;
+    private int itemsInArray = 0;
 
     public static void main(String[] args) {
 
@@ -44,7 +70,7 @@ public class HashFunction2 {
         }
     }
 
-    public boolean isPrime(int number) {
+    private boolean isPrime(int number) {
 
         // Eliminate the need to check versus even numbers
         if (number % 2 == 0)
@@ -61,7 +87,7 @@ public class HashFunction2 {
     }
 
     // Receives a number and returns the next prime number that follows
-    public int getNextPrime(int minNumberToCheck) {
+    private int getNextPrime(int minNumberToCheck) {
 
         for (int i = minNumberToCheck; true; i++) {
             if (isPrime(i))
@@ -70,7 +96,7 @@ public class HashFunction2 {
     }
 
     // Increase array size to a prime number
-    public void increaseArraySize(int minArraySize) {
+    private void increaseArraySize(int minArraySize) {
 
         // Get a prime number bigger than the array requested
         int newArraySize = getNextPrime(minArraySize);
@@ -79,7 +105,7 @@ public class HashFunction2 {
         moveOldArray(newArraySize);
     }
 
-    public void moveOldArray(int newArraySize) {
+    private void moveOldArray(int newArraySize) {
 
         // Create an array that has all of the values of theArray, but no empty spaces
         String[] cleanArray = removeEmptySpacesInArray(theArray);
@@ -96,7 +122,7 @@ public class HashFunction2 {
     }
 
     // Will remove all empty spaces in an array
-    public String[] removeEmptySpacesInArray(String[] arrayToClean) {
+    private String[] removeEmptySpacesInArray(String[] arrayToClean) {
 
         ArrayList<String> stringList = new ArrayList<String>();
 
@@ -109,7 +135,7 @@ public class HashFunction2 {
         return stringList.toArray(new String[stringList.size()]);
     }
 
-    public void doubleHashFunc(String[] stringsForArray, String[] theArray) {
+    private void doubleHashFunc(String[] stringsForArray, String[] theArray) {
 
         for (int n = 0; n < stringsForArray.length; n++) {
             // Store value in array index
@@ -127,7 +153,7 @@ public class HashFunction2 {
 			// System.out.println("Modulus Index= " + arrayIndex + " for value " + newElementVal);
 
             // Cycle through the array until we find an empty space
-            while (theArray[arrayIndex] != "-1") {
+            while (!theArray[arrayIndex].equals("-1")) {
 
                 arrayIndex += stepDistance;
                 // System.out.println("Collision Try " + arrayIndex + " Instead");
@@ -141,7 +167,7 @@ public class HashFunction2 {
     }
 
     // Returns the value stored in the Double Hashed Hash Table
-    public String findKeyDblHashed(String key) {
+    private String findKeyDblHashed(String key) {
 
         // Find the keys original hash key
         int arrayIndexHash = Integer.parseInt(key) % arraySize;
@@ -149,7 +175,7 @@ public class HashFunction2 {
         // Find the keys original step distance
         int stepDistance = 5 - (Integer.parseInt(key) % 5);
 
-        while (theArray[arrayIndexHash] != "-1") {
+        while (!theArray[arrayIndexHash].equals("-1")) {
 
             if (theArray[arrayIndexHash] == key) {
 
@@ -169,7 +195,7 @@ public class HashFunction2 {
         return null;
     }
 
-    public void hashFunction2(String[] stringsForArray, String[] theArray) {
+    private void hashFunction2(String[] stringsForArray, String[] theArray) {
         for (int n = 0; n < stringsForArray.length; n++) {
 
             String newElementVal = stringsForArray[n];
@@ -179,7 +205,7 @@ public class HashFunction2 {
 
             //System.out.println("Modulus Index= " + arrayIndex + " for value " + newElementVal);
             // Cycle through the array until we find an empty space
-            while (theArray[arrayIndex] != "-1") {
+            while (!theArray[arrayIndex].equals("-1")) {
 
                 ++arrayIndex;
                 // System.out.println("Collision Try " + arrayIndex + " Instead");
@@ -198,7 +224,7 @@ public class HashFunction2 {
         // Find the keys original hash key
         int arrayIndexHash = Integer.parseInt(key) % arraySize;
 
-        while (theArray[arrayIndexHash] != "-1") {
+        while (!theArray[arrayIndexHash].equals("-1")) {
             if (theArray[arrayIndexHash] == key) {
 
                 // Found the key so return it
@@ -219,7 +245,7 @@ public class HashFunction2 {
         return null;
     }
 
-    HashFunction2(int size) {
+    private HashFunction2(int size) {
 
         arraySize = size;
         theArray = new String[size];
@@ -228,11 +254,11 @@ public class HashFunction2 {
         fillArrayWithNeg1();
     }
 
-    public void fillArrayWithNeg1() {
+    private void fillArrayWithNeg1() {
         Arrays.fill(theArray, "-1");
     }
 
-    public void displayTheStack() {
+    private void displayTheStack() {
 
         int increment = 0;
         int numberOfRows = (arraySize / 10) + 1;
