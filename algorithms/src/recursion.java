@@ -1,4 +1,9 @@
 /**
+ * In most situations the QuickSort is the fastest sorting algorithm.
+ * The QuickSort works by partioning arrays that the smaller numbers
+ * are on the left and the larger are on the right.  It then recursively
+ * sends small parts of larger arrays to itself and partitions again.
+ *
  * Recursive method: a method that calls itself. With each method call the problem becomes simpler.
  * Must have a conditional that leads to the method no longer making another method call on itself.
  */
