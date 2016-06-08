@@ -1,3 +1,13 @@
+/**
+ * Random data normally isn't unbalanced.  Ordered data tends to create unbalanced trees.
+ *
+ * You can search, insert, and delete items quickly in a tree
+ * Ordered Arrays are bad at insertions and deletions.
+ * Finding items in a Linked List is slow.
+ * Time needed to perform an operation on a tree is O(log N)
+ * On average a tree is more ifficient if you need to perform many different types of operations.
+ */
+
 public class BinaryTree {
 
     private Node root;
@@ -11,7 +21,6 @@ public class BinaryTree {
         if (root == null) {
             root = newNode;
         } else {
-
             // Set root as the Node we will start with as we traverse the tree
             Node focusNode = root;
 
@@ -45,7 +54,9 @@ public class BinaryTree {
                         parent.rightChild = newNode;
                         return; // All Done
                     }
-                }}}
+                }
+            }
+        }
     }
 
     // All nodes are visited in ascending order. Recursion is used to go to one node and then go to its child nodes and
