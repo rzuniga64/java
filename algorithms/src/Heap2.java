@@ -22,20 +22,20 @@ public class Heap2 {
 
     private Data3 pop() {
 
-        // if (itemsInArray != 0) {
-        int tempItemsInArray = itemsInArray - 1;
+         if (itemsInArray != 0) {
+            int tempItemsInArray = itemsInArray - 1;
 
-        // Used to show how data is moved during sorting
-        System.out.println("Store " + theHeap[0] + " in root. Store " + theHeap[tempItemsInArray] + " in index 0");
-        System.out.println(Arrays.toString(theHeap) + "\n");
-        Data3 root = theHeap[0];
-        theHeap[0] = theHeap[--itemsInArray];
+            // Used to show how data is moved during sorting
+            System.out.println("Store " + theHeap[0] + " in root. Store " + theHeap[tempItemsInArray] + " in index 0");
+            System.out.println(Arrays.toString(theHeap) + "\n");
+            Data3 root = theHeap[0];
+            theHeap[0] = theHeap[--itemsInArray];
 
-        // Send to the array heap method starting with index 0
-        heapTheArray(0);
-        return root;
-        // }
-        // return null;
+            // Send to the array heap method starting with index 0
+            heapTheArray(0);
+            return root;
+         }
+         return null;
     }
 
     private void printTree2(int rows) {
