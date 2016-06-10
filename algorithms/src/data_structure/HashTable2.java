@@ -33,7 +33,6 @@ public class HashTable2 {
 
     private String[] theArray;
     private int arraySize;
-    private int itemsInArray = 0;
 
     public static void main(String[] args) {
 
@@ -126,7 +125,7 @@ public class HashTable2 {
     // Will remove all empty spaces in an array
     private String[] removeEmptySpacesInArray(String[] arrayToClean) {
 
-        ArrayList<String> stringList = new ArrayList<String>();
+        ArrayList<String> stringList = new ArrayList<>();
 
         // Cycle through the array and if a space doesn't contain -1, or isn't empty add it to the ArrayList
 
@@ -179,7 +178,7 @@ public class HashTable2 {
 
         while (!theArray[arrayIndexHash].equals("-1")) {
 
-            if (theArray[arrayIndexHash] == key) {
+            if (theArray[arrayIndexHash].equals(key)) {
 
                 // Found the key so return it
                 System.out.println(key + " was found in index " + arrayIndexHash);
@@ -227,7 +226,7 @@ public class HashTable2 {
         int arrayIndexHash = Integer.parseInt(key) % arraySize;
 
         while (!theArray[arrayIndexHash].equals("-1")) {
-            if (theArray[arrayIndexHash] == key) {
+            if (theArray[arrayIndexHash].equals(key)) {
 
                 // Found the key so return it
                 System.out.println(key + " was found in index "

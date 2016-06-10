@@ -226,7 +226,7 @@ public class BinaryTree {
         return true;
     }
 
-    public Node getReplacementNode(Node replacedNode) {
+    private Node getReplacementNode(Node replacedNode) {
 
         Node replacementParent = replacedNode;
         Node replacement = replacedNode;

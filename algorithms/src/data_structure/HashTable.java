@@ -11,9 +11,8 @@ import java.util.Arrays;
 
 public class HashTable {
 
-    String[] theArray;
-    int arraySize;
-    int itemsInArray = 0;
+    private String[] theArray;
+    private int arraySize;
 
     public static void main(String[] args) {
 
@@ -57,7 +56,7 @@ public class HashTable {
 
     // The goal is to make the array big enough to avoid collisions, but not so big that we waste memory.
 
-    public void hashFunction2(String[] stringsForArray, String[] theArray) {
+    private void hashFunction2(String[] stringsForArray, String[] theArray) {
 
         for (int n = 0; n < stringsForArray.length; n++) {
             String newElementVal = stringsForArray[n];
@@ -67,7 +66,7 @@ public class HashTable {
             System.out.println("Modulus Index= " + arrayIndex + " for value " + newElementVal);
 
             // Cycle through the array until we find an empty space
-            while (theArray[arrayIndex] != "-1") {
+            while (!theArray[arrayIndex].equals("-1")) {
 
                 ++arrayIndex;
                 System.out.println("Collision Try " + arrayIndex + " Instead");
@@ -81,14 +80,14 @@ public class HashTable {
     }
 
     // Returns the value stored in the Hash Table
-    public String findKey(String key) {
+    private String findKey(String key) {
 
         // Find the keys original hash key
         int arrayIndexHash = Integer.parseInt(key) % 29;
 
-        while (theArray[arrayIndexHash] != "-1") {
+        while (!theArray[arrayIndexHash].equals("-1")) {
 
-            if (theArray[arrayIndexHash] == key) {
+            if (theArray[arrayIndexHash].equals(key)) {
                 // Found the key so return it
                 System.out.println(key + " was found in index " + arrayIndexHash);
 
@@ -106,14 +105,14 @@ public class HashTable {
         return null;
     }
 
-    HashTable(int size) {
+    private HashTable(int size) {
 
         arraySize = size;
         theArray = new String[size];
         Arrays.fill(theArray, "-1");
     }
 
-    public void displayTheStack() {
+    private void displayTheStack() {
 
         int increment = 0;
 

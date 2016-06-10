@@ -163,18 +163,18 @@ public class DoubleEndedLinkedList {
 
 class Neighbor {
 
-    public String homeOwnerName;
-    public int houseNumber;
+    private String homeOwnerName;
+    protected int houseNumber;
 
-    public Neighbor next;
-    public Neighbor previous; // Used with Doubly Linked List
+    protected Neighbor next;
+    protected Neighbor previous; // Used with Doubly Linked List
 
-    public Neighbor(String homeOwnerName, int houseNumber){
+    protected Neighbor(String homeOwnerName, int houseNumber){
         this.homeOwnerName = homeOwnerName;
         this.houseNumber = houseNumber;
     }
 
-    public void display(){
+    protected void display(){
         System.out.println(homeOwnerName + ": " + houseNumber + " Privet Drive");
     }
 
@@ -198,7 +198,7 @@ class NeighborIterator{
         previousNeighbor = theNeighbors.lastLink;
     }
 
-    public boolean hasNext(){
+    protected boolean hasNext(){
 
         if(currentNeighbor.next != null){
             return true;
@@ -206,7 +206,7 @@ class NeighborIterator{
         return false;
     }
 
-    public Neighbor next(){
+    protected Neighbor next(){
 
         if(hasNext()){
             previousNeighbor = currentNeighbor;
@@ -216,7 +216,7 @@ class NeighborIterator{
         return null;
     }
 
-    public void remove(){
+    protected void remove(){
 
         // If at the beginning of the list
         if(previousNeighbor == null){

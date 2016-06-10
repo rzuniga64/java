@@ -6,7 +6,6 @@ public class HashTable3 {
 
     private WordList[] theArray;
     private int arraySize;
-    private int itemsInArray = 0;
 
     private String[][] elementsToAdd = {
             { "ace", "Very good" },

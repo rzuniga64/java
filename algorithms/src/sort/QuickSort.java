@@ -2,7 +2,7 @@ package sort;
 
 import java.util.Arrays;
 
-// The Quick sort.Sort is normally the fastest sorting algorithm
+// The Quick sort.SelectionSort is normally the fastest sorting algorithm
 public class QuickSort {
 
     private static int[] theArray;
@@ -69,26 +69,16 @@ public class QuickSort {
             if (leftPointer >= rightPointer) {
 
                 System.out.println("left is >= right so start again");
-
                 break;
-
-            }
-
-            else {
-
+            } else {
                 swapValues(leftPointer, rightPointer);
-
                 System.out.println(theArray[leftPointer] + " was swapped for "
                         + theArray[rightPointer]);
-
             }
-
         }
 
         swapValues(leftPointer, right);
-
         return leftPointer;
-
     }
 
     private void swapValues(int indexOne, int indexTwo) {
@@ -96,20 +86,14 @@ public class QuickSort {
         int temp = theArray[indexOne];
         theArray[indexOne] = theArray[indexTwo];
         theArray[indexTwo] = temp;
-
     }
 
     private void generateRandomArray() {
 
         for (int i = 0; i < arraySize; i++) {
-
-            // Generate a random array with values between
-            // 10 and 59
-
+            // Generate a random array with values between 10 and 59
             theArray[i] = (int) (Math.random() * 50) + 10;
-
         }
-
     }
 
     private static void printHorzArray(int i, int j) {
@@ -119,11 +103,8 @@ public class QuickSort {
 
         System.out.println();
 
-        for (int n = 0; n < arraySize; n++) {
-
+        for (int n = 0; n < arraySize; n++)
             System.out.format("| %2s " + " ", n);
-
-        }
 
         System.out.println("|");
 
@@ -132,11 +113,8 @@ public class QuickSort {
 
         System.out.println();
 
-        for (int n = 0; n < arraySize; n++) {
-
+        for (int n = 0; n < arraySize; n++)
             System.out.print(String.format("| %2s " + " ", theArray[n]));
-
-        }
 
         System.out.println("|");
 
@@ -148,7 +126,6 @@ public class QuickSort {
         if (i != -1) {
 
             // Number of spaces to put before the F
-
             int spacesBeforeFront = 6 * (i + 1) - 5;
 
             for (int k = 0; k < spacesBeforeFront; k++)
@@ -157,7 +134,6 @@ public class QuickSort {
             System.out.print("L" + i);
 
             // Number of spaces to put before the R
-
             int spacesBeforeRear = 5 * (j + 1) - spacesBeforeFront;
 
             for (int l = 0; l < spacesBeforeRear; l++)

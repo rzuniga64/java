@@ -16,15 +16,6 @@ public class BinarySearch {
             theArray[i] = (int)(Math.random()*9)+10;
     }
 
-    // Used to slow down calculations
-    private void pauseAndUpdate(){
-        try {
-            Thread.sleep(700);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
     // Prints the Array on the screen in a grid
     private void printArray(){
 

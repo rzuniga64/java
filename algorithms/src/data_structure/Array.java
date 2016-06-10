@@ -77,29 +77,6 @@ public class Array {
         }
     }
 
-    // Linear LinearSearch.LinearSearch : Every index must be looked at
-    private String linearSearchForValue(int value){
-
-        boolean valueInArray = false;
-        String indexsWithValue = "";
-        System.out.print("The Value was Found in the Following Indexes: ");
-        for(int i = 0; i < arraySize; i++){
-            if(theArray[i] == value) {
-                valueInArray = true;
-                System.out.print(i + " ");
-                indexsWithValue+= i + " ";
-            }
-        }
-
-        if(!valueInArray){
-            indexsWithValue = "None";
-            System.out.print(indexsWithValue);
-        }
-
-        System.out.println();
-        return indexsWithValue;
-    }
-
     public static void main(String[] args){
 		
 		Array newArray = new Array();
