@@ -1,4 +1,6 @@
-public class Searach {
+package Search;
+
+public class Search {
 
     private int[] theArray = new int[50];   // Creates an array with 50 indexes
     private int arraySize = 10;             // Elements in theArray
@@ -76,7 +78,7 @@ public class Searach {
         }
     }
 
-    // Linear Search : Every index must be looked at
+    // Linear Search.Search : Every index must be looked at
     private String linearSearchForValue(int value){
 
         boolean valueInArray = false;
@@ -138,7 +140,7 @@ public class Searach {
         theArray[indexTwo] = temp;
     }
 
-    // The Binary Search is quicker than the linear search because all the values are sorted. Because everything is
+    // The Binary Search.Search is quicker than the linear search because all the values are sorted. Because everything is
     // sorted once you get to a number larger than what you are looking for you can stop the search. Also you be able
     // to start searching from the middle which speeds the search. It also works best when there are no duplicates
     private void binarySearchForValue(int value){
@@ -159,7 +161,7 @@ public class Searach {
 
     public static void main(String[] args){
 		
-		Searach newArray = new Searach();
+		Search newArray = new Search();
 		
 		newArray.generateRandomArray();
 		

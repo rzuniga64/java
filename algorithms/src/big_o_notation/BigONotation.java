@@ -1,3 +1,5 @@
+package big_o_notation;
+
 import java.util.Arrays;
 
 /**
@@ -103,7 +105,7 @@ public class BigONotation {
 
         System.out.println("Value Found: " + valueInArray);
         endTime = System.currentTimeMillis();
-        System.out.println("Linear Search Took " + (endTime - startTime) + " milliseconds");
+        System.out.println("Linear Search.Search Took " + (endTime - startTime) + " milliseconds");
     }
 
     /**
@@ -164,7 +166,7 @@ public class BigONotation {
 
         // This doesn't really show anything because the algorithm is so fast
         endTime = System.currentTimeMillis();
-        System.out.println("Binary Search Took " + (endTime - startTime) + " milliseconds.");
+        System.out.println("Binary Search.Search Took " + (endTime - startTime) + " milliseconds.");
         System.out.println("Times Through: " + timesThrough);
     }
 

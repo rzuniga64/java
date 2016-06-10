@@ -174,7 +174,7 @@ class WordList {
 
         Word current = firstWord;
 
-        // Search for key, but stop searching if the hashKey < what we are searching for
+        // Search.Search for key, but stop searching if the hashKey < what we are searching for
         // Because the list is sorted this allows us to avoid searching the whole list
 
         while (current != null && current.key <= hashKey) {
