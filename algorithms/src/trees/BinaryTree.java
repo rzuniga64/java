@@ -1,3 +1,5 @@
+package trees;
+
 /**
  * Random data normally isn't unbalanced.  Ordered data tends to create unbalanced trees.
  *
@@ -14,17 +16,17 @@ public class BinaryTree {
 
     private void addNode(int key, String name) {
 
-        // Create a new Node and initialize it
+        // Create a new trees.Node and initialize it
         Node newNode = new Node(key, name);
 
         // If there is no root this becomes root
         if (root == null) {
             root = newNode;
         } else {
-            // Set root as the Node we will start with as we traverse the tree
+            // Set root as the trees.Node we will start with as we traverse the tree
             Node focusNode = root;
 
-            // Future parent for our new Node
+            // Future parent for our new trees.Node
             Node parent;
 
             while (true) {
@@ -59,7 +61,7 @@ public class BinaryTree {
         }
     }
 
-    // All nodes are visited in ascending order. Recursion is used to go to one node and then go to its child nodes and
+    // All nodes are visited in ascending order. recursion.Recursion is used to go to one node and then go to its child nodes and
     // so forth
 
     private void inOrderTraverseTree(Node focusNode) {
@@ -84,6 +86,7 @@ public class BinaryTree {
             preorderTraverseTree(focusNode.leftChild);
             preorderTraverseTree(focusNode.rightChild);
         }
+
     }
 
     private void postOrderTraverseTree(Node focusNode) {
@@ -102,16 +105,16 @@ public class BinaryTree {
         // Start at the top of the tree
         Node focusNode = root;
 
-        // While we haven't found the Node keep looking
+        // While we haven't found the trees.Node keep looking
         while (focusNode.key != key) {
 
             // If we should search to the left
             if (key < focusNode.key) {
 
-                // Shift the focus Node to the left child
+                // Shift the focus trees.Node to the left child
                 focusNode = focusNode.leftChild;
             } else {
-                // Shift the focus Node to the right child
+                // Shift the focus trees.Node to the right child
                 focusNode = focusNode.rightChild;
             }
 
@@ -128,10 +131,10 @@ public class BinaryTree {
         Node focusNode = root;
         Node parent = root;
 
-        // When searching for a Node this will tell us whether to search to the right or left
+        // When searching for a trees.Node this will tell us whether to search to the right or left
         boolean isItALeftChild = true;
 
-        // While we haven't found the Node keep looking
+        // While we haven't found the trees.Node keep looking
         while (focusNode.key != key) {
 
             parent = focusNode;
@@ -140,14 +143,14 @@ public class BinaryTree {
             if (key < focusNode.key) {
                 isItALeftChild = true;
 
-                // Shift the focus Node to the left child
+                // Shift the focus trees.Node to the left child
                 focusNode = focusNode.leftChild;
             } else {
 
                 // Greater than focus node so go to the right
                 isItALeftChild = false;
 
-                // Shift the focus Node to the right child
+                // Shift the focus trees.Node to the right child
                 focusNode = focusNode.rightChild;
             }
 
@@ -156,7 +159,7 @@ public class BinaryTree {
                 return false;
         }
 
-        // If Node doesn't have children delete it
+        // If trees.Node doesn't have children delete it
         if (focusNode.leftChild == null && focusNode.rightChild == null) {
 
             // If root delete it
@@ -176,7 +179,7 @@ public class BinaryTree {
             if (focusNode == root)
                 root = focusNode.leftChild;
 
-            // If focus Node was on the left of parent move the focus Nodes left child up to the parent node
+            // If focus trees.Node was on the left of parent move the focus Nodes left child up to the parent node
             else if (isItALeftChild)
                 parent.leftChild = focusNode.leftChild;
 
@@ -191,7 +194,7 @@ public class BinaryTree {
             if (focusNode == root)
                 root = focusNode.rightChild;
 
-            // If focus Node was on the left of parent move the focus Nodes right child up to the parent node
+            // If focus trees.Node was on the left of parent move the focus Nodes right child up to the parent node
             else if (isItALeftChild)
                 parent.leftChild = focusNode.rightChild;
 
@@ -259,12 +262,22 @@ public class BinaryTree {
         theTree.addNode(85, "Salesman 1");
 
         // Different ways to traverse binary trees
-        // theTree.inOrderTraverseTree(theTree.root);
-        // theTree.preorderTraverseTree(theTree.root);
-        // theTree.postOrderTraverseTree(theTree.root);
+        System.out.println("preOrderTraversal:");
+        theTree.preorderTraverseTree(theTree.root);
+        System.out.println();
+
+        System.out.println("inOrderTraversal:");
+        theTree.inOrderTraverseTree(theTree.root);
+        System.out.println();
+
+
+        System.out.println("postOrderTraversal:");
+        theTree.postOrderTraverseTree(theTree.root);
+        System.out.println();
+
         // Find the node with key 75
 
-        System.out.println("\nNode with the key 75");
+        System.out.println("\ntrees.Node with the key 75");
         System.out.println(theTree.findNode(75));
     }
 }

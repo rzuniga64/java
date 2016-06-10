@@ -1,3 +1,5 @@
+package sort;
+
 public class Sort {
 
     private int[] theArray = new int[50];
@@ -176,7 +178,7 @@ public class Sort {
     }
 
     /**
-     *  The Insertion Sort is normally the best of the elementary sorts. Unlike the other sorts that had a group sorted
+     *  The Insertion sort.Sort is normally the best of the elementary sorts. Unlike the other sorts that had a group sorted
      *  at any given time, groups are only partially sorted here.
      *  */
 
@@ -205,7 +207,7 @@ public class Sort {
 
         newArray.linearSearchForValue(10);
 
-        // We must Sort first before executing a search
+        // We must sort.Sort first before executing a search
         newArray.bubbleSort();
 
         newArray.binarySearchForValue(17);

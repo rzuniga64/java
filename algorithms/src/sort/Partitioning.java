@@ -1,3 +1,5 @@
+package sort;
+
 import java.util.Arrays;
 
 // When we partition data we are dividing it into two parts. All items with data above a defined value

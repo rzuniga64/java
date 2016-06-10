@@ -1,4 +1,4 @@
-// A Double Ended LinkedList has a reference to
+package linkedlist;// A Double Ended LinkedList has a reference to
 // the first and last Link in the List
 
 public class DoubleEndedLinkedList {
@@ -31,11 +31,11 @@ public class DoubleEndedLinkedList {
     private void insertInLastPosition(String homeOwnerName, int houseNumber){
         Neighbor theNewLink = new Neighbor(homeOwnerName, houseNumber);
 
-        // If empty put the new Neighbor in first position
+        // If empty put the new linkedlist.Neighbor in first position
         if(isEmpty()){
             firstLink = theNewLink;
         } else {
-            // Assign the last Neighbors next to the new Neighbor
+            // Assign the last Neighbors next to the new linkedlist.Neighbor
             lastLink.next = theNewLink;
             theNewLink.previous = lastLink; // FOR DOUBLY LINKED LIST
         }
@@ -53,24 +53,24 @@ public class DoubleEndedLinkedList {
 
         // while the current houseNumber isn't the key keep looking
         while(currentNeighbor.houseNumber != key){
-            currentNeighbor = currentNeighbor.next; // Switch to the next Neighbor
-            // If we get to the last Neighbor without a match leave the method
+            currentNeighbor = currentNeighbor.next; // Switch to the next linkedlist.Neighbor
+            // If we get to the last linkedlist.Neighbor without a match leave the method
             if(currentNeighbor == null){
                 return false;
             }
         }
 
         // If we make it here we have a match for the key
-        // If the match was for the last Neighbor in the list
+        // If the match was for the last linkedlist.Neighbor in the list
 
         if(currentNeighbor == lastLink){
-            // Assign the new Neighbor as the last link
+            // Assign the new linkedlist.Neighbor as the last link
             theNewLink.next = null;
             lastLink = theNewLink;
 
         } else {
-            // It didn't match for the last link So take next from the Neighbor that was here previously and assign
-            // theNewLink to the previous Neighbor
+            // It didn't match for the last link So take next from the linkedlist.Neighbor that was here previously and assign
+            // theNewLink to the previous linkedlist.Neighbor
             theNewLink.next = currentNeighbor.next;
             currentNeighbor.next.previous = theNewLink;
         }
@@ -106,7 +106,7 @@ public class DoubleEndedLinkedList {
         neighbors.currentNeighbor.display();
         // Is there another?
         System.out.println(neighbors.hasNext());
-        // Switch to the next Neighbor
+        // Switch to the next linkedlist.Neighbor
         neighbors.next();
         neighbors.currentNeighbor.display();
         neighbors.remove();
@@ -114,7 +114,7 @@ public class DoubleEndedLinkedList {
 
     }
 
-    // Returns true if LinkList is empty
+    // Returns true if linkedlist.LinkList is empty
     private boolean isEmpty(){
         return(firstLink == null);
     }
@@ -124,7 +124,7 @@ public class DoubleEndedLinkedList {
 
         Neighbor theNewLink = new Neighbor(homeOwnerName, houseNumber);
 
-        // Holds he last Neighbor searched so we can change its value for next if we input a new Neighbor
+        // Holds he last linkedlist.Neighbor searched so we can change its value for next if we input a new linkedlist.Neighbor
         Neighbor previousNeighbor = null;
         Neighbor currentNeighbor = firstLink;
 
@@ -132,19 +132,19 @@ public class DoubleEndedLinkedList {
         // Change the > to < for opposite sort
         while((currentNeighbor != null) && (houseNumber > currentNeighbor.houseNumber)){
             previousNeighbor = currentNeighbor;
-            currentNeighbor = currentNeighbor.next; // Get the next Neighbor
+            currentNeighbor = currentNeighbor.next; // Get the next linkedlist.Neighbor
         }
 
         // We are still at the beginning of the list
         if(previousNeighbor == null){
-            // Save new Neighbor in the first position
+            // Save new linkedlist.Neighbor in the first position
             firstLink = theNewLink;
         } else {
-            // Assign the new Neighbor as the value for next
+            // Assign the new linkedlist.Neighbor as the value for next
             previousNeighbor.next = theNewLink;
         }
 
-        // Assign the value of next to the next Neighbor
+        // Assign the value of next to the next linkedlist.Neighbor
         theNewLink.next = currentNeighbor;
     }
 
@@ -186,8 +186,8 @@ class Neighbor {
 // An iterator provides an easy way to cycle through all the objects in a LinkedList
 class NeighborIterator{
 
-    Neighbor currentNeighbor; // The current focus Neighbor
-    Neighbor previousNeighbor; // The previous Neighbor
+    Neighbor currentNeighbor; // The current focus linkedlist.Neighbor
+    Neighbor previousNeighbor; // The previous linkedlist.Neighbor
 
     DoubleEndedLinkedList theNeighbors;
 

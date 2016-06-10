@@ -1,3 +1,5 @@
+package hashfunction;
+
 import java.util.Scanner;
 
 public class HashFunction3 {
@@ -75,7 +77,7 @@ public class HashFunction3 {
 
         String wordToHash = newWord.theWord;
 
-        // Calculate the hashkey for the Word
+        // Calculate the hashkey for the hashfunction.Word
         int hashKey = stringHashFunction(wordToHash);
 
         // Add the new word to the array and set the key for the word
@@ -97,10 +99,10 @@ public class HashFunction3 {
             String word = elementsToAdd[i][0];
             String definition = elementsToAdd[i][1];
 
-            // Create the Word with the word name and definition
+            // Create the hashfunction.Word with the word name and definition
             Word newWord = new Word(word, definition);
 
-            // Add the Word to theArray
+            // Add the hashfunction.Word to theArray
             insert(newWord);
         }
     }
@@ -119,7 +121,7 @@ class Word {
     private String definition;
     protected int key;
 
-    // Reference to next Word made in the WordList
+    // Reference to next hashfunction.Word made in the hashfunction.WordList
     protected Word next;
 
     protected Word(String theWord, String definition) {

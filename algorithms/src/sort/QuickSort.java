@@ -1,6 +1,8 @@
+package sort;
+
 import java.util.Arrays;
 
-// The Quick Sort is normally the fastest sorting algorithm
+// The Quick sort.Sort is normally the fastest sorting algorithm
 public class QuickSort {
 
     private static int[] theArray;

@@ -63,7 +63,7 @@ public class BigONotation {
         startTime = System.currentTimeMillis();
         testAlgo2.quickSort(0, testAlgo2.itemsInArray);
         endTime = System.currentTimeMillis();
-        System.out.println("Quick Sort Took " + (endTime - startTime) + " milliseconds");
+        System.out.println("Quick sort.Sort Took " + (endTime - startTime) + " milliseconds");
     }
 
     /**
@@ -71,7 +71,7 @@ public class BigONotation {
      * This code executes in the same amount of time no matter how big the array is
     */
 
-    public void addItemToArray(int newItem) {
+    private void addItemToArray(int newItem) {
 
         theArray[itemsInArray++] = newItem;
     }
@@ -85,7 +85,7 @@ public class BigONotation {
      * the whole array must be searched
     */
 
-    public void linearSearchForValue(int value) {
+    private void linearSearchForValue(int value) {
 
         boolean valueInArray = false;
         String indexsWithValue = "";
@@ -107,14 +107,14 @@ public class BigONotation {
     }
 
     /**
-     * O(N^2) Time to complete will be proportional to the square of the amount of data (Bubble Sort)
+     * O(N^2) Time to complete will be proportional to the square of the amount of data (Bubble sort.Sort)
      * Algorithms with more nested iterations will result in O(N^3), O(N^4), etc. performance
      *
      * Each pass through the outer loop (0)N requires us to go through the entire list again so N multiplies
      * against itself or it is squared
     */
 
-    public void bubbleSort() {
+    private void bubbleSort() {
 
         startTime = System.currentTimeMillis();
 
@@ -127,7 +127,7 @@ public class BigONotation {
         }
 
         endTime = System.currentTimeMillis();
-        System.out.println("Bubble Sort Took " + (endTime - startTime) + " milliseconds");
+        System.out.println("Bubble sort.Sort Took " + (endTime - startTime) + " milliseconds");
     }
 
     /**
@@ -140,7 +140,7 @@ public class BigONotation {
      * early on because the amount of data is halved on each run through
     */
 
-    public void binarySearchForValue(int value) {
+    private void binarySearchForValue(int value) {
 
         startTime = System.currentTimeMillis();
 
@@ -169,7 +169,7 @@ public class BigONotation {
     }
 
     /** O (n log n) Most sorts are at least O(N) because every element must be looked at, at least once.
-     * The bubble sort is O(N^2). To figure out the number of comparisons we need to make with the Quick Sort we first
+     * The bubble sort is O(N^2). To figure out the number of comparisons we need to make with the Quick sort.Sort we first
      * know that it is comparing and moving values very efficiently without shifting. That means values are compared
      * only once. So each comparison will reduce the possible final sorted lists in half.
      * Comparisons = log n! (Factorial of n)

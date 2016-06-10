@@ -1,3 +1,5 @@
+package linkedlist;
+
 public class LinkList{
 
     private class Link {
@@ -5,7 +7,7 @@ public class LinkList{
         private String bookName;
         private int millionsSold;
 
-        // Reference to next link made in the LinkList.
+        // Reference to next link made in the linkedlist.LinkList.
         // Holds the reference to the Link that was created before it
         // Set to null until it is connected to other links
 
@@ -27,13 +29,13 @@ public class LinkList{
 
     LinkList(){ firstLink = null; }
 
-    // Returns true if LinkList is empty
+    // Returns true if linkedlist.LinkList is empty
     private boolean isEmpty(){ return(firstLink == null); }
 
     //  To add a New Link
     //  - New link is created
     //  - It's Next is assigned the reference to the previous Link created
-    //  - The LinkList's firstLink is assigned a reference to the newest Link added.
+    //  - The linkedlist.LinkList's firstLink is assigned a reference to the newest Link added.
 
     public void insertFirstLink(String bookName, int millionsSold){
 

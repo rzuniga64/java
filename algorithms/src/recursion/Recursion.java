@@ -1,6 +1,8 @@
+package recursion;
+
 /**
- * In most situations the QuickSort is the fastest sorting algorithm.
- * The QuickSort works by partioning arrays that the smaller numbers
+ * In most situations the sort.QuickSort is the fastest sorting algorithm.
+ * The sort.QuickSort works by partioning arrays that the smaller numbers
  * are on the left and the larger are on the right.  It then recursively
  * sends small parts of larger arrays to itself and partitions again.
  *
@@ -22,7 +24,7 @@ public class Recursion {
 
         System.out.println("\nTriangular Number: " + recursionTool.getTriangularNum(3) + "\n");
         System.out.println("GET TRIANGULAR NUMBER");
-        System.out.println("Recursion Triangular Number: " + recursionTool.getTriangularNumR(6));
+        System.out.println("recursion.Recursion Triangular Number: " + recursionTool.getTriangularNumR(6));
         System.out.println("\nGET FACTORIAL");
         System.out.println("Factorial: " + recursionTool.getFactorial(3));
     }

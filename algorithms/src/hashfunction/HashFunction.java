@@ -1,3 +1,5 @@
+package hashfunction;
+
 import java.util.Arrays;
 
 /**
