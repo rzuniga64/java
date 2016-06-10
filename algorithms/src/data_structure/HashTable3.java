@@ -2,7 +2,7 @@ package data_structure;
 
 import java.util.Scanner;
 
-public class HashFunction3 {
+public class HashTable3 {
 
     private WordList[] theArray;
     private int arraySize;
@@ -60,7 +60,7 @@ public class HashFunction3 {
         return hashKeyValue;
     }
 
-    HashFunction3(int size) {
+    HashTable3(int size) {
 
         arraySize = size;
         theArray = new WordList[size];
@@ -193,7 +193,7 @@ class WordList {
         Scanner input = new Scanner(System.in);
 
         // Make a 11 item array that will hold words and definitions
-        HashFunction3 wordHashTable = new HashFunction3(11);
+        HashTable3 wordHashTable = new HashTable3(11);
         String wordLookUp = "a";
 
         // Keep retrieve requests until x is entered

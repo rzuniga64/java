@@ -29,7 +29,7 @@ import java.util.Arrays;
  * Change the step distance to get the distance to skip down in the array after a collision occurs to a random index.
  * We do this to avoid creating clusters.
  */
-public class HashFunction2 {
+public class HashTable2 {
 
     private String[] theArray;
     private int arraySize;
@@ -37,7 +37,7 @@ public class HashFunction2 {
 
     public static void main(String[] args) {
 
-        HashFunction2 theFunc = new HashFunction2(31);
+        HashTable2 theFunc = new HashTable2(31);
 
         String[] elementsToAdd2 = { "100", "510", "170", "214", "268", "398",
                 "235", "802", "900", "723", "699", "1", "16", "999", "890",
@@ -247,7 +247,7 @@ public class HashFunction2 {
         return null;
     }
 
-    private HashFunction2(int size) {
+    private HashTable2(int size) {
 
         arraySize = size;
         theArray = new String[size];

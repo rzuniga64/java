@@ -9,7 +9,7 @@ import java.util.Arrays;
  *  is a data structure that offers fast insertion and searching capabilities.
  */
 
-public class HashFunction {
+public class HashTable {
 
     String[] theArray;
     int arraySize;
@@ -17,7 +17,7 @@ public class HashFunction {
 
     public static void main(String[] args) {
 
-        HashFunction theFunc = new HashFunction(30);
+        HashTable theFunc = new HashTable(30);
 
         // Simplest Hash Function
         // String[] elementsToAdd = { "1", "5", "17", "21", "26" };
@@ -106,7 +106,7 @@ public class HashFunction {
         return null;
     }
 
-    HashFunction(int size) {
+    HashTable(int size) {
 
         arraySize = size;
         theArray = new String[size];
