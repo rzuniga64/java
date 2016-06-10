@@ -1,12 +1,12 @@
 import java.util.Arrays;
 
-public class Heap2 {
+public class Heap {
 
     private Data3[] theHeap;
     private int itemsInArray = 0;
     private int maxSize;
 
-    private Heap2(int maxSize) {
+    private Heap(int maxSize) {
 
         this.maxSize = maxSize;
         theHeap = new Data3[maxSize];
@@ -50,7 +50,7 @@ public class Heap2 {
      * 4th Row Indent 0 Spaces 1
      *
      * http://www.wolframalpah.com
-     * Indent : -2^-n * (-16+2^n) start with 1
+     * Indent : 1/2 * (-2+2^n) start with 1
      * Note: need an iterator that starts at 1. Go until no more rows.
      * Spaces : 0 and then whatever Indent was
      *
@@ -117,16 +117,20 @@ public class Heap2 {
         }
     }
 
-    // Fix the follwoing problems:
-    // 1. Make calculation of the indent more dynamic by depending up the array data
-    // 2. Print indexes that don't exist (i.e. when less items in array than can accommodate the rows
-    // 3. Ability to print single and double digit numbers
-    // Calculate each indent per row for the tree then reverse their order to go from biggest to smallest
+    /**
+     *  Fix the following problems:
+     *  1. Make calculation of the indent more dynamic by depending up the array data
+     *  2. Print indexes that don't exist (i.e. when less items in array than can accommodate the rows
+     *  3. Ability to print single and double digit numbers
+     *  Calculate each indent per row for the tree then reverse their order to go from biggest to smallest
+    */
+
     private int[] getIndentArray(int rows) {
 
         int[] indentArray = new int[rows];
 
         for (int i = 0; i < rows; i++)
+            //Indent : 1/2 * (-2+2^n) start with 1
             indentArray[i] = (int) Math.abs((-2 + (Math.pow(2, i + 1))));
 
         Arrays.sort(indentArray);
@@ -227,7 +231,7 @@ public class Heap2 {
 
     public static void main(String args[]) {
 
-        Heap2 newHeap = new Heap2(7);
+        Heap newHeap = new Heap(63);
         newHeap.generateFilledArray(90);
 
         // Print out the array before it is sorted
@@ -236,7 +240,7 @@ public class Heap2 {
 
         System.out.println();
 
-        newHeap.printTree(4);
+        newHeap.printTree(6);
         System.out.println();
 
         for (int j = newHeap.maxSize / 2 - 1; j >= 0; j--)
