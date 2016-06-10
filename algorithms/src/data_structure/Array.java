@@ -77,7 +77,7 @@ public class Array {
         }
     }
 
-    // Linear Search.Search : Every index must be looked at
+    // Linear LinearSearch.LinearSearch : Every index must be looked at
     private String linearSearchForValue(int value){
 
         boolean valueInArray = false;
