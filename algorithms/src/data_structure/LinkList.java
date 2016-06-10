@@ -1,4 +1,4 @@
-package linkedlist;
+package data_structure;
 
 public class LinkList{
 
@@ -7,7 +7,7 @@ public class LinkList{
         private String bookName;
         private int millionsSold;
 
-        // Reference to next link made in the linkedlist.LinkList.
+        // Reference to next link made in the data_structure.LinkList.
         // Holds the reference to the Link that was created before it
         // Set to null until it is connected to other links
 
@@ -29,13 +29,13 @@ public class LinkList{
 
     LinkList(){ firstLink = null; }
 
-    // Returns true if linkedlist.LinkList is empty
+    // Returns true if data_structure.LinkList is empty
     private boolean isEmpty(){ return(firstLink == null); }
 
     //  To add a New Link
     //  - New link is created
     //  - It's Next is assigned the reference to the previous Link created
-    //  - The linkedlist.LinkList's firstLink is assigned a reference to the newest Link added.
+    //  - The data_structure.LinkList's firstLink is assigned a reference to the newest Link added.
 
     public void insertFirstLink(String bookName, int millionsSold){
 
