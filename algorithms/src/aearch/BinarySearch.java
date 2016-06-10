@@ -1,4 +1,4 @@
-package Search;
+package aearch;
 
 public class BinarySearch {
 
