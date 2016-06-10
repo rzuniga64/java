@@ -38,7 +38,44 @@ public class Heap2 {
          return null;
     }
 
-    private void printTree2(int rows) {
+    /**
+     * 4 ROW TREE
+     * _______1
+     * ___1_______1
+     * _1___1___1___1
+     * 1_1_1_1_1_1_1_1
+     * 1st Row Indent 7 Spaces 0
+     * 2nd Row Indent 3 Spaces 7
+     * 3rd Row Indent 1 Spaces 3
+     * 4th Row Indent 0 Spaces 1
+     *
+     * http://www.wolframalpah.com
+     * Indent : -2^-n * (-16+2^n) start with 1
+     * Note: need an iterator that starts at 1. Go until no more rows.
+     * Spaces : 0 and then whatever Indent was
+     *
+     * First Index Per Row
+     *
+     * 0
+     * 1 2
+     * 3 4 5 6
+     * 7 8 9 10 11 12 13 14
+     * .5 * (-2 + (Math.pow(2, iteration)))
+     *
+     * Items Per Row
+     * 1, 2, 4, 8
+     * Math.pow(2, iteration - 1)
+     *
+     * Max Index Per Row
+     * indexToPrint + itemsPerRow
+     *
+     * Indent Number
+     * Indent Number Space Number
+     * Indent Number Space Number Space...
+     *
+     * I need 1 index followed by multiple numbers & spaces every time
+     */
+    private void printTree(int rows) {
 
         // Number of spaces between items in tree
         int spaces = 0;
@@ -60,9 +97,8 @@ public class Heap2 {
             for (int j = 0; j < indent[iteration - 1]; j++)
                 System.out.print(" ");
 
-            // Print all of the index values for each row indexToPrint represents the first index in the
+            // Print all of the index values for each row. indexToPrint represents the first index in the
             // row, while maxIndexToPrint equals the last
-
             for (int l = indexToPrint; l < maxIndexToPrint; l++) {
 
                 // If the array isn't full don't try to print indexes that don't exist
@@ -81,6 +117,10 @@ public class Heap2 {
         }
     }
 
+    // Fix the follwoing problems:
+    // 1. Make calculation of the indent more dynamic by depending up the array data
+    // 2. Print indexes that don't exist (i.e. when less items in array than can accommodate the rows
+    // 3. Ability to print single and double digit numbers
     // Calculate each indent per row for the tree then reverse their order to go from biggest to smallest
     private int[] getIndentArray(int rows) {
 
@@ -167,7 +207,7 @@ public class Heap2 {
             theHeap[index] = theHeap[largestChild];
             index = largestChild;
             System.out.println();
-            printTree2(4);
+            printTree(4);
             System.out.println();
         }
 
@@ -196,7 +236,7 @@ public class Heap2 {
 
         System.out.println();
 
-        newHeap.printTree2(4);
+        newHeap.printTree(4);
         System.out.println();
 
         for (int j = newHeap.maxSize / 2 - 1; j >= 0; j--)
@@ -205,7 +245,7 @@ public class Heap2 {
 
         System.out.println("Heaped Array");
         System.out.println(Arrays.toString(newHeap.theHeap) + "\n");
-        newHeap.printTree2(4);
+        newHeap.printTree(4);
         System.out.println("HEAPED SORTED");
         newHeap.heapSort();
 
