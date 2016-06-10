@@ -1,4 +1,4 @@
-package hashfunction;
+package data_structure;
 
 import java.util.Scanner;
 
@@ -77,7 +77,7 @@ public class HashFunction3 {
 
         String wordToHash = newWord.theWord;
 
-        // Calculate the hashkey for the hashfunction.Word
+        // Calculate the hashkey for the data_structure.Word
         int hashKey = stringHashFunction(wordToHash);
 
         // Add the new word to the array and set the key for the word
@@ -99,10 +99,10 @@ public class HashFunction3 {
             String word = elementsToAdd[i][0];
             String definition = elementsToAdd[i][1];
 
-            // Create the hashfunction.Word with the word name and definition
+            // Create the data_structure.Word with the word name and definition
             Word newWord = new Word(word, definition);
 
-            // Add the hashfunction.Word to theArray
+            // Add the data_structure.Word to theArray
             insert(newWord);
         }
     }
@@ -121,7 +121,7 @@ class Word {
     private String definition;
     protected int key;
 
-    // Reference to next hashfunction.Word made in the hashfunction.WordList
+    // Reference to next data_structure.Word made in the data_structure.WordList
     protected Word next;
 
     protected Word(String theWord, String definition) {

@@ -1,4 +1,4 @@
-package stack; /**
+package data_structure; /**
  *  Arrays, linked lists, trees, etc. are best for data that represents real objects.
  *
  *  Stacks & Queues are instead used to complete a task and are soon after discarded.
@@ -33,23 +33,23 @@ public class Stack {
             topOfStack++;
             stackArray[topOfStack] = input;
         } else
-            System.out.println("Sorry But the stack.Stack is Full");
+            System.out.println("Sorry But the data_structure.Stack is Full");
 
         displayTheStack();
-        System.out.println("PUSH " + input + " Was Added to the stack.Stack\n");
+        System.out.println("PUSH " + input + " Was Added to the data_structure.Stack\n");
     }
 
     private String pop(){
 
         if(topOfStack >= 0){
             displayTheStack();
-            System.out.println("POP " + stackArray[topOfStack] + " Was Removed From the stack.Stack\n");
+            System.out.println("POP " + stackArray[topOfStack] + " Was Removed From the data_structure.Stack\n");
             // Just like in memory an item isn't deleted, but instead is just not available
             stackArray[topOfStack] = "-1"; // Assigns -1 so the value won't appear
             return stackArray[topOfStack--];
         } else {
             displayTheStack();
-            System.out.println("Sorry But the stack.Stack is Empty");
+            System.out.println("Sorry But the data_structure.Stack is Empty");
             return "-1";
         }
     }
@@ -57,7 +57,7 @@ public class Stack {
     private String peek(){
 
         displayTheStack();
-        System.out.println("PEEK " + stackArray[topOfStack] + " Is at the Top of the stack.Stack\n");
+        System.out.println("PEEK " + stackArray[topOfStack] + " Is at the Top of the data_structure.Stack\n");
         return stackArray[topOfStack];
     }
 

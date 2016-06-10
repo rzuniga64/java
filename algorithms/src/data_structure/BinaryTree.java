@@ -1,4 +1,4 @@
-package trees;
+package data_structure;
 
 /**
  * Random data normally isn't unbalanced.  Ordered data tends to create unbalanced trees.
@@ -16,17 +16,17 @@ public class BinaryTree {
 
     private void addNode(int key, String name) {
 
-        // Create a new trees.Node and initialize it
+        // Create a new data_structure.Node and initialize it
         Node newNode = new Node(key, name);
 
         // If there is no root this becomes root
         if (root == null) {
             root = newNode;
         } else {
-            // Set root as the trees.Node we will start with as we traverse the tree
+            // Set root as the data_structure.Node we will start with as we traverse the tree
             Node focusNode = root;
 
-            // Future parent for our new trees.Node
+            // Future parent for our new data_structure.Node
             Node parent;
 
             while (true) {
@@ -105,16 +105,16 @@ public class BinaryTree {
         // Start at the top of the tree
         Node focusNode = root;
 
-        // While we haven't found the trees.Node keep looking
+        // While we haven't found the data_structure.Node keep looking
         while (focusNode.key != key) {
 
             // If we should search to the left
             if (key < focusNode.key) {
 
-                // Shift the focus trees.Node to the left child
+                // Shift the focus data_structure.Node to the left child
                 focusNode = focusNode.leftChild;
             } else {
-                // Shift the focus trees.Node to the right child
+                // Shift the focus data_structure.Node to the right child
                 focusNode = focusNode.rightChild;
             }
 
@@ -131,10 +131,10 @@ public class BinaryTree {
         Node focusNode = root;
         Node parent = root;
 
-        // When searching for a trees.Node this will tell us whether to search to the right or left
+        // When searching for a data_structure.Node this will tell us whether to search to the right or left
         boolean isItALeftChild = true;
 
-        // While we haven't found the trees.Node keep looking
+        // While we haven't found the data_structure.Node keep looking
         while (focusNode.key != key) {
 
             parent = focusNode;
@@ -143,14 +143,14 @@ public class BinaryTree {
             if (key < focusNode.key) {
                 isItALeftChild = true;
 
-                // Shift the focus trees.Node to the left child
+                // Shift the focus data_structure.Node to the left child
                 focusNode = focusNode.leftChild;
             } else {
 
                 // Greater than focus node so go to the right
                 isItALeftChild = false;
 
-                // Shift the focus trees.Node to the right child
+                // Shift the focus data_structure.Node to the right child
                 focusNode = focusNode.rightChild;
             }
 
@@ -159,7 +159,7 @@ public class BinaryTree {
                 return false;
         }
 
-        // If trees.Node doesn't have children delete it
+        // If data_structure.Node doesn't have children delete it
         if (focusNode.leftChild == null && focusNode.rightChild == null) {
 
             // If root delete it
@@ -179,7 +179,7 @@ public class BinaryTree {
             if (focusNode == root)
                 root = focusNode.leftChild;
 
-            // If focus trees.Node was on the left of parent move the focus Nodes left child up to the parent node
+            // If focus data_structure.Node was on the left of parent move the focus Nodes left child up to the parent node
             else if (isItALeftChild)
                 parent.leftChild = focusNode.leftChild;
 
@@ -194,7 +194,7 @@ public class BinaryTree {
             if (focusNode == root)
                 root = focusNode.rightChild;
 
-            // If focus trees.Node was on the left of parent move the focus Nodes right child up to the parent node
+            // If focus data_structure.Node was on the left of parent move the focus Nodes right child up to the parent node
             else if (isItALeftChild)
                 parent.leftChild = focusNode.rightChild;
 
@@ -277,7 +277,7 @@ public class BinaryTree {
 
         // Find the node with key 75
 
-        System.out.println("\ntrees.Node with the key 75");
+        System.out.println("\ndata_structure.Node with the key 75");
         System.out.println(theTree.findNode(75));
     }
 }

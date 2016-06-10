@@ -1,4 +1,4 @@
-package hashfunction;
+package data_structure;
 
 import java.util.ArrayList;
 import java.util.Arrays;
