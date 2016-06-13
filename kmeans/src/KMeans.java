@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class KMeans {
-	private final static String input1 = "src/input1.txt";
-	private final static String input2 = "src/input2.txt";
-	private final static String input3 = "src/input3.txt";
-	private final static String input4 = "src/input4.txt";
+	private final static String input1 = "kmeans/src/input1.txt";
+	private final static String input2 = "kmeans/src/input2.txt";
+	private final static String input3 = "kmeans/src/input3.txt";
+	private final static String input4 = "kmeans/src/input4.txt";
 	
 	//Number of Clusters. This metric should be related to the number of points
     private final static int NUM_CLUSTERS1 = 2;
@@ -28,7 +28,7 @@ public class KMeans {
     private ArrayList<String> inputFiles;
     private ArrayList<Integer> numberOfClusters;
     
-    public KMeans() {
+    private KMeans() {
         this.points = new ArrayList<Point>();
         this.clusters = new ArrayList<Cluster>();
         this.inputFiles = new ArrayList<String>();
@@ -89,7 +89,7 @@ public class KMeans {
         }
     }
     
-    public void plotCluster(Cluster c, int index) {
+    private void plotCluster(Cluster c, int index) {
         System.out.println("[Cluster: " + c.getId() + "]");
         System.out.println("[Centroid: " + c.getCentroid() + "]");
         System.out.println("[Points: \n");
@@ -114,7 +114,7 @@ public class KMeans {
     }
 
     //The process to calculate the K Means, with iterating method.
-    public void calculate(int numberOfClusters, int index) {
+    private void calculate(int numberOfClusters, int index) {
         boolean finish = false;
         int iteration = 0;
 
@@ -158,7 +158,7 @@ public class KMeans {
     }
 
     private ArrayList<Point> getCentroids(int numberOfClusters) {
-        ArrayList<Point> centroids = new ArrayList<Point>(numberOfClusters);
+        ArrayList<Point> centroids = new ArrayList<>(numberOfClusters);
         for(Cluster cluster : clusters) {
             Point aux = cluster.getCentroid();
             Point point = new Point(aux.getX(),aux.getY());
@@ -171,7 +171,7 @@ public class KMeans {
         double max = Double.MAX_VALUE;
         double min = max;
         int cluster = 0;
-        double distance = 0.0;
+        double distance;
 
         for(Point point : points) {
             min = max;

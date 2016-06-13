@@ -22,23 +22,18 @@ public class Point {
     public void setX(double x) {
         this.x = x;
     }
-
     public double getX()  {
         return this.x;
     }
-
     public void setY(double y) {
         this.y = y;
     }
-
     public double getY() {
         return this.y;
     }
-
     public void setCluster(int n) {
         this.cluster_number = n;
     }
-
     public int getCluster() {
         return this.cluster_number;
     }
@@ -57,7 +52,7 @@ public class Point {
     }
     
     protected static ArrayList<Point> getPoints(String inputFile) {
-	    ArrayList<Point> points = new ArrayList<Point>(NUM_POINTS);
+	    ArrayList<Point> points = new ArrayList<>(NUM_POINTS);
 	    try {
 	        FileReader fr = new FileReader(inputFile);
 	        BufferedReader br  = new BufferedReader(fr);
