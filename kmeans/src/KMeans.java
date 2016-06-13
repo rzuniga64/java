@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class KMeans {
-	private final static String input1 = "kmeans/src/input1.txt";
-	private final static String input2 = "kmeans/src/input2.txt";
-	private final static String input3 = "kmeans/src/input3.txt";
-	private final static String input4 = "kmeans/src/input4.txt";
+	private final static String input1 = "src/input1.txt";
+	private final static String input2 = "src/input2.txt";
+	private final static String input3 = "src/input3.txt";
+	private final static String input4 = "src/input4.txt";
 	
 	//Number of Clusters. This metric should be related to the number of points
     private final static int NUM_CLUSTERS1 = 2;
