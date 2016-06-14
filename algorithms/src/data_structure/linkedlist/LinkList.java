@@ -1,53 +1,75 @@
 package data_structure.linkedlist;
 
+/**
+ * A data structure representing a series of dynamically allocated nodes chained together in a sequence.
+ * Each node points to another node.
+ * Each nodes contains a data field (structure, object, etc) and a pointer that can point to another node.
+ * A separate pointer (the head) points to the first item in the list.
+ * The last element (the tail) points to nothing (NULL).
+ * An empty list contains no nodes. The list head points to NULL
+ *
+ *  Operations:
+ *  constructor:        creates an empty linked list
+ *  isEmpty():          is the list empty
+ *  insertFirstLink():  insert new link in the first position in the linked list
+ *  deleteFirstLink():  remove the link in the first position in the linked list
+ *  display():          display the linked list
+ *  find(value):        find value in the linked list (if it exists)
+ *  removeLink(value):  remove value in the linked list (if it exists)
+ *
+ * Advantages of linked lists over arrays
+ * 1. A linked list can grow or shrink in size.
+ * 2. The programmer doesn't need to predict how many values could be in teh list.
+ * 3. The programmer doesn't need to resize and copy the list when it reaches a certain capacity.
+ * 4. When a value is inserted into or deleted from a linked list, none of the other nodes have to be moved.
+ */
+
 public class LinkList{
 
     private class Link {
 
-        private String bookName;
-        private int millionsSold;
+        Object bookName;
+        int millionsSold;
 
-        // Reference to next link made in the data_structure.linkedlist.LinkList.
-        // Holds the reference to the Link that was created before it
-        // Set to null until it is connected to other links
+        // Reference to next link made in the data_structure. Self-referential data structure.
+        // Define a reference for head of the list. It must be initialized to NULL to signify the end of the list.
+        Link next = null;
 
-        public Link next;
-
-        public Link(String bookName, int millionsSold){
+        Link(Object bookName, int millionsSold){
             this.bookName = bookName;
             this.millionsSold = millionsSold;
         }
 
-        public void display(){ System.out.println(bookName + ": " + millionsSold + ",000,000 Sold"); }
-        public String toString(){ return bookName; }
-
+        public String toString(){return bookName.toString(); }
+        public void display(){
+            System.out.println(bookName + ": " + millionsSold + ",000,000 Sold");
+        }
     }
 
-    // Reference to first Link in list
-    // The last Link added to the LinkedList
-    private  Link firstLink;
-
+    private Link firstLink;    // Reference to first Link in list
     private LinkList(){ firstLink = null; }
 
-    // Returns true if data_structure.linkedlist.LinkList is empty
+    // Returns true or false if linked list is empty
+    // Average time complexity: O(1)
     private boolean isEmpty(){ return(firstLink == null); }
 
-    //  To add a New Link
-    //  - New link is created
-    //  - It's Next is assigned the reference to the previous Link created
-    //  - The data_structure.linkedlist.LinkList's firstLink is assigned a reference to the newest Link added.
-
-    private void insertFirstLink(String bookName, int millionsSold){
+    //  Add a new link to the first position in the linked list
+    //  - Create a new link and assign its Next the reference to the previous Link created
+    //  - The linked lists first link is assigned a reference to the newest Link added.
+    // Average time complexity: O(1)
+    private void insertFirstLink(Object bookName, int millionsSold){
 
         Link newLink = new Link(bookName, millionsSold);
-        // Connects the firstLink field to the new Link
+        // Connect the firstLink field to the new Link
         newLink.next = firstLink;
         firstLink = newLink;
     }
 
-    private Link removeFirst(){
-
+    //  Remove the link in the first position in the linked list
+    //  Average time complexity: O(1
+    private Link deleteFirstLink(){
         Link linkReference = firstLink;
+
         if(!isEmpty())
             firstLink = firstLink.next; // Removes the Link from the List
         else
@@ -56,22 +78,25 @@ public class LinkList{
         return linkReference;
     }
 
+    // Display the linked list
+    // Average time complexity for traversing list: O(n)
+    //
+    // Start at the reference stored in firstLink and keep getting the references stored in next for every Link until
+    // next returns null
     private void display(){
 
         Link theLink = firstLink;
-        // Start at the reference stored in firstLink and
-        // keep getting the references stored in next for
-        // every Link until next returns null
 
         while(theLink != null){
-            theLink.display();
-            System.out.println("Next Link: " + theLink.next);
+            System.out.println(theLink.toString());
             theLink = theLink.next;
-            System.out.println();
         }
+        System.out.println();
     }
 
-    public Link find(String bookName){
+    // Find a value in the linked list (if it exists)
+    // Average time complexity for traversing list: O(n)
+    public Link find(Object bookName){
         Link theLink = firstLink;
 
         if(!isEmpty()){
@@ -90,7 +115,9 @@ public class LinkList{
         return theLink;
     }
 
-    private Link removeLink(String bookName){
+    // Remove link that contains a certain value in the linked list (if it exists)
+    // Average time complexity for traversing list: O(n)
+    private Link removeLink(Object bookName){
 
         Link currentLink = firstLink;
         Link previousLink = firstLink;
@@ -110,17 +137,12 @@ public class LinkList{
         }
 
         if(currentLink == firstLink){
-            // If you are here that means there was a match
-            // in the reference stored in firstLink in the
-            // LinkedList so just assign next to firstLink
-
+            // If here that means there was a match in the reference stored in firstLink in the LinkedList so just
+            // assign next to firstLink
             firstLink = firstLink.next;
         } else {
-            // If you are here there was a match in a Link other
-            // than the firstLink. Assign the value of next for
-            // the Link you want to delete to the Link that's
-            // next previously pointed to the reference to remove
-
+            // If here there was a match in a Link other than the firstLink. Assign the value of next for the Link you
+            // want to delete to the Link that's next previously pointed to the reference to remove
             System.out.println("FOUND A MATCH");
             System.out.println("currentLink: " + currentLink);
             System.out.println("firstLink: " + firstLink);
@@ -143,10 +165,14 @@ public class LinkList{
         theLinkedList.display();
         System.out.println("Value of first in LinkedList " + theLinkedList.firstLink + "\n");
 
-        // Removes the last Link entered
-        theLinkedList.removeFirst();
+        // Removes the first link entered
+        theLinkedList.deleteFirstLink();
         theLinkedList.display();
+
+        // Find a certain book
         System.out.println(theLinkedList.find("The Lord of the Rings").bookName + " Was Found");
+
+        // Remove a certain book from the list
         theLinkedList.removeLink("A Tale of Two Cities");
         System.out.println("\nA Tale of Two Cities Removed\n");
         theLinkedList.display();
