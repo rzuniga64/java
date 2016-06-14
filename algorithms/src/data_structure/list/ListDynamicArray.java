@@ -86,9 +86,7 @@ public class ListDynamicArray {
     // Returns true or false if array is empty
     // Average time complexity: O(1)
     private boolean isEmpty() {
-        if (theArray.size() != 0)
-            return true;
-        return false;
+        return (theArray.size() == 0);
     }
 
     // Returns true or false if a value is in the ListArray
