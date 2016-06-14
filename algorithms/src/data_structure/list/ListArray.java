@@ -1,31 +1,41 @@
-package data_structure;
+package data_structure.list;
 
 /**
- * List: ordered set of objects
+ *  ListArray: ordered set of objects of the same type.
+ *  Can contain multiple values of the same type.
+ *  Values are stored consecutively in memory
  *
- * Average Time Complexity
- * Indexing:    O(1)
- * Search:      O(n)
- * Insertion:   O(n)
- * Deletion:    O(n)
+ *  Operations:
+ *  Traversing
+ *  Searching
+ *  Sorting
+ *  Insertion
+ *  Deletion
+ *  Merging
  *
- * constructor: creates an empty list
- * get(i):      returns the element at position i
- * set(i,v):    change the element at position i to v
- * isEmpty():   is the list empty
- * size():      returns the number of elements
- * doesArrayContainThisValue()
- * add(x, i):   inserts an element x at position i
- * remove(i):   removes the element at position i
+ *  Average Time Complexity
+ *  Indexing:    O(1)
+ *  Search:      O(n)
+ *  Insertion:   O(n)
+ *  Deletion:    O(n)
+ *
+ *  constructor: creates an empty list
+ *  get(i):      returns the element at position i
+ *  set(i,v):    change the element at position i to v
+ *  isEmpty():   is the list empty
+ *  size():      returns the number of elements
+ *  doesArrayContainThisValue()
+ *  add(x, i):   inserts an element x at position i
+ *  remove(i):   removes the element at position i
  */
 
-public class List {
+public class ListArray {
 
     private int[] theArray;     // Creates an array with 50 indexes
     private int capacity;       // Elements in theArray
 
     // Constructor: create an empty list
-    List(int size, int capacity) {
+    ListArray(int size, int capacity) {
         this.theArray = new int[size];
         this.capacity = capacity;
     }
@@ -33,7 +43,7 @@ public class List {
     private int[] getArray(){ return theArray; }
     public int size(){ return capacity; }
 
-    // Fills the List with random values
+    // Fills the ListArray with random values
     private void generateRandomArray(){
         for(int i = 0; i < size(); i++)
             theArray[i] = (int)(Math.random()*9)+10;
@@ -48,7 +58,7 @@ public class List {
         }
     }
 
-    // Prints the List on the screen in a grid
+    // Prints the ListArray on the screen in a grid
     private void printArray(){
 
         System.out.println("----------");
@@ -81,7 +91,7 @@ public class List {
         return false;
     }
 
-    // Returns true or false if a value is in the List
+    // Returns true or false if a value is in the ListArray
     // Average time complexity for search: O(n)
     private boolean doesArrayContainThisValue(int searchValue){
 
@@ -93,7 +103,7 @@ public class List {
         return valueInArray;
     }
 
-    // Delete List row for the index and move elements up
+    // Delete ListArray row for the index and move elements up
     // Average time complexity for delete: O(n)
     private void delete(int index){
         if(index < size()){
@@ -120,7 +130,7 @@ public class List {
 
     public static void main(String[] args){
 		
-		List newArray = new List(50, 10);
+		ListArray newArray = new ListArray(50, 10);
         System.out.println(newArray.isEmpty());
 		newArray.generateRandomArray();
 		newArray.printArray();
