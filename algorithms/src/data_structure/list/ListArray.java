@@ -35,13 +35,13 @@ public class ListArray {
     private int capacity;       // Elements in theArray
 
     // Constructor: create an empty list
-    ListArray(int size, int capacity) {
+    private ListArray(int size, int capacity) {
         this.theArray = new int[size];
         this.capacity = capacity;
     }
 
     private int[] getArray(){ return theArray; }
-    public int size(){ return capacity; }
+    private int size(){ return capacity; }
 
     // Fills the ListArray with random values
     private void generateRandomArray(){

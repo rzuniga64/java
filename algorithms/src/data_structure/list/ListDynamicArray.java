@@ -36,12 +36,10 @@ public class ListDynamicArray {
     private ArrayList theArray; // Creates an array with 50 indexes
 
     // Constructor: create an empty list
-    ListDynamicArray(int size) {
+    private ListDynamicArray(int size) {
         this.theArray = new ArrayList(size);
         generateRandomArray(size);
     }
-
-    private ArrayList getArray(){ return theArray; }
 
     // Fills the List with random values
     private void generateRandomArray(int size){
@@ -79,9 +77,10 @@ public class ListDynamicArray {
     // Sets value at provided index
     // Average time complexity for indexing: O(1)
     private Object set(int index, int value){
-        ArrayList test;
-        if(index < theArray.size()) theArray.set(index, value);
-            return theArray.get(index);
+        if(index < theArray.size())
+            theArray.set(index, value);
+
+        return theArray.get(index);
     }
 
     // Returns true or false if array is empty
@@ -97,8 +96,8 @@ public class ListDynamicArray {
     private boolean doesArrayContainThisValue(int searchValue){
 
         boolean valueInArray = false;
-        if(theArray.contains(searchValue));
-        valueInArray = true;
+        if(theArray.contains(searchValue))
+            valueInArray = true;
 
         return valueInArray;
     }
