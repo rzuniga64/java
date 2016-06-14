@@ -1,4 +1,4 @@
-package data_structure;
+package data_structure.linkedlist;
 
 public class LinkList{
 
@@ -7,7 +7,7 @@ public class LinkList{
         private String bookName;
         private int millionsSold;
 
-        // Reference to next link made in the data_structure.LinkList.
+        // Reference to next link made in the data_structure.linkedlist.LinkList.
         // Holds the reference to the Link that was created before it
         // Set to null until it is connected to other links
 
@@ -25,19 +25,19 @@ public class LinkList{
 
     // Reference to first Link in list
     // The last Link added to the LinkedList
-    public  Link firstLink;
+    private  Link firstLink;
 
-    LinkList(){ firstLink = null; }
+    private LinkList(){ firstLink = null; }
 
-    // Returns true if data_structure.LinkList is empty
+    // Returns true if data_structure.linkedlist.LinkList is empty
     private boolean isEmpty(){ return(firstLink == null); }
 
     //  To add a New Link
     //  - New link is created
     //  - It's Next is assigned the reference to the previous Link created
-    //  - The data_structure.LinkList's firstLink is assigned a reference to the newest Link added.
+    //  - The data_structure.linkedlist.LinkList's firstLink is assigned a reference to the newest Link added.
 
-    public void insertFirstLink(String bookName, int millionsSold){
+    private void insertFirstLink(String bookName, int millionsSold){
 
         Link newLink = new Link(bookName, millionsSold);
         // Connects the firstLink field to the new Link
@@ -45,7 +45,7 @@ public class LinkList{
         firstLink = newLink;
     }
 
-    public Link removeFirst(){
+    private Link removeFirst(){
 
         Link linkReference = firstLink;
         if(!isEmpty())
@@ -56,7 +56,7 @@ public class LinkList{
         return linkReference;
     }
 
-    public void display(){
+    private void display(){
 
         Link theLink = firstLink;
         // Start at the reference stored in firstLink and
@@ -90,7 +90,7 @@ public class LinkList{
         return theLink;
     }
 
-    public Link removeLink(String bookName){
+    private Link removeLink(String bookName){
 
         Link currentLink = firstLink;
         Link previousLink = firstLink;

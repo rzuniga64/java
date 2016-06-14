@@ -3,7 +3,12 @@ package data_structure.list;
 /**
  *  ListArray: ordered set of objects of the same type.
  *  Can contain multiple values of the same type.
- *  Values are stored consecutively in memory
+ *  Values are stored consecutively in memory.
+ *
+ *  Advantages of array over linked list:
+ *  1. Arrays allow random access to element: array[i] while linked lists only allow sequential access to elements
+ *  2. Arrays do no require extra storage for 'links'. Linked lists are impractical for lists of characters or
+ *     booleans (pointer value is bigger than data value).
  *
  *  Operations:
  *  Traversing
