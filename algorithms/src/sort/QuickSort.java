@@ -2,7 +2,13 @@ package sort;
 
 import java.util.Arrays;
 
-// The Quick sort.SelectionSort is normally the fastest sorting algorithm
+/**
+ * In most situations the sort.QuickSort is the fastest sorting algorithm.
+ * The sort.QuickSort works by partioning arrays that the smaller numbers
+ * are on the left and the larger are on the right.  It then recursively
+ * sends small parts of larger arrays to itself and partitions again.
+ *
+ */
 public class QuickSort {
 
     private static int[] theArray;
