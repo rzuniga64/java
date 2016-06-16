@@ -28,7 +28,7 @@ package data_structure.linkedlist;
 
 public class LinkedList {
 
-    private class Link {
+    public class Link {
 
         // Reference to next link made in the data_structure. Self-referential data structure.
         // Define a reference for head of the list. It must be initialized to NULL to signify the end of the list.
@@ -41,18 +41,20 @@ public class LinkedList {
         }
 
         public String toString(){return value.toString(); }
-        public void display(){
-            System.out.println(value);
-        }
+        public void display(){ System.out.println(value); }
+        public Object getValue() { return value; }
+        public Link getNext() { return next; }
     }
 
     // Constructor: sets up empty list
     private Link head;      // Reference to first Link in list
-    private LinkedList(){ head = null; }
+    public LinkedList(){ head = null; }
+
+    public Link getFirstLink() { return head; }
 
     // Returns true or false if linked list is empty
     // Average time complexity: O(1)
-    private boolean isEmpty(){ return(head == null); }
+    public boolean isEmpty(){ return(head == null); }
 
     /**
     *  Append add new node to end of list
@@ -65,7 +67,7 @@ public class LinkedList {
     *          Make the lst node point to the new node
     */
 
-    private void append(Object value) {
+    public void append(Object value) {
         Link newLink = new Link();
         newLink.value = value;
         newLink.next = null;
@@ -101,7 +103,7 @@ public class LinkedList {
      *      make new node point to p’s node
      */
 
-    private void insert(Object value) {
+    public void insert(Object value) {
         Link newLink = new Link();
         newLink.value = value;
 
@@ -129,7 +131,7 @@ public class LinkedList {
      * next returns null
      */
 
-    private void display(){
+    public void display(){
 
         Link theLink = head;
 
@@ -163,7 +165,7 @@ public class LinkedList {
 
     // Remove link that contains a certain value in the linked list (if it exists)
     // Average time complexity for traversing list: O(n)
-    private Link removeLink(Object value){
+    public Link removeLink(Object value){
 
         Link currentLink = head;
         Link previousLink = head;
