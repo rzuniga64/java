@@ -78,7 +78,8 @@ public class Recursion {
         LinkedList.Link link = theLinkedList.getFirstLink();
         System.out.println("\nThe max value of the list is " + maxValue(link, 1.00));
 
-
+        // Recursive binary search
+        System.out.println("\nThe index of " + number + " is " + binarySearchRecursive(list, 0, 9, number));
     }
 
     /**
@@ -193,5 +194,46 @@ public class Recursion {
         else
             return maxValue(Link.getNext(), maxValue);
 
+    }
+
+    /**
+     * Recursive binary search
+     * Runtime Analysis: O log(N)
+     *
+     * Find an item in a list, return the index or -1.
+     * Base case: if search is narrowed down to 0 elements, return -1. Divide an conquer algorithm.
+     * - if empty list return -1
+     * Recursive case
+     * - if equal, then return index
+     * - if less than middle value, search in first half
+     * - if more than middle value, search in last half
+     *
+     * Need to add parameters for first and last index of the current subpart of the list to search.
+     *
+     * @param array
+     * @param first
+     * @param last
+     * @param value
+     * @return
+     *
+     *  Precondition: The list must be sorted.
+     *  PostCondition: the index of the item in the list or -1 if not found
+     */
+    private static int binarySearchRecursive(int array[], int first, int last, int value) {
+        // base case: check for empty list
+        if (first > last)
+            return -1;
+        // computer middle index
+        int middle = (first + last)/2;
+        if (array[middle] == value)
+            return middle;
+        if (value < array[middle])
+            return binarySearchRecursive(array, middle-1, last, value);
+        else
+            return binarySearchRecursive(array, middle+1, last, value);
+    }
+
+    int binarySeaarch(int array[], int size, int value) {
+        return binarySearchRecursive(array, 0, size-1, value);
     }
 }
