@@ -1,4 +1,4 @@
-package data_structure;
+package hash_table;
 
 import java.util.Scanner;
 
@@ -76,7 +76,7 @@ public class HashTable3 {
 
         String wordToHash = newWord.theWord;
 
-        // Calculate the hashkey for the data_structure.Word
+        // Calculate the hashkey for the hash_table.Word
         int hashKey = stringHashFunction(wordToHash);
 
         // Add the new word to the array and set the key for the word
@@ -98,10 +98,10 @@ public class HashTable3 {
             String word = elementsToAdd[i][0];
             String definition = elementsToAdd[i][1];
 
-            // Create the data_structure.Word with the word name and definition
+            // Create the hash_table.Word with the word name and definition
             Word newWord = new Word(word, definition);
 
-            // Add the data_structure.Word to theArray
+            // Add the hash_table.Word to theArray
             insert(newWord);
         }
     }
@@ -120,7 +120,7 @@ class Word {
     private String definition;
     protected int key;
 
-    // Reference to next data_structure.Word made in the data_structure.WordList
+    // Reference to next hash_table.Word made in the hash_table.WordList
     protected Word next;
 
     protected Word(String theWord, String definition) {

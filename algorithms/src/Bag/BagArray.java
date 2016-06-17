@@ -1,6 +1,4 @@
-package Bag;
-
-import data_structure.list.ListArray;
+package bag;
 
 /**
  *  BagArray: unordered collection of objects of the same type
