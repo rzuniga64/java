@@ -1,5 +1,8 @@
 package stack;
 
+import data_structure.linkedlist.LinkedList;
+import data_structure.linkedlist.StackLinkList;
+
 /**
  *  Stacks are used to complete a task and are soon after discarded.
  *
@@ -29,4 +32,75 @@ package stack;
  */
 
 public class StackLinkedList {
+
+    private class Link {
+        Object value;
+        Link next = null;
+
+        Link() { }
+        Link(Object value){ this.value = value; }
+
+        public String toString(){return value.toString(); }
+        public void display(){ System.out.println(value); }
+        public Object getValue() { return value; }
+        public Link getNext() { return next; }
+    }
+
+    private Link head;    // Reference to first Link in list
+    private StackLinkedList(){ head = null; }
+
+    // Display the linked list
+    // Average time complexity for traversing list: O(n)
+    //
+    // Start at the reference stored in firstLink and keep getting the references stored in next for every Link until
+    // next returns null
+    public void display(){
+
+        StackLinkedList.Link theLink = head;
+
+        while(theLink != null){
+            System.out.println(theLink.toString());
+            theLink = theLink.next;
+        }
+        System.out.println();
+    }
+
+    // Returns true or false if linked list is empty
+    // Average time complexity: O(1)
+    public boolean isEmpty(){
+        return(head == null);
+    }
+
+    public boolean isFull(){
+        return false;
+    }
+
+    public void makeEmpty() {
+        while (!isEmpty()) {
+            //pop();
+        }
+    }
+
+    public void push(Object value) {
+        Link temp = new Link();
+        temp.value = value;
+
+        // insert at head of list
+        temp.next = head;
+        head = temp;
+    }
+
+    public static void main(String[] args) {
+
+        StackLinkedList theLinkedList = new StackLinkedList();
+
+        // Insert Link and add a reference to the book Link added just prior to the field next
+        theLinkedList.push("Don Quixote");
+        theLinkedList.push("A Tale of Two Cities");
+        theLinkedList.push("The Lord of the Rings");
+        theLinkedList.push("Harry Potter and the Sorcerer's Stone");
+
+        theLinkedList.display();
+        System.out.println("Value of first item in the stack is " + theLinkedList.head + "\n");
+    }
 }
