@@ -1,15 +1,15 @@
-package data_structure;
+package stack;
 
 /**
  *  Stacks are used to complete a task and are soon after discarded.
  *
- *  Stack
- *  1.  Stack is a data structure that holds a collection of elements of the same type.
+ *  StackArray
+ *  1.  StackArray is a data structure that holds a collection of elements of the same type.
  *  2.  Allowa only a single item to be added or removed at a time
  *  3.  Allows access to the last item inserted, first out (LIFO)
  *  4.  Problem: No random access to other elements
- *	5.  Stack overflow: Trying to push an item onto a full stack
- *  6. 	Stack underflow: Trying to pop an item from an empty stack
+ *	5.  StackArray overflow: Trying to push an item onto a full stack
+ *  6. 	StackArray underflow: Trying to pop an item from an empty stack
  *
  *  STACK OPERATIONS
  *  Operations: These operations should take constant time O(1)
@@ -30,14 +30,14 @@ package data_structure;
 
 import java.util.Arrays;
 
-public class Stack {
+public class StackArray {
     private static int SIZE = 100;
 
     private String[] stackArray;
     private int stackSize;
     private int top;
 
-    private Stack(int size){
+    private StackArray(int size){
         stackSize = SIZE;
         stackArray = new String[SIZE];
         top = -1;   // stack is empty
@@ -64,23 +64,23 @@ public class Stack {
             top++;
             stackArray[top] = input;
         } else
-            System.out.println("Sorry But the data_structure.Stack is Full");
+            System.out.println("Sorry But the stack.StackArray is Full");
 
         displayTheStack();
-        System.out.println("PUSH " + input + " Was Added to the data_structure.Stack\n");
+        System.out.println("PUSH " + input + " Was Added to the stack.StackArray\n");
     }
 
     private String pop(){
 
         if(top >= 0){
             displayTheStack();
-            System.out.println("POP " + stackArray[top] + " Was Removed From the data_structure.Stack\n");
+            System.out.println("POP " + stackArray[top] + " Was Removed From the stack.StackArray\n");
             // Just like in memory an item isn't deleted, but instead is just not available
             stackArray[top] = "-1"; // Assigns -1 so the value won't appear
             return stackArray[top--];
         } else {
             displayTheStack();
-            System.out.println("Sorry But the data_structure.Stack is Empty");
+            System.out.println("Sorry But the stack.StackArray is Empty");
             return "-1";
         }
     }
@@ -88,7 +88,7 @@ public class Stack {
     private String peek(){
 
         displayTheStack();
-        System.out.println("PEEK " + stackArray[top] + " Is at the Top of the data_structure.Stack\n");
+        System.out.println("PEEK " + stackArray[top] + " Is at the Top of the stack.StackArray\n");
         return stackArray[top];
     }
 
@@ -135,7 +135,7 @@ public class Stack {
     }
 
     public static void main(String[] args){
-        Stack theStack = new Stack(10);
+        StackArray theStack = new StackArray(10);
 
         theStack.push("10");
         theStack.push("17");
