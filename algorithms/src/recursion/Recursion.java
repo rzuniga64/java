@@ -2,6 +2,10 @@ package recursion;
 
 import data_structure.linkedlist.LinkedList;
 
+import java.util.ArrayList;
+import java.util.Vector;
+import java.util.jar.Pack200;
+
 /**
  * WHY USE RECURSION?
  *
@@ -32,13 +36,20 @@ import data_structure.linkedlist.LinkedList;
  *	    else
  *		    // ... f(n-1) ...
  *      ! Note these functions are undefined for n < 0.
+ *
+ *  We will do examples with arrays, ArrayList, linked lists and Strings
+ *
+ *  Summary of list exmaples
+ *                                  Array           Vector                              Linked List
+ *  Base Case                       size == 0       v.size() == 0                       p == null
+ *  last (or first) element         a[size - 1]     v.back()                            p.value
+ *  shorter list (recursive call)   user size - 1   v.popback()                         p.next
+ *                                                  (may need to copy original vector)
  */
 
 public class Recursion {
 
     public static void main(String[] args) {
-
-        Recursion recursionTool = new Recursion();
 
         // Fibonacci
         System.out.println( "The first 13 fibonacci nubers: ");
@@ -80,7 +91,116 @@ public class Recursion {
 
         // Recursive binary search
         System.out.println("\nThe index of " + number + " is " + binarySearchRecursive(list, 0, 9, number));
+
+        // Recursion over array
+        System.out.println("\nThe sum of the array is " + sumList(list, 10));
+
+        ArrayList<Integer> arraylist = new ArrayList<>();
+        arraylist.add(1);
+        arraylist.add(2);
+        arraylist.add(3);
+        arraylist.add(4);
+        arraylist.add(5);
+        arraylist.add(6);
+        arraylist.add(7);
+        arraylist.add(9);
+        arraylist.add(10);
+        arraylist.add(11);
+
+        // Recursion over dynamic array
+        System.out.println("\nThe sum of the dynamic array is " + sumArrayList(arraylist));
+
+        LinkedList linkedlist = new LinkedList();
+        linkedlist.append(1);
+        linkedlist.append(2);
+        linkedlist.append(3);
+        linkedlist.append(4);
+        linkedlist.append(5);
+        linkedlist.append(6);
+        linkedlist.append(7);
+        linkedlist.append(9);
+        linkedlist.append(10);
+        linkedlist.append(11);
+
+        LinkedList.Link cursor = linkedlist.getFirstLink();
+
+        System.out.println("\nThe sum of the linked list is " + sumLinkedList(cursor));
+
+        // recursion over string
+        String word = "Hello World";
+        System.out.println("\nThe number of characters in " + word + " is " + numChars('l', word));
     }
+
+    /**
+     *   Recursion over array
+     *   base case: length = 0 ==> empty list
+     *   recursive case: if we assume we can sum the first n-1 items in the list,
+     *   how can we get the sum of the whole list from that?
+     *
+     *   sum(list)=sum(list[0...n-2])+ list[n-1]
+     *   Assume your given the answer to sum(list[0...n-2]), the sum of the first n-1 items.
+     */
+
+    static int sumList(int list[], int size) {
+        if (size == 0)
+            return 0;
+        else
+            // call sum on first n-1 elements: sum(a, size-1. The last element: a[size - 1]
+            return sumList(list, size - 1) + list[size - 1];
+    }
+
+    /**
+     *   Recursion over ArrayList
+     *   base case: length = 0 ==> empty list
+     *   recursive case: if we assume we can sum the first n-1 items in the list,
+     *   how can we get the sum of the whole list from that?
+     *
+     *   sum(list)=sum(list[0...n-2])+ list[n-1]
+     *   Assume your given the answer to sum(list[0...n-2]), the sum of the first n-1 items.
+     */
+    static Integer sumArrayList(ArrayList<Integer> list) {
+        if (list.size() == 0)
+            return 0;
+        else {
+            Integer x = list.get(list.size() - 1);
+            // list.popback creates the shorter list
+            list.remove(list.size()-1);
+            return x + sumArrayList(list);
+        }
+    }
+
+    /**
+     *   Recursion over Linked List
+     *   base case: length = 0 ==> empty list
+     *   recursive case: if we assume we can sum the first n-1 items in the list,
+     *   how can we get the sum of the whole list from that?
+     */
+    static Integer sumLinkedList(LinkedList.Link cursor){
+        if (cursor == null)
+            return 0;
+        else
+            return (Integer)cursor.getValue() + sumLinkedList(cursor.getNext());
+    }
+
+    /**
+     *   Recursion over String: recursive function count the number of times a specific character appears in a string.
+     *   String member function: substr(int post, int len)
+     * - pos is the position of the first character to be copied as a substring.
+     * - len is the number of characters to include in the substring.
+     */
+
+    static int numChars(char target, String str) {
+        if (str.isEmpty())
+            return 0;
+        else {
+            int result = numChars(target, str.substring(1, str.length()));
+            if (str.charAt(0) == target )
+                return 1 + result;
+            else
+                return result;
+        }
+    }
+
 
     /**
     *   Fibonacci numbers
@@ -210,12 +330,6 @@ public class Recursion {
      *
      * Need to add parameters for first and last index of the current subpart of the list to search.
      *
-     * @param array
-     * @param first
-     * @param last
-     * @param value
-     * @return
-     *
      *  Precondition: The list must be sorted.
      *  PostCondition: the index of the item in the list or -1 if not found
      */
@@ -233,7 +347,7 @@ public class Recursion {
             return binarySearchRecursive(array, middle+1, last, value);
     }
 
-    int binarySeaarch(int array[], int size, int value) {
+    private int binarySeaarch(int array[], int size, int value) {
         return binarySearchRecursive(array, 0, size-1, value);
     }
 }
