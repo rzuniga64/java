@@ -105,18 +105,13 @@ public class BubbleSort {
 
     // This bubble sort will sort everything from smallest to largest
     private void bubbleSort(){
-        // i starts at the end of the Array
-        // As it is decremented all indexes greater
-        // then it are sorted
+        // i starts at the end of the array. As it is decremented all indexes greater then it are sorted
         for(int i = arraySize - 1; i > 1; i--){
-            // The inner loop starts at the beginning of
-            // the array and compares each value next to each
-            // other. If the value is greater then they are
-            // swapped
+            // The inner loop starts at the beginning of the array and compares each value next to each other.
+            // If the value is greater then they are swapped.
             for(int j = 0; j < i; j++){
                 if(theArray[j] > theArray[j + 1])
                     swapValues(j, j+1);
-
             }
         }
     }
@@ -131,7 +126,6 @@ public class BubbleSort {
                 // increase the indexes until they have all been checked
                 if(theArray[j-1] < theArray[j])
                     swapValues(j-1, j);
-
             }
         }
     }
