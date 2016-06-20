@@ -52,7 +52,7 @@ public class InsertionSort {
         theArray[indexTwo] = temp;
     }
 
-    /** The Binary LinearSearch.LinearSearch is quicker than the linear search because all the values are sorted. Because everything is
+    /** The Binary LinearSearch is quicker than the linear search because all the values are sorted. Because everything is
      * sorted once you get to a number larger than what you are looking for you can stop the search. Also you be able
      * to start searching from the middle which speeds the search. It also works best when there are no duplicates */
 
@@ -76,6 +76,10 @@ public class InsertionSort {
     /**
      *  The Insertion sort.SelectionSort is normally the best of the elementary sorts.
      *  Unlike the other sorts that had a group sorted at any given time, groups are only partially sorted here.
+     *
+     *  Time Complexity
+     *  Best    Average     Worst
+     *  O(n)    O(n*n)      O(n*n)
      *
      * Insertion sort is a simple sorting algorithm that is appropriate for small inputs
      * The basic action of insertion sort is to sort the elements in positions 0 through p (where p ranges from 1 through
