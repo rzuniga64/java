@@ -77,7 +77,7 @@ public class InsertionSort {
      *  The Insertion sort.SelectionSort is normally the best of the elementary sorts.
      *  Unlike the other sorts that had a group sorted at any given time, groups are only partially sorted here.
      *
-     *  Time Complexity
+     *  Runtime analysis
      *  Best    Average     Worst
      *  O(n)    O(n*n)      O(n*n)
      *
