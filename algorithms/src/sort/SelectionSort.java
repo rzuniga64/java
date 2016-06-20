@@ -88,7 +88,7 @@ public class SelectionSort {
 
             for(int y=x; y < arraySize; y++){
                 // To change direction of sort just change this from > to <
-                if(theArray[minimum]>theArray[y])
+                if( theArray[y] < theArray[minimum])
                     minimum = y;
             }
 
