@@ -78,8 +78,8 @@ public class SelectionSort {
     }
 
 
-    /** Selection sort searches for the smallest number in the array saves it in the minimum spot and then repeats
-     * searching through the entire array each time */
+    /** On each pass, the smallest (minimum) element in the rest of the list is exchanged (swapped) with element at the
+     *	current position. and then repeats searching through the entire array each time */
 
     private void selectionSort(){
 
