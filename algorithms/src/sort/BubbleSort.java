@@ -14,9 +14,9 @@ package sort;
 *   If you change the algorithm to look at only the unsorted part of the array in each pass, it is exactly like the
 *	selection sort
 *
-*  Runtime analysis
-*  Best    Average     Worst
-*  O(n)    O(n*n)      O(n*n)
+*   Runtime analysis
+*   Best    Average     Worst
+*   O(n)    O(n*n)      O(n*n)
 *
 *	7 2 3 8 9 1     7 > 2, swap
 *   - -
@@ -43,7 +43,7 @@ package sort;
 *	2 1 3 7 8 9     !(2<1) swap, 2<3<7<8<9
 *   - -
 *	1 2 3 7 8 9     finished pass 5, did one swap
-*	1 2 3 7 8 9	    1<2<3<7<8<9, no swaps finished pass 6, no swaps, list is sorted!
+*   1 2 3 7 8 9	    1<2<3<7<8<9, no swaps finished pass 6, no swaps, list is sorted!
 */
 
 public class BubbleSort {
