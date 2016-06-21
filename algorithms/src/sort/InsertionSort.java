@@ -1,5 +1,8 @@
 package sort;
 
+import static sort.SortUtility.generateRandomArray;
+import static sort.SortUtility.printHorizontalArray;
+
 public class InsertionSort {
 
     private int[] theArray = new int[50];
@@ -48,11 +51,11 @@ public class InsertionSort {
             int j;
             for (j = i; j > 0 && theArray[j-1] > temp; j-- ){
                 theArray[j] = theArray[j-1];
-                SortUtility.printHorizontalArray(theArray, arraySize, i, j);
+                printHorizontalArray(theArray, arraySize, i, j);
             }
 
             theArray[j] = temp;
-            SortUtility.printHorizontalArray(theArray, arraySize, i, j);
+            printHorizontalArray(theArray, arraySize, i, j);
             System.out.println("\nArray[i] = " + theArray[i] + " Array[j] = " + theArray[j] + " toInsert = " + temp + "\n");
         }
     }
@@ -74,15 +77,15 @@ public class InsertionSort {
                 System.out.println("\nFound a Match for " + value + " at Index " + middleIndex);
                 lowIndex = highIndex + 1;
             }
-            SortUtility.printHorizontalArray(theArray, arraySize, middleIndex, -1);
+            printHorizontalArray(theArray, arraySize, middleIndex, -1);
         }
     }
 
     public static void main(String[] args){
 
         InsertionSort newArray = new InsertionSort();
-        SortUtility.generateRandomArray(newArray.theArray, newArray.arraySize);
-        SortUtility.printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
+        generateRandomArray(newArray.theArray, newArray.arraySize);
+        printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
 
         newArray.insertionSort();
     }

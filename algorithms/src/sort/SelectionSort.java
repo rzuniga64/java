@@ -1,5 +1,8 @@
 package sort;
 
+import static sort.SortUtility.generateRandomArray;
+import static sort.SortUtility.printHorizontalArray;
+
 /*
  * 	Selection Sort
  *	There is a pass for each position (0..size-1)
@@ -52,15 +55,15 @@ public class SelectionSort {
             }
 
             swapValues(x, minimum);
-            SortUtility.printHorizontalArray(theArray, arraySize, x, -1);
+            printHorizontalArray(theArray, arraySize, x, -1);
         }
     }
 
     public static void main(String[] args){
 
         SelectionSort newArray = new SelectionSort();
-        SortUtility.generateRandomArray(newArray.theArray, newArray.arraySize);
-        SortUtility.printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
+        generateRandomArray(newArray.theArray, newArray.arraySize);
+        printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
         newArray.selectionSort();
     }
 }

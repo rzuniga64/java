@@ -1,5 +1,8 @@
 package sort;
 
+import static sort.SortUtility.generateRandomArray;
+import static sort.SortUtility.printHorizontalArray;
+
 /*
 *	Bubble Sort
 *	On each pass: Compare first two elements. If the first is bigger, they exchange places (swap). Compare second and
@@ -86,12 +89,12 @@ public class BubbleSort {
 
     public static void main(String[] args){
 		BubbleSort newArray = new BubbleSort();
-        SortUtility.generateRandomArray(newArray.theArray, newArray.arraySize);
+        generateRandomArray(newArray.theArray, newArray.arraySize);
 
         newArray.bubbleSort();;
-        SortUtility.printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
+        printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
 
         newArray.bubbleSortDescending();
-        SortUtility.printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
+        printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
     }
 }
