@@ -51,58 +51,6 @@ public class BubbleSort {
     private int[] theArray = new int[50];   // Creates an array with 50 indexes
     private int arraySize = 10;             // Elements in theArray
 
-    // Fills the Array with random values
-    private void generateRandomArray(){
-
-        for(int i = 0; i < arraySize; i++)
-            theArray[i] = (int)(Math.random()*9)+10;
-    }
-
-    // Prints the Array on the screen in a grid
-    private void printArray(){
-
-        System.out.println("----------");
-        for(int i = 0; i < arraySize; i++){
-            System.out.print("| " + i + " | ");
-            System.out.println(theArray[i] + " |");
-            System.out.println("----------");
-        }
-    }
-
-    private void printHorizontalArray(int i, int j){
-
-        for(int n = 0; n < 51; n++)System.out.print("-");
-        System.out.println();
-        for(int n = 0; n < arraySize; n++)
-            System.out.print("| " + n + "  ");
-
-        System.out.println("|");
-        for(int n = 0; n < 51; n++)System.out.print("-");
-        System.out.println();
-        for(int n = 0; n < arraySize; n++)
-            System.out.print("| " + theArray[n] + " ");
-
-        System.out.println("|");
-        for(int n = 0; n < 51; n++)System.out.print("-");
-        System.out.println();
-
-        // END OF FIRST PART
-        // ADDED FOR BUBBLE SORT
-        if(j != -1){
-            // ADD THE +2 TO FIX SPACING
-            for(int k = 0; k < ((j*5)+2); k++)System.out.print(" ");
-            System.out.print(j);
-        }
-
-        // THEN ADD THIS CODE
-        if(i != -1){
-            // ADD THE -1 TO FIX SPACING
-            for(int l = 0; l < (5*(i - j)-1); l++)System.out.print(" ");
-            System.out.print(i);
-        }
-        System.out.println();
-    }
-
     // This bubble sort will sort everything from smallest to largest
     private void bubbleSort(){
         // i starts at the end of the array. As it is decremented all indexes greater then it are sorted
@@ -138,10 +86,13 @@ public class BubbleSort {
 
     public static void main(String[] args){
 		BubbleSort newArray = new BubbleSort();
-		newArray.generateRandomArray();
-		newArray.printHorizontalArray(-1,-1);
-        newArray.printHorizontalArray(-1,-1);
+        SortUtility utility = new SortUtility(newArray.theArray, newArray.arraySize);
+        utility.generateRandomArray();
+
+        newArray.bubbleSort();;
+        utility.printHorizontalArray(-1,-1);
+
         newArray.bubbleSortDescending();
-        newArray.printHorizontalArray(-1,-1);
+        utility.printHorizontalArray(-1,-1);
     }
 }
