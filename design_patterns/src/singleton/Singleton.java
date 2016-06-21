@@ -1,7 +1,7 @@
 package singleton;
 
 // /What is a Singleton Patter?
-//  -   it is used when you want to eliminate the option of instantiating more than one object.
+//  -   It is used when you want to eliminate the option of instantiating more than one object.
 //. -   A demonstration will be used that holds all the Potential Scrabble letters and spits out new ones upon request.
 //  -   Each player will share the same potential letter list.
 //  -   Each player has their own set of letters.
@@ -10,14 +10,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 
-public class Singleton {
+class Singleton {
 
     // firstInstance will hold the one and only instance of the class Singleton.
-    // It is static because because objects like this usually need to be available
-    // on a global basis.
+    // It is static because because objects like this usually need to be available on a global basis.
     private static Singleton firstInstance = null;
 
-    String[] scrabbleLetters = {"a", "a", "a", "a", "a", "a", "a", "a", "a",
+    private String[] scrabbleLetters = {"a", "a", "a", "a", "a", "a", "a", "a", "a",
                             "b", "b", "c", "c", "d", "d", "d", "d", "e", "e", "e", "e", "e",
                             "e", "e", "e", "e", "e", "e", "e", "f", "f", "g", "g", "g", "h",
                             "h", "i", "i", "i", "i", "i", "i", "i", "i", "i", "j", "k", "l",
@@ -30,19 +29,19 @@ public class Singleton {
     private LinkedList<String> letterList = new LinkedList<>(Arrays.asList(scrabbleLetters));
 
     // used to slow down firstThread
-    static boolean firstThread = true;
+    private static boolean firstThread = true;
 
     // Created to keep users from instantiation
     // Only Singleton will be able to instantiate this class
     private Singleton(){ }
 
-    /** We could make getFirstInstance a synchronized method to force every thread to
-     *  wait its turn.  That way only one thread can access a method at a time.
-     *  This can really slow everything down though.
+    /**
+     *  We could make getFirstInstance a synchronized method to force every thread to wait its turn.
+     *  That way only one thread can access a method at a time. This can really slow everything down though.
      *
      * @return firstInstance
      */
-    public static Singleton getInstance() {
+    static Singleton getInstance() {
 
         if (firstInstance == null) {
             // This is here to test what happens if threads try to create instances of this class
@@ -72,7 +71,8 @@ public class Singleton {
      * @function getLetterList
      * @return a list of Scrabble letters
      */
-    public LinkedList<String> getLetterList() {
+    LinkedList<String> getLetterList() {
+
         return letterList;
     }
 
@@ -81,11 +81,10 @@ public class Singleton {
      * @param howManyTiles the number of letter tiles requested
      * @return Return the number of letter tiles requested
      */
-    public LinkedList<String> getTiles(int howManyTiles) {
+    LinkedList<String> getTiles(int howManyTiles) {
         LinkedList<String> tilesToSend = new LinkedList<>();    // Tiles to be returned to the user
 
-        // Cycle through the linked list, letterList, while adding
-        // the starting Strings to the returned linked list while
+        // Cycle through the linked list, letterList, while adding the starting Strings to the returned linked list while
         // deleting them from letterList.
         for (int i = 0; i < howManyTiles; i++)
             tilesToSend.add(firstInstance.letterList.remove(0));
