@@ -5,46 +5,6 @@ public class InsertionSort {
     private int[] theArray = new int[50];
     private int arraySize = 10;
 
-    private void generateRandomArray(){
-        for(int i = 0; i < arraySize; i++){
-            theArray[i] = (int)(Math.random()*10)+10;
-        }
-    }
-
-    private void printHorizontalArray(int i, int j){
-
-        for(int n = 0; n < 51; n++)System.out.print("-");
-        System.out.println();
-        for(int n = 0; n < arraySize; n++)
-            System.out.print("| " + n + "  ");
-
-        System.out.println("|");
-        for(int n = 0; n < 51; n++)System.out.print("-");
-        System.out.println();
-        for(int n = 0; n < arraySize; n++)
-            System.out.print("| " + theArray[n] + " ");
-
-        System.out.println("|");
-        for(int n = 0; n < 51; n++)System.out.print("-");
-        System.out.println();
-
-        // END OF FIRST PART
-        // ADDED FOR BUBBLE SORT
-        if(j != -1){
-            // ADD THE +2 TO FIX SPACING
-            for(int k = 0; k < ((j*5)+2); k++)System.out.print(" ");
-            System.out.print(j);
-        }
-
-        // THEN ADD THIS CODE
-        if(i != -1){
-            // ADD THE -1 TO FIX SPACING
-            for(int l = 0; l < (5*(i - j)-1); l++)System.out.print(" ");
-            System.out.print(i);
-        }
-        System.out.println();
-    }
-
     private void swapValues(int indexOne, int indexTwo){
 
         int temp = theArray[indexOne];
@@ -69,7 +29,7 @@ public class InsertionSort {
                 System.out.println("\nFound a Match for " + value + " at Index " + middleIndex);
                 lowIndex = highIndex + 1;
             }
-            printHorizontalArray(middleIndex, -1);
+            SortUtility.printHorizontalArray(theArray, arraySize, middleIndex, -1);
         }
     }
 
@@ -116,11 +76,11 @@ public class InsertionSort {
             int j;
             for (j = i; j > 0 && theArray[j-1] > temp; j-- ){
                 theArray[j] = theArray[j-1];
-                printHorizontalArray(i, j);
+                SortUtility.printHorizontalArray(theArray, arraySize, i, j);
             }
 
             theArray[j] = temp;
-            printHorizontalArray(i, j);
+            SortUtility.printHorizontalArray(theArray, arraySize, i, j);
             System.out.println("\nArray[i] = " + theArray[i] + " Array[j] = " + theArray[j] + " toInsert = " + temp + "\n");
         }
     }
@@ -128,8 +88,8 @@ public class InsertionSort {
     public static void main(String[] args){
 
         InsertionSort newArray = new InsertionSort();
-        newArray.generateRandomArray();
-        newArray.printHorizontalArray(-1,-1);
+        SortUtility.generateRandomArray(newArray.theArray, newArray.arraySize);
+        SortUtility.printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
 
         newArray.insertionSort();
     }
