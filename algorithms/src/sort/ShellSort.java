@@ -7,7 +7,7 @@ import static sort.SortUtility.printHorzArray;
 
 public class ShellSort {
 
-    private void sort() {
+    private void shellsort() {
         int inner, outer, temp;
         int interval = 1;
 
@@ -74,7 +74,7 @@ public class ShellSort {
     public static void main(String[] args) {
         ShellSort theSort = new ShellSort(10);
         System.out.println(Arrays.toString(theSort.theArray));
-        theSort.sort();
+        theSort.shellsort();
         System.out.println(Arrays.toString(theSort.theArray));
     }
 
