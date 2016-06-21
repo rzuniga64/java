@@ -13,7 +13,7 @@ public class TestScrabble {
         System.out.println(instanceOne.getLetterList());
 
         LinkedList<String> playerOneTiles = instanceOne.getTiles(7);
-        System.out.println("Player 1: " + playerOneTiles);
+        System.out.println("\nPlayer 1: " + playerOneTiles + "\n");
         System.out.println(instanceOne.getLetterList());
 
         // Try to make another instance of Singleton
@@ -22,13 +22,13 @@ public class TestScrabble {
         Singleton instanceTwo = Singleton.getInstance();
 
         // Get unique id for instance object
-        System.out.println("Instance 1 ID: " + System.identityHashCode(instanceOne));
+        System.out.println("\nInstance 2 ID: " + System.identityHashCode(instanceOne));
 
         // THIS RETURNS THE VALUE OF THE FIRST INSTANCE CREATED. WRONG!
         System.out.println(instanceOne.getLetterList());
 
         // Player 2 draws 7 tiles
         LinkedList<String> playerTwoTiles = instanceOne.getTiles(7);
-        System.out.println("Player 2: " + playerTwoTiles);
+        System.out.println("\nPlayer 2: " + playerTwoTiles);
     }
 }
