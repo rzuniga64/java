@@ -6,6 +6,14 @@ import static sort.SortUtility.generateRandomArray;
 import static sort.SortUtility.printHorzArray;
 
 public class ShellSort {
+    private int[] theArray;
+    private int arraySize;
+
+    private ShellSort(int arraySize) {
+        this.arraySize = arraySize;
+        theArray = new int[arraySize];
+        generateRandomArray(this.theArray, this.arraySize);
+    }
 
     private void shellsort() {
         int inner, outer, temp;
@@ -73,14 +81,5 @@ public class ShellSort {
         System.out.println(Arrays.toString(theSort.theArray));
         theSort.shellsort();
         System.out.println(Arrays.toString(theSort.theArray));
-    }
-
-    private int[] theArray;
-    private int arraySize;
-
-    private ShellSort(int arraySize) {
-        this.arraySize = arraySize;
-        theArray = new int[arraySize];
-        generateRandomArray(this.theArray, this.arraySize);
     }
 }
