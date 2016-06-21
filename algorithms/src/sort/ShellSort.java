@@ -58,8 +58,8 @@ public class ShellSort {
                     theArray[j] = theArray[j - gap];
                 theArray[j] = temp;
 
-               // System.out.println("inner= " + (i-gap) + " outer= " + i + " temp= " + temp + " interval= " + gap);
-               // printHorzArray(theArray, arraySize, j, i, gap);
+                System.out.println("inner= " + (i-gap) + " outer= " + i + " temp= " + temp + " interval= " + gap);
+                printHorzArray(theArray, arraySize, j, i, gap);
             }
         }
 
@@ -68,7 +68,7 @@ public class ShellSort {
     }
 
     public static void main(String[] args) {
-        ShellSort theSort = new ShellSort(100000);
+        ShellSort theSort = new ShellSort(10);
         //System.out.println(Arrays.toString(theSort.theArray));
         theSort.shellsort();
         //System.out.println(Arrays.toString(theSort.theArray));
