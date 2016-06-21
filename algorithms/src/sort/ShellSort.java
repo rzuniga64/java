@@ -41,9 +41,7 @@ public class ShellSort {
 
                         printHorzArray(theArray, arraySize, inner, outer, interval);
 
-                        // Make room for the smaller temp by moving values in the array
-                        // up one space if they are greater than temp
-
+                        // Make room for the smaller temp by moving values in array up one space if greater than temp
                         theArray[inner] = theArray[inner - interval];
 
                         System.out.println(theArray[inner - interval]
@@ -56,9 +54,8 @@ public class ShellSort {
                         System.out.println("interval= " + interval);
                     }
 
-                    // Now that everything has been moved into place put the value
-                    // stored in temp into the index above the first value smaller
-                    // than it is
+                    // Now that everything has been moved into place put the value stored in temp into the index above
+                    // the first value smaller than it is
 
                     theArray[inner] = temp;
                     System.out.println(temp + " moved to index " + inner);
