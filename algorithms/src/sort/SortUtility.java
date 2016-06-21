@@ -64,7 +64,7 @@ class SortUtility {
         System.out.println();
 
         for (int n = 0; n < arraySize; n++)
-            System.out.print("| " + n + "  ");
+            System.out.print("|  " + n + " ");
 
         System.out.println("|");
 
@@ -85,7 +85,7 @@ class SortUtility {
 
         if (i != -1) {
             // Number of spaces to put before the F
-            int spacesBeforeFront = 5 * i + 1;
+            int spacesBeforeFront = 5 * i + 4;
 
             for (int k = 0; k < spacesBeforeFront; k++)
                 System.out.print(" ");
