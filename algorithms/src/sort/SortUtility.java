@@ -1,24 +1,16 @@
 package sort;
 
-public class SortUtility {
-
-    private int[] theArray;   // Creates an array with 50 indexes
-    private int arraySize;             // Elements in theArray
-
-    SortUtility(int[] theArray, int arraySize) {
-        this.theArray = theArray;
-        this.arraySize = arraySize;
-    }
+class SortUtility {
 
     // Fills the Array with random values
-    public void generateRandomArray(){
+    static public void generateRandomArray(int[] theArray, int arraySize){
 
         for(int i = 0; i < arraySize; i++)
-            theArray[i] = (int)(Math.random()*9)+10;
+            theArray[i] = (int)(Math.random()*10)+10;
     }
 
     // Prints the Array on the screen in a grid
-    public void printArray(){
+    static public void printArray(int[] theArray, int arraySize){
 
         System.out.println("----------");
         for(int i = 0; i < arraySize; i++){
@@ -28,7 +20,7 @@ public class SortUtility {
         }
     }
 
-    public void printHorizontalArray(int i, int j){
+    static public void printHorizontalArray(int[] theArray, int arraySize, int i, int j){
 
         for(int n = 0; n < 51; n++)System.out.print("-");
         System.out.println();
