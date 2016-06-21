@@ -55,7 +55,7 @@ class Singleton {
                 }
             }
 
-            // FIX THE ISSUE WITH MULTIPLE THREADS CREATING MORE THAN ONE OBJECT USING SYNCRONIZED KEYWORD!
+            // FIX THE ISSUE WITH MULTIPLE THREADS CREATING MORE THAN ONE OBJECT USING SYNCHRONIZED KEYWORD!
             // This makes this a synchronized method until the first object is created.
             // Thereafter it will not be considered a synchronized class.
             synchronized(Singleton.class) {
