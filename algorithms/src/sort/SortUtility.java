@@ -6,7 +6,7 @@ class SortUtility {
     static public void generateRandomArray(int[] theArray, int arraySize){
 
         for(int i = 0; i < arraySize; i++)
-            theArray[i] = (int)(Math.random()*10)+10;
+            theArray[i] = (int)(Math.random()*90)+10;
     }
 
     // Prints the Array on the screen in a grid
@@ -52,5 +52,54 @@ class SortUtility {
             System.out.print(i);
         }
         System.out.println();
+    }
+
+    static void printHorzArray(int[] theArray, int arraySize, int i, int j, int h) {
+        if (i == j)
+            i = i - h;
+
+        for (int n = 0; n < 51; n++)
+            System.out.print("-");
+
+        System.out.println();
+
+        for (int n = 0; n < arraySize; n++)
+            System.out.print("| " + n + "  ");
+
+        System.out.println("|");
+
+        for (int n = 0; n < 51; n++)
+            System.out.print("-");
+
+        System.out.println();
+
+        for (int n = 0; n < arraySize; n++)
+            System.out.print("| " + theArray[n] + " ");
+
+        System.out.println("|");
+
+        for (int n = 0; n < 51; n++)
+            System.out.print("-");
+
+        System.out.println();
+
+        if (i != -1) {
+            // Number of spaces to put before the F
+            int spacesBeforeFront = 5 * i + 1;
+
+            for (int k = 0; k < spacesBeforeFront; k++)
+                System.out.print(" ");
+
+            System.out.print("I");
+
+            // Number of spaces to put before the R
+            int spacesBeforeRear = (5 * j + 1 - 1) - spacesBeforeFront;
+
+            for (int l = 0; l < spacesBeforeRear; l++)
+                System.out.print(" ");
+
+            System.out.print("O");
+            System.out.println("\n");
+        }
     }
 }

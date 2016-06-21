@@ -2,6 +2,9 @@ package sort;
 
 import java.util.Arrays;
 
+import static sort.SortUtility.generateRandomArray;
+import static sort.SortUtility.printHorzArray;
+
 public class ShellSort {
 
     private void sort() {
@@ -36,7 +39,7 @@ public class ShellSort {
                                 + theArray[inner - interval] + " in index "
                                 + (inner - interval) + " is bigger than " + temp);
 
-                        printHorzArray(inner, outer, interval);
+                        printHorzArray(theArray, arraySize, inner, outer, interval);
 
                         // Make room for the smaller temp by moving values in the array
                         // up one space if they are greater than temp
@@ -47,7 +50,7 @@ public class ShellSort {
                                 + " moved to index " + inner);
                         inner -= interval;
                         System.out.println("inner= " + inner);
-                        printHorzArray(inner, outer, interval);
+                        printHorzArray(theArray, arraySize, inner, outer, interval);
                         System.out.println("outer= " + outer);
                         System.out.println("temp= " + temp);
                         System.out.println("interval= " + interval);
@@ -59,7 +62,7 @@ public class ShellSort {
 
                     theArray[inner] = temp;
                     System.out.println(temp + " moved to index " + inner);
-                    printHorzArray(inner, outer, interval);
+                    printHorzArray(theArray, arraySize, inner, outer, interval);
                 }
 
                 // Once we get here we have interval sorted our array so we decrement interval and go again
@@ -81,62 +84,6 @@ public class ShellSort {
     private ShellSort(int arraySize) {
         this.arraySize = arraySize;
         theArray = new int[arraySize];
-        generateRandomArray();
-    }
-
-    private void generateRandomArray() {
-        for (int i = 0; i < arraySize; i++) {
-            // Generate a random array with values between 10 and 59
-            theArray[i] = (int) (Math.random() * 50) + 10;
-        }
-    }
-
-    private void printHorzArray(int i, int j, int h) {
-        if (i == j)
-            i = i - h;
-
-        for (int n = 0; n < 51; n++)
-            System.out.print("-");
-
-        System.out.println();
-
-        for (int n = 0; n < arraySize; n++)
-            System.out.print("| " + n + "  ");
-
-        System.out.println("|");
-
-        for (int n = 0; n < 51; n++)
-            System.out.print("-");
-
-        System.out.println();
-
-        for (int n = 0; n < arraySize; n++)
-            System.out.print("| " + theArray[n] + " ");
-
-        System.out.println("|");
-
-        for (int n = 0; n < 51; n++)
-            System.out.print("-");
-
-        System.out.println();
-
-        if (i != -1) {
-            // Number of spaces to put before the F
-            int spacesBeforeFront = 5 * i + 1;
-
-            for (int k = 0; k < spacesBeforeFront; k++)
-                System.out.print(" ");
-
-            System.out.print("I");
-
-            // Number of spaces to put before the R
-            int spacesBeforeRear = (5 * j + 1 - 1) - spacesBeforeFront;
-
-            for (int l = 0; l < spacesBeforeRear; l++)
-                System.out.print(" ");
-
-            System.out.print("O");
-            System.out.println("\n");
-        }
+        generateRandomArray(this.theArray, this.arraySize);
     }
 }
