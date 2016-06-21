@@ -69,8 +69,8 @@ public class ShellSort {
 
     public static void main(String[] args) {
         ShellSort theSort = new ShellSort(10);
-        //System.out.println(Arrays.toString(theSort.theArray));
+        System.out.println(Arrays.toString(theSort.theArray));
         theSort.shellsort();
-        //System.out.println(Arrays.toString(theSort.theArray));
+        System.out.println(Arrays.toString(theSort.theArray));
     }
 }
