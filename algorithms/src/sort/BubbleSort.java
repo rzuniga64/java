@@ -86,13 +86,12 @@ public class BubbleSort {
 
     public static void main(String[] args){
 		BubbleSort newArray = new BubbleSort();
-        SortUtility utility = new SortUtility(newArray.theArray, newArray.arraySize);
-        utility.generateRandomArray();
+        SortUtility.generateRandomArray(newArray.theArray, newArray.arraySize);
 
         newArray.bubbleSort();;
-        utility.printHorizontalArray(-1,-1);
+        SortUtility.printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
 
         newArray.bubbleSortDescending();
-        utility.printHorizontalArray(-1,-1);
+        SortUtility.printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
     }
 }
