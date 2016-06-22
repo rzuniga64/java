@@ -1,8 +1,8 @@
 package prototype;
 
-public class Sheep implements Animal {
+class Sheep implements Animal {
 
-    public Sheep(){ System.out.println("Sheep is Made"); }
+    Sheep(){ System.out.println("Sheep is Made"); }
 
     public Animal makeCopy() {
 
@@ -10,12 +10,9 @@ public class Sheep implements Animal {
         Sheep sheepObject = null;
 
         try {
-            // Calls the Animal super classes clone()
-            // Then casts the results to Sheep
+            // Calls the Animal super classes clone(). Then casts the results to Sheep
             sheepObject = (Sheep) super.clone();
-        }
-
-        // If Animal didn't extend Cloneable this error is thrown
+        }   // If Animal didn't extend Cloneable this error is thrown
         catch (CloneNotSupportedException e) {
 
             System.out.println("The Sheep was Turned to Mush");
@@ -24,7 +21,6 @@ public class Sheep implements Animal {
 
         return sheepObject;
     }
-
     public String toString(){
         return "Dolly is my Hero, Baaaaa";
     }
