@@ -1,8 +1,6 @@
 package builder;
 
-// The concrete builder class that assembles the parts
-// of the finished Robot object
-
+// The concrete builder class that assembles the parts of the finished Robot object
 class TheRobotBuilder implements RobotBuilder {
 
     private Robot robot;
