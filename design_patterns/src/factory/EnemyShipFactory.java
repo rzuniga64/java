@@ -9,11 +9,11 @@ public class EnemyShipFactory{
 
         EnemyShip newShip = null;
 
-        if (newShipType.equals("U"))
+        if (newShipType.equalsIgnoreCase("U"))
             return new UFOEnemyShip();
-        else if (newShipType.equals("R"))
+        else if (newShipType.equalsIgnoreCase("R"))
             return new RocketEnemyShip();
-        else if (newShipType.equals("B"))
+        else if (newShipType.equalsIgnoreCase("B"))
                 return new BigUFOEnemyShip();
         else return null;
     }
