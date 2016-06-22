@@ -3,9 +3,6 @@ package factory;
 public abstract class EnemyShip {
 
     private String name;
-    private double speed;
-    private double directionX;
-    private double directionY;
     private double amtDamage;
 
     public String getName() { return name; }
