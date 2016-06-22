@@ -2,11 +2,11 @@ package builder;
 
 // Defines the methods needed for creating parts for the robot
 
-public interface RobotBuilder {
+interface RobotBuilder {
 
-    public void buildRobotHead();
-    public void buildRobotTorso();
-    public void buildRobotArms();
-    public void buildRobotLegs();
-    public Robot getRobot();
+    void buildRobotHead();
+    void buildRobotTorso();
+    void buildRobotArms();
+    void buildRobotLegs();
+    Robot getRobot();
 }
