@@ -1,8 +1,8 @@
 package factory;
 
-public class UFOEnemyShip extends EnemyShip {
+class UFOEnemyShip extends EnemyShip {
 
-    public UFOEnemyShip(){
+    UFOEnemyShip(){
 
         setName("UFO Enemy Ship");
         setDamage(20.0);
