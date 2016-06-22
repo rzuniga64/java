@@ -1,6 +1,6 @@
 package builder;
 
-public class TestRobotBuilder {
+class TestRobotBuilder {
 
     public static void main(String[] args){
 
