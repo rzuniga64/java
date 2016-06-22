@@ -17,6 +17,7 @@ public class TestCloning {
         System.out.println(sally);
         System.out.println(clonedSheep);
 
+        // Prove that they are in different locations in memory
         System.out.println("Sally HashCode: " + System.identityHashCode(sally));
         System.out.println("Clone HashCode: " + System.identityHashCode(clonedSheep));
     }
