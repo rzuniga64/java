@@ -7,8 +7,7 @@ class CloneFactory {
 
     Animal getClone(Animal animalSample) {
 
-        // Because of Polymorphism the Sheeps makeCopy()
-        // is called here instead of Animals
+        // Because of Polymorphism the Sheeps makeCopy() is called here instead of Animals
         return animalSample.makeCopy();
     }
 }
