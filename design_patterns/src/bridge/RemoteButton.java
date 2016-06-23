@@ -5,7 +5,7 @@ package bridge;
 
 abstract class RemoteButton{
 
-    // A reference to a generic device using aggregation
+    // A reference to a generic device using composition
     private EntertainmentDevice theDevice;
 
     RemoteButton(EntertainmentDevice newDevice){
@@ -28,5 +28,6 @@ abstract class RemoteButton{
         theDevice.deviceFeedback();
     }
 
+    // Define those things the remotes that are going to implement this abstract class are going to need to extend.
     public abstract void buttonNinePressed();
 }
