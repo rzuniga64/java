@@ -8,7 +8,6 @@ public class TestTheRemote{
         RemoteButton theTV2 = new TVRemotePause(new TVDevice(1, 200));
 
         RemoteButton theDVD = new DVDRemote(new DVDDevice(1,14));
-
         System.out.println("Test TV with Mute");
 
         theTV.buttonFivePressed();
