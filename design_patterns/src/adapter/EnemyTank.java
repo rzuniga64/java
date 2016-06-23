@@ -1,14 +1,13 @@
 package adapter;
 
-// EnemyTank implements EnemyAttacker perfectly
-// Our job is to make classes with different methods
-// from EnemyAttacker to work with the EnemyAttacker interface
+// EnemyTank implements EnemyAttacker perfectly. Our job is to make classes with different methods from EnemyAttacker
+// to work with the EnemyAttacker interface
 
 import java.util.Random;
 
-public class EnemyTank implements EnemyAttacker{
+class EnemyTank implements EnemyAttacker{
 
-    Random generator = new Random();
+    private Random generator = new Random();
 
     public void fireWeapon() {
 
