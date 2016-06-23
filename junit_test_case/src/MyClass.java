@@ -1,6 +1,6 @@
 
-public class MyClass {
-	public int multiply (int x, int y) {
+class MyClass {
+	int multiply (int x, int y) {
 		return x * y;
 	}
 }
