@@ -3,11 +3,11 @@ package bridge;
 // Refined Abstraction
 // If I decide I want to further extend the remote I can
 
-public class DVDRemote extends RemoteButton{
+class DVDRemote extends RemoteButton{
 
     private boolean play = true;
 
-    public DVDRemote(EntertainmentDevice newDevice) {
+    DVDRemote(EntertainmentDevice newDevice) {
         super(newDevice);
     }
 
