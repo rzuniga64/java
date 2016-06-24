@@ -16,7 +16,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         // load the image
-        Image image = new Image("imageview/flower.jpg");
+        Image image = new Image("flower.jpg");
 
         // display image as is
         ImageView iv1 = new ImageView();
@@ -38,14 +38,15 @@ public class Main extends Application {
         iv3.setViewport(viewportRect);
         iv3.setRotate(90);
 
-        Group root = new Group();
-        Scene scene = new Scene(root);
-        scene.setFill(Color.BLACK);
         HBox box = new HBox();
         box.getChildren().add(iv1);
         box.getChildren().add(iv2);
         box.getChildren().add(iv3);
+
+        Group root = new Group();
         root.getChildren().add(box);
+        Scene scene = new Scene(root);
+        scene.setFill(Color.BLACK);
 
         primaryStage.setTitle("ImageView");
         primaryStage.setWidth(415);
