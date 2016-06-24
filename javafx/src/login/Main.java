@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
@@ -49,6 +51,10 @@ public class Main extends Application {
 
         // Sign in button
         Button btn = new Button("Sign in");
+        Image image = new Image("login/javafx_icon.png");
+        ImageView iv = new ImageView();
+        iv.setImage(image);
+        btn.setGraphic(iv);
         HBox hbBtn = new HBox(10);
         hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
         hbBtn.getChildren().add(btn);

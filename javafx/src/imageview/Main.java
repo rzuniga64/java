@@ -16,7 +16,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         // load the image
-        Image image = new Image("flower.jpg");
+        Image image = new Image("imageview/flower.jpg");
 
         // display image as is
         ImageView iv1 = new ImageView();
