@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<GridPane alignment="center" hgap="10" prefHeight="300.0" prefWidth="300.0" vgap="10" xmlns="http://javafx.com/javafx/null"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenebuilder.hello_world.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Button fx:id="btn_msg" mnemonicParsing="false" onAction="#pressButton" prefHeight="52.0" prefWidth="68.0"
+              text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   </children>
+</GridPane>
