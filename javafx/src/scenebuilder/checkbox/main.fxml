@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" prefHeight="301.0" prefWidth="249.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenebuilder.checkbox.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label fx:id="lbllist" alignment="CENTER" prefHeight="212.0" prefWidth="115.0" GridPane.columnIndex="2" />
+      <CheckBox fx:id="cb1" mnemonicParsing="false" onAction="#checkEvent" text="Dog">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </CheckBox>
+      <CheckBox fx:id="cb2" mnemonicParsing="false" onAction="#checkEvent" text="Cat">
+         <GridPane.margin>
+            <Insets top="40.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <CheckBox fx:id="cb3" mnemonicParsing="false" onAction="#checkEvent" text="Cow">
+         <GridPane.margin>
+            <Insets top="80.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <CheckBox fx:id="cb4" mnemonicParsing="false" onAction="#checkEvent" text="Rat">
+         <GridPane.margin>
+            <Insets top="120.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <Label fx:id="lblcount" GridPane.rowIndex="2" />
+   </children>
+</GridPane>
