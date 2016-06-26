@@ -1,12 +1,12 @@
 package composite;
 
-public class Song extends SongComponent {
+class Song extends SongComponent {
 
-    String songName;
-    String bandName;
-    int releaseYear;
+    private String songName;
+    private String bandName;
+    private int releaseYear;
 
-    public Song(String newSongName, String newBandName, int newReleaseYear){
+    Song(String newSongName, String newBandName, int newReleaseYear){
 
         songName = newSongName;
         bandName = newBandName;
@@ -19,7 +19,6 @@ public class Song extends SongComponent {
 
     public void displaySongInfo(){
 
-        System.out.println(getSongName() + " was recorded by " +
-                getBandName() + " in " + getReleaseYear());
+        System.out.println(getSongName() + " was recorded by " + getBandName() + " in " + getReleaseYear());
     }
 }
