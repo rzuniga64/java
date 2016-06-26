@@ -16,19 +16,12 @@ import javafx.stage.FileChooser.ExtensionFilter;
 
 public class Controller implements Initializable {
 
-    @FXML
-    private Button btn1;
-
-    @FXML
-    private Button btn2;
-
-    @FXML
-    private ListView listview;
+    @FXML private Button btn1;
+    @FXML private Button btn2;
+    @FXML private ListView listview;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
+    public void initialize(URL location, ResourceBundle resources) { }
 
     public void Button1Action(ActionEvent event) {
         FileChooser fc = new FileChooser();

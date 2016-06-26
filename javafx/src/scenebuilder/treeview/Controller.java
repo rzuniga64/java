@@ -21,6 +21,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         TreeItem<String> root = new TreeItem<>("Root", new ImageView(icon));
         root.setExpanded(true);
 

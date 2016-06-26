@@ -12,11 +12,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
 public class Controller implements Initializable {
-    @FXML
-    public Label myLabel;
 
-    @FXML
-    public ComboBox<String> combobox;
+    @FXML public Label myLabel;
+    @FXML public ComboBox<String> combobox;
 
     private ObservableList<String> list = FXCollections.observableArrayList("Mark", "Tom", "John", "Jack");
 

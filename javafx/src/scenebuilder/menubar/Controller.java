@@ -16,11 +16,10 @@ public class Controller implements Initializable {
     MenuBar menuBar;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
+    public void initialize(URL location, ResourceBundle resources) { }
 
     public void CloseApp(ActionEvent event) {
+
         Platform.exit();
         System.exit(0);
     }

@@ -11,18 +11,12 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
-    @FXML
-    private CheckBox cb1;
-    @FXML
-    private CheckBox cb2;
-    @FXML
-    private CheckBox cb3;
-    @FXML
-    private CheckBox cb4;
-    @FXML
-    private Label lbllist;
-    @FXML
-    private Label lblcount;
+    @FXML private CheckBox cb1;
+    @FXML private CheckBox cb2;
+    @FXML private CheckBox cb3;
+    @FXML private CheckBox cb4;
+    @FXML private Label lbllist;
+    @FXML private Label lblcount;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import java.util.Random;
 
 public class Controller {
+
     // annotation that tags a class or memeber as accessible to markup.
     @FXML
     private Label myMessage;
@@ -19,6 +20,7 @@ public class Controller {
     }
 
     public void pressButton(ActionEvent e) {
+
         System.out.println("Hello World");
     }
 }

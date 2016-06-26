@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 
 public class Controller {
 
-    @FXML   // tag our xmfl file with the label
+    @FXML   // tag our fxml file with the label
     private Label result;
     private long number1 = 0;
     private String operator = "";

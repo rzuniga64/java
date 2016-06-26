@@ -17,13 +17,16 @@ public class Controller implements Initializable {
     public ListView<String> listview;
 
     private ObservableList<String> list = FXCollections.observableArrayList("Mark", "Tom", "John", "Jack");
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         listview.setItems(list);
         listview.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 
     public void buttonAction(ActionEvent event) {
+
         //listview.getItems().addAll("Ben", "Steve");
 
         ObservableList<String> names;

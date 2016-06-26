@@ -9,6 +9,7 @@ import javafx.scene.layout.StackPane;
 
 public class HelloWorld extends Application {
     public static void main(String[] args) {
+
         // start application
         launch(args);
     }

@@ -20,6 +20,7 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {}
 
     public void radioSelect(ActionEvent event) {
+
         String message = "";
 
         if (rb1.isSelected()) {
