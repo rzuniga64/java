@@ -1,13 +1,13 @@
-package properties;
+package properties_binding;
 
 /**
- * JavaFX properties store the inner state of a control and allows us to listen to state change from JavaFX UI controls.
+ * JavaFX properties_binding store the inner state of a control and allows us to listen to state change from JavaFX UI controls.
  * That means you will be able to perform an action when the value changes.
  * Types
  * Read/Writable
  * Read-only
  *
- * This whole class is a java bean which is a concept for declaring properties.
+ * This whole class is a java bean which is a concept for declaring properties_binding.
  */
 
 import javafx.beans.property.*;
