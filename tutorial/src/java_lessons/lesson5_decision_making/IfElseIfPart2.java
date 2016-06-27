@@ -2,14 +2,13 @@ package java_lessons.lesson5_decision_making;
 
 import java.util.Scanner;
 
-/*
-
-Temperature	Activity
-> 85		Swimming
-70-85		Tennis
-32-69		Golf
-0 - 31		Dancing
-Below 0		Sit by the fire
+/**
+ * Temperature	Activity
+ * > 85		Swimming
+ * 70-85		Tennis
+ * 32-69		Golf
+ * 0 - 31		Dancing
+ * Below 0		Sit by the fire
 */
 
 public class IfElseIfPart2

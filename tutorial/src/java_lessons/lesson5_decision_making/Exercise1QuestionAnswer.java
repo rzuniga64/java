@@ -8,7 +8,7 @@ public class Exercise1QuestionAnswer
    {
       Scanner input = new Scanner(System.in);
       String answer = "Watson";
-      String response = "";
+      String response;
       System.out.println("Let's play a guessing game. You get three tries.");
       System.out.print("What was the name of the computer that played on Jeopardy? ");
       response = input.nextLine();
