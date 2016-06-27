@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * The type Abstract model.
  */
 public abstract class AbstractModel implements Model {
-    private static ArrayList<ModelListener> listeners = new ArrayList<ModelListener>();
+    private static ArrayList<ModelListener> listeners = new ArrayList<>();
 
     public void notifyChanged(ModelEvent event) {
         ArrayList<ModelListener> ls = (ArrayList<ModelListener>) listeners.clone();
