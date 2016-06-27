@@ -36,6 +36,7 @@ public class Controller implements Initializable {
             }
         });
 
+        // Unidrectional Binding
         // bind the property of the progress bar to the property of the MyNumber class.
         pb.progressProperty().bind(myNum.numberProperty());
         pi.progressProperty().bind(myNum.numberProperty());
