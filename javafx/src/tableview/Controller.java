@@ -31,9 +31,9 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         id.setCellFactory(new PropertyValueFactory<Student, Integer>("id"));
-        id.setCellFactory(new PropertyValueFactory<Student, String>("name"));
-        id.setCellFactory(new PropertyValueFactory<Student, String>("surname"));
-        id.setCellFactory(new PropertyValueFactory<Student, Integer>("age"));
+        name.setCellFactory(new PropertyValueFactory<Student, String>("name"));
+        surname.setCellFactory(new PropertyValueFactory<Student, String>("surname"));
+        age.setCellFactory(new PropertyValueFactory<Student, Integer>("age"));
 
         table.setItems(list);
     }
