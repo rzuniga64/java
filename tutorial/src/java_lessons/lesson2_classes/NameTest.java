@@ -1,6 +1,5 @@
 package java_lessons.lesson2_classes;
 
-
 public class NameTest {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {

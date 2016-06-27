@@ -55,7 +55,7 @@ public class Name
 			middle = mname;
 		}
 		
-		public void setLast(String lname) {
+		void setLast(String lname) {
 			last = lname;
 		}
 		
@@ -63,7 +63,7 @@ public class Name
 			return first + " " + middle + " " + last;
 		}
 		
-        public void setName(String f, String m, String l) {
+        void setName(String f, String m, String l) {
 			first = f;
 			middle = m;
 			last = l;
