@@ -6,7 +6,7 @@ class Mozzarella extends ToppingDecorator {
 
         super(newPizza);
         System.out.println("Adding Dough");
-        System.out.println("Adding Moz");
+        System.out.println("Adding Mozzarella");
     }
 
     // Returns the result of calling getDescription() for PlainPizza and adds " mozzarella" to it
