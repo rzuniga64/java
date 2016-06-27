@@ -1,14 +1,13 @@
 package java_lessons.lesson6_repitition;
 
-/*
+/**
+ * lcv - loop control variable
+ *
+ * for(initialize lcv; rel test lcv; modify lcv) {
+ * statements;
+ * }
+ */
 
-lcv - loop control variable
-
-for(initialize lcv; rel test lcv; modify lcv) {
-   statements;
-}
-
-*/
 public class ForLoop
 {
    public static void main(String[] args)

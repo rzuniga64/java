@@ -1,11 +1,11 @@
 package java_lessons.lesson6_repitition;
 
-/*
-while (relational expression) {
-   loop body
-}
+/**
+ * while (relational expression) {
+ * loop body
+ * }
+ */
 
-*/
 public class WhileLoop
 {
    public static void main(String[] args)

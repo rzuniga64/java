@@ -7,7 +7,7 @@ public class ForLoopCountVowels
    public static void main(String[] args) 
    {
       Scanner input = new Scanner(System.in);
-      String sentence = "";
+      String sentence;
       int numVowels = 0;
       System.out.print("Enter a sentence: ");
       sentence = input.nextLine();

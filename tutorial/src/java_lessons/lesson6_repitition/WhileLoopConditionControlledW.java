@@ -8,7 +8,7 @@ public class WhileLoopConditionControlledW
    {
       Scanner input = new Scanner(System.in);
       int grade, total, count;
-      double average = 0.0;
+      double average;
       total = 0; 
       count = 0;
       System.out.print("Enter a grade (-1 to quit): ");

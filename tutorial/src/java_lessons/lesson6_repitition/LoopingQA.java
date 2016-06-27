@@ -7,7 +7,7 @@ public class LoopingQA
    public static void main(String[] args)
    {
       String answer = "Watson";
-      String response = "";
+      String response;
       int tries = 0;
       Scanner input = new Scanner(System.in);
       while (tries <= 3) {
