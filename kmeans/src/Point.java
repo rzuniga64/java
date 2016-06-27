@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Point {
+class Point {
     //Number of Points
     private final static int NUM_POINTS = 15;
 	
@@ -13,25 +13,25 @@ public class Point {
     private double y = 0;
     private int cluster_number = 0;
 
-    public Point(double x, double y)
+    Point(double x, double y)
     {
         this.setX(x);
         this.setY(y);
     }
 
-    public void setX(double x) {
+    void setX(double x) {
         this.x = x;
     }
-    public double getX()  {
+    double getX()  {
         return this.x;
     }
-    public void setY(double y) {
+    void setY(double y) {
         this.y = y;
     }
-    public double getY() {
+    double getY() {
         return this.y;
     }
-    public void setCluster(int n) {
+    void setCluster(int n) {
         this.cluster_number = n;
     }
     public int getCluster() {
@@ -39,19 +39,19 @@ public class Point {
     }
 
     //Calculates the distance between two points.
-    protected static double distance(Point p, Point centroid) {
+    static double distance(Point p, Point centroid) {
         return Math.sqrt(Math.pow((centroid.getY() - p.getY()), 2) + Math.pow((centroid.getX() - p.getX()), 2));
     }
 
     //Creates random point
-    protected static Point createRandomPoint(int min, int max) {
+    static Point createRandomPoint(int min, int max) {
         Random r = new Random();
         double x = min + (max - min) * r.nextDouble();
         double y = min + (max - min) * r.nextDouble();
         return new Point(x,y);
     }
     
-    protected static ArrayList<Point> getPoints(String inputFile) {
+    static ArrayList<Point> getPoints(String inputFile) {
 	    ArrayList<Point> points = new ArrayList<>(NUM_POINTS);
 	    try {
 	        FileReader fr = new FileReader(inputFile);

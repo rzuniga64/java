@@ -45,7 +45,7 @@ public class KMeans {
         this.numberOfClusters.add(NUM_CLUSTERS4);
     }
 
-    public static void main(String[] args) throws FileNotFoundException, IOException {
+    public static void main(String[] args) throws IOException {
   
         KMeans kmeans = new KMeans();
         ArrayList<String> inputFiles = kmeans.getInputFiles();
@@ -56,16 +56,16 @@ public class KMeans {
         }
     }
 
-    public ArrayList<String> getInputFiles() {
+    private ArrayList<String> getInputFiles() {
     	return this.inputFiles;
     }
     
-    public ArrayList<Integer> getNumberOfClusters() {
+    private ArrayList<Integer> getNumberOfClusters() {
     	return this.numberOfClusters;
     }
     
     //Initializes the process
-    public void init(String inputFile, int numberOfClusters, int index) throws FileNotFoundException, IOException {
+    private void init(String inputFile, int numberOfClusters, int index) throws IOException {
         //Create Points
         points = Point.getPoints(inputFile);
 

@@ -1,45 +1,39 @@
 
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
-public class Cluster {
+class Cluster {
 
-    public ArrayList<Point> points;
-    public Point centroid;
-    public int id;
+    private ArrayList<Point> points;
+    private Point centroid;
+    private int id;
 
     //Creates a new Cluster
-    public Cluster(int id) {
+    Cluster(int id) {
         this.id = id;
         this.points = new ArrayList();
         this.centroid = null;
     }
 
-    public ArrayList<Point> getPoints() {
+    ArrayList<Point> getPoints() {
         return points;
     }
-    public void addPoint(Point point) {
+    void addPoint(Point point) {
         points.add(point);
     }
     public void setPoints(ArrayList<Point> points) { this.points = points; }
 
-    public Point getCentroid() {
+    Point getCentroid() {
         return centroid;
     }
-    public void setCentroid(Point centroid) {
+    void setCentroid(Point centroid) {
         this.centroid = centroid;
     }
 
-    public int getId() {
+    int getId() {
         return id;
     }
-    public void clear() {
+    void clear() {
         points.clear();
     }
 }
