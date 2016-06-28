@@ -13,7 +13,7 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
         primaryStage.setTitle("Pie Chart");
-        Scene scene = new Scene(root, 500, 300);
+        Scene scene = new Scene(root);
         //scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();

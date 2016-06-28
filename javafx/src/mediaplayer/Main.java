@@ -1,4 +1,4 @@
-package tableview;
+package mediaplayer;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
-        primaryStage.setTitle("Table View");
+        primaryStage.setTitle("Media Player");
         primaryStage.setScene(new Scene(root));
         //scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
         primaryStage.show();

@@ -6,7 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="piechart.Controller">
+<AnchorPane prefHeight="600.0" prefWidth="500.0"
+            xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="piechart.Controller">
    <children>
       <PieChart fx:id="piechart" layoutY="-7.0" legendSide="RIGHT" prefHeight="300.0" prefWidth="500.0" title="PIE CHART" />
       <Button layoutX="213.0" layoutY="521.0" mnemonicParsing="false" onAction="#btn" text="Load Chart" />
