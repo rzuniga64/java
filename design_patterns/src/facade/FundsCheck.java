@@ -4,11 +4,17 @@ class FundsCheck {
 
     private double cashInAccount = 1000.00;
 
-    private double getCashInAccount() { return cashInAccount; }
+    private double getCashInAccount() {
+        return cashInAccount;
+    }
 
-    private void decreaseCashInAccount(double cashWithdrawn) { cashInAccount -= cashWithdrawn; }
+    private void decreaseCashInAccount(double cashWithdrawn) {
+        cashInAccount -= cashWithdrawn;
+    }
 
-    private void increaseCashInAccount(double cashDeposited) { cashInAccount += cashDeposited; }
+    private void increaseCashInAccount(double cashDeposited) {
+        cashInAccount += cashDeposited;
+    }
 
     boolean haveEnoughMoney(double cashToWithdrawal) {
 
@@ -19,7 +25,6 @@ class FundsCheck {
 
             return false;
         } else {
-
             decreaseCashInAccount(cashToWithdrawal);
             System.out.println("Withdrawal Complete: Current Balance is " + getCashInAccount());
 
