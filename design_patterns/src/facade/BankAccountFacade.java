@@ -28,7 +28,6 @@ class BankAccountFacade {
     }
 
     private int getAccountNumber() { return accountNumber; }
-
     private int getSecurityCode() { return securityCode; }
 
     void withdrawCash(double cashToGet){
