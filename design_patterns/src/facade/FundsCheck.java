@@ -5,14 +5,17 @@ class FundsCheck {
     private double cashInAccount = 1000.00;
 
     private double getCashInAccount() {
+
         return cashInAccount;
     }
 
     private void decreaseCashInAccount(double cashWithdrawn) {
+
         cashInAccount -= cashWithdrawn;
     }
 
     private void increaseCashInAccount(double cashDeposited) {
+
         cashInAccount += cashDeposited;
     }
 
