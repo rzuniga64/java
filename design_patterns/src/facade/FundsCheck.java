@@ -1,16 +1,16 @@
 package facade;
 
-public class FundsCheck {
+class FundsCheck {
 
     private double cashInAccount = 1000.00;
 
-    public double getCashInAccount() { return cashInAccount; }
+    private double getCashInAccount() { return cashInAccount; }
 
-    public void decreaseCashInAccount(double cashWithdrawn) { cashInAccount -= cashWithdrawn; }
+    private void decreaseCashInAccount(double cashWithdrawn) { cashInAccount -= cashWithdrawn; }
 
-    public void increaseCashInAccount(double cashDeposited) { cashInAccount += cashDeposited; }
+    private void increaseCashInAccount(double cashDeposited) { cashInAccount += cashDeposited; }
 
-    public boolean haveEnoughMoney(double cashToWithdrawal) {
+    boolean haveEnoughMoney(double cashToWithdrawal) {
 
         if(cashToWithdrawal > getCashInAccount()) {
 
@@ -27,7 +27,7 @@ public class FundsCheck {
         }
     }
 
-    public void makeDeposit(double cashToDeposit) {
+    void makeDeposit(double cashToDeposit) {
 
         increaseCashInAccount(cashToDeposit);
         System.out.println("Deposit Complete: Current Balance is " + getCashInAccount());
