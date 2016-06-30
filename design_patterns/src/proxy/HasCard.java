@@ -1,10 +1,10 @@
 package proxy;
 
-public class HasCard implements ATMState {
+class HasCard implements ATMState {
 
-    ATMMachine atmMachine;
+    private ATMMachine atmMachine;
 
-    public HasCard(ATMMachine newATMMachine){
+    HasCard(ATMMachine newATMMachine){
 
         atmMachine = newATMMachine;
     }
@@ -28,7 +28,6 @@ public class HasCard implements ATMState {
     public void insertPin(int pinEntered) {
 
         if(pinEntered == 1234){
-
             System.out.println("You entered the correct PIN");
             atmMachine.correctPinEntered = true;
             atmMachine.setATMState(atmMachine.getHasPin());

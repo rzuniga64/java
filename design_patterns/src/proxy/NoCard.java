@@ -1,10 +1,10 @@
 package proxy;
 
-public class NoCard implements ATMState {
+class NoCard implements ATMState {
 
-    ATMMachine atmMachine;
+    private ATMMachine atmMachine;
 
-    public NoCard(ATMMachine newATMMachine){
+    NoCard(ATMMachine newATMMachine){
 
         atmMachine = newATMMachine;
     }
