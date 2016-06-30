@@ -20,13 +20,13 @@ public class FlyWeightTest extends JFrame{
 
     private static final long serialVersionUID = 1L;
 
-    JButton startDrawing;
+    private JButton startDrawing;
 
-    int windowWidth = 1750;
-    int windowHeight = 1000;
+    private int windowWidth = 1750;
+    private int windowHeight = 1000;
 
     // A new rectangle is created only if a new color is needed
-    Color[] shapeColor = {Color.orange, Color.red, Color.yellow,
+    private Color[] shapeColor = {Color.orange, Color.red, Color.yellow,
             Color.blue, Color.pink, Color.cyan, Color.magenta,
             Color.black, Color.gray};
 
@@ -35,7 +35,7 @@ public class FlyWeightTest extends JFrame{
         new FlyWeightTest();
     }
 
-    public FlyWeightTest(){
+    private  FlyWeightTest(){
 
         // Create the frame, position it and handle closing it
         this.setSize(windowWidth,windowHeight);
