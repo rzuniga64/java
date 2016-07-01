@@ -14,7 +14,6 @@ public class TestATMMachine {
         atmMachine.insertCard();
         atmMachine.insertPin(1234);
 
-        // NEW STUFF : Proxy Design Pattern Code
         // The interface limits access to just the methods you want made accessible
         GetATMData realATMMachine = new ATMMachine();
         GetATMData atmProxy = new ATMProxy();
