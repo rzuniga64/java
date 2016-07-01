@@ -24,9 +24,9 @@ public class FlyWeightTest extends JFrame{
 
     private static final long serialVersionUID = 1L;
 
-    private JButton startDrawing;
-    private int windowWidth = 1750;
-    private int windowHeight = 1000;
+    private JButton startDrawingButton;
+    private int windowWidth = 1500;
+    private int windowHeight = 800;
 
     // A new rectangle is created only if a new color is needed
     private Color[] shapeColor = {Color.orange, Color.red, Color.yellow,
@@ -47,18 +47,18 @@ public class FlyWeightTest extends JFrame{
 
         // Create the frame, position it and handle closing it
         this.setSize(windowWidth,windowHeight);
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);   // set to center of screen
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Flyweight Test");
 
         JPanel contentPane = new JPanel();
         contentPane.setLayout(new BorderLayout());
         final JPanel  drawingPanel  = new JPanel();
-        startDrawing = new JButton("Button 1");
+        startDrawingButton = new JButton("Create Rectangles");
         contentPane.add(drawingPanel,  BorderLayout.CENTER);
-        contentPane.add(startDrawing, BorderLayout.SOUTH);
+        contentPane.add(startDrawingButton, BorderLayout.SOUTH);
 
-        startDrawing.addActionListener(new ActionListener() {
+        startDrawingButton.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent event) {
 
