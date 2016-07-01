@@ -1,7 +1,13 @@
 package facade;
 
+/**
+ * The type Welcome to bank.
+ */
 class WelcomeToBank{
 
+    /**
+     * Instantiates a new Welcome to bank.
+     */
     WelcomeToBank() {
 
         System.out.println("Welcome to ABC Bank");

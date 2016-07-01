@@ -1,7 +1,15 @@
 package facade;
 
+/**
+ * The type Test bank account.
+ */
 public class TestBankAccount {
 
+    /**
+     * Main.
+     *
+     * @param args the args
+     */
     public static void main(String[] args){
 
         BankAccountFacade accessingBank = new BankAccountFacade(12345678, 1234);

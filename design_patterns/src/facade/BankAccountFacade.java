@@ -6,6 +6,9 @@ package facade;
 // The Facades aim is to simplify interfaces so you don't have
 // to worry about what is going on under the hood
 
+/**
+ * The type Bank account facade.
+ */
 class BankAccountFacade {
 
     private int accountNumber;
@@ -16,6 +19,12 @@ class BankAccountFacade {
     private FundsCheck fundChecker;
     private WelcomeToBank bankWelcome;
 
+    /**
+     * Instantiates a new Bank account facade.
+     *
+     * @param newAcctNum the new acct num
+     * @param newSecCode the new sec code
+     */
     BankAccountFacade(int newAcctNum, int newSecCode){
 
         accountNumber = newAcctNum;
@@ -27,9 +36,19 @@ class BankAccountFacade {
         fundChecker = new FundsCheck();
     }
 
-    private int getAccountNumber() { return accountNumber; }
-    private int getSecurityCode() { return securityCode; }
+    private int getAccountNumber() {
+        return accountNumber;
+    }
 
+    private int getSecurityCode() {
+        return securityCode;
+    }
+
+    /**
+     * Withdraw cash.
+     *
+     * @param cashToGet the cash to get
+     */
     void withdrawCash(double cashToGet){
 
         if(acctChecker.accountActive(getAccountNumber()) &&
@@ -43,6 +62,11 @@ class BankAccountFacade {
     }
 
 
+    /**
+     * Deposit cash.
+     *
+     * @param cashToDeposit the cash to deposit
+     */
     void depositCash(double cashToDeposit){
 
         if(acctChecker.accountActive(getAccountNumber()) &&

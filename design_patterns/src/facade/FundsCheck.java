@@ -1,5 +1,8 @@
 package facade;
 
+/**
+ * The type Funds check.
+ */
 class FundsCheck {
 
     private double cashInAccount = 1000.00;
@@ -19,6 +22,12 @@ class FundsCheck {
         cashInAccount += cashDeposited;
     }
 
+    /**
+     * Have enough money boolean.
+     *
+     * @param cashToWithdrawal the cash to withdrawal
+     * @return the boolean
+     */
     boolean haveEnoughMoney(double cashToWithdrawal) {
 
         if(cashToWithdrawal > getCashInAccount()) {
@@ -35,6 +44,11 @@ class FundsCheck {
         }
     }
 
+    /**
+     * Make deposit.
+     *
+     * @param cashToDeposit the cash to deposit
+     */
     void makeDeposit(double cashToDeposit) {
 
         increaseCashInAccount(cashToDeposit);
