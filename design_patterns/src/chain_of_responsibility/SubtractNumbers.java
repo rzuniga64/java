@@ -1,6 +1,6 @@
 package chain_of_responsibility;
 
-public class SubtractNumbers implements Chain{
+class SubtractNumbers implements Chain{
 
     private  Chain nextInChain;
 
@@ -11,11 +11,9 @@ public class SubtractNumbers implements Chain{
 
     public void calculate(Numbers request) {
 
-        if(request.getCalcWanted() == "sub")
-
+        if(request.getCalcWanted().equals("sub"))
             System.out.print(request.getNumber1() + " - " + request.getNumber2() + " = "+
                     (request.getNumber1()-request.getNumber2()));
-
         else
             nextInChain.calculate(request);
     }

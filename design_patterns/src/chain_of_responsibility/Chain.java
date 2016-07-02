@@ -6,15 +6,15 @@ package chain_of_responsibility;
 // If the first Object can't solve it, it passes
 // the data to the next Object in the chain
 
-public interface Chain {
+interface Chain {
 
     // Defines the next Object to receive the data
     // if this Object can't process it
 
-    public void setNextChain(Chain nextChain);
+    void setNextChain(Chain nextChain);
 
     // Either solves the problem or passes the data
     // to the next Object in the chain
 
-    public void calculate(Numbers request);
+    void calculate(Numbers request);
 }

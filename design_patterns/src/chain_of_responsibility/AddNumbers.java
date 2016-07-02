@@ -20,7 +20,7 @@ public class AddNumbers implements Chain{
 
     public void calculate(Numbers request) {
 
-        if(request.getCalcWanted() == "add")
+        if(request.getCalcWanted().equals("add"))
 
             System.out.print(request.getNumber1() + " + " + request.getNumber2() + " = "+
                     (request.getNumber1()+request.getNumber2()));

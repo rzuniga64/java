@@ -1,6 +1,6 @@
 package chain_of_responsibility;
 
-public class DivideNumbers implements Chain{
+class DivideNumbers implements Chain{
 
     private  Chain nextInChain;
 
@@ -11,7 +11,7 @@ public class DivideNumbers implements Chain{
 
     public void calculate(Numbers request) {
 
-        if(request.getCalcWanted() == "div")
+        if(request.getCalcWanted().equals("div"))
 
             System.out.print(request.getNumber1() + " / " + request.getNumber2() + " = "+
                     (request.getNumber1()/request.getNumber2()));
