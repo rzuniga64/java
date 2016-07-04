@@ -1,8 +1,8 @@
 package command;
 
-public class TVRemote {
+class TVRemote {
 
-    public static ElectronicDevice getDevice(){
+    static ElectronicDevice getDevice(){
         return new Television();
     }
 }

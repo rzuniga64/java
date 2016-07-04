@@ -50,7 +50,7 @@ public class TestRemote {
         Radio theRadio = new Radio();
 
         // Add the Electronic Devices to a List
-        List<ElectronicDevice> allDevices = new ArrayList<ElectronicDevice>();
+        List<ElectronicDevice> allDevices = new ArrayList<>();
 
         allDevices.add(theTV);
         allDevices.add(theRadio);

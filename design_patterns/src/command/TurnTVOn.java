@@ -1,10 +1,10 @@
 package command;
 
-public class TurnTVOn implements Command {
+class TurnTVOn implements Command {
 
-    ElectronicDevice theDevice;
+    private ElectronicDevice theDevice;
 
-    public TurnTVOn(ElectronicDevice newDevice){
+    TurnTVOn(ElectronicDevice newDevice){
         theDevice = newDevice;
     }
 

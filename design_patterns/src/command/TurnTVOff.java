@@ -1,10 +1,10 @@
 package command;
 
-public class TurnTVOff implements Command {
+class TurnTVOff implements Command {
 
-    ElectronicDevice theDevice;
+    private ElectronicDevice theDevice;
 
-    public TurnTVOff(ElectronicDevice newDevice){
+    TurnTVOff(ElectronicDevice newDevice){
         theDevice = newDevice;
     }
 
@@ -12,8 +12,7 @@ public class TurnTVOff implements Command {
         theDevice.off();
     }
 
-    // Used if you want to allow for undo
-    // Do the opposite of execute()
+    // Used if you want to allow for undo. Do the opposite of execute()
     public void undo() {
         theDevice.on();
     }

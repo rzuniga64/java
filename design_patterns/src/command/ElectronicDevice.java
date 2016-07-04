@@ -2,8 +2,8 @@ package command;
 
 public interface ElectronicDevice {
 
-    public void on();
-    public void off();
-    public void volumeUp();
-    public void volumenDown();
+    void on();
+    void off();
+    void volumeUp();
+    void volumenDown();
 }

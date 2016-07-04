@@ -1,6 +1,6 @@
 package command;
 
-public class Radio implements ElectronicDevice {
+class Radio implements ElectronicDevice {
 
     private int volume = 0;
 

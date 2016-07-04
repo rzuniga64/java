@@ -1,27 +1,24 @@
 package command;
 
-// This is known as the invoker
-// It has a method press() that when executed
-// causes the execute method to be called
+/**
+ *  This is known as the invoker
+ *  It has a method press() that when executed causes the execute method to be called.
+ *  The execute method for the Command interface then calls the method assigned in the class that implements the
+ *  Command interface
+ */
 
-// The execute method for the Command interface then calls
-// the method assigned in the class that implements the
-// Command interface
+class DeviceButton{
 
-public class DeviceButton{
+    private Command theCommand;
 
-    Command theCommand;
-
-    public DeviceButton(Command newCommand){
+    DeviceButton(Command newCommand){
         theCommand = newCommand;
     }
 
-    public void press(){
+    void press(){
         theCommand.execute();
     }
-
-    // Now the remote can undo past commands
-    public void pressUndo(){
+    void pressUndo(){
         theCommand.undo();
-    }
+    }   // Now the remote can undo past commands
 }
