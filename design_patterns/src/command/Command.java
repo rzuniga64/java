@@ -4,6 +4,13 @@ package command;
 
 interface Command {
 
+    /**
+     * execute.
+     */
     void execute();
+
+    /**
+     * undo.
+     */
     void undo();    // You may want to offer the option to undo a command
 }
