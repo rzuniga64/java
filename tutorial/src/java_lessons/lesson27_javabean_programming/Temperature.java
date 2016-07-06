@@ -8,7 +8,7 @@ package java_lessons.lesson27_javabean_programming;
 */
 import java.io.Serializable;
 /*
-    A javabean is a class that exposes its methods and properties to
+    A javabean is a class that exposes its methods and properties_binding to
     other programs and applications. With javabean programming we can
     do component based software design. That means we can write
     independent components and then have each component look at other
