@@ -1,4 +1,4 @@
-package java_lessons.lesson15_generic_programming;
+package java_lessons.lesson15_generic_programming.generic_class;
 
 /**
  * Test class for List class.

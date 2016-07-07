@@ -1,4 +1,4 @@
-package java_lessons.lesson15_generic_programming;
+package java_lessons.lesson15_generic_programming.generic_class;
 
 /**
  * We want to specify a generic data type using generic programming by using a type place holder <T>.
