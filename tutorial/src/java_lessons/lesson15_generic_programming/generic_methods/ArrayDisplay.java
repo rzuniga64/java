@@ -1,15 +1,28 @@
-package java_lessons.lesson15_generic_programming;
+package java_lessons.lesson15_generic_programming.generic_methods;
 
+/**
+ * The type Array display.
+ */
 public class ArrayDisplay {
 
-    static <T> void Display(T[] arr) {
-        for(int i = 0; i < arr.length; ++i) {
-            if (arr[i] != null) {
-                System.out.print(arr[i] + " ");
-            }
+    /**
+     * Display.
+     *
+     * @param <T> the type parameter
+     * @param array the array
+     */
+    private static <T> void Display(T[] array) {
+        for (T element: array) {
+            if (element != null)
+                System.out.print(element + " ");
         }
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         String[] names = new String[10];
         names[0] = "David";
