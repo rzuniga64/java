@@ -1,7 +1,13 @@
-package java_lessons.lesson15_generic_programming;
+package java_lessons.lesson15_generic_programming.generic_class;
 
 public class LinkedList {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
+
         Node<String> node1 = new Node("David");
         Node<String> node2 = new Node("Raymond");
         Node<String> node3 = new Node("Cynthia");
