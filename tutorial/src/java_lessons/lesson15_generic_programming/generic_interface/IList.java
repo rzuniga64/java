@@ -6,7 +6,7 @@ package java_lessons.lesson15_generic_programming.generic_interface;
  *
  * @param <T> the type parameter
  */
-public interface IList<T> {
+interface IList<T> {
     /**
      * This method adds and element of type <T>
      *
