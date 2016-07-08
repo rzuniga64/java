@@ -14,7 +14,7 @@ public class StackEx {
      */
     public static void main(String[] args) {
 
-        Stack names = new Stack();
+        Stack<String> names = new Stack<>();
 
         names.push("Raymond");
         names.push("David");
@@ -33,7 +33,7 @@ public class StackEx {
 
         if (!names.empty())
             System.out.println("Top of stack: " + names.peek());
-         else
+        else
             System.out.println("Stack empty.");
     }
 }
