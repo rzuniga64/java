@@ -2,16 +2,28 @@ package java_lessons.lesson16_sequential_collections;
 
 import java.util.PriorityQueue;
 
-public class Line_PriorityQueue {
+/**
+ * The type Priority queue.
+ */
+public class priorityQueue {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
+
         PriorityQueue<String> line = new PriorityQueue<>();
+
         line.add("David");
         line.add("Cynthia");
         line.add("Raymond");
         line.add("Bryan");
         line.add("Clayton");
+
         for (String name : line)
             System.out.println(name);
+
         // remove an item from the head
         line.poll();
         System.out.println("\n");
