@@ -2,12 +2,18 @@ package java_lessons.lesson16_sequential_collections;
 
 import java.util.TreeSet;
 
-/*
-    The difference between HashSet and TreeSet is that TreeSet will store
-    data in a natural order. Example, alphabetic order if data are strings
-    or ascending order if data are numbers.
+/**
+ * The type Tree set.
+ * The difference between HashSet and TreeSet is that TreeSet will store data in a natural order.
+ * Example, alphabetic order if data are strings or ascending order if data are numbers.
  */
-public class Names_TreeSet {
+
+public class treeSet {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         TreeSet<String> names = new TreeSet<String>();
         names.add("Mau Mau");

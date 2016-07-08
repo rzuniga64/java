@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * The type A list.
  */
-public class AnArrayList {
+public class arrayList {
     /**
      * The entry point of application.
      *

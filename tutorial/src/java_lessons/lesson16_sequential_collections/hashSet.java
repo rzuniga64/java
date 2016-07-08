@@ -2,9 +2,20 @@ package java_lessons.lesson16_sequential_collections;
 
 import java.util.HashSet;
 
-public class Names_HashSet {
+/**
+ * The type Hash set. A set is an unordered collection of unique objects.
+ * The HashSet will NOT store data in a natural order.
+ * Example, alphabetic order if data are strings or ascending order if data are numbers.
+ */
+public class hashSet {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
-        HashSet<String> names = new HashSet<String>();
+
+        HashSet<String> names = new HashSet<>();
         names.add("David");
         names.add("Bryan");
         names.add("Cynthia");
