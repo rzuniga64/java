@@ -2,9 +2,17 @@ package java_lessons.lesson16_sequential_collections;
 
 import java.util.ArrayList;
 
-public class AList {
+/**
+ * The type A list.
+ */
+public class AnArrayList {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
-        ArrayList<Integer> grades = new ArrayList<Integer>();
+        ArrayList<Integer> grades = new ArrayList<>();
         grades.add(100);
         grades.add(90);
         grades.add(80);
@@ -12,8 +20,6 @@ public class AList {
         grades.add(60);
 
         int total = 0;
-        //for (int i = 0; i < grades.size(); ++i)
-        //    total += grades.get(i);
         for (Integer grade : grades)
             total += grade;
         double average = total / grades.size();
