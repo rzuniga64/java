@@ -5,6 +5,11 @@ import java.util.Stack;
 /**
  * The type Stack ex. Items stored in a stack is stored as an Object data type so the data type does not need to be
  * specified.
+ * Methods used:
+ * - push(e)
+ * - pop()
+ * - empty()
+ *
  */
 public class StackEx {
     /**
