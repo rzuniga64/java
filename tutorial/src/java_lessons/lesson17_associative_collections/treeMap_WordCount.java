@@ -3,9 +3,18 @@ package java_lessons.lesson17_associative_collections;
 import java.util.TreeMap;
 import java.util.*;
 
-public class WordCount {
+/**
+ * The type Tree map word count.
+ */
+public class treeMap_WordCount {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         String text;
+        int count = 0;
         text = "Either the well was very deep or she fell very slowly "
                 + "for she had plenty of time as she went down to look about "
                 + "her, and to wonder what was going to happen next First "
@@ -18,23 +27,22 @@ public class WordCount {
                 + "to her great disappointment it was empty she did not like to "
                 + "drop the jar for fear of killing somebody underneath so "
                 + "managed to put it into one of the cupboards as she fell past";
+
         // store each word in an array
         String[] words = text.split(" ");
         // sort the array in alphabetical order
         Arrays.sort(words);
-        int count = 0;
-        for (String word : words)
-            System.out.println("Word: " + word);
+
+        //for (String word : words)
+        //    System.out.println("Word: " + word);
+
         TreeMap<String, Integer> wordMap = new TreeMap<>();
 
         for(String word : words) {
-            // if the word has previously been found,
-            // increment the value by one
+            // if the word has previously been found, increment the value by one
             if (wordMap.containsKey(word))
                 wordMap.put(word, wordMap.get(word) + 1);
-            // if first time finding the word create
-            // a new entry in the map
-            else
+            else // if first time finding the word create a new entry in the map
                 wordMap.put(word, 1);
         }
 
