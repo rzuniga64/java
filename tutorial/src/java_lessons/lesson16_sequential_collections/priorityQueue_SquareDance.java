@@ -3,12 +3,20 @@ package java_lessons.lesson16_sequential_collections;
 import java.util.PriorityQueue;
 import java.io.*;
 
-public class SquareDance {
+/**
+ * The type Priority queue square dance.
+ */
+public class priorityQueue_SquareDance {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         PriorityQueue<String> men = new PriorityQueue<String>();
         PriorityQueue<String> women = new PriorityQueue<String>();
         String line = null;
-        String file = "C:\\Users\\Roy\\git\\java\\udemy\\src\\advanced_java\\lesson16_sequential_collections\\dance.txt";
+        String file = "tutorial\\src\\java_lessons\\lesson16_sequential_collections\\dance.txt";
         String sex = "";
         BufferedReader input;
 
