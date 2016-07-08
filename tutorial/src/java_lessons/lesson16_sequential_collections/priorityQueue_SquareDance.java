@@ -13,11 +13,11 @@ public class priorityQueue_SquareDance {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        PriorityQueue<String> men = new PriorityQueue<String>();
-        PriorityQueue<String> women = new PriorityQueue<String>();
-        String line = null;
+        PriorityQueue<String> men = new PriorityQueue<>();
+        PriorityQueue<String> women = new PriorityQueue<>();
+        String line;
         String file = "tutorial\\src\\java_lessons\\lesson16_sequential_collections\\dance.txt";
-        String sex = "";
+        String sex;
         BufferedReader input;
 
         try {
