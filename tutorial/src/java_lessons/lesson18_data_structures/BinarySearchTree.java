@@ -1,20 +1,42 @@
 package java_lessons.lesson18_data_structures;
 
-public class BinarySearchTree {
-    public Node root;
+/**
+ * The type Binary search tree class.
+ * Methods:
+ * - insert(e)
+ * - inorder()
+ * - preorder()
+ * - postorder()
+ * - min()
+ * - max()
+ *
+ */
+class BinarySearchTree {
+    private Node root;
 
-    public BinarySearchTree() {
+    /**
+     * Instantiates a new Binary search tree.
+     */
+    BinarySearchTree() {
         root = null;
     }
 
-    public void insert(int data) {
+    /**
+     * This methods inserts an element into the binary tree.
+     *
+     * @param data the data
+     */
+    void insert(int data) {
+
         Node newNode = new Node();
         newNode.data = data;
+
         if (root == null) {
             root = newNode;
         } else {
             Node current = root;
             Node parent;
+
             while (true) {
                 parent = current;
                 if (data < current.data) {
@@ -34,7 +56,10 @@ public class BinarySearchTree {
         }
     }
 
-    public void inOrder() {
+    /**
+     * This methods prints out a binary search tree in order.
+     */
+    void inOrder() {
         inOrder(root);
     }
 
@@ -46,7 +71,10 @@ public class BinarySearchTree {
         }
     }
 
-    public void preOrder() {
+    /**
+     * This methods prints out a binary search tree in pre-order.
+     */
+    void preOrder() {
         preOrder(root);
     }
 
@@ -58,7 +86,10 @@ public class BinarySearchTree {
         }
     }
 
-    public void postOrder() {
+    /**
+     * This methods prints out a binary search tree in post-order.
+     */
+    void postOrder() {
         postOrder(root);
     }
 
@@ -70,20 +101,31 @@ public class BinarySearchTree {
         }
     }
 
-    public int min() {
+    /**
+     * This method finds the minimum element in the binary search tree.
+     *
+     * @return the int
+     */
+    int min() {
         Node current = root;
-        while (current.left != null) {
+
+        while (current.left != null)
             current = current.left;
-        }
+
         return current.getData();
     }
 
-    public int max() {
+    /**
+     *  This method finds the maximum element in the binary search tree.
+     *
+     * @return the int
+     */
+    int max() {
         Node current = root;
-        while (current.right != null) {
+
+        while (current.right != null)
             current = current.right;
-        }
+
         return current.getData();
     }
-
 }

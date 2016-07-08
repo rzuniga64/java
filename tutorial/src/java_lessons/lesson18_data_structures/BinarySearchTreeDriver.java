@@ -1,6 +1,6 @@
 package java_lessons.lesson18_data_structures;
 
-public class BTree {
+public class BinarySearchTreeDriver {
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
         bst.insert(8);
