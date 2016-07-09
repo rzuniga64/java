@@ -7,9 +7,9 @@ import java.awt.event.ActionListener;
 
 public class Buttons {
     // declare widgets
-    JLabel label;
-    JTextField textField;
-    JButton button;
+    private JLabel label;
+    private JTextField textField;
+    private JButton button;
 
     public Buttons() {
         label = new JLabel("");

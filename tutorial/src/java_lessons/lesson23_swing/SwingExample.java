@@ -4,7 +4,7 @@ import javax.swing.*;
 
 // we'll look at the frame and label classes in this example
 public class SwingExample {
-    SwingExample() {
+    private SwingExample() {
         JFrame frame = new JFrame("Hello, World! Application");
         frame.setSize(400, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

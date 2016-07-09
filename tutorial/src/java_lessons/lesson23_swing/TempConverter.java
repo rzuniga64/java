@@ -6,14 +6,14 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class TempConverter {
-    JLabel tempLabel, outLabel;
-    JTextField textField;
-    JButton button;
-    String[] temps;
-    JList list;
-    int tempIndex;
+    private JLabel tempLabel, outLabel;
+    private JTextField textField;
+    private JButton button;
+    private String[] temps;
+    private JList list;
+    private int tempIndex;
 
-    static double convert(int temp, String scale) {
+    private static double convert(int temp, String scale) {
         if (scale.equals("Celsius")) {
             return (temp - 32.0) * (5.0 / 9.0);
         }
@@ -22,7 +22,7 @@ public class TempConverter {
         }
     }
 
-    public TempConverter() {
+    private TempConverter() {
         tempLabel = new JLabel("Temperature: ");
         outLabel = new JLabel("");
         textField = new JTextField(5);

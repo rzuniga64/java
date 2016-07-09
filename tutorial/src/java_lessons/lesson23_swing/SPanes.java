@@ -5,12 +5,12 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 public class SPanes {
-    JLabel label;
-    JList list;
-    JScrollPane spane;
-    String[] nycsites;
+    private JLabel label;
+    private JList list;
+    private JScrollPane spane;
+    private String[] nycsites;
 
-    public SPanes() {
+    private SPanes() {
         label = new JLabel("");
         nycsites = new String[] {"Empire State Building", "Ground Zero",
                 "Statue of Liberty", "Wall Street",

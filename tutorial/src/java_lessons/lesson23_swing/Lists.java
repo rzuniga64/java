@@ -5,11 +5,11 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 public class Lists {
-    JLabel label;
-    JList list;
-    String[] nycsites;
+    private JLabel label;
+    private JList list;
+    private String[] nycsites;
 
-    public Lists() {
+    private Lists() {
         label = new JLabel("");
         nycsites = new String[] {"Empire State Building", "Ground Zero",
                                  "Statue of Liberty", "Wall Street",
