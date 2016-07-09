@@ -1,7 +1,7 @@
 package java_lessons.lesson18_data_structures;
 
 /**
- * The type Binary search tree class.
+ * The type Binary search tree class. One of the advantages is that it makes it easy to find data that is unsorted.
  * Methods:
  * - insert(e)
  * - inorder()
