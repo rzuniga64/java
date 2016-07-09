@@ -46,21 +46,16 @@ public class InsertionSort {
     static void insertionSort(int[] data) {
 
         int size = data.length;
-        int temp = 0;
-        int j;
 
         for (int i = 0; i < size; i++) {
-            for (j = i; j > 0; --j) {
+            for (int j = i; j > 0; --j) {
                 if (data[j-1] > data[j]) {
-                    temp = data[j];
+                    int temp = data[j];
                     data[j] = data[j-1];
                     data[j-1] = temp;
-                    SortUtility.printHorizontalArray(data, size, i, j);
                 }
             }
-            SortUtility.printHorizontalArray(data, size, i, j);
-            System.out.println("\nArray[i] = " + data[i] + " Array[j] = " + data[j] + " toInsert = " + temp + "\n");
-        }
+         }
     }
 
     /**
@@ -77,15 +72,13 @@ public class InsertionSort {
             data[i] = (int) (Math.random() * 100);
 
         System.out.println("Before sorting: ");
-       // for (int i = 0; i < size; i++)
-            //System.out.println(data[i]);
-        SortUtility.printHorizontalArray(data, size, -1,-1);
+        for (int i = 0; i < size; i++)
+            System.out.println(data[i]);
 
         insertionSort(data);
 
-        //System.out.println("\nAfter sorting: ");
-        //for (int i = 0; i < size; i++)
-        //    System.out.println(data[i]);
-
+        System.out.println("\nAfter sorting: ");
+        for (int i = 0; i < size; i++)
+            System.out.println(data[i]);
     }
 }
