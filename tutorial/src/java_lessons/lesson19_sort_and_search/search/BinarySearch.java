@@ -12,7 +12,7 @@ public class BinarySearch {
         }
     }
 
-    private static int binarySearch(int[] arr, int key) {
+    static int binarySearch(int[] arr, int key) {
         int first = 0;
         int last = arr.length-1;
         while (first <= last) {

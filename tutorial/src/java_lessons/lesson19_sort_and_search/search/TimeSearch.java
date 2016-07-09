@@ -6,29 +6,6 @@ import java .util.Arrays;
 
 public class TimeSearch {
 
-    private static int linearSearch(int[] arr, int key) {
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] == key)
-                return i;
-        }
-        return -1;
-    }
-
-    private static int binarySearch(int[] arr, int key) {
-        int first = 0;
-        int last = arr.length-1;
-        while (first <= last) {
-            int mid = (first + last) / 2;
-            if (key > arr[mid])
-                first = mid + 1;
-            else if (key < arr[mid])
-                last = mid -1;
-            else
-                return mid;
-        }
-        return -1;
-    }
-
     public static void main(String[] args) {
         final int size = 10000;
         final int maxNums = 100000;
@@ -56,7 +33,7 @@ public class TimeSearch {
         int num = input.nextInt();
 
         long startTime = System.nanoTime();
-        int found = linearSearch(numbers, num);
+        int found = LinearSearch.linearSearch(numbers, num);
         long stopTime = System.nanoTime();
         long duration = stopTime - startTime;
         if (found > 0)
@@ -68,7 +45,7 @@ public class TimeSearch {
         System.out.print("Enter a number to search for: ");
         num = input.nextInt();
         startTime = System.nanoTime();
-        found = binarySearch(numbers, num);
+        found = BinarySearch.binarySearch(numbers, num);
         stopTime = System.nanoTime();
         duration = stopTime - startTime;
         if (found > 0)
