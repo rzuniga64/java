@@ -1,17 +1,18 @@
-package java_lessons.lesson19_sort_and_search;
+package java_lessons.lesson19_sort_and_search.sort;
 
+/**
+ * Created by Roy on 7/3/2015.
+ */
+public class BubbleSort {
 
-public class InsertionSort {
-
-    private static void insertionSort(int [] data) {
+    private static void bubbleSort(int[] data) {
         int size = data.length;
-
-        for (int i = 0; i < size; i++) {
-            for (int j = i; j > 0; --j) {
-                if (data[j-1] > data[j]) {
+        for (int i = 1; i < size; i++) {
+            for (int j = 0; j <  size - i; j++) {
+                if (data[j] > data[j+1]) {
                     int temp = data[j];
-                    data[j] = data[j-1];
-                    data[j-1] = temp;
+                    data[j] = data[j+1];
+                    data[j+1] = temp;
                 }
             }
         }
@@ -27,11 +28,10 @@ public class InsertionSort {
         for (int i = 0; i < size; i++)
             System.out.println(data[i]);
 
-        insertionSort(data);
+        bubbleSort(data);
 
         System.out.println("\nAfter sorting: ");
         for (int i = 0; i < size; i++)
             System.out.println(data[i]);
-
     }
 }

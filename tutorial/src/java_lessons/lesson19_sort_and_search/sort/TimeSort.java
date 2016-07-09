@@ -1,4 +1,4 @@
-package java_lessons.lesson19_sort_and_search;
+package java_lessons.lesson19_sort_and_search.sort;
 
 
 public class TimeSort {
