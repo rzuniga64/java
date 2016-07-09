@@ -4,12 +4,12 @@ import java.awt.*;
 
 @SuppressWarnings("serial")
 public class Borderlayout extends java.applet.Applet {
-	BorderLayout myborder = new BorderLayout();
-	Button top = new Button("Top");
-	Button bottom = new Button("Bottom");
-	Button right = new Button("Right");
-	Button center = new Button("Center");
-	Button left = new Button("Left");
+	private BorderLayout myborder = new BorderLayout();
+	private Button top = new Button("Top");
+	private Button bottom = new Button("Bottom");
+	private Button right = new Button("Right");
+	private Button center = new Button("Center");
+	private Button left = new Button("Left");
 	
 	public void init() {
 		setLayout(myborder);

@@ -4,7 +4,7 @@ import java.awt.*;
 
 @SuppressWarnings("serial")
 public class Choices extends java.applet.Applet {
-	Choice myList = new Choice();
+	private Choice myList = new Choice();
 	
 	public void init() {
 		myList.add("Choice 1");

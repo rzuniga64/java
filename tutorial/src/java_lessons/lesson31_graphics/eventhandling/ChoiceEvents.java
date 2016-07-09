@@ -7,9 +7,9 @@ import java.awt.event.*;
 
 @SuppressWarnings("serial")
 public class ChoiceEvents extends Applet implements ItemListener {
-	Label label;
-	Choice c1 = new Choice();
-	Choice c2 = new Choice();
+	private Label label;
+	private Choice c1 = new Choice();
+	private Choice c2 = new Choice();
 	
 	public  void init() {
 		c1.add("Red");

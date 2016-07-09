@@ -6,8 +6,8 @@ import java.awt.event.*;
 
 @SuppressWarnings("serial")
 public class CheckBoxGroupEvents extends Applet implements ItemListener {
-	
-	Label label;
+
+	private Label label;
 	
 	public void init() {
 		CheckboxGroup cbg = new CheckboxGroup();

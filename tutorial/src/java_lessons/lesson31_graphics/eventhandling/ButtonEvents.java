@@ -8,7 +8,7 @@ import java.awt.event.*;
 @SuppressWarnings("serial")
 public class ButtonEvents extends Applet implements ActionListener
 {	
-	Label label;
+	private Label label;
 	
 	public void init(){
 		Button b1 = new Button("Apple");

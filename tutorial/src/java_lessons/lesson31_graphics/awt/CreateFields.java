@@ -4,12 +4,12 @@ import java.awt.*;
 
 @SuppressWarnings("serial")
 public class CreateFields extends java.applet.Applet {
-	Label yourName = new Label("Name");
-	TextField nameField = new TextField(30);
-	Label email = new Label("Email");
-	TextField emailField = new TextField(30);
-	Label pass = new Label("Password");
-	TextField passField = new TextField(30);
+	private Label yourName = new Label("Name");
+	private TextField nameField = new TextField(30);
+	private Label email = new Label("Email");
+	private TextField emailField = new TextField(30);
+	private Label pass = new Label("Password");
+	private TextField passField = new TextField(30);
 	
 	public void init() {
 		add(yourName);

@@ -7,8 +7,8 @@ import java.awt.event.*;
 
 @SuppressWarnings("serial")
 public class TextFieldEvents extends Applet implements ActionListener, TextListener {
-	TextField tf;
-	TextArea ta;
+	private TextField tf;
+	private TextArea ta;
 	
 	public void init() {
 		tf = new TextField(20);

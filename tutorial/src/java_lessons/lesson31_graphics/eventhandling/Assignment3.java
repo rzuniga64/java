@@ -6,18 +6,18 @@ import java.awt.event.*;
 
 @SuppressWarnings("serial")
 public class Assignment3 extends Applet implements ActionListener {
-	
-	Font thefont = new Font("Verdana", Font.BOLD, 12);
-	Label label = new Label("Please enter age: ", Label.LEFT);
-	TextField textfield = new TextField(5);
-	Button button = new Button("Display age characteristics");
-	
-	Checkbox run;
-	Checkbox burgers;
-	Checkbox glasses;
-	Checkbox sit;
-	Checkbox toys;
-	Checkbox prunes;
+
+	private Font thefont = new Font("Verdana", Font.BOLD, 12);
+	private Label label = new Label("Please enter age: ", Label.LEFT);
+	private TextField textfield = new TextField(5);
+	private Button button = new Button("Display age characteristics");
+
+	private Checkbox run;
+    private Checkbox burgers;
+    private Checkbox glasses;
+    private Checkbox sit;
+    private Checkbox toys;
+    private Checkbox prunes;
 	
 	public void init() {
 		

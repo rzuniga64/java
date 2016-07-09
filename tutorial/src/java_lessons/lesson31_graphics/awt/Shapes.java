@@ -8,7 +8,7 @@ import java.awt.Color;
 
 @SuppressWarnings("serial")
 public class Shapes extends java.applet.Applet {
-	Font f = new Font("TimesRoman", Font.BOLD, 36);
+	private Font f = new Font("TimesRoman", Font.BOLD, 36);
 	
 	public void paint(Graphics screen) {
 		Dimension d = getSize();

@@ -49,7 +49,7 @@ import java.awt.AWTEvent;
 class AppletFrame extends Frame
 {
 
-    public static void startApplet(String className, 
+    static void startApplet(String className,
                                    String title, 
                                    String args[])
     {
@@ -90,7 +90,7 @@ class AppletFrame extends Frame
   
   
     // constructor needed to pass window title to class Frame
-    public AppletFrame(String name)
+    private AppletFrame(String name)
     {
        // call java.awt.Frame(String) constructor
        super(name);

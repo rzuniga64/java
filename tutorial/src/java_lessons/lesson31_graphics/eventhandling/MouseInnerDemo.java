@@ -12,7 +12,7 @@ public class MouseInnerDemo extends Applet {
 		addMouseListener(new MyMouseAdapter());
 	}
 	
-	class MyMouseAdapter extends MouseAdapter {
+	private class MyMouseAdapter extends MouseAdapter {
 		public void mousePressed(MouseEvent me) {
 			setBackground(Color.red);
 			repaint();

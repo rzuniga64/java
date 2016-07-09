@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 @SuppressWarnings("serial")
 public class ButtonEventRename extends Applet implements ActionListener {
-	Button b;
+	private Button b;
 	
 	public void init() {
 		b = new Button("Start");

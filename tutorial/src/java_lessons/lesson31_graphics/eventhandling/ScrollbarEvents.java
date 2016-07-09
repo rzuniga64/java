@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 @SuppressWarnings("serial")
 public class ScrollbarEvents extends Applet implements AdjustmentListener {
-	TextArea ta;
+	private TextArea ta;
 	
 	public void init() {
 		Scrollbar sb = new Scrollbar(Scrollbar.HORIZONTAL, 50, 5, 0, 100);

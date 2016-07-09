@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 @SuppressWarnings("serial")
 public class CheckboxEvents extends Applet implements ItemListener {
-	Label label;
+	private Label label;
 	
 	public void init() {
 		Checkbox cb1 = new Checkbox("Apple");

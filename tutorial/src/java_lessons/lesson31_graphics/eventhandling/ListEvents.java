@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 @SuppressWarnings("serial")
 public class ListEvents extends Applet implements ActionListener, ItemListener {
-	TextArea ta;
+	private TextArea ta;
 	
 	public void init() {
 		List list = new List();
