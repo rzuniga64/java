@@ -9,11 +9,9 @@ public class RegEx1 {
         Pattern pattern = Pattern.compile(patt);
         Matcher match = pattern.matcher(words);
         System.out.println(words);
-        /*
-            find will go through the string starting with the
-            first character and look for matches of our pattern
-            in the string and every time it finds it its going to
-            mark the index location of where it found the match.
+        /**
+         * find will go through the string starting with the first character and look for matches of our pattern
+         * in the string and every time it finds it its going to mark the index location of where it found the match.
          */
         while (match.find()) {
             System.out.println("Found " + patt + " at: " + match.start());
