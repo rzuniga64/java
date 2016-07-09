@@ -32,7 +32,7 @@ public class ConnectToDB {
     return connection;
     }
 
-    public static void closeConnection(Connection connection) {
+    static void closeConnection(Connection connection) {
         if (connection != null) {
             try {
                 connection.close();

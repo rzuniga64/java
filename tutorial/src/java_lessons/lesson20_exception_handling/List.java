@@ -7,7 +7,7 @@ public class List<T> {
     private int size;
     private int capacity;
 
-    public List(int numElements) {
+    List(int numElements) {
         size = numElements;
         capacity = 0;
 
