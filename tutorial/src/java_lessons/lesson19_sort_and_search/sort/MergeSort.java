@@ -3,7 +3,7 @@ package java_lessons.lesson19_sort_and_search.sort;
 
 public class MergeSort {
 
-    private static void mergeSort(int[] arr, int low, int high) {
+    static void mergeSort(int[] arr, int low, int high) {
         int size = arr.length;
         if (low < high) {
             int middle = (low + high) / 2;

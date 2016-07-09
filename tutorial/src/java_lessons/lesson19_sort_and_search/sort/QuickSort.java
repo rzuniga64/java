@@ -2,7 +2,7 @@ package java_lessons.lesson19_sort_and_search.sort;
 
 public class QuickSort {
 
-    private static void quickSort(int[] arr, int left, int right) {
+    static void quickSort(int[] arr, int left, int right) {
         int i = left;
         int j = right;
         int temp;

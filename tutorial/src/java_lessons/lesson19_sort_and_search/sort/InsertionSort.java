@@ -3,7 +3,7 @@ package java_lessons.lesson19_sort_and_search.sort;
 
 public class InsertionSort {
 
-    private static void insertionSort(int [] data) {
+    static void insertionSort(int [] data) {
         int size = data.length;
 
         for (int i = 0; i < size; i++) {
@@ -18,8 +18,10 @@ public class InsertionSort {
     }
 
     public static void main(String[] args) {
+
         int size = 10;
         int[] data = new int[size];
+
         for (int i = 0; i < size; i++)
             data[i] = (int) (Math.random() * 100);
 
