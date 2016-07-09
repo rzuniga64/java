@@ -2,7 +2,7 @@ package java_lessons.lesson19_sort_and_search;
 
 
 public class TimeSort {
-    public static void insertionSort(int [] data) {
+    private static void insertionSort(int [] data) {
         int size = data.length;
 
         for (int i = 0; i < size; i++) {
@@ -16,7 +16,7 @@ public class TimeSort {
         }
     }
 
-    public static void bubbleSort(int[] data) {
+    private static void bubbleSort(int[] data) {
         int size = data.length;
         for (int i = 1; i < size; i++) {
             for (int j = 0; j <  size - i; j++) {
@@ -29,7 +29,7 @@ public class TimeSort {
         }
     }
 
-    public static void quickSort(int[] arr, int left, int right) {
+    private static void quickSort(int[] arr, int left, int right) {
         int i = left;
         int j = right;
         int temp;
@@ -54,7 +54,7 @@ public class TimeSort {
             quickSort(arr, i, right);
     }
 
-    public static void mergeSort(int[] arr, int low, int high) {
+    private static void mergeSort(int[] arr, int low, int high) {
         int size = arr.length;
         if (low < high) {
             int middle = (low + high) / 2;
@@ -64,7 +64,7 @@ public class TimeSort {
         }
     }
 
-    public static void merge(int[] arr, int low, int middle, int high) {
+    private static void merge(int[] arr, int low, int middle, int high) {
         int size = arr.length;
         int[] temp = new int[size];
         for (int i = low; i <= high; ++i) {

@@ -1,7 +1,7 @@
 package java_lessons.lesson19_sort_and_search;
 
 public class LinearSearch {
-    public static int min(int[] arr) {
+    private static int min(int[] arr) {
         int minimum = arr[0];
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] < minimum)

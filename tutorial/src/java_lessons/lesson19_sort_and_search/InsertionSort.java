@@ -3,7 +3,7 @@ package java_lessons.lesson19_sort_and_search;
 
 public class InsertionSort {
 
-    public static void insertionSort(int [] data) {
+    private static void insertionSort(int [] data) {
         int size = data.length;
 
         for (int i = 0; i < size; i++) {

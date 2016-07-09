@@ -6,7 +6,7 @@ import java .util.Arrays;
 
 public class TimeSearch {
 
-    public static int linearSearch(int[] arr, int key) {
+    private static int linearSearch(int[] arr, int key) {
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] == key)
                 return i;
@@ -14,7 +14,7 @@ public class TimeSearch {
         return -1;
     }
 
-    public static int binarySearch(int[] arr, int key) {
+    private static int binarySearch(int[] arr, int key) {
         int first = 0;
         int last = arr.length-1;
         while (first <= last) {
@@ -33,7 +33,7 @@ public class TimeSearch {
         final int size = 10000;
         final int maxNums = 100000;
         int n;
-        ArrayList nums = new ArrayList();
+        ArrayList<Integer> nums = new ArrayList<>();
         for (int i = 0; i < size; i++) {
             n = (int)(Math.random() * maxNums);
             if (!nums.contains(n))
@@ -50,7 +50,7 @@ public class TimeSearch {
         System.out.println();
         int[] numbers = new int[size];
         for (int i = 0; i < nums.size(); i++)
-            numbers[i] = (Integer)nums.get(i);
+            numbers[i] = nums.get(i);
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a number to search for: ");
         int num = input.nextInt();

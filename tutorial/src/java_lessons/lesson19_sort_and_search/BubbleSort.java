@@ -5,7 +5,7 @@ package java_lessons.lesson19_sort_and_search;
  */
 public class BubbleSort {
 
-    public static void bubbleSort(int[] data) {
+    private static void bubbleSort(int[] data) {
         int size = data.length;
         for (int i = 1; i < size; i++) {
             for (int j = 0; j <  size - i; j++) {
