@@ -1,6 +1,6 @@
 package java_lessons.lesson19_sort_and_search;
 
-public class QSort {
+public class QuickSort {
 
     private static void quickSort(int[] arr, int left, int right) {
         int i = left;
