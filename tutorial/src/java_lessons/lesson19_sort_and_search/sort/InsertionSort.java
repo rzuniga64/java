@@ -54,8 +54,8 @@ public class InsertionSort {
                 if (data[j-1] > data[j]) {
                     temp = data[j];
                     data[j] = data[j-1];
-                    SortUtility.printHorizontalArray(data, size, i, j);
                     data[j-1] = temp;
+                    SortUtility.printHorizontalArray(data, size, i, j);
                 }
             }
             SortUtility.printHorizontalArray(data, size, i, j);
@@ -83,9 +83,9 @@ public class InsertionSort {
 
         insertionSort(data);
 
-        System.out.println("\nAfter sorting: ");
-        for (int i = 0; i < size; i++)
-            System.out.println(data[i]);
+        //System.out.println("\nAfter sorting: ");
+        //for (int i = 0; i < size; i++)
+        //    System.out.println(data[i]);
 
     }
 }
