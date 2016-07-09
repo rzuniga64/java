@@ -68,7 +68,7 @@ class ComputeLog extends Thread {
       }
    }
 
-   public void end() {
+   void end() {
       stop = true;
    }
 } 

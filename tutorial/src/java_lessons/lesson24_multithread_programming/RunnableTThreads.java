@@ -72,7 +72,7 @@ class ComputeLog2 implements Runnable {
         }
     }
 
-    public void end() {
+    void end() {
         stop = true;
     }
 } 

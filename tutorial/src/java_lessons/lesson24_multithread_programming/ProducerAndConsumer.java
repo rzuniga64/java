@@ -6,8 +6,8 @@ package java_lessons.lesson24_multithread_programming;
 // notify to let the waiting thread know that it is actually finished.
 // we only need to modify the get and set methods of the Market class.
 class Market {
-    int n;
-    boolean valSet = false;
+    private int n;
+    private boolean valSet = false;
 
     synchronized  int get() {
         if (!valSet) {
@@ -39,9 +39,9 @@ class Market {
 }
 
 class Producer implements Runnable {
-    Market m;
+    private Market m;
 
-    public Producer(Market m)  {
+    Producer(Market m)  {
         this.m = m;
         new Thread(this, "Producer").start();
     }
@@ -54,9 +54,9 @@ class Producer implements Runnable {
 }
 
 class Consumer implements Runnable {
-    Market m;
+    private Market m;
 
-    public Consumer(Market m) {
+    Consumer(Market m) {
         this.m = m;
         new Thread(this,"Consumer").start();
     }
