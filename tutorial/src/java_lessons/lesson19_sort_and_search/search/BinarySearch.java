@@ -3,7 +3,15 @@ package java_lessons.lesson19_sort_and_search.search;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * The type Binary search.
+ */
 public class BinarySearch {
+    /**
+     * this method displays the data to be binary sorted.
+     *
+     * @param arr the arr
+     */
     public static void display(int [] arr) {
         for (int i = 0; i < arr.length; i++) {
             if ( i % 10 == 0)
@@ -12,6 +20,13 @@ public class BinarySearch {
         }
     }
 
+    /**
+     * This method performs a Binary search.
+     *
+     * @param arr the arr
+     * @param key the key
+     * @return the int
+     */
     static int binarySearch(int[] arr, int key) {
         int first = 0;
         int last = arr.length-1;
@@ -27,6 +42,11 @@ public class BinarySearch {
         return -1;
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         final int size = 100;
         int[] numbers = new int[size];
