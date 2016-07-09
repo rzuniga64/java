@@ -1,7 +1,17 @@
 package java_lessons.lesson19_sort_and_search.sort;
 
+/**
+ * The type Quick sort.
+ */
 public class QuickSort {
 
+    /**
+     * this method performs a Quick sort.
+     *
+     * @param arr   the arr
+     * @param left  the left
+     * @param right the right
+     */
     static void quickSort(int[] arr, int left, int right) {
         int i = left;
         int j = right;
@@ -27,12 +37,22 @@ public class QuickSort {
             quickSort(arr, i, right);
     }
 
+    /**
+     * Display.
+     *
+     * @param arr the arr
+     */
     public static void display(int[] arr) {
         for (int num : arr) {
             System.out.println(num);
         }
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         int[] data = new int[] {5,10,1,9,4,8,3,6,2,7};
         System.out.println("Unsorted array: ");

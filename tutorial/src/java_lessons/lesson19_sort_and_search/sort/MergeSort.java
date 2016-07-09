@@ -1,10 +1,22 @@
 package java_lessons.lesson19_sort_and_search.sort;
 
 
+/**
+ * The type Merge sort.
+ */
 public class MergeSort {
 
+    /**
+     * this method peforms a Merge sort.
+     *
+     * @param arr  the arr
+     * @param low  the low
+     * @param high the high
+     */
     static void mergeSort(int[] arr, int low, int high) {
+
         int size = arr.length;
+
         if (low < high) {
             int middle = (low + high) / 2;
             mergeSort(arr, low, middle);
@@ -14,11 +26,14 @@ public class MergeSort {
     }
 
     private static void merge(int[] arr, int low, int middle, int high) {
+
         int size = arr.length;
         int[] temp = new int[size];
+
         for (int i = low; i <= high; ++i) {
             temp[i] = arr[i];
         }
+
         int i = low;
         int j = middle + 1;
         int k = low;
@@ -41,7 +56,13 @@ public class MergeSort {
         }
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
+
         int size = 10;
         int[] data = new int[]{5,10,1,6,2,9,3,8,7,4};
         int low = 0;

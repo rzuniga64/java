@@ -1,8 +1,16 @@
 package java_lessons.lesson19_sort_and_search.sort;
 
 
+/**
+ * The type Insertion sort.
+ */
 public class InsertionSort {
 
+    /**
+     * this method performs an Insertion sort.
+     *
+     * @param data the data to sort.
+     */
     static void insertionSort(int [] data) {
         int size = data.length;
 
@@ -17,6 +25,11 @@ public class InsertionSort {
         }
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
 
         int size = 10;
