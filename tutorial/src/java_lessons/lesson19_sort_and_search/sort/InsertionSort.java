@@ -9,6 +9,7 @@ public class InsertionSort {
      *  This method performs an Insertion sort.
      *
      *  @param data the data to sort.
+     *
      *  The Insertion sort.SelectionSort is normally the best of the elementary sorts.
      *  Unlike the other sorts that had a group sorted at any given time, groups are only partially sorted here.
      *
