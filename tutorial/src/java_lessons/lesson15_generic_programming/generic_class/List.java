@@ -18,7 +18,7 @@ public class List<T> {
      *
      * @param numElements the num elements
      */
-    List(int numElements) {
+    public List(int numElements) {
         size = numElements;
         capacity = 0;
         data = (T[]) new Object[size];
