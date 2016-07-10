@@ -6,10 +6,10 @@ import java.awt.event.*;
 
 public class TextFields {
     // declare widgets
-    JLabel label;
-    JTextField textField;
+    private JLabel label;
+    private JTextField textField;
 
-    public TextFields() {
+    private  TextFields() {
         label = new JLabel("");
         textField = new JTextField(20); // pass number of chars wide
         JFrame frame = new JFrame("Using TextFields");

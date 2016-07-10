@@ -14,7 +14,7 @@ public class Lists {
         nycsites = new String[] {"Empire State Building", "Ground Zero",
                                  "Statue of Liberty", "Wall Street",
                                  "Central Park", "Times Square"};
-        list = new JList(nycsites);
+        list = new JList<>(nycsites);
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list.addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent le) {

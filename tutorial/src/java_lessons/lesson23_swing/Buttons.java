@@ -21,9 +21,8 @@ public class Buttons {
         frame.setSize(200, 150);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // wire the interface to handle events by adding an action listener
-        // when an action is performed capture the action and take the
-        // text out of the textfield and put it in the label
+        // Wire the interface to handle events by adding an action listener when an action is performed capture the
+        // action and take the text out of the textfield and put it in the label
         textField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 label.setText(textField.getText());
