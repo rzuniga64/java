@@ -1,23 +1,9 @@
 package java_lessons.lesson19_sort_and_search.sort;
 
-import java.util.Arrays;
-
-import static java_lessons.lesson19_sort_and_search.sort.SortUtility.*;
-
-
 /**
  * The type Shell sort.
  */
 public class ShellSort {
-
-    private int[] theArray;
-    private int arraySize;
-
-    private ShellSort(int arraySize) {
-        this.arraySize = arraySize;
-        theArray = new int[arraySize];
-        generateRandomArray(this.theArray, this.arraySize);
-    }
 
     /**
      *  Shell sort is a sub quadratic algorithm whose code is only slightly longer than the insertion sort, making it the
@@ -44,11 +30,8 @@ public class ShellSort {
      *                  --          --          --          --          --
      *  After 1-sort    11  12  15  17  28  35  41  58  75  81  94  95  96
      */
-    private void shellsort() {
-        long startTime;
-        long endTime;
-
-        startTime = System.currentTimeMillis();
+    static void shellsort(int[] theArray) {
+        int arraySize = theArray.length;
         int temp;
         int j;
 
@@ -61,14 +44,19 @@ public class ShellSort {
                 for (j = i; j >= gap && temp < theArray[j - gap]; j -= gap)
                     theArray[j] = theArray[j - gap];
                 theArray[j] = temp;
-
-                System.out.println("inner= " + (i-gap) + " outer= " + i + " temp= " + temp + " interval= " + gap);
-                printHorzArray(theArray, arraySize, j, i, gap);
             }
         }
+    }
 
-        endTime = System.currentTimeMillis();
-        System.out.println("Shellsort took " + (endTime - startTime) + " milliseconds.");
+    /**
+     * Display.
+     *
+     * @param arr the arr
+     */
+    public static void display(int[] arr) {
+        for (int num : arr) {
+            System.out.println(num);
+        }
     }
 
     /**
@@ -77,10 +65,13 @@ public class ShellSort {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        ShellSort theSort = new ShellSort(10);
-        System.out.println(Arrays.toString(theSort.theArray));
-        theSort.shellsort();
+        int[] data = new int[] {5,10,1,9,4,8,3,6,2,7};
+        System.out.println("Unsorted array: ");
+        display(data);
         System.out.println();
-        System.out.println(Arrays.toString(theSort.theArray));
+        shellsort(data);
+        System.out.println();
+        System.out.println("Sorted array: ");
+        display(data);
     }
 }
