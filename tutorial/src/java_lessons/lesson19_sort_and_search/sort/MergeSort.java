@@ -7,7 +7,8 @@ package java_lessons.lesson19_sort_and_search.sort;
 public class MergeSort {
 
     /**
-     *  This method performs a Merge sort.
+     *  This method performs a Merge sort. It recursively splits the list into sublists until sublist size is 1, then
+     *  merges those sublists to produce a sorted list
      *
      *  @param arr  the arr
      *  @param low  the low
@@ -48,10 +49,17 @@ public class MergeSort {
         }
     }
 
+    /**
+     * This method is a helper function which does the actual sorting and merging.
+     * @param arr
+     * @param low
+     * @param middle
+     * @param high
+     */
     private static void merge(int[] arr, int low, int middle, int high) {
 
         int size = arr.length;
-        int[] temp = new int[size];
+        int[] temp = new int[size]; // create a temporary array used as a placeholder to sort out the data
 
         for (int i = low; i <= high; ++i) {
             temp[i] = arr[i];
@@ -88,8 +96,8 @@ public class MergeSort {
 
         int size = 10;
         int[] data = new int[]{5,10,1,6,2,9,3,8,7,4};
-        int low = 0;
-        int high = 9;
+        int low = 0;    // lower bound of array
+        int high = 9;   // upper bodund of array
 
         System.out.println("Before sorting: ");
         for (int i = 0; i < size; i++)
