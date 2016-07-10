@@ -3,7 +3,7 @@ package sort;
 import static sort.SortUtility.generateRandomArray;
 import static sort.SortUtility.printHorizontalArray;
 
-/*
+/**
  * 	Selection Sort
  *	There is a pass for each position (0..size-1)
  *	On each pass, the smallest (minimum) element in the rest of the list is exchanged (swapped) with element at the
