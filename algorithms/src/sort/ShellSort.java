@@ -6,15 +6,15 @@ import static sort.SortUtility.generateRandomArray;
 import static sort.SortUtility.printHorzArray;
 
 /**
- *  Shellsort is a subquadratic algorithm whose code is only slightly longer than the insertion sort, making it the
+ *  Shell sort is a sub quadratic algorithm whose code is only slightly longer than the insertion sort, making it the
  *  simplest of the faster algorithms. It compares elements that are far apart and then by comparing elements that are
- *  less far apart, and so on, gradually shrinking toward the basic insertion sort.  Shellsort is known as a
+ *  less far apart, and so on, gradually shrinking toward the basic insertion sort.  Shell sort is known as a
  *  diminishing gap sort. When gap is 1 the loop is identical to an insertion sort.
  *
- *  The running time of Shellsort depends heavily on the choice of increment sequences.  A sequence which performs well
+ *  The running time of Shell sort depends heavily on the choice of increment sequences.  A sequence which performs well
  *  in practice but has no theoretical basis, is to have a starting gap of N/2.2. This divisor appears to bring the
  *  average running time to below O(pow(N, 5/4)).  For 100, 000, to 1,000,000 items, it typically improves performance
- *  by about to 25 to 35 percent over Shell's Increments, although nobody knows why.  The performance of Shellsort is
+ *  by about to 25 to 35 percent over Shell's Increments, although nobody knows why.  The performance of Shell sort is
  *  quite acceptable in practice, even for N in the tens of thousands. The simplicity of the code makes it the algorithm
  *  of choice for sorting up to moderately large input.  it is also a fine example of a very simple algorithm with an
  *  extremely complex analysis.
