@@ -24,9 +24,9 @@ public class DisplayHistrogramUsingArray
       showHistogram(distribution, size);
    }
 
-   static void showHistogram(int[] arr, int size) {
+   private static void showHistogram(int[] arr, int size) {
       String stars = "";
-      int totStars = 0;
+      int totStars;
       for(int i = 0; i < size; ++i) {
          totStars = arr[i];
          for(int j = 1; j <= totStars; ++j)
