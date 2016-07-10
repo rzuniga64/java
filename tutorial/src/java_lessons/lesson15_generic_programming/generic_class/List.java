@@ -1,5 +1,7 @@
 package java_lessons.lesson15_generic_programming.generic_class;
 
+import java_lessons.lesson20_exception_handling.ListEmptyException;
+
 /**
  * We want to specify a generic data type using generic programming by using a type place holder <T>.
  *
@@ -34,7 +36,10 @@ public class List<T> {
         capacity++;
     }
 
-    public String toString() {
+    public String toString() throws ListEmptyException {
+        if (data[0] == null)
+            throw new ListEmptyException();
+
         String elements = "";
         for (int i = 0; i < capacity; ++i) {
             elements += data[i] + " ";
