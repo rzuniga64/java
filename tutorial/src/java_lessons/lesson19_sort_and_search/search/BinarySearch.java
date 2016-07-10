@@ -53,6 +53,7 @@ public class BinarySearch {
      * @param args the input arguments
      */
     public static void main(String[] args) {
+
         final int size = 100;
         int[] numbers = new int[size];
 
