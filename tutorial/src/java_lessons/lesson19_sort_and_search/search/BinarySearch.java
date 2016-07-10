@@ -21,16 +21,21 @@ public class BinarySearch {
     }
 
     /**
-     * This method performs a Binary search.
+     *  This method performs a Binary search.
+     *  Binary search is a search algorithm that finds the position of a target value within a sorted array.
+     *  It compares the target value to the middle element of the array; if they are unequal, the half in which the
+     *  target cannot lie is eliminated and the search continues on the remaining half until it is successful.
      *
-     * @param arr the arr
-     * @param key the key
-     * @return the int
+     *  @param arr the arr
+     *  @param key the key
+     *  @return the int
      */
     static int binarySearch(int[] arr, int key) {
         int first = 0;
         int last = arr.length-1;
+
         while (first <= last) {
+
             int mid = (first + last) / 2;
             if (key > arr[mid])
                 first = mid + 1;
@@ -50,10 +55,13 @@ public class BinarySearch {
     public static void main(String[] args) {
         final int size = 100;
         int[] numbers = new int[size];
+
         for (int i = 0; i < size; i++)
             numbers[i] = (int)(Math.random() * 100);
+
         Arrays.sort(numbers);
         display(numbers);
+
         Scanner input = new Scanner(System.in);
         System.out.print("\nEnter a number to search for: ");
         int num = input.nextInt();
