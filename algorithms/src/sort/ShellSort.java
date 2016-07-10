@@ -46,12 +46,13 @@ public class ShellSort {
 
     private void shellsort() {
         startTime = System.currentTimeMillis();
+        int temp;
+        int j;
 
         // Keep looping until the interval is 1. Then this becomes an insertion sort
         for (int gap = arraySize/2; gap > 0; gap = (gap == 2) ? 1 : (new Double(gap/2.2)).intValue()) {
             for (int i = gap; i < arraySize; i++) {
-                int temp = theArray[i];
-                int j;
+                temp = theArray[i];
 
                 // While there is a number bigger than temp move it further up in the array
                 for (j = i; j >= gap && temp < theArray[j - gap]; j -= gap)
