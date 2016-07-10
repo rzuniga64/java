@@ -6,11 +6,18 @@ package java_lessons.lesson19_sort_and_search.search;
 public class LinearSearch {
 
     /**
-     * This method performs a Linear search.
+     *  This method performs a Linear search. A Linear search can work on unsorted data.
      *
-     * @param arr the arr
-     * @param key the key
-     * @return the int
+     *  @param arr the arr
+     *  @param key the key
+     *  @return the int
+     *
+     *  A  linear search starts at the first element of a data collection and searches element by element for a
+     *  particular item.
+     *
+     *  Runtime analysis
+     *  Best    Average     Worst
+     *  O(1)    O(n)      O(n)
      */
     static int linearSearch(int[] arr, int key) {
         for (int i = 1; i < arr.length; i++) {
@@ -24,7 +31,6 @@ public class LinearSearch {
      * This method performs a Linear search to find the minimum value of a data list.
      *
      * @param arr the arr
-     * @param key the key
      * @return the int
      */
     private static int min(int[] arr) {
