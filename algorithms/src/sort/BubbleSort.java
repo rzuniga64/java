@@ -3,7 +3,7 @@ package sort;
 import static sort.SortUtility.generateRandomArray;
 import static sort.SortUtility.printHorizontalArray;
 
-/*
+/**
 *	Bubble Sort
 *	On each pass: Compare first two elements. If the first is bigger, they exchange places (swap). Compare second and
 *	third elements. If second is bigger, exchange them. Repeat until last two elements of  the list  are compared.
