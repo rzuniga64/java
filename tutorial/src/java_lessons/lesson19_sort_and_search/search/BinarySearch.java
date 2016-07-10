@@ -22,13 +22,18 @@ public class BinarySearch {
 
     /**
      *  This method performs a Binary search.
-     *  Binary search is a search algorithm that finds the position of a target value within a sorted array.
-     *  It compares the target value to the middle element of the array; if they are unequal, the half in which the
-     *  target cannot lie is eliminated and the search continues on the remaining half until it is successful.
      *
      *  @param arr the arr
      *  @param key the key
      *  @return the int
+     *
+     *  Binary search is a search algorithm that finds the position of a target value within a sorted array.
+     *  It compares the target value to the middle element of the array; if they are unequal, the half in which the
+     *  target cannot lie is eliminated and the search continues on the remaining half until it is successful.
+     *
+     *  Runtime analysis
+     *  Best    Average     Worst
+     *  O(1)    O(log n)    O(log n)
      */
     static int binarySearch(int[] arr, int key) {
         int first = 0;
