@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class BinarySearch {
     /**
-     * this method displays the data to be binary sorted. A Binary search works on sorted data.
+     * This method displays the data to be binary sorted. A Binary search works on sorted data.
      *
      * @param arr the arr
      */
@@ -49,6 +49,7 @@ public class BinarySearch {
             else
                 return mid;
         }
+
         return -1;
     }
 
