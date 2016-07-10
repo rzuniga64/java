@@ -6,7 +6,7 @@ public class FileNotFound {
     public static void main(String[] args) {
         // String file = "C:\\mydata.dat";
         String file = "C:\\Users\\Roy\\git\\java\\udemy\\src\\java_lessons\\lesson20_exception_handling\\FileNotFound.java";
-        String line = "";
+        String line;
         BufferedReader inFile = null;
         try {
             inFile = new BufferedReader(new FileReader(file));

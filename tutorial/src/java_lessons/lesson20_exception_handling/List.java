@@ -4,11 +4,10 @@ package java_lessons.lesson20_exception_handling;
 // by using a type place holder <T>.
 public class List<T> {
     private T[] data;
-    private int size;
     private int capacity;
 
     List(int numElements) {
-        size = numElements;
+        int size = numElements;
         capacity = 0;
 
         /* Generic classes and methods only work with Object
