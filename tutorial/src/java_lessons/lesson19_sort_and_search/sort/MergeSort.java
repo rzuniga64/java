@@ -36,30 +36,6 @@ public class MergeSort {
      *
      *  After 3rd pass sorted    1   2    3   4   5   6   7   8     both parts merged and sorted
      **/
-
-    /**
-     * The entry point of application.
-     *
-     * @param args the input arguments
-     */
-    public static void main(String[] args) {
-
-        int size = 10;
-        int[] data = new int[]{5,10,1,6,2,9,3,8,7,4};
-        int low = 0;
-        int high = 9;
-
-        System.out.println("Before sorting: ");
-        for (int i = 0; i < size; i++)
-            System.out.println(data[i]);
-
-        mergeSort(data, low, high);
-
-        System.out.println("\nAfter sorting: ");
-        for (int i = 0; i < size; i++)
-            System.out.println(data[i]);
-    }
-
     static void mergeSort(int[] arr, int low, int high) {
 
         int size = arr.length;
@@ -101,5 +77,28 @@ public class MergeSort {
             ++k;
             ++i;
         }
+    }
+
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
+    public static void main(String[] args) {
+
+        int size = 10;
+        int[] data = new int[]{5,10,1,6,2,9,3,8,7,4};
+        int low = 0;
+        int high = 9;
+
+        System.out.println("Before sorting: ");
+        for (int i = 0; i < size; i++)
+            System.out.println(data[i]);
+
+        mergeSort(data, low, high);
+
+        System.out.println("\nAfter sorting: ");
+        for (int i = 0; i < size; i++)
+            System.out.println(data[i]);
     }
 }
