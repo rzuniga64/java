@@ -8,13 +8,13 @@ public class MergeSort {
         int array[] = { 10, 8, 4, 80, 13, 1, 3, 11 };
 
         System.out.println("STARTING ARRAY\n");
-        printHorzArray(-1, -1, array, 49);
+        printHorzArray(array, 49);
         System.out.println();
 
         // Send the array, 0 and the array size
         mergeSort_srt(array, 0, array.length - 1);
         System.out.print("FINAL SORTED ARRAY\n");
-        printHorzArray(-1, -1, array, 49);
+        printHorzArray(array, 49);
     }
 
     // Receives the array, 0 and the array size
@@ -48,7 +48,7 @@ public class MergeSort {
             printSmallArray(array, lo, middle);
             System.out.println("\nTOP ARRAY");
             printSmallArray(array, start_high, high);
-            printHorzArray(-1, -1, array, 49);
+            printHorzArray(array, 49);
 
             // If the value in the 1st index of the 1st array is less than the value in the 1st index of the 2nd array
             System.out.println("Is " + array[low] + " < " + array[start_high] + "? " + (array[low] < array[start_high]));
@@ -67,7 +67,7 @@ public class MergeSort {
                     array[k + 1] = array[k];
                 }
                 System.out.println(Temp + " is stored in index " + low);
-                printHorzArray(-1, -1, array, 49);
+                printHorzArray(array, 49);
 
                 array[low] = Temp;
                 low++;
@@ -75,7 +75,7 @@ public class MergeSort {
                 start_high++;
             }
         }
-        printHorzArray(-1, -1, array, 49);
+        printHorzArray(array, 49);
     }
 
     // Used to print out the smaller arrays
@@ -83,10 +83,10 @@ public class MergeSort {
         int[] tempArray = Arrays.copyOfRange(theArray, lo, high);
         int tempArrayDashes = tempArray.length * 6;
         System.out.println("Array Index Start " + lo + " and End " + high);
-        printHorzArray(-1, -1, tempArray, tempArrayDashes);
+        printHorzArray(tempArray, tempArrayDashes);
     }
 
-    private static void printHorzArray(int i, int j, int theArray[], int numDashes) {
+    private static void printHorzArray(int theArray[], int numDashes) {
         for (int n = 0; n < numDashes; n++)
             System.out.print("-");
 
