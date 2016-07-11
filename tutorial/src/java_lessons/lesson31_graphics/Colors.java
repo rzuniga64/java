@@ -10,6 +10,7 @@ import java.awt.*;
  */
 public class Colors extends Applet {
     public void paint(Graphics g) {
+
         Color color1 = new Color(178,34,34);
         g.setColor(color1);
 
@@ -38,7 +39,6 @@ public class Colors extends Applet {
         x2 = 60;
         y2 = 60;
         g.drawArc(x1,y1,x2,y2,0,180);
-
     }
 }
 
