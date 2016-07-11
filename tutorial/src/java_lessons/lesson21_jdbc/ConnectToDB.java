@@ -35,7 +35,7 @@ public class ConnectToDB {
         } catch (Exception e) {
             System.out.println("Connection failed.");
         } finally {
-            closeConnection(connection);
+            //closeConnection(connection);
         }
     return connection;
     }

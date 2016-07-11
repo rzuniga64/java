@@ -4,7 +4,15 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+/**
+ * The type InsertData. Inserts data into table 'books' of database 'test'
+ */
 public class InsertData {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         ConnectToDB conn = new ConnectToDB();
         Connection connection = conn.getConnection();
@@ -22,6 +30,7 @@ public class InsertData {
                 String title = result.getString("title");
                 String author = result.getString("author");
                 String publisher = result.getString("publisher");
+
                 System.out.print("ISBN: " + isbn);
                 System.out.println(" Title: " + title);
                 System.out.print("Author: " + author);
