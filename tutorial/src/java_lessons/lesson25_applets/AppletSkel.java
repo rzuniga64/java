@@ -2,6 +2,9 @@ package java_lessons.lesson25_applets;
 
 import java.applet.*;
 
+/**
+ * The type Applet skel.
+ */
 public class AppletSkel extends Applet {
     /*
     init();     // initialize variables
