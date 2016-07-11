@@ -1,10 +1,24 @@
-package java_lessons.lesson26_simple_servlet;
+/*package java_lessons.lesson26_simple_servlet;
 
-/*import javax.servlet.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.*;
 import javax.servlet.http.*;
+*/
 
-public class PostSelServlet extends HttpServlet {
-    public void doPost(HttpServletRequest request,
+/**
+ * The type PostSeLServlet.
+ */
+//public class PostSelServlet extends HttpServlet {
+    /**
+     * Do post.
+     *
+     * @param request  the request
+     * @param response the response
+     * @throws IOException      the io exception
+     * @throws ServletException the servlet exception
+     */
+/*    public void doPost(HttpServletRequest request,
                        HttpServletResponse response)
                        throws IOException, ServletException {
         response.setContentType("text/html");
@@ -13,4 +27,4 @@ public class PostSelServlet extends HttpServlet {
         writer.println("You selected " + language + " as your favorite.");
         writer.close();
     }
-} */
+}*/
