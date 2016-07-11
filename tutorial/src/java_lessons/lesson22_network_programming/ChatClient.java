@@ -4,7 +4,7 @@ import java.net.*;
 import java.io.*;
 
 /**
- * The type Chat client.
+ * The type ChatClient.
  */
 public class ChatClient {
     /**

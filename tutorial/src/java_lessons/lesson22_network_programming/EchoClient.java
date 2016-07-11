@@ -12,8 +12,9 @@ import java.net.UnknownHostException;
  *
  *   Use TCP/IP to connect two computers to send messages back and forth.
  *   Server is only echoing back what the client received.
+ *   A socket is a way to connect to a server using TCP/IP. When you are communicating via sockets you have a server
+ *   socket and a client socket.
  */
-
 public class EchoClient {
     /**
      * The entry point of application.
@@ -21,7 +22,7 @@ public class EchoClient {
      * @param args the input arguments
      * @throws Exception the exception
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
 
         Socket socket = null;
         PrintWriter output = null;
@@ -43,8 +44,10 @@ public class EchoClient {
         BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
         String userInput;
 
-        while ((userInput = stdIn.readLine()) != null)
+        while ((userInput = stdIn.readLine()) != null) {
             output.println(userInput);
+            System.out.println("echo: " + input.readLine());
+        }
 
         output.close();
         input.close();

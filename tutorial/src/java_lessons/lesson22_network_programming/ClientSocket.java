@@ -11,6 +11,14 @@ import java.io.OutputStream;
  *  Whois allows you to see some specific domain registration information.
  *  A socket is a way to make a connection to a server. When you are communicating
  *  via sockets, you have a server socket and a client socket in order to have two-way communication.
+ *
+ *  Steps
+ *  1. Create a socket
+ *  2. Create an input stream to receive data
+ *  3. Create an output stream to send data
+ *  4. Organize data to send
+ *  5. Send it
+ *  5. Receive data as bytes and convert them to chars so we can read the output
  */
 public class ClientSocket {
     /**

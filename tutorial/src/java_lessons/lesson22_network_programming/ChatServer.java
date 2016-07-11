@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 /**
- * The type Chat server.
+ * The type ChatServer.
  */
 public class ChatServer {
     /**

@@ -5,7 +5,10 @@ import java.net.URLConnection;
 import java.io.*;
 
 /**
- * The type urlProg. Make a connection to a website and retrieve the content.
+ * The type urlProg.
+ *
+ * Make a connection to a website and retrieve the content.
+ * Most of the time with network programming methods have to throw an exception.
  */
 public class urlProg {
     /**
@@ -14,7 +17,6 @@ public class urlProg {
      * @param args the input arguments
      * @throws Exception the exception
      */
-    // most of the time with network programming methods have to throw an exception.
     public static void main(String[] args) throws Exception {
 
         URL theURL = new URL("http://www.infiniteskills.com");
