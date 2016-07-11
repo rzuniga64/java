@@ -7,10 +7,22 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.UnknownHostException;
 
-// Use TCP/IP to connect two computers to send messages back and forth.
-// Server is only echoing back what the client received.
+/**
+ *   The type EchoClient.
+ *
+ *   Use TCP/IP to connect two computers to send messages back and forth.
+ *   Server is only echoing back what the client received.
+ */
+
 public class EchoClient {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws Exception the exception
+     */
     public static void main(String[] args) throws Exception {
+
         Socket socket = null;
         PrintWriter output = null;
         BufferedReader input = null;
@@ -27,10 +39,13 @@ public class EchoClient {
             System.out.println("Cannot connect to host");
             System.exit(1);
         }
+
         BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
         String userInput;
+
         while ((userInput = stdIn.readLine()) != null)
             output.println(userInput);
+
         output.close();
         input.close();
         stdIn.close();

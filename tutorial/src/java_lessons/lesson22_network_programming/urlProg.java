@@ -5,9 +5,8 @@ import java.net.URLConnection;
 import java.io.*;
 
 /**
- * The type urlProg.
+ * The type urlProg. Make a connection to a website and retrieve the content.
  */
-// Make a connection to a website and retrieve the content.
 public class urlProg {
     /**
      * The entry point of application.
