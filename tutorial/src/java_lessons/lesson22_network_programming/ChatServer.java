@@ -36,6 +36,7 @@ public class ChatServer {
             line = input.readLine();
             if (line.equals("bye"))
                 break;
+
          // print message from client
          System.out.println("Client: " + line);
          System.out.print("Server: ");
