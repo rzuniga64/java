@@ -18,22 +18,32 @@ package java_lessons.lesson24_multithread_programming;
 
 import java.io.*;
 
+/**
+ * The type TwoThreads.
+ */
 public class TwoThreads {
-   public static void main(String[] args) throws InterruptedException {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws InterruptedException the interrupted exception
+     */
+    public static void main(String[] args) throws InterruptedException {
       Thread firstThread = new UserInteraction();
       firstThread.start();
       Thread secondThread = new ComputeLog();
       secondThread.start();
-      // the join method waits for the thread process to terminate
-      // once that thread process is terminated we go to the second
-      // thread and call end to it.
+      // The join method waits for the thread process to terminate once that thread process is terminated we go to the
+      // second thread and call end to it.
       firstThread.join();
-      // cast thread back to ComputeLog because the end method is part
-      // of the ComputeLog class not the thread class.
+      // Cast thread back to ComputeLog because the end method is part of the ComputeLog class not the thread class.
       ((ComputeLog) secondThread).end();
    }
 }
 
+/**
+ * The type UserInteraction.
+ */
 class UserInteraction extends Thread {
    public void run() {
       try {
@@ -50,7 +60,10 @@ class UserInteraction extends Thread {
       }
    }
 }
-         
+
+/**
+ * The type ComputeLog.
+ */
 class ComputeLog extends Thread {
    private static boolean stop = false;
    public void run() {
@@ -68,7 +81,10 @@ class ComputeLog extends Thread {
       }
    }
 
-   void end() {
+    /**
+     * End.
+     */
+    void end() {
       stop = true;
    }
 } 

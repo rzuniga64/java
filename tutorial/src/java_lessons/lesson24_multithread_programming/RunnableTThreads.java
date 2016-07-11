@@ -21,23 +21,33 @@ package java_lessons.lesson24_multithread_programming;
 
 import java.io.*;
 
+/**
+ * The type Runnable t threads.
+ */
 public class RunnableTThreads {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws InterruptedException the interrupted exception
+     */
     public static void main(String[] args) throws InterruptedException {
         Thread firstThread = new Thread(new UserInteraction2());
         firstThread.start();
         ComputeLog2 numProc = new ComputeLog2();
         Thread secondThread = new Thread(numProc);
         secondThread.start();
-        // the join method waits for the thread process to terminate
-        // once that thread process is terminated we go to the second
-        // thread and call end to it.
+        // the join method waits for the thread process to terminate once that thread process is terminated we go to
+        // the second thread and call end to it.
         firstThread.join();
-        // cast thread back to ComputeLog because the end method is part
-        // of the ComputeLog class not the thread class.
+        // cast thread back to ComputeLog because the end method is part of the ComputeLog class not the thread class.
         numProc.end();
     }
 }
 
+/**
+ * The type UserInteraction2.
+ */
 class UserInteraction2 implements Runnable {
     public void run() {
         try {
@@ -55,6 +65,9 @@ class UserInteraction2 implements Runnable {
     }
 }
 
+/**
+ * The type ComputeLog2.
+ */
 class ComputeLog2 implements Runnable {
     private static boolean stop = false;
     public void run() {
@@ -72,6 +85,9 @@ class ComputeLog2 implements Runnable {
         }
     }
 
+    /**
+     * End.
+     */
     void end() {
         stop = true;
     }
