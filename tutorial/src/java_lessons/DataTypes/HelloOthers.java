@@ -1,4 +1,4 @@
-package java_lessons.lesson25_applets.lesson1_data_types_and_variables;
+package java_lessons.DataTypes;
 
 public class HelloOthers
 {
