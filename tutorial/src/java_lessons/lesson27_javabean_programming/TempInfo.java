@@ -5,6 +5,9 @@ import java.beans.SimpleBeanInfo;
 import java.beans.MethodDescriptor;
 import java.lang.reflect.Method;
 
+/**
+ * The type Temp info.
+ */
 public class TempInfo extends SimpleBeanInfo {
     public PropertyDescriptor[] getPropertyDescriptors() {
         try {
@@ -17,18 +20,23 @@ public class TempInfo extends SimpleBeanInfo {
         return null;
     }
 
-    /*
-        Add a method descriptor, method so we can get a description
-        of the methods that are part of a javabean class.
+    /**
+     * getMethodDescriptors
+     * Add a method descriptor, method so we can get a description of the methods that are part of a javabean class.
+     *
+     * @return the MethodDescriptor[]
      */
     public MethodDescriptor[] getMethodDescriptors() {
+
         try {
             Class c1 = Temperature.class;
-            // will hold the parameters for our methods. In this case because we
-            // have to method parameters it is an empty object.
+            // will hold the parameters for our methods. In this case because we have to method parameters it is an
+            // empty object.
             Class args[] = {};
+
             Method cToF = c1.getMethod("cToF", args);
             MethodDescriptor cToFDesc = new MethodDescriptor(cToF);
+
             // add a method description to our MethodDescriptor object.
             cToFDesc.setShortDescription("Convert Celsius to Fahrenheit");
 
