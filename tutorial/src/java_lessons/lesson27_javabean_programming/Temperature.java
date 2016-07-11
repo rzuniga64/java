@@ -9,16 +9,14 @@ import java.io.Serializable;
 /**
  *  The type Temperature.
  *
- *  A javabean is a class that exposes its methods and properties_binding to other programs and applications.
+ *  A javabean is a class that exposes its methods and properties to other programs and applications.
  *  With javabean programming we can do component based software design. That means we can write independent components
  *  and then have each component look at other components to determine whether or not that particular component has
  *  method or data via a property that the component can use to get it's own work done. By being able to write
  *  components we can simply plug components in when we need them and simplify the sw development process.
  */
-public class Temperature implements Serializable {
-    /**
-     * The Temp.
-     */
+class Temperature implements Serializable {
+
     public double temp;
 
     /**
