@@ -5,6 +5,9 @@ import java.awt.*;
 
 // <applet code="Colors" width="300" height="200"></applet>
 
+/**
+ * The type Colors.
+ */
 public class Colors extends Applet {
     public void paint(Graphics g) {
         Color color1 = new Color(178,34,34);

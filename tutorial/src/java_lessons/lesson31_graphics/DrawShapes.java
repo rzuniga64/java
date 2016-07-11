@@ -5,6 +5,9 @@ import java.applet.*;
 
 // <applet code="DrawShapes" width="300" height="200"></applet>
 
+/**
+ * The type Draw shapes.
+ */
 public class DrawShapes extends Applet {
     public void paint(Graphics g) {
         int x1 = 30;
@@ -24,6 +27,5 @@ public class DrawShapes extends Applet {
         x2 = 60;
         y2 = 60;
         g.drawArc(x1,y1,x2,y2,0,180);
-
     }
 }
