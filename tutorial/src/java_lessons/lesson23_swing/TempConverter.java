@@ -5,6 +5,9 @@ import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * The type Temp converter.
+ */
 public class TempConverter {
     private JLabel tempLabel, outLabel;
     private JTextField textField;
@@ -23,12 +26,14 @@ public class TempConverter {
     }
 
     private TempConverter() {
+
         tempLabel = new JLabel("Temperature: ");
         outLabel = new JLabel("");
         textField = new JTextField(5);
         button = new JButton("Convert");
         temps = new String[]{"Celsius", "Fahrenheit"};
         list = new JList(temps);
+
         JFrame frame = new JFrame("Temperature Converter:");
         frame.setLayout(new GridLayout(3,2));
         frame.setSize(400,300);
@@ -56,7 +61,13 @@ public class TempConverter {
         frame.setVisible(true);
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
+
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new TempConverter();

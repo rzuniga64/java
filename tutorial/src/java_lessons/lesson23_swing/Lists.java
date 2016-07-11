@@ -4,7 +4,11 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
+/**
+ * The type Lists.
+ */
 public class Lists {
+
     private JLabel label;
     private JList list;
     private String[] nycsites;
@@ -23,6 +27,7 @@ public class Lists {
                     label.setText("Site to visit: " + nycsites[index]);
             }
         });
+
         JFrame frame = new JFrame("Using Lists");
         frame.setLayout(new FlowLayout());
         frame.setSize(500, 250);
@@ -32,7 +37,13 @@ public class Lists {
         frame.setVisible(true);
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
+
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new Lists();
