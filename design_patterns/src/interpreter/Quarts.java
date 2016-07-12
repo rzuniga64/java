@@ -1,14 +1,32 @@
 package interpreter;
 
+/**
+ * The type Quarts.
+ */
 public class Quarts extends Expression{
 
-    public String gallons(double quantity) { return Double.toString(quantity/4); }
+    public String gallons(double quantity) {
 
-    public String quarts(double quantity) { return Double.toString(quantity); }
+        return Double.toString(quantity/4);
+    }
 
-    public String pints(double quantity) { return Double.toString(quantity*2); }
+    public String quarts(double quantity) {
 
-    public String cups(double quantity) { return Double.toString(quantity*4); }
+        return Double.toString(quantity);
+    }
 
-    public String tablespoons(double quantity) { return Double.toString(quantity*64); }
+    public String pints(double quantity) {
+
+        return Double.toString(quantity*2);
+    }
+
+    public String cups(double quantity) {
+
+        return Double.toString(quantity*4);
+    }
+
+    public String tablespoons(double quantity) {
+
+        return Double.toString(quantity*64);
+    }
 }

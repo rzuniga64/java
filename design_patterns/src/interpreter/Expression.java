@@ -1,6 +1,9 @@
 package interpreter;
 
-public abstract class Expression {
+/**
+ * The type Expression.
+ */
+abstract class Expression {
 
     public abstract String gallons(double quantity);
 
@@ -11,5 +14,4 @@ public abstract class Expression {
     public abstract String cups(double quantity);
 
     public abstract String tablespoons(double quantity);
-
 }

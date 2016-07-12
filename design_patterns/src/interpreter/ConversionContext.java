@@ -1,6 +1,9 @@
 package interpreter;
 
-public class ConversionContext {
+/**
+ * The type Conversion context.
+ */
+class ConversionContext {
 
     private String conversionQues = "";
     private String conversionResponse = "";
@@ -8,29 +11,69 @@ public class ConversionContext {
     private String toConversion = "";
     private double quantity;
 
-    String[] partsOfQues;
-
-    public ConversionContext(String input)
+    /**
+     * Instantiates a new Conversion context.
+     *
+     * @param input the input
+     */
+    ConversionContext(String input)
     {
+        String[] partsOfQues;
+
         this.conversionQues = input;
         partsOfQues = getInput().split(" ");
         fromConversion = getCapitalized(partsOfQues[1]);
-        toConversion = getLowercase(partsOfQues[3]);
+        toConversion = getCapitalized(getLowercase(partsOfQues[3])); // 1 gallon to pints
         quantity = Double.valueOf(partsOfQues[0]);
         conversionResponse = partsOfQues[0] + " "+ partsOfQues[1] + " equals ";
     }
 
-    public String getInput() { return conversionQues; }
-    public String getFromConversion() { return fromConversion; }
-    public String getToConversion() { return toConversion; }
-    public String getResponse() { return conversionResponse; }
-    public double getQuantity() { return quantity; }
+    private String getInput() { return conversionQues; }
 
-    // Make String lowercase
-    public String getLowercase(String wordToLowercase){ return wordToLowercase.toLowerCase(); }
+    /**
+     * Gets from conversion.
+     *
+     * @return the from conversion
+     */
+    String getFromConversion() { return fromConversion; }
 
-    // Capitalizes the first letter of a word
-    public String getCapitalized(String wordToCapitalize){
+    /**
+     * Gets to conversion.
+     *
+     * @return the to conversion
+     */
+    String getToConversion() { return toConversion; }
+
+    /**
+     * Gets response.
+     *
+     * @return the response
+     */
+    String getResponse() { return conversionResponse; }
+
+    /**
+     * Gets quantity.
+     *
+     * @return the quantity
+     */
+    double getQuantity() { return quantity; }
+
+    /**
+     * Make String lowercase
+     *
+     * @return the words in lowercase
+     */
+    String getLowercase(String wordToLowercase){
+
+        return wordToLowercase.toLowerCase();
+    }
+
+    /**
+     * Capitalizes the first letter of a group of words
+     *
+     * @return the group of words with first letter capitalized.
+     */
+    private String getCapitalized(String wordToCapitalize){
 
         // Make characters lower case
         wordToCapitalize = wordToCapitalize.toLowerCase();
