@@ -4,7 +4,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bidirectional_binding.Controller">
+<AnchorPane prefHeight="300.0" prefWidth="300.0"
+            xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="bidirectional_binding.Controller">
    <children>
       <Slider fx:id="slider" layoutX="80.0" layoutY="68.0" prefHeight="26.0" prefWidth="147.0" />
       <TextField fx:id="field" layoutX="79.0" layoutY="111.0" />
