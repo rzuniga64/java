@@ -1,16 +1,27 @@
 package memento;
 
-// Memento Design Pattern Tutorial
 import java.util.ArrayList;
 
+/**
+ * The type Caretaker.
+ */
 class Caretaker {
 
     // Where all mementos are saved
-    ArrayList<Memento> savedArticles = new ArrayList<Memento>();
+    private ArrayList<Memento> savedArticles = new ArrayList<>();
 
-    // Adds memento to the ArrayList
-    public void addMemento(Memento m) { savedArticles.add(m); }
+    /**
+     * Add memento to the ArrayList.
+     *
+     * @param momento the momento
+     */
+    void addMemento(Memento momento) { savedArticles.add(momento); }
 
-    // Gets the memento requested from the ArrayList
-    public Memento getMemento(int index) { return savedArticles.get(index); }
+    /**
+     * Get the memento requested from the ArrayList
+     *
+     * @param index the index
+     * @return the memento
+     */
+    Memento getMemento(int index) { return savedArticles.get(index); }
 }
