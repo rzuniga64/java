@@ -1,26 +1,47 @@
 package iterator;
 
-// Will hold all of the info needed for each song
+/**
+ *  The type Song info.
+ *  Will hold all of the info needed for each song: song name, band name and year the song was released.
+ */
+class SongInfo{
 
-// I told all users to:
-// 1. create a function named addSong() for adding song, band and release
-// 2. create a function named getBestSongs() that will return the collection
-//    of songs
+    private String songName;
+    private String bandName;
+    private int yearReleased;
 
-public class SongInfo{
-
-    String songName;
-    String bandName;
-    int yearReleased;
-
-    public SongInfo(String newSongName, String newBandName, int newYearReleased){
+    /**
+     * Instantiates a new Song info.
+     *
+     * @param newSongName     the new song name
+     * @param newBandName     the new band name
+     * @param newYearReleased the new year released
+     */
+    SongInfo(String newSongName, String newBandName, int newYearReleased){
 
         songName = newSongName;
         bandName = newBandName;
         yearReleased = newYearReleased;
     }
 
-    public String getSongName(){ return songName; }
-    public String getBandName(){ return bandName; }
-    public int getYearReleased(){ return yearReleased; }
+    /**
+     * Get song name string.
+     *
+     * @return the song name as a string string
+     */
+    String getSongName(){ return songName; }
+
+    /**
+     * Get band name string.
+     *
+     * @return the band name as a string
+     */
+    String getBandName(){ return bandName; }
+
+    /**
+     * Get year released int.
+     *
+     * @return the year a song was released as aint
+     */
+    int getYearReleased(){ return yearReleased; }
 }

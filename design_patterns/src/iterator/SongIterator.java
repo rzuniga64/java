@@ -2,7 +2,15 @@ package iterator;
 
 import java.util.Iterator;
 
-public interface SongIterator {
+/**
+ * The interface Song iterator.
+ */
+interface SongIterator {
 
-    public Iterator createIterator();
+    /**
+     * Create iterator iterator.
+     *
+     * @return the iterator
+     */
+    Iterator createIterator();
 }
