@@ -3,34 +3,42 @@ package observer;
 import java.text.DecimalFormat;
 import java.lang.Double;
 
+/**
+ * The type Get the stock.
+ */
 public class GetTheStock implements Runnable{
 
-    // Could be used to set how many seconds to wait in Thread.sleep() below
-
-    private int startTime;
+    private int startTime;  // Could be used to set how many seconds to wait in Thread.sleep() below
     private String stock;
     private double price;
+    private Subject stockGrabber;     // Will hold reference to the StockGrabber object
 
-    // Will hold reference to the StockGrabber object
-    private Subject stockGrabber;
-
+    /**
+     * Instantiates a new Get the stock.
+     *
+     * @param stockGrabber the stock grabber
+     * @param newStartTime the new start time
+     * @param newStock     the new stock
+     * @param newPrice     the new price
+     */
     public GetTheStock(Subject stockGrabber, int newStartTime, String newStock, double newPrice){
 
         // Store the reference to the stockGrabber object so I can make calls to its methods
         this.stockGrabber = stockGrabber;
 
-        startTime = newStartTime;  // Not used to have variable sleep time
+        startTime = newStartTime;
         stock = newStock;
         price = newPrice;
     }
 
+    /**
+     * Implement the Runnable interface's run method.
+     */
     public void run(){
 
         for(int i = 1; i <= 20; i++){
             try{
-                // Sleep for 2 seconds
-                Thread.sleep(2000);
-                // Use Thread.sleep(startTime * 1000); to make sleep time variable
+                Thread.sleep(2000); // Sleep for 2 seconds. Use Thread.sleep(startTime * 1000); to make sleep time variable
             }
             catch(InterruptedException e) {
                 e.printStackTrace();

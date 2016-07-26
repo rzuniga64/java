@@ -1,21 +1,23 @@
 package observer;
 
-// Represents each Observer that is monitoring changes in the subject
+/**
+ * The type Stock observer. Represents each Observer that is monitoring changes in the subject.
+ */
 public class StockObserver implements Observer {
 
     private double ibmPrice;
     private double aaplPrice;
     private double googPrice;
 
-    // Static used as a counter
-    private static int observerIDTracker = 0;
+    private static int observerIDTracker = 0;     // Static used as a counter
+    private int observerID;                       // Used to track the observers
+    private Subject stockGrabber;                 // Will hold reference to the StockGrabber object
 
-    // Used to track the observers\
-    private int observerID;
-
-    // Will hold reference to the StockGrabber object
-    private Subject stockGrabber;
-
+    /**
+     * Instantiates a new Stock observer.
+     *
+     * @param stockGrabber the stock grabber
+     */
     public StockObserver(Subject stockGrabber){
 
         // Store the reference to the stockGrabber object so I can make calls to its methods
@@ -31,7 +33,13 @@ public class StockObserver implements Observer {
         stockGrabber.register(this);
     }
 
-    // Called to update all observers
+    /**
+     *  This method is called to update all the observers.
+     *
+     *  @param ibmPrice the IBM price
+     *  @param aaplPrice the Apple price
+     *  @param googPrice the Google price
+     */
     public void update(double ibmPrice, double aaplPrice, double googPrice) {
 
         this.ibmPrice = ibmPrice;
@@ -41,6 +49,9 @@ public class StockObserver implements Observer {
         printThePrices();
     }
 
+    /**
+     * Print the prices.
+     */
     public void printThePrices(){
 
         System.out.println(observerID + "\nIBM: " + ibmPrice + "\nAAPL: " +

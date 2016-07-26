@@ -1,10 +1,27 @@
 package observer;
 
-// This interface handles adding, deleting and updating all observers
+/**
+ * The interface Subject handles adding, deleting and updating all observers.
 
+ */
 public interface Subject {
 
-    public void register(Observer o);
-    public void unregister(Observer o);
+    /**
+     * Register.
+     *
+     * @param observer
+     */
+    public void register(Observer observer);
+
+    /**
+     * Unregister.
+     *
+     * @param observer
+     */
+    public void unregister(Observer observer);
+
+    /**
+     * Notify observer
+     */
     public void notifyObserver();
 }
