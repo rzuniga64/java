@@ -1,7 +1,15 @@
 package template_method;
 
+/**
+ * The type Sandwich sculptor.
+ */
 public class SandwichSculptor {
 
+    /**
+     * Main.
+     *
+     * @param args the args
+     */
     public static void main(String[] args){
 
         ItalianHoagie cust12Hoagie = new ItalianHoagie();

@@ -1,12 +1,18 @@
 package template_method;
 
-public class ItalianHoagie extends Hoagie{
+/**
+ * The type Italian hoagie.
+ */
+class ItalianHoagie extends Hoagie{
 
-    String[] meatUsed = { "Salami", "Pepperoni", "Capicola Ham" };
-    String[] cheeseUsed = { "Provolone" };
-    String[] veggiesUsed = { "Lettuce", "Tomatoes", "Onions", "Sweet Peppers" };
-    String[] condimentsUsed = { "Oil", "Vinegar" };
+    private String[] meatUsed = { "Salami", "Pepperoni", "Capicola Ham" };
+    private String[] cheeseUsed = { "Provolone" };
+    private String[] veggiesUsed = { "Lettuce", "Tomatoes", "Onions", "Sweet Peppers" };
+    private String[] condimentsUsed = { "Oil", "Vinegar" };
 
+    /**
+     * Add meat.
+     */
     public void addMeat(){
 
         System.out.print("Adding the Meat: ");
@@ -15,6 +21,9 @@ public class ItalianHoagie extends Hoagie{
             System.out.print(meat + " ");
     }
 
+    /**
+     *  Add cheese.
+     */
     public void addCheese(){
 
         System.out.print("Adding the Cheese: ");
@@ -23,6 +32,9 @@ public class ItalianHoagie extends Hoagie{
             System.out.print(cheese + " ");
     }
 
+    /**
+     *  Add vegetables.
+     */
     public void addVegetables(){
 
         System.out.print("Adding the Vegetables: ");
@@ -31,6 +43,9 @@ public class ItalianHoagie extends Hoagie{
             System.out.print(vegetable + " ");
     }
 
+    /**
+     *  Add condiments.
+     */
     public void addCondiments(){
 
         System.out.print("Adding the Condiments: ");
@@ -39,46 +54,3 @@ public class ItalianHoagie extends Hoagie{
             System.out.print(condiment + " ");
     }
 }
-
-	/*
-	public void makeSandwich(){
-
-		cutBun();
-		addMeat();
-		addCheese();
-		addVegetables();
-		addCondiments();
-		wrapTheHoagie();
-	}
-
-	public void cutBun(){
-
-		System.out.println("The Hoagie is Cut");
-	}
-
-	public void addMeat(){
-
-		System.out.println("Add Salami, Pepperoni and Capicola ham");
-	}
-
-	public void addCheese(){
-
-		System.out.println("Add Provolone");
-	}
-
-	public void addVegetables(){
-
-		System.out.println("Add Lettuce, Tomatoes, Onions and Sweet Peppers");
-	}
-
-	public void addCondiments(){
-
-		System.out.println("Add Oil and Vinegar");
-	}
-
-	public void wrapTheHoagie(){
-
-		System.out.println("Wrap the Hoagie");
-	}
-}
-	*/

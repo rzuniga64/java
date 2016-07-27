@@ -1,13 +1,26 @@
 package template_method;
 
-public class VeggieHoagie extends Hoagie{
+/**
+ * The type Veggie hoagie.
+ */
+class VeggieHoagie extends Hoagie{
 
-    String[] veggiesUsed = { "Lettuce", "Tomatoes", "Onions", "Sweet Peppers" };
-    String[] condimentsUsed = { "Oil", "Vinegar" };
+    private String[] veggiesUsed = { "Lettuce", "Tomatoes", "Onions", "Sweet Peppers" };
+    private String[] condimentsUsed = { "Oil", "Vinegar" };
 
+    /**
+     * Customer wants meet.
+     */
     boolean customerWantsMeat() { return false; }
+
+    /**
+     * Customer wants cheese.
+     */
     boolean customerWantsCheese() { return false; }
 
+    /**
+     * add Vegetables
+     */
     public void addVegetables(){
 
         System.out.print("Adding the Vegetables: ");
@@ -16,6 +29,9 @@ public class VeggieHoagie extends Hoagie{
             System.out.print(vegetable + " ");
     }
 
+    /**
+     * Add condiments.
+     */
     public void addCondiments(){
 
         System.out.print("Adding the Condiments: ");
@@ -24,6 +40,13 @@ public class VeggieHoagie extends Hoagie{
             System.out.print(condiment + " ");
     }
 
+    /**
+     * Add meat.
+     */
     void addMeat() {}
+
+    /**
+     * Add cheese.
+     */
     void addCheese() {}
 }
