@@ -1,17 +1,23 @@
 package state;
 
+/**
+ * The type Atm machine (Context).
+ */
 public class ATMMachine {
 
-    ATMState hasCard;
-    ATMState noCard;
-    ATMState hasCorrectPin;
-    ATMState atmOutOfMoney;
+    private ATMState hasCard;
+    private ATMState noCard;
+    private ATMState hasCorrectPin;
+    private ATMState atmOutOfMoney;
 
-    ATMState atmState;
+    private ATMState atmState;
 
     int cashInMachine = 2000;
     boolean correctPinEntered = false;
 
+    /**
+     * Instantiates a new Atm machine.
+     */
     public ATMMachine(){
 
         hasCard = new HasCard(this);
@@ -21,44 +27,91 @@ public class ATMMachine {
 
         atmState = noCard;
 
-        if(cashInMachine < 0){
-
+        if(cashInMachine < 0)
             atmState = atmOutOfMoney;
-        }
     }
 
+    /**
+     * Set atm state.
+     *
+     * @param newATMState the new atm state
+     */
     void setATMState(ATMState newATMState){
 
         atmState = newATMState;
     }
 
-    public void setCashInMachine(int newCashInMachine){
+    /**
+     * Set cash in machine.
+     *
+     * @param newCashInMachine the new cash in machine
+     */
+    void setCashInMachine(int newCashInMachine){
 
         cashInMachine = newCashInMachine;
     }
 
+    /**
+     * Insert card.
+     */
     public void insertCard() {
 
         atmState.insertCard();
     }
 
+    /**
+     * Eject card.
+     */
     public void ejectCard() {
 
         atmState.ejectCard();
     }
 
+    /**
+     * Request cash.
+     *
+     * @param cashToWithdraw the cash to withdraw
+     */
     public void requestCash(int cashToWithdraw) {
 
         atmState.requestCash(cashToWithdraw);
     }
 
+    /**
+     * Insert pin.
+     *
+     * @param pinEntered the pin entered
+     */
     public void insertPin(int pinEntered){
 
         atmState.insertPin(pinEntered);
     }
 
-    public ATMState getYesCardState() { return hasCard; }
-    public ATMState getNoCardState() { return noCard; }
-    public ATMState getHasPin() { return hasCorrectPin; }
-    public ATMState getNoCashState() { return atmOutOfMoney; }
+    /**
+     * Gets yes card state.
+     *
+     * @return the yes card state
+     */
+    ATMState getYesCardState() { return hasCard; }
+
+    /**
+     * Gets no card state.
+     *
+     * @return the no card state
+     */
+    ATMState getNoCardState() { return noCard; }
+
+    /**
+     * Gets has pin.
+     *
+     * @return the has pin
+     */
+    ATMState getHasPin() { return hasCorrectPin; }
+
+    /**
+     * Gets no cash state.
+     *
+     * @return the no cash state
+     */
+    ATMState getNoCashState() { return atmOutOfMoney; }
 }

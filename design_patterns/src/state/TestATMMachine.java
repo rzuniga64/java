@@ -1,7 +1,15 @@
 package state;
 
+/**
+ * The type Test atm machine.
+ */
 public class TestATMMachine {
 
+    /**
+     * Main.
+     *
+     * @param args the args
+     */
     public static void main(String[] args){
 
         ATMMachine atmMachine = new ATMMachine();
