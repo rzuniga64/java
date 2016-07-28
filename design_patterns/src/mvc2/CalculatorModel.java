@@ -1,22 +1,31 @@
 package mvc2;
 
-// The Model performs all the calculations needed
-// and that is it. It doesn't know the View
-// exists
+/**
+ *  The type Calculator model. The Model performs all the calculations needed and that is it. It doesn't know the View
+ *  exists
+ */
+class CalculatorModel {
 
-public class CalculatorModel {
-
-    // Holds the value of the sum of the numbers
-    // entered in the view
-
+    // Holds the value of the sum of the numbers entered in the view
     private int calculationValue;
 
-    public void addTwoNumbers(int firstNumber, int secondNumber){
+    /**
+     * Add two numbers.
+     *
+     * @param firstNumber  the first number
+     * @param secondNumber the second number
+     */
+    void addTwoNumbers(int firstNumber, int secondNumber){
 
         calculationValue = firstNumber + secondNumber;
     }
 
-    public int getCalculationValue(){
+    /**
+     * Get calculation value int.
+     *
+     * @return the int
+     */
+    int getCalculationValue(){
 
         return calculationValue;
     }
