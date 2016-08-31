@@ -4,7 +4,7 @@ import static sort.SortUtility.generateRandomArray;
 import static sort.SortUtility.printHorizontalArray;
 
 /**
- * 	Selection Sort
+ * 	Selection Sort is normally the best of the elementary sorts.
  *	There is a pass for each position (0..size-1)
  *	On each pass, the smallest (minimum) element in the rest of the list is exchanged (swapped) with element at the
  *	current position. The first part of the list (already processed) is always sorted. Each pass increases the size
