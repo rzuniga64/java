@@ -20,13 +20,13 @@ import static sort.SortUtility.printHorizontalArray;
  *	After 2nd pass	6 	10 	24	36	12	10 and 24 are swapped
  *	After 3rd pass	6	10	12	36	24	12 and 24 are swapped
  *	After 4th pass	6 	10	12	24	36	24 and 36 are swapped
-*
-*	N is the number of elements in the list
-*	Outer loop executes N-1 times
-*	Inner loop executes N-1, then N-2, then N-3, ... then once.
-*	Total number of comparisons (in inner loop) is the sum of 1 to N-1 is N(N + 1) /2
-*	Efficiency of algorith is O(N2)
-*/
+ *
+ *	N is the number of elements in the list
+ *	Outer loop executes N-1 times
+ *	Inner loop executes N-1, then N-2, then N-3, ... then once.
+ *	Total number of comparisons (in inner loop) is the sum of 1 to N-1 is N(N + 1) /2
+ *	Efficiency of algorith is O(N2)
+ */
 
 public class SelectionSort {
 
