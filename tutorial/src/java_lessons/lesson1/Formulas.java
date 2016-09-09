@@ -1,4 +1,4 @@
-package java_lessons.DataTypes;
+package java_lessons.lesson1;
 
 // x / y - 3
 // 1 / (x + y)

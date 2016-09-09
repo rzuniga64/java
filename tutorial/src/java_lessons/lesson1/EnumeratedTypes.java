@@ -1,4 +1,4 @@
-package java_lessons.DataTypes;
+package java_lessons.lesson1;
 
 /**
  * An enumerated data type is a programmer defined data type.
@@ -10,23 +10,22 @@ package java_lessons.DataTypes;
  *
  * When the enum is declared public inside a class, the typename and values must include the class name and scope
  * resolution operator outside the class
- *
  */
 
 public class EnumeratedTypes {
 
-    public enum Day {
+    private enum Day {
         SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
         THURSDAY, FRIDAY, SATURDAY
     }
 
-    Day day;
+    private Day day;
 
-    public EnumeratedTypes(Day day) {
+    private EnumeratedTypes(Day day) {
         this.day = day;
     }
 
-    public void tellItLikeItIs() {
+    private void tellItLikeItIs() {
         switch (day) {
             case MONDAY:
                 System.out.println("Mondays are bad.");

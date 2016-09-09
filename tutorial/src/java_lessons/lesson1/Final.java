@@ -1,4 +1,4 @@
-package java_lessons.DataTypes;
+package java_lessons.lesson1;
 
 public class Final
 {
@@ -7,6 +7,6 @@ public class Final
       final double pi = 3.14159;
       double radius = 2.0;
       double area = pi * (radius * radius);
-      final String greeting = "Hello";
+      System.out.println("area = " + area);
    }
 }
