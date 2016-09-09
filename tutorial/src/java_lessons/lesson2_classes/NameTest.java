@@ -1,7 +1,6 @@
 package java_lessons.lesson2_classes;
 
 public class NameTest {
-	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		Name myName = new Name("Raul", "Zuniga");
 		Name yourName = new Name("Randy", "Burcham");
@@ -14,6 +13,6 @@ public class NameTest {
 		yourName.setLast("Brown");
 		System.out.println("yourName: " + yourName.toString());
 		someName.setName("John", "Quincy", "Adams");
-		System.out.println("youName: " + someName.toString());
+		System.out.println("someName: " + someName.toString());
 	}
 }

@@ -8,6 +8,5 @@ public class DateTest {
 		tomorrow.setDay(5);
 		System.out.println("tomorrow is " + tomorrow.toString());
 		System.out.println("today is again " + today.getMonth() + "/" + today.getDay() + "/" + today.getYear());
-		
 	}
 }

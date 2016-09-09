@@ -16,6 +16,12 @@ class Date {
 		year = y;
 	}
 	
+	Date() {
+		month = 0;
+		day = 0;
+		year = 0;
+	}
+
 	public String toString() {
 		return month + "/" + day + "/" + year;
 	}
@@ -32,9 +38,7 @@ class Date {
 		return year;
 	}
 	
-	public void setMonth(int m) {
-		month = m;
-	}
+	public void setMonth(int m) { month = m; }
 	
 	void setDay(int d) {
 		day = d;

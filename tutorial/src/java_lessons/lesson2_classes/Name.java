@@ -59,10 +59,6 @@ public class Name
 			last = lname;
 		}
 		
-		public String displayName() {
-			return first + " " + middle + " " + last;
-		}
-		
         void setName(String f, String m, String l) {
 			first = f;
 			middle = m;
@@ -70,8 +66,7 @@ public class Name
 		}
 
 		public String getInitials() {
-			return first.substring(0,1) + middle.substring(0,1)
-				   + last.substring(0,1);
+			return first.substring(0,1) + middle.substring(0,1) + last.substring(0,1);
 		}
 }
 
