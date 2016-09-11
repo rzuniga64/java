@@ -9,7 +9,7 @@ public class InsertionSort {
     private int arraySize = 10;
 
     /**
-     *  The Insertion sort.SelectionSort is normally the best of the elementary sorts.
+     *  The Insertion sort.
      *  Unlike the other sorts that had a group sorted at any given time, groups are only partially sorted here.
      *
      *  Runtime analysis
