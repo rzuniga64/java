@@ -15,7 +15,7 @@ import java.util.Arrays;
  *  HashEntry find(x)           : Return item and it's index that matches x
  *  void displayTheStack()
  */
-public class HashTable  {
+public class HashTableLinearProbing {
 
     private class HashEntry {
         private int key;
@@ -45,7 +45,7 @@ public class HashTable  {
      *
      * @param size the size of the hash table
      */
-    private HashTable(int size) {
+    private HashTableLinearProbing(int size) {
 
         tableSize = size;
         table = new HashEntry[tableSize];
@@ -66,6 +66,7 @@ public class HashTable  {
 
             // Create an index to store the value in by taking the modulus
             int hash = Math.abs(Integer.parseInt(value)) % this.tableSize;
+
             System.out.println("Modulus Index= " + hash + " for value " + value);
 
             // Cycle through the array until we find an empty slot.
@@ -154,7 +155,7 @@ public class HashTable  {
 
         final int TABLE_SIZE = 43;
 
-        HashTable table = new HashTable(TABLE_SIZE);
+        HashTableLinearProbing table = new HashTableLinearProbing(TABLE_SIZE);
 
         // This contains exactly 30 items to show how collisions will work
 
