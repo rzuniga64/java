@@ -17,6 +17,11 @@ import java.util.Arrays;
  */
 public class HashTableLinearProbing {
 
+    private HashEntry[] table;
+    private int tableSize;
+
+    public static int occupied;
+
     private class HashEntry {
         private int key;
         private String value;
@@ -26,18 +31,14 @@ public class HashTableLinearProbing {
             this.value = value;
         }
 
-        public int getKey() {
+        int getKey() {
             return key;
         }
 
-        public String getValue() {
+        String getValue() {
             return value;
         }
     }
-
-    private HashEntry[] table;
-    private int tableSize;
-    public static int occupied;
 
     /**
      * Constructor
@@ -52,6 +53,14 @@ public class HashTableLinearProbing {
         Arrays.fill(table, null);
     }
 
+    private int hashFunction(String value) {
+        // Create an index to store the value in by taking the modulus
+        int hash = Math.abs(Integer.parseInt(value)) % this.tableSize;
+
+        System.out.println("Modulus Index= " + hash + " for value " + value);
+        return hash;
+    }
+
     /**
      *  Division Method
      *
@@ -62,29 +71,26 @@ public class HashTableLinearProbing {
      *
      * @param value the value to store in the hash table
      */
-    private int hashFunction(String value) {
+    private int findPos(String value) {
 
-            // Create an index to store the value in by taking the modulus
-            int hash = Math.abs(Integer.parseInt(value)) % this.tableSize;
-
-            System.out.println("Modulus Index= " + hash + " for value " + value);
+            int currentPos = hashFunction(value);
 
             // Cycle through the array until we find an empty slot.
-            while (table[hash] != null && !table[hash].getValue().equals(value)) {
+            while (table[currentPos] != null && !table[currentPos].getValue().equals(value)) {
 
-                ++hash;
-                System.out.println("Collision Try " + hash + " Instead");
+                ++currentPos;
+                System.out.println("Collision Try " + currentPos + " Instead");
                 occupied++;
 
                 // If we get to the end of the array go back to index 0
-                hash %= tableSize;
+                currentPos %= tableSize;
             }
 
-            return hash;
+            return currentPos;
     }
 
     private void insert(String value) {
-        int currentPos = hashFunction(value);
+        int currentPos = findPos(value);
 
         table[currentPos] = new HashEntry(currentPos, value);
     }
@@ -96,11 +102,10 @@ public class HashTableLinearProbing {
      */
     private int find(String value) {
 
-        int currentPos = hashFunction(value);
+        int currentPos = findPos(value);
 
         return table[currentPos].getKey();
     }
-
 
     /**
      * Display the hash table.
@@ -145,7 +150,6 @@ public class HashTableLinearProbing {
         }
     }
 
-
     /**
      * The entry point of application.
      *
@@ -169,7 +173,7 @@ public class HashTableLinearProbing {
 
         // Locate the value 660 in the Hash Table
         table.displayTheStack();
-        System.out.println("The number of collisions is : " + table.occupied + "\n");
+        System.out.println("The number of collisions is : " + HashTableLinearProbing.occupied + "\n");
         System.out.println("The value 660 is at location: " + table.find("660"));
 
     }
