@@ -48,6 +48,7 @@ public class HashTableLinearProbing {
      */
     private HashTableLinearProbing(int size) {
 
+        occupied = 0;
         tableSize = size;
         table = new HashEntry[tableSize];
         Arrays.fill(table, null);
