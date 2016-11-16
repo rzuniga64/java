@@ -94,11 +94,11 @@ public class HashTableLinearProbing {
      *
      * @param value the value to find
      */
-    private HashEntry find(String value) {
+    private int find(String value) {
 
         int currentPos = hashFunction(value);
 
-        return table[currentPos];
+        return table[currentPos].getKey();
     }
 
 
@@ -168,9 +168,10 @@ public class HashTableLinearProbing {
             table.insert( value );
 
         // Locate the value 660 in the Hash Table
-        table.find("660");
         table.displayTheStack();
-        System.out.println("The number of collisions is : " + table.occupied);
+        System.out.println("The number of collisions is : " + table.occupied + "\n");
+        System.out.println("The value 660 is at location: " + table.find("660"));
+
     }
 }
 
