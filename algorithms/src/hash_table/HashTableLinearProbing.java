@@ -20,7 +20,7 @@ public class HashTableLinearProbing {
     private HashEntry[] table;
     private int tableSize;
 
-    public static int occupied;
+    private static int occupied;
 
     private class HashEntry {
         private int key;
