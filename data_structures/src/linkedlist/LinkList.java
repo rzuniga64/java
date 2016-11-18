@@ -1,4 +1,4 @@
-package data_structure.linkedlist;
+package linkedlist;
 
 /**
  * A data structure representing a series of dynamically allocated nodes chained together in a sequence.
