@@ -1,8 +1,12 @@
 package trees;
 
 import static java.lang.Integer.max;
+import java.util.ListIterator;
 
 /***********************************************************************************************************************
+ *  Represents a node in a binary tree with a left and right child. Therefore this class also represents the root of
+ *  subtree.
+ *
  *  Public Operations
  *
  *  int getKey()
@@ -20,88 +24,85 @@ import static java.lang.Integer.max;
  *  void printPostOrder()   Print a postorder tree traversal
  *  void printInOrder()     Print a inorder tree traversal
  *  Node duplicate()        Return a duplicate tree
- */
-class Node {
-    private String name;
-    private int key;
+ **********************************************************************************************************************/
+class Node<T> {
 
-    private Node leftChild;
-    private Node rightChild;
+    private T element;
+    private Node leftChild, rightChild;
 
     /**
      * Instantiates a new Node.
      *
-     * @param key  the key
-     * @param name the name
+     * @param element  the element
      */
-    Node(int key, String name) {
-        this.key = key;
-        this.name = name;
+    Node(T element) {
+        this.element = element;
         this.leftChild = null;
         this.rightChild = null;
     }
 
     /**
-     * Gets key.
+     * Gets element.
      *
-     * @return the key
+     * @return the element
      */
-    int getKey() { return key; }
+    T getElement() { return element; }
 
     /**
-     * Sets key.
+     * Sets element.
      *
-     * @param key the key
+     * @param element the element
      */
-    public void setKey(int key) { this.key = key; }
-
-    /**
-     * Gets name.
-     *
-     * @return the name
-     */
-    public String getName() { return name; }
-
-    /**
-     * Sets name.
-     *
-     * @param name the name
-     */
-    public void setName(String name) { this.name = name; }
+    void setElement(T element) { this.element = element; }
 
     /**
      * Gets left child.
      *
      * @return the left child
      */
-    Node getLeftChild() { return leftChild; }
+    Node<T> getLeftChild() { return leftChild; }
 
     /**
      * Sets left child.
      *
      * @param leftChild the left child
      */
-    void setLeftChild(Node leftChild) { this.leftChild = leftChild; }
+    void setLeftChild(Node<T> leftChild) { this.leftChild = leftChild; }
 
     /**
      * Gets right child.
      *
      * @return the right child
      */
-    Node getRightChild() { return rightChild; }
+    Node<T> getRightChild() { return rightChild; }
 
     /**
      * Sets right child.
      *
      * @param rightChild the right child
      */
-    void setRightChild(Node rightChild) { this.rightChild = rightChild; }
+    void setRightChild(Node<T> rightChild) { this.rightChild = rightChild; }
 
     /**
      * Return each data value of node in a string.
      */
     public String toString() {
-        return name + " has the key " + key + "\nLeft Child: " + leftChild + "\nRight Child: " + rightChild + "\n";
+        //return element.getKey() + " has the key " + element.getName() + "\nLeft Child: " + leftChild + "\nRight Child: " + rightChild + "\n";
+        return null;
+    }
+
+    public Node<T> find (T target) {
+
+        Node<T> result = null;
+        if (element.equals(target))
+            result = this;
+        else
+            if (this.getLeftChild() != null)
+                result = this.getLeftChild().find(target);
+            if (result == null && this.getRightChild() != null)
+                result = this.getRightChild().find(target);
+
+        return result;
     }
 
     /**
@@ -135,50 +136,36 @@ class Node {
     /**
      * Print a pre order tree traversal
      */
-    void printPreOrder() {
+    void printPreOrder(ListIterator<T> iter) {
 
         System.out.println(this.toString());
         if (this.getLeftChild() != null)
-            this.getLeftChild().printPreOrder();
+            this.getLeftChild().printPreOrder(iter);
         if (this.getRightChild() != null)
-            this.getRightChild().printPreOrder();
+            this.getRightChild().printPreOrder(iter);
     }
 
     /**
      * Print a post order tree traversal
      */
-    void printPostOrder() {
+    void printPostOrder(ListIterator<T> iter) {
 
         System.out.println(this.toString());
         if (this.getLeftChild() != null)
-            this.getLeftChild().printPostOrder();
+            this.getLeftChild().printPostOrder(iter);
         if (this.getRightChild() != null)
-            this.getRightChild().printPostOrder();
+            this.getRightChild().printPostOrder(iter);
     }
 
     /**
      * Print a in order tree traversal.
      */
-    void printInOrder() {
+    void printInOrder(ListIterator<T> iter) {
+
         if (this.getLeftChild() != null)
-            this.getLeftChild().printInOrder();
+            this.getLeftChild().printInOrder(iter);
         System.out.println(this.toString());
         if (this.getRightChild() != null)
-            this.getRightChild().printInOrder();
-    }
-
-    /**
-     * Return a duplicate tree
-     *
-     * @return the node
-     */
-    Node duplicate() {
-        Node root = new Node(key, name);
-
-        if (this.getLeftChild() != null)
-            root.setLeftChild(getLeftChild().duplicate());
-        if (this.getRightChild() != null)
-            root.setRightChild(getRightChild().duplicate());
-        return root;
+            this.getRightChild().printInOrder(iter);
     }
 }
