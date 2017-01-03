@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class KMeans {
-	private final static String input1 = "src/input1.txt";
-	private final static String input2 = "src/input2.txt";
-	private final static String input3 = "src/input3.txt";
-	private final static String input4 = "src/input4.txt";
+	private final static String input1 = "kmeans\\src\\input1.txt";
+	private final static String input2 = "kmeans\\src\\input2.txt";
+	private final static String input3 = "kmeans\\src\\input3.txt";
+	private final static String input4 = "kmeans\\src\\input4.txt";
 	
 	//Number of Clusters. This metric should be related to the number of points
     private final static int NUM_CLUSTERS1 = 2;
@@ -95,7 +95,9 @@ public class KMeans {
         System.out.println("[Points: \n");
   
         try {
-			FileWriter fw = new FileWriter("src/outfile" + Integer.toString(index+1) + ".txt", false);
+			FileWriter fw = new FileWriter("kmeans\\src\\outfile" + Integer
+                    .toString
+                    (index+1) + ".txt", false);
 	        PrintWriter pw  = new PrintWriter(fw);
 	        for (Point p : points) {
 	        	pw.write(p.toString() + "\t" + Integer.toString(c.getId()) + "\n");
