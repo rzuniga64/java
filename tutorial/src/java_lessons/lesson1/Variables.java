@@ -17,8 +17,7 @@ public final class Variables {
      * Unit tests.
      * @param args the arguments
      */
-    public static void main(final String[] args)
-    {
+    public static void main(final String[] args) {
         // Integral types
         int int1       = 1;    // -2**31 - 2**31
         long long1     = 1L;   // -2**63 - 2**63
