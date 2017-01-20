@@ -1,4 +1,4 @@
-package java_lessons.lesson5_decision_making;
+package java_lessons.lesson4_decision_making;
 
 public class LogicalOperators
 {

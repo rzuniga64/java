@@ -1,4 +1,4 @@
-package java_lessons.lesson2_classes;
+package java_lessons.lesson5_classes;
 
 public class NameTest {
 	public static void main(String[] args) {
