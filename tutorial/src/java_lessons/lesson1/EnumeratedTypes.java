@@ -12,20 +12,25 @@ package java_lessons.lesson1;
  * include the class name and scope
  * resolution operator outside the class
  */
+public final class EnumeratedTypes {
 
-public class EnumeratedTypes {
+    /** Constructor. */
+    private EnumeratedTypes() { }
 
-    private enum Day {
-        SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
-        THURSDAY, FRIDAY, SATURDAY
-    }
-
+    /** Enum data type. */
+    private enum Day { SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY }
+    /** Day data type. */
     private Day day;
 
-    private EnumeratedTypes(Day day) {
-        this.day = day;
+    /**
+     * EnumeratedTypes data type.
+     * @param newDay the day
+     */
+    private EnumeratedTypes(final Day newDay) {
+        this.day = newDay;
     }
 
+    /** tellItLikeItIs. */
     private void tellItLikeItIs() {
         switch (day) {
             case MONDAY:
@@ -46,7 +51,11 @@ public class EnumeratedTypes {
         }
     }
 
-    public static void main(String[] args) {
+    /**
+     * Unit tests.
+     * @param args the arguments
+     */
+    public static void main(final String[] args) {
         EnumeratedTypes firstDay = new EnumeratedTypes(Day.MONDAY);
         firstDay.tellItLikeItIs();
         EnumeratedTypes thirdDay = new EnumeratedTypes(Day.WEDNESDAY);
