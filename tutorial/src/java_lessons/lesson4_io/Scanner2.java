@@ -2,14 +2,29 @@ package java_lessons.lesson4_io;
 
 import java.util.Scanner;
 
-public class Scanner2 
-{
-   public static void main(String[] args)
-   {
+/**
+ * Scanner2 class.
+ */
+public final class Scanner2 {
+
+   /**
+    *  Scanner 1 class.
+    *  Console represented by System.out.
+    *  Keyboard represented by System.in.
+    */
+
+   /** Constructor. */
+   private Scanner2() { }
+
+   /**
+    * Unit tests.
+    * @param args the arguments.
+    */
+   public static void main(final String[] args) {
       String name;
       Scanner input = new Scanner(System.in);
       System.out.print("Enter your name: ");
       name = input.nextLine();
-      System.out.println("Your name is " + name);  
+      System.out.println("Your name is " + name);
    }
 }
