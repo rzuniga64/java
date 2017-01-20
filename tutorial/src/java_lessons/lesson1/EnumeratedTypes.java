@@ -8,7 +8,8 @@ package java_lessons.lesson1;
  * - Operations that work over enum values:
  * - =, ==, !=, <, <=, >, >=, can use as case labels in switch stmt
  *
- * When the enum is declared public inside a class, the typename and values must include the class name and scope
+ * When the enum is declared public inside a class, the typename and values must
+ * include the class name and scope
  * resolution operator outside the class
  */
 
