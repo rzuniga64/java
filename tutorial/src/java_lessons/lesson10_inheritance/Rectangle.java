@@ -18,6 +18,7 @@ public class Rectangle extends Shape {
      * @param h height
      */
     Rectangle(final int xcoor, final int ycoor, final int w, final int h) {
+
         super(xcoor, ycoor);
         width = w;
         height = h;
