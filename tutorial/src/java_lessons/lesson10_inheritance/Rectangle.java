@@ -1,17 +1,61 @@
 package java_lessons.lesson10_inheritance;
 
-public class Rectangle extends Shape{
+/**
+ * Rectangle class.
+ */
+public class Rectangle extends Shape {
+
+    /** Width of rectangle. */
     private int width;
+    /** Height of rectangle. */
     private int height;
-    
-    Rectangle(int xcoor, int ycoor, int w, int h) {
+
+    /**
+     * Constructor.
+     * @param xcoor x-coordinate
+     * @param ycoor y-coordinate
+     * @param w width
+     * @param h height
+     */
+    Rectangle(final int xcoor, final int ycoor, final int w, final int h) {
         super(xcoor, ycoor);
         width = w;
         height = h;
     }
-    
-    public int getWidth() { return width; }
-    public int getHeight() { return height; }
-    public void setWidth(int w) { width = w; }
-    public void setHeight(int h) { height = h; }
+
+    /**
+     * Get the width.
+     * @return the width
+     */
+    public int getWidth() {
+
+        return width;
+    }
+
+    /**
+     * Get the height.
+     * @return the height.
+     */
+    public int getHeight() {
+
+        return height;
+    }
+
+    /**
+     * Set the width.
+     * @param w the width
+     */
+    public void setWidth(final int w) {
+
+        width = w;
+    }
+
+    /**
+     * Set the height.
+     * @param h the height
+     */
+    public void setHeight(final int h) {
+
+        height = h;
+    }
 }
