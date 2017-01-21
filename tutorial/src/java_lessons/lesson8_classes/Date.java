@@ -53,7 +53,7 @@ public final class  Date {
      * @return the object as a string
      */
     public String toString() {
-        return month + "/" + day + "/" + year;
+        return getMonth() + "/" + getDay() + "/" + getYear();
     }
 
     /**
