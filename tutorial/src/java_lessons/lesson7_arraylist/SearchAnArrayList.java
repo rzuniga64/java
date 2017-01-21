@@ -21,7 +21,6 @@ public final class SearchAnArrayList {
      */
     public static void main(final String[] args) {
 
-        Random rand = new Random(System.currentTimeMillis());
         ArrayList<Integer> numbers = new ArrayList<>();
 
         for (int i = 0; i < 100; ++i) {
