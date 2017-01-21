@@ -5,8 +5,7 @@ import java.util.Scanner;
 /**
  * Exercise1QuestionAnswer class.
  */
-public final class Exercise1QuestionAnswer
-{
+public final class Exercise1QuestionAnswer {
    /** Constructor. */
    private Exercise1QuestionAnswer() { }
 
