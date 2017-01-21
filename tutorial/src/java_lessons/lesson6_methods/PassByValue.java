@@ -1,7 +1,9 @@
 package java_lessons.lesson6_methods;
 
 /**
- * PassByValue class.
+ *  PassByValue class. Compiler makes a copy of the value and works with the
+ *  copy within the method definition.
+ *  Java passes by value by default.
  */
 public final class PassByValue {
 
