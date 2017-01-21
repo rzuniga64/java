@@ -41,12 +41,12 @@ public final class DefiningAMethodPart2 {
        double ctemp, ftemp;
        Scanner input = new Scanner(System.in);
 
-       System.out.print("Enter a temparature in Fahrenheit: ");
+       System.out.print("Enter a temperature in Fahrenheit: ");
        ftemp = input.nextDouble();
        ctemp = ftoc(ftemp);
        System.out.println(ftemp + " F is equal to " + ctemp + " C.");
 
-       System.out.print("Enter a temparature in Celcius: ");
+       System.out.print("Enter a temperature in Celsius: ");
        ctemp = input.nextDouble();
        ftemp = ctof(ctemp);
        System.out.println(ctemp + " F is equal to " + ftemp + " C.");
