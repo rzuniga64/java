@@ -1,7 +1,7 @@
 package java_lessons.lesson11_polymorphism;
 
 /**
- * Shape class.
+ * Shape abstract class.
  *
  * An abstract class that can be inherited from but can not be instantiated
  * directly.  Used as a basis to create other classes. For Example, we don't
