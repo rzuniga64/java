@@ -1,25 +1,47 @@
 package java_lessons.lesson11_polymorphism;
 
-public class Employee
-{
+/**
+ * Employee class is the base or parent class from which the Manager class will
+ * inherit.
+ */
+public class Employee {
+
+   /** Name of a person. */
    private final String name;
+   /** The salary of the person. */
    protected double salary;
 
-   Employee(String n, double s) {
+   /**
+    * Constructor.
+    * @param n the name
+    * @param s the salary
+    */
+   Employee(final String n, final double s) {
       name = n;
       salary = s;
    }
- 
+
+   /**
+    * Get the name.
+    * @return the name
+    */
    public String getName() {
       return name;
    }
 
+   /**
+    * Get the salary.
+    * @return the salary
+    */
    public double getSalary() {
       return salary;
    }
 
-   public String displayEmpInfo() {
-      return "Name: " + name + "\n" + 
-             "Salary: " + salary + "\n";
+   /**
+    * Display employee info.
+    * @return employee info as a String
+    */
+   public String display() {
+      return "Name: " + name + "\n" + "Salary: " + salary + "\n";
    }
 }
