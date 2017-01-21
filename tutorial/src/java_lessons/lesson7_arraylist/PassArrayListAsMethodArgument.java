@@ -28,6 +28,8 @@ public final class PassArrayListAsMethodArgument {
 
    /**
     * Change the contents of an array list.
+    * To change the contents of an ArrayList call the set method passing it the
+    * index of the item you want to change.
     * @param arr the array
     * @param amount the amount
     */
