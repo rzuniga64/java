@@ -85,8 +85,8 @@ public abstract class Shape {
    }
 
    /**
-    * Abstract method. A class that inherits from Shape1 must implement a
-    * draw method but not necessarily inherit the Shape1's draw method.  It
+    * Abstract method. A class that inherits from Shape must implement a
+    * draw method but not necessarily inherit the Shape's draw method.  It
     * doesn't make sense to have a draw method for shape because we haven't
     * defined the shape.  So rather than have a body that does something
     * meaningless it's better to make the method abstract and then implement
