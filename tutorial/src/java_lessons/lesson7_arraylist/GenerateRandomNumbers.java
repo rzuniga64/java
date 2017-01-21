@@ -13,22 +13,6 @@ public final class GenerateRandomNumbers {
      */
     private GenerateRandomNumbers() { }
 
-   /**
-    * Unit tests.
-    * @param args the arguments.
-    */
-   public static void main(final String[] args) {
-
-       int number;
-        Random rand = new Random(System.currentTimeMillis());
-       ArrayList<Integer> numbers = new ArrayList<>();
-       for (int i = 0; i < 10; ++i) {
-            number = rand.nextInt(101);
-            numbers.add(number);
-       }
-       display(numbers);
-   }
-
     /**
      * Display the array.
      * @param arr the array
@@ -38,4 +22,20 @@ public final class GenerateRandomNumbers {
           System.out.print(item + " ");
       }
    }
+
+    /**
+     * Unit tests.
+     * @param args the arguments.
+     */
+    public static void main(final String[] args) {
+
+        int number;
+        Random rand = new Random(System.currentTimeMillis());
+        ArrayList<Integer> numbers = new ArrayList<>();
+        for (int i = 0; i < 10; ++i) {
+            number = rand.nextInt(101);
+            numbers.add(number);
+        }
+        display(numbers);
+    }
 }
