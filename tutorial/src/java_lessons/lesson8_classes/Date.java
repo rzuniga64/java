@@ -128,5 +128,6 @@ public final class  Date {
         System.out.println("tomorrow is " + tomorrow.toString());
         System.out.println("today is again " + today.getMonth() + "/"
                 + today.getDay() + "/" + today.getYear());
+        System.out.println("Do two dates equal? " + today.equals(tomorrow));
     }
 }
