@@ -16,7 +16,8 @@ public final class Calculator {
     * @param n2 number
     * @return the sum
     */
-   static double add(final double n1, final double n2) { return n1 + n2; }
+   private static double add(final double n1, final double n2) {
+       return n1 + n2; }
 
    /**
     *
@@ -24,7 +25,7 @@ public final class Calculator {
     * @param n2 number
     * @return the result
     */
-   static double subtract(final double n1, final double n2) {
+   private static double subtract(final double n1, final double n2) {
       return n1 - n2;
    }
 
@@ -34,7 +35,7 @@ public final class Calculator {
     * @param n2 number
     * @return the result
     */
-   static double mult(final double n1, final double n2) {
+   private static double mult(final double n1, final double n2) {
       return n1 * n2;
    }
 
@@ -44,7 +45,8 @@ public final class Calculator {
     * @param n2 number
     * @return the result
     */
-   static double div(final double n1, final double n2) { return n1 / n2; }
+   private static double div(final double n1, final double n2) {
+       return n1 / n2; }
 
     /**
      * Unit tests.
