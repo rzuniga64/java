@@ -26,7 +26,7 @@ public final class MultipleParameters {
     * @param temp the temperature
     * @return the temperatur in fahrenheit
     */
-   static double ctof(final double temp) {
+   private static double ctof(final double temp) {
       double fahrenheit;
       fahrenheit = temp * (9.0 / 5.0) + 32.0;
       return fahrenheit;
@@ -38,11 +38,12 @@ public final class MultipleParameters {
      * @param type the type
      * @return the temperature
      */
-   static double convert(final double temp, final String type) {
-      if (type.equals("C"))
-         return (temp - 32.0) * (5.0 / 9.0);
-      else
-         return temp * (9.0 / 5.0) + 32.0;
+   private static double convert(final double temp, final String type) {
+      if (type.equals("C")) {
+          return (temp - 32.0) * (5.0 / 9.0);
+      } else {
+          return temp * (9.0 / 5.0) + 32.0;
+      }
    }
 
     /**
