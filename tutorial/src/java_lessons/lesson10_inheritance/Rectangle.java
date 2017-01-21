@@ -59,4 +59,17 @@ public class Rectangle extends Shape {
 
         height = h;
     }
+
+    /**
+     * Unit tests.
+     * @param args the arguments
+     */
+    public static void main(final String[] args) {
+
+        Rectangle r1 = new Rectangle(10,200,5,8);
+        System.out.println("x = " + r1.getX());
+        System.out.println("y = " + r1.getY());
+        System.out.println("width = " + r1.getWidth());
+        System.out.println("height = " + r1.getHeight());
+    }
 }
