@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 /**
  * PassArrayListAsMethodArgument class.
+ * Reference objects are passed by reference not by value. We have access to the
+ * underlying memory addresses where the reference object is stored.  So when
+ * we modify the object not just a copy. ArrayList is a reference object.
  */
 public final class PassArrayListAsMethodArgument {
 
