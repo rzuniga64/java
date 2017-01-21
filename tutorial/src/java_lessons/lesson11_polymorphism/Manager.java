@@ -1,25 +1,51 @@
 package java_lessons.lesson11_polymorphism;
 
-public class Manager extends Employee
-{
-   private final String department;
+/**
+ *  Manager class.
+ */
+public class Manager extends Employee {
 
-   Manager(String n, int s, String d) {
-      super(n, s);
+   /** Department. */
+   private String department;
+
+   /**
+    * Constructor.
+    * @param n name
+    * @param s salary
+    * @param d department
+    */
+   Manager(final String n, final int s, final String d) {
+      super(n, s);  // call the constructor of the superclass.
       department = d;
    }
 
-   public String getDepartment() {
-      return department;
-   }
+    /**
+     * Get department.
+     * @return department
+     */
+    public String getDepartment() {
+
+        return department;
+    }
+
+
+    /**
+     * Set the salary.
+     * @param e employee
+     * @param amount amount of salary
+     */
+    public void setSalary(final Employee e, final double amount) {
+
+        e.salary = amount;
+    }
 
    @Override
-   public String displayEmpInfo() {
-      String empinfo = super.displayEmpInfo();
-      return empinfo + "Department: " + department + "\n";
-   }
+   /**
+    * Display the manager information.
+    */
+   public String display() {
 
-   public void setSalary(Employee e, double amount) {
-      e.salary = amount;
+       String empinfo = super.display();
+       return empinfo + "Department: " + department + "\n";
    }
 }
