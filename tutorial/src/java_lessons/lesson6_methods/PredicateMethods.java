@@ -29,11 +29,7 @@ import java.util.Scanner;
      */
    static boolean isVowel(final char c) {
 
-      if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
-          return true;
-      } else {
-          return false;
-      }
+      return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
    }
 
     /**
