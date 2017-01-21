@@ -1,4 +1,4 @@
-package java_lessons.lesson7_methods;
+package java_lessons.lesson6_methods;
 
 public class PassByValue
 {

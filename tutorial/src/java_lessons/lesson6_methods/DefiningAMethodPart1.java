@@ -1,4 +1,4 @@
-package java_lessons.lesson7_methods;
+package java_lessons.lesson6_methods;
 
 // A method is a set of instructions that performs a named operation.
 // It takes data as input and may return data as output.
