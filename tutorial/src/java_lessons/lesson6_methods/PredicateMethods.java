@@ -32,6 +32,7 @@ import java.util.Scanner;
      * @return true if character is a vowel; false otherwise
      */
    static boolean isVowel(final char c) {
+
       if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
           return true;
       } else {
