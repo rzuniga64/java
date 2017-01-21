@@ -1,21 +1,36 @@
 package java_lessons.lesson8_classes;
 
+/**
+ * Date class
+ * - Use encapsulation and data hiding to limit access to data from outside
+ * the class.
+ * - Constructors are used to initialize data members to a value.
+ * - Constructors have same name as the class. They don't have a return type.
+ */
 class Date {
 
     private int month;
     private int day;
     private int year;
 
+    /**
+     * Fully parametized constructor.
+     * @param m month
+     * @param d day
+     * @param y year
+     */
     Date(final int m, final int d, final int y) {
-        month = m;
-        day = d;
-        year = y;
+
+        month = (m < 0 || m > 24) ? 0 : m;
+        day = (d < 0 || d > 31) ? 0 : d;
+        year = (y < 0) ? 0 : y;
     }
 
     Date(final int m, final int y) {
-        month = m;
+        
+        month = (m < 0 || m > 24) ? 0 : m;
         day = 0;
-        year = y;
+        year = (y < 0) ? 0 : y;
     }
 
     Date() {
