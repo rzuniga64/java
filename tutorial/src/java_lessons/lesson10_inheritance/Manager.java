@@ -1,25 +1,49 @@
 package java_lessons.lesson10_inheritance;
 
-public class Manager extends Employee
-{
+/**
+ * Manager class.
+ */
+public class Manager extends Employee {
+
+   /** Department. */
    private final String department;
 
-   Manager(String n, int s, String d) {
+   /**
+    * Constructor.
+    * @param n name
+    * @param s salary
+    * @param d department
+    */
+   Manager(final String n, final int s, final String d) {
       super(n, s);
       department = d;
    }
 
+   /**
+    * Get department.
+    * @return department
+    */
    public String getDepartment() {
       return department;
    }
 
    @Override
-   public String displayEmpInfo() {
-      String empinfo = super.displayEmpInfo();
+   /**
+    * Display the manager information.
+    */
+   public String display() {
+
+      String empinfo = super.display();
       return empinfo + "Department: " + department + "\n";
    }
 
-   public void setSalary(Employee e, double amount) {
-      e.salary = amount;
+    /**
+     * Set the salary.
+     * @param e employee
+     * @param amount amount of salary
+     */
+   public void setSalary(final Employee e, final double amount) {
+
+       e.setSalary(amount);
    }
 }
