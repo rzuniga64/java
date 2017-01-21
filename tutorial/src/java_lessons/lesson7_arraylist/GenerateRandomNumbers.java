@@ -30,9 +30,13 @@ public final class GenerateRandomNumbers {
     public static void main(final String[] args) {
 
         int number;
+        // Seed the random number generator is the system clock in ms
         Random rand = new Random(System.currentTimeMillis());
         ArrayList<Integer> numbers = new ArrayList<>();
+
         for (int i = 0; i < 10; ++i) {
+            // to specify a range you put a number as an argument to nextInt
+            // that is in the range of n - 1 of the numbers that you want
             number = rand.nextInt(101);
             numbers.add(number);
         }
