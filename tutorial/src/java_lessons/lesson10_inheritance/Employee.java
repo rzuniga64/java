@@ -1,25 +1,49 @@
 package java_lessons.lesson10_inheritance;
 
-public class Employee
-{
-   private final String name;
-   protected double salary;
+/**
+ * Employee class is the base or parent class from which other classes will
+ * inherit.
+ *
+ * Inheritance is when a class inherits the features of another class.
+ */
+public class Employee {
 
-   Employee(String n, double s) {
-      name = n;
-      salary = s;
-   }
- 
-   public String getName() {
-      return name;
-   }
+    /** Name of a person. */
+    private final String name;
+   /** The salary of the person. */
+    private double salary;
 
-   public double getSalary() {
-      return salary;
-   }
+    /**
+     * Constructor.
+     * @param n the name
+     * @param s the salary
+     */
+    Employee(final String n, final double s) {
+        name = n;
+        salary = s;
+    }
 
-   public String displayEmpInfo() {
-      return "Name: " + name + "\n" + 
-             "Salary: " + salary + "\n";
+    /**
+     * Get the name.
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Get the salary.
+     * @return the salary
+     */
+    public double getSalary() {
+        return salary;
+    }
+
+    /**
+     * Display employee info.
+     * @return employee info as a String
+     */
+    public String display() {
+        return "Name: " + name + "\n" + "Salary: " + salary + "\n";
    }
 }
