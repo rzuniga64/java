@@ -27,6 +27,7 @@ public final class DefiningAMethodPart1 {
      * @param args the arguments.
      */
     public static void main(final String[] args) {
+
         int num = 12;
         System.out.println(num + " squared equals " + square(num));
     }
