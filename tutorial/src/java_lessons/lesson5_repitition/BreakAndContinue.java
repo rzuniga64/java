@@ -15,6 +15,7 @@ public final class BreakAndContinue {
      * @param args the arguments.
      */
    public static void main(final String[] args) {
+
        String spaces = "there are spaces in this string";
        int numSpaces = 0;
        for (int i = 0; i < spaces.length(); ++i) {
