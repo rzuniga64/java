@@ -1,7 +1,9 @@
 package java_lessons.lesson10_inheritance;
 
 /**
- * Manager class.
+ *  Manager class.
+ *  When we write the constructor of the subclass we have to call the
+ *  constructor of the superclass.
  */
 public class Manager extends Employee {
 
@@ -14,8 +16,8 @@ public class Manager extends Employee {
     * @param s salary
     * @param d department
     */
-   Manager(final String n, final int s, final String d) {
-      super(n, s);
+   private Manager(final String n, final int s, final String d) {
+      super(n, s);  // call the constructor of the superclass.
       department = d;
    }
 
