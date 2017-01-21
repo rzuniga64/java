@@ -33,6 +33,16 @@ public final class Manager extends Employee {
       return department;
    }
 
+    /**
+     * Set the salary.
+     * @param e employee
+     * @param amount amount of salary
+     */
+    public void setSalary(final Employee e, final double amount) {
+
+        e.salary = amount;
+    }
+
    @Override
    /**
     * Display the manager information.
@@ -63,5 +73,7 @@ public final class Manager extends Employee {
         System.out.println(e1.display());
         System.out.println(m1.display());
 
+        m1.setSalary(e1, 25000);
+        System.out.println(e1.display());
     }
 }
