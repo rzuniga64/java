@@ -16,7 +16,7 @@ public final class Manager extends Employee {
     * @param s salary
     * @param d department
     */
-   private Manager(final String n, final int s, final String d) {
+   Manager(final String n, final int s, final String d) {
       super(n, s);  // call the constructor of the superclass.
       department = d;
    }
@@ -48,4 +48,20 @@ public final class Manager extends Employee {
 
        e.setSalary(amount);
    }
+
+   /**
+    * Unit tests
+    * @param args the arguments
+    */
+    public static void main(final String[] args)
+    {
+        Employee e1 = new Employee("Brown", 30000);
+        System.out.println(e1.getName() + ": " + e1.getSalary());
+        Manager m1 = new Manager("Smith", 50000, "Sales");
+        System.out.println(m1.getName());
+        System.out.println(m1.getSalary());
+        System.out.println(m1.getDepartment());
+        //m1.raise(.2);
+        System.out.println(m1.getSalary());
+    }
 }
