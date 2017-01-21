@@ -69,10 +69,11 @@ public final class Manager extends Employee {
         //m1.raise(.2);
         System.out.println(m1.getSalary());
 
-        // overriding methods
+        // test overriding methods
         System.out.println(e1.display());
         System.out.println(m1.display());
 
+        // Test protected data member salary.
         m1.setSalary(e1, 25000);
         System.out.println(e1.display());
     }
