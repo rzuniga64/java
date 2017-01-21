@@ -9,6 +9,7 @@ public final class Polymorphism {
 
    /** Constructor. */
    private Polymorphism() { }
+
    /**
     * Unit tests.
     * @param args the arguments.
