@@ -5,6 +5,9 @@ package java_lessons.lesson10_inheritance;
  * inherit.
  *
  * Inheritance is when a class inherits the features of another class.
+ * Protected means any inheriting class also has access to the member.
+ * Protected is defined as allowing access to the superclass and subclass
+ * inheriting from the superclass.
  * Use protected for salary since we want to set salary from Manager class.
  */
 public class Employee {
