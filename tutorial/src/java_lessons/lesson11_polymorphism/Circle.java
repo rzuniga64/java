@@ -14,7 +14,7 @@ public final class Circle extends Shape {
      * @param ycoor y-coordinate
      * @param r the radius
      */
-    private Circle(final int xcoor, final int ycoor, final int r) {
+    Circle(final int xcoor, final int ycoor, final int r) {
         super(xcoor, ycoor);
         setRadius(r);
     }
