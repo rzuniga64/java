@@ -40,6 +40,13 @@ public class Employee {
     }
 
     /**
+     * Set salarty
+     */
+    public void setSalary(final double s) {
+        this.salary = s;
+    }
+
+    /**
      * Display employee info.
      * @return employee info as a String
      */
