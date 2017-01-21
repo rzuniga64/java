@@ -1,7 +1,7 @@
 package java_lessons.lesson11_polymorphism;
 
 /**
- * Shape1 interface.
+ * ShapeInterface interface.
  *
  * An interface is a class that has method names only but no method
  * definitions.  When you inherit from an interface the class will have these
@@ -10,7 +10,7 @@ package java_lessons.lesson11_polymorphism;
  * methods in the interface and any class that implements the interface must
  * define those methods listed in the interface definition.
  */
-public interface Shape1 {
+public interface ShapeInterface {
    /**
     * Get the x-coordinate.
     * @return the x-coordinate
