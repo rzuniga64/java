@@ -6,7 +6,7 @@ package java_lessons.lesson10_inheritance;
  *
  * Inheritance is when a class inherits the features of another class.
  */
-public final class Employee {
+public class Employee {
 
     /** Name of a person. */
     private final String name;
@@ -18,7 +18,7 @@ public final class Employee {
      * @param n the name
      * @param s the salary
      */
-    private Employee(final String n, final double s) {
+    Employee(final String n, final double s) {
         name = n;
         salary = s;
     }
