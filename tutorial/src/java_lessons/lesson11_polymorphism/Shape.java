@@ -9,7 +9,7 @@ package java_lessons.lesson11_polymorphism;
  * (Circle, Rectangle,etc).
  *
  * To make a class a superclass while not allowing a
- * user to instantaiate it is to make it abstract.
+ * user to instantiate it is to make it abstract.
 */
 
 public abstract class Shape {
