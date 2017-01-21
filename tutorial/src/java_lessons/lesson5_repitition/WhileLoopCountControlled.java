@@ -6,7 +6,7 @@ package java_lessons.lesson5_repitition;
 public final class WhileLoopCountControlled {
 
     /** Constructor. */
-    private LoopingCalculator() { }
+    private WhileLoopCountControlled() { }
 
     /**
      * Unit tests.
@@ -17,12 +17,14 @@ public final class WhileLoopCountControlled {
         // balance, rate, number of year
         double balance = 5000;
         double rate = 1.02;
+
         // create a loop control variable
         int year = 1;
-        while (year <= 10) {  		//test loop control variable
-            balance = balance * rate; 	// balance *= rate;
-            System.out.printf("After year " + year + ", the balance is %.2f\n", balance);
-            ++year;					// modify loop control variable
+        while (year <= 10) {   //test loop control variable
+            balance = balance * rate; // balance *= rate;
+            System.out.printf("After year " + year + ", the balance is %.2f\n",
+                    balance);
+            ++year; // modify loop control variable
         }
         System.out.printf("After 10 years the balance is %.2f.\n", balance);
     }
