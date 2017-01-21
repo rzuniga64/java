@@ -6,11 +6,14 @@ package java_lessons.lesson8_classes;
  * the class.
  * - Constructors are used to initialize data members to a value.
  * - Constructors have same name as the class. They don't have a return type.
+ * - Overloading allows you to overload a definition with another definition.
  */
-class Date {
-
+public final class  Date {
+    /** Month variable. */
     private int month;
+    /** Day variable. */
     private int day;
+    /** Year variable. */
     private int year;
 
     /**
@@ -19,54 +22,92 @@ class Date {
      * @param d day
      * @param y year
      */
-    Date(final int m, final int d, final int y) {
+    private Date(final int m, final int d, final int y) {
 
         month = (m < 0 || m > 24) ? 0 : m;
         day = (d < 0 || d > 31) ? 0 : d;
         year = (y < 0) ? 0 : y;
     }
 
-    Date(final int m, final int y) {
-        
+    /**
+     * Overloaded constructor.
+     * @param m month
+     * @param y year
+     */
+    private Date(final int m, final int y) {
+
         month = (m < 0 || m > 24) ? 0 : m;
         day = 0;
         year = (y < 0) ? 0 : y;
     }
 
-    Date() {
+    /** Default constructor. */
+    private Date() {
         month = 0;
         day = 0;
         year = 0;
     }
 
+    /**
+     * Display the state of the object at any particular time.
+     * @return the object as a string
+     */
     public String toString() {
         return month + "/" + day + "/" + year;
     }
 
-    int getMonth() {
+    /**
+     * Get the month.
+     * @return the month.
+     */
+    public int getMonth() {
         return month;
     }
 
-    int getDay() {
+    /**
+     * Get the day.
+     * @return the day.
+     */
+    public int getDay() {
         return day;
     }
 
-    int getYear() {
+    /**
+     * Get the year.
+     * @return the year
+     */
+    public int getYear() {
         return year;
     }
 
+    /**
+     * Set the month.
+     * @param m the month
+     */
     public void setMonth(final int m) {
         month = m;
     }
 
+    /**
+     * Set the day.
+     * @param d the day
+     */
     void setDay(final int d) {
         day = d;
      }
 
+    /**
+     * Set the year.
+     * @param y the year.
+     */
     public void setYear(final int y) {
         year = y;
     }
 
+    /**
+     * Unit tests.
+     * @param args the arguments.
+     */
     public static void main(final String[] args) {
 
         Date today = new Date(12, 26, 2013);
