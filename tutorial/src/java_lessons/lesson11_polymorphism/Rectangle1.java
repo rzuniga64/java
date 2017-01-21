@@ -6,7 +6,7 @@ package java_lessons.lesson11_polymorphism;
  * An interface is another way to build complex
  * hierchies in Java.
  */
-public class Rectangle1 implements Shape1 {
+public class Rectangle1 implements ShapeInterface {
 
     /** x ooordinate. */
     private int x;
@@ -67,7 +67,7 @@ public class Rectangle1 implements Shape1 {
        height = h;
    }
 
-   // Must implement the methods listed in the Shape1 interface
+   // Must implement the methods listed in the ShapeInterface interface
    @Override
    /**
     * Get the x-coordinate.
