@@ -24,6 +24,7 @@ public final class WhileLoopConditionControlled {
        System.out.print("Enter a grade (-1 to quit): ");
        Scanner input = new Scanner(System.in);
        grade = input.nextInt();
+
        while (grade != -1) {
            total += grade;
            ++count;
