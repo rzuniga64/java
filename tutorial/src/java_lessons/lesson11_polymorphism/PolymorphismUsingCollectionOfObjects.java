@@ -19,11 +19,14 @@ public final class PolymorphismUsingCollectionOfObjects {
       Manager m1 = new Manager("Brown", 40000, "IT");
       Employee e2 = new Employee("Jones", 30000);
       Manager m2 = new Manager("Green", 50000, "Sales");
-      ArrayList<Employee> emps = new ArrayList<Employee>();
+
+      ArrayList<Employee> emps = new ArrayList<>();
+
       emps.add(e2);
       emps.add(m1);
       emps.add(e1);
       emps.add(m2);
+
       for (Employee employee : emps) {
           System.out.println(employee.display());
       }
