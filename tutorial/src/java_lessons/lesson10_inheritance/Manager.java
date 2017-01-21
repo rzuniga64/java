@@ -6,7 +6,7 @@ package java_lessons.lesson10_inheritance;
 public class Manager extends Employee {
 
    /** Department. */
-   private final String department;
+   private String department;
 
    /**
     * Constructor.
