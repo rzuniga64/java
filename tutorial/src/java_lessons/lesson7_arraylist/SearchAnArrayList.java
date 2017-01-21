@@ -4,7 +4,9 @@ import java.util.Random;
 import java.util.ArrayList;
 
 /**
- * SearchArrayList class.
+ * SearchArrayList class. The following methods help us search an ArrayList:
+ * - indexOf
+ * - contains
  */
 public final class SearchAnArrayList {
 
@@ -26,11 +28,12 @@ public final class SearchAnArrayList {
             numbers.add(rand.nextInt(101));
         }
 
-        /*if (numbers.contains(100))
-            System.out.println("100 was found at position "
-                                    + numbers.indexOf(100));
-        else
-            System.out.println("100 was not found in numbers.");*/
+        if (numbers.contains(99)) {
+            System.out.println("99 was found at position "
+                    + numbers.indexOf(99));
+        } else {
+            System.out.println("100 was not found in numbers.");
+        }
 
         int min = 0;
         for (int i = 1; i < numbers.size(); ++i) {
