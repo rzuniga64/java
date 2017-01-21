@@ -19,7 +19,7 @@ public final class PassArrayListAsMethodArgument {
     * Display the contents of an array.
     * @param arr the array
     */
-   static void display(final ArrayList arr) {
+   private static void display(final ArrayList arr) {
       for (Object item : arr) {
          System.out.print(item + " ");
       }
@@ -31,7 +31,7 @@ public final class PassArrayListAsMethodArgument {
     * @param arr the array
     * @param amount the amount
     */
-   static void change(final ArrayList<Integer> arr, final int amount) {
+   private static void change(final ArrayList<Integer> arr, final int amount) {
        int value;
        for (int i = 0; i < arr.size(); ++i) {
            value = arr.get(i);
