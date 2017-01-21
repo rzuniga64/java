@@ -44,8 +44,8 @@ public final class Circle extends Shape {
     public static void main(final String[] args) {
 
         Circle c1 = new Circle(50, 50, 10);
-        System.out.println(c1.getX());
-        System.out.println(c1.getY());
-        System.out.println(c1.getRadius());
+        System.out.println("x = " + c1.getX());
+        System.out.println("y = " + c1.getY());
+        System.out.println("radius = " + c1.getRadius());
     }
 }
