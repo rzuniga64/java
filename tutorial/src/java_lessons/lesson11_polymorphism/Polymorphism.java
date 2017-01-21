@@ -15,6 +15,7 @@ public final class Polymorphism {
     * @param args the arguments.
     */
    public static void main(final String[] args) {
+
       Circle c1 = new Circle(10, 20, 5);
       Rectangle r1 = new Rectangle(50, 100, 10, 20);
       c1.draw();
