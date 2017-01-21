@@ -3,21 +3,39 @@ package java_lessons.lesson7_arraylist;
 import java.util.Random;
 import java.util.ArrayList;
 
-public class GenerateRandomNumbers
-{
-   public static void main(String[] args) 
-   {
-      Random rand = new Random(System.currentTimeMillis());
-      int number;
-      ArrayList<Integer> numbers = new ArrayList<Integer>();
-      for(int i = 0; i < 10; ++i) {
-         number = rand.nextInt(101);
-         numbers.add(number);
-      }
-      display(numbers);
+/**
+ * GenerateRandomNumbers class.
+ */
+public final class GenerateRandomNumbers {
+
+    /**
+     * Constructor.
+     */
+    private GenerateRandomNumbers() { }
+
+   /**
+    * Unit tests.
+    * @param args the arguments.
+    */
+   public static void main(final String[] args) {
+
+       int number;
+        Random rand = new Random(System.currentTimeMillis());
+       ArrayList<Integer> numbers = new ArrayList<>();
+       for (int i = 0; i < 10; ++i) {
+            number = rand.nextInt(101);
+            numbers.add(number);
+       }
+       display(numbers);
    }
-   static void display(ArrayList arr) {
-      for(int i = 0; i < arr.size(); ++i)
-         System.out.print(arr.get(i) + " ");
+
+    /**
+     * Display the array.
+     * @param arr the array
+     */
+   private static void display(final ArrayList arr) {
+      for (Object item : arr) {
+          System.out.print(item + " ");
+      }
    }
 }
