@@ -105,6 +105,17 @@ public final class  Date {
     }
 
     /**
+     * Are two object equal?
+     * @param d the date
+     * @return true if objects are equal; false otherwise
+     */
+    public boolean equals(final Date d) {
+
+        return (getMonth() == d.getMonth() && getDay() == d.getDay()
+                && getYear() == d.getYear());
+    }
+
+    /**
      * Unit tests.
      * @param args the arguments.
      */
