@@ -1,4 +1,4 @@
-package java_lessons.lesson6_repitition;
+package java_lessons.lesson5_repitition;
 
 public class ForLoop2
 {

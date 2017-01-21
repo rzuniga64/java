@@ -1,4 +1,4 @@
-package java_lessons.lesson5_classes;
+package java_lessons.lesson6_classes;
 
 public class DateTest {
 	public static void main(String[] args) {
