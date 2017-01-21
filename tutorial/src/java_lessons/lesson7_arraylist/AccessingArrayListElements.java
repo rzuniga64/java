@@ -18,8 +18,9 @@ public final class AccessingArrayListElements  {
      * @param arr the array
      */
     static void display(final ArrayList arr) {
-        for (int i = 0; i < arr.size(); ++i) {
-            System.out.print(arr.get(i) + " ");
+
+        for (Object item: arr) {
+            System.out.print(item + " ");
         }
     }
 
