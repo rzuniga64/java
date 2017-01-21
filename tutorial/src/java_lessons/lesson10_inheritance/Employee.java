@@ -18,7 +18,7 @@ public class Employee {
      * @param n the name
      * @param s the salary
      */
-    Employee(final String n, final double s) {
+    private Employee(final String n, final double s) {
         name = n;
         salary = s;
     }
