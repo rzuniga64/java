@@ -1,7 +1,7 @@
 package java_lessons.lesson10_inheritance;
 
 /**
- * Employee class is the base or parent class from which other classes will
+ * Employee class is the base or parent class from which the Manager class will
  * inherit.
  *
  * Inheritance is when a class inherits the features of another class.
