@@ -58,7 +58,7 @@ public final class MaxValue {
      */
     public static void main(final String[] args) {
 
-        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        ArrayList<Integer> numbers = new ArrayList<>();
         buildAL(numbers, 10);
         int max = maximum(numbers);
         display(numbers);
