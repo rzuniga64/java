@@ -2,10 +2,19 @@ package java_lessons.lesson11_polymorphism;
 
 import java.util.ArrayList;
 
-public class PolymorphismUsingCollectionOfObjects
-{
-   public static void main(String[] args)
-   {
+/**
+ * PolymorphismUsingCollectionOfObjects class.
+ */
+public final class PolymorphismUsingCollectionOfObjects {
+
+    /** Constructor. */
+    private PolymorphismUsingCollectionOfObjects() { }
+    /**
+     * Unit tests.
+     * @param args the arguments
+     */
+   public static void main(final String[] args) {
+
       Employee e1 = new Employee("Smith", 20000);
       Manager m1 = new Manager("Brown", 40000, "IT");
       Employee e2 = new Employee("Jones", 30000);
@@ -15,7 +24,8 @@ public class PolymorphismUsingCollectionOfObjects
       emps.add(m1);
       emps.add(e1);
       emps.add(m2);
-      for(int i = 0; i < emps.size(); ++i)
-         System.out.println(emps.get(i).displayEmpInfo());
+      for (Employee employee : emps) {
+          System.out.println(employee.display());
+      }
    }
 }
