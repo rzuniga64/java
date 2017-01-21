@@ -5,6 +5,8 @@ package java_lessons.lesson10_inheritance;
  * Every feature in Java is an object and those objects are placed in a chain
  * of inheritance.
  * An instance of the Object class can take on any other object.
+ * toString() and equals(Object object) are methods of the Object class which
+ * are typically overridden.
  */
 public final class ObjectClass {
 
