@@ -27,7 +27,7 @@ public final class Palindrome {
    }
 
     /**
-     * BuildAL method.
+     * Build an ArrayList from a string.
      * @param pword the pword
      * @param word the word
      */
