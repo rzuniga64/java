@@ -2,22 +2,28 @@ package java_lessons.lesson4_decision_making;
 
 import java.util.Scanner;
 
-/*
-   if (relational expression) {
-      statements;
-   }  else if (relational expression) {
-      statements;
-   } else if (relational expression) {
-      statements;
-   } else {
-      statements;
-   }
+/**
+ *  IfElseIfPart1 class.
+ *
+ *  if (relational expression) {
+ *      statements;
+ *  } else if (relational expression) {
+ *      statements;
+ *  } else if (relational expression) {
+ *      statements;
+ *  } else {
+ *      statements;
+ *  }
 */
+public final class IfElseIfPart1 {
+    /** Constructor. */
+    private IfElseIfPart1() { }
 
-public class IfElseIfPart1
-{
-   public static void main(String[] args)
-   {
+    /**
+     * Unit tests.
+     * @param args the arguments.
+     */
+    public static void main(final String[] args) {
       int grade;
       String letterGrade = "";
       Scanner input = new Scanner(System.in);
@@ -33,8 +39,9 @@ public class IfElseIfPart1
          letterGrade = "D";
       } else if (grade >= 0) {
          letterGrade = "F";
-      } else
-         System.out.println("Didn't recognize input.");
+      } else {
+          System.out.println("Didn't recognize input.");
+      }
       System.out.println("A grade of " + grade + " is a " + letterGrade + ".");
    }
 }
