@@ -39,28 +39,25 @@ public final class Manager extends Employee {
       return empinfo + "Department: " + department + "\n";
    }
 
-    /**
-     * Set the salary.
-     * @param e employee
-     * @param amount amount of salary
-     */
-   public void setSalary(final Employee e, final double amount) {
-
-       e.setSalary(amount);
-   }
-
    /**
     * Unit tests.
     * @param args the arguments
     */
     public static void main(final String[] args) {
+
         Employee e1 = new Employee("Brown", 30000);
         System.out.println(e1.getName() + ": " + e1.getSalary());
         Manager m1 = new Manager("Smith", 50000, "Sales");
+
         System.out.println(m1.getName());
         System.out.println(m1.getSalary());
         System.out.println(m1.getDepartment());
         //m1.raise(.2);
         System.out.println(m1.getSalary());
+
+        // overriding methods
+        System.out.println(e1.display());
+        System.out.println(m1.display());
+
     }
 }
