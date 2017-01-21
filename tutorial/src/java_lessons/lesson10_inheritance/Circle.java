@@ -3,7 +3,7 @@ package java_lessons.lesson10_inheritance;
 /**
  * Circle class.
  */
-public class Circle extends Shape {
+public final class Circle extends Shape {
 
     /** The radius of the circle. */
     private int radius;
@@ -14,7 +14,7 @@ public class Circle extends Shape {
      * @param ycoor y-coordinate
      * @param r the radius
      */
-    Circle(final int xcoor, final int ycoor, final int r) {
+    private Circle(final int xcoor, final int ycoor, final int r) {
         super(xcoor, ycoor);
         setRadius(r);
     }
