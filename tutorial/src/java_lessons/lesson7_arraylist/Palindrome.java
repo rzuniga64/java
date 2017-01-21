@@ -9,9 +9,7 @@ import java.util.Scanner;
  */
 public final class Palindrome {
 
-   /**
-    * Constructor.
-    */
+   /** Constructor. */
    private Palindrome() { }
 
    /**
