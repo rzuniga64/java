@@ -4,6 +4,10 @@ package java_lessons.lesson10_inheritance;
  *  Manager class.
  *  When we write the constructor of the subclass we have to call the
  *  constructor of the superclass.
+ *
+ *  Overriding is the ability to overwrite the superclass's methods in subclass
+ *  so it can use some of the information from the superclass plus adds
+ *  its own information from the sublclass necessary to complete the method.
  */
 public final class Manager extends Employee {
 
