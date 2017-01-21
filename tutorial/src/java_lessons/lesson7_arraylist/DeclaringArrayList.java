@@ -15,8 +15,8 @@ final class DeclaringArrayList {
      * @param args the arguments.
      */
    public static void main(final String[] args) {
-       ArrayList<String> names = new ArrayList<String>();
-       ArrayList<Integer> numbers = new ArrayList<Integer>();
-       ArrayList<Double> nums = new ArrayList<Double>();
+       ArrayList<String> names = new ArrayList<>();
+       ArrayList<Integer> numbers = new ArrayList<>();
+       ArrayList<Double> nums = new ArrayList<>();
    }
 }
