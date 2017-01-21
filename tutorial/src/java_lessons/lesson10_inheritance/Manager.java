@@ -5,7 +5,7 @@ package java_lessons.lesson10_inheritance;
  *  When we write the constructor of the subclass we have to call the
  *  constructor of the superclass.
  */
-public class Manager extends Employee {
+public final class Manager extends Employee {
 
    /** Department. */
    private String department;
