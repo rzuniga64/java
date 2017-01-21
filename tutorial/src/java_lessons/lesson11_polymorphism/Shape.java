@@ -13,6 +13,7 @@ package java_lessons.lesson11_polymorphism;
 */
 
 public abstract class Shape {
+    
    /** x ooordinate. */
    private int x;
    /** y coordinate. */
