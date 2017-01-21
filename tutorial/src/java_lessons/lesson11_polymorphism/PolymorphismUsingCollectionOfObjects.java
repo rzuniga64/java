@@ -9,6 +9,7 @@ public final class PolymorphismUsingCollectionOfObjects {
 
     /** Constructor. */
     private PolymorphismUsingCollectionOfObjects() { }
+
     /**
      * Unit tests.
      * @param args the arguments
