@@ -1,4 +1,4 @@
-package java_lessons.lesson6_classes;
+package java_lessons.lesson8_classes;
 class Date {
 	private int month;
 	private int day;
