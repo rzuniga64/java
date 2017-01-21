@@ -50,11 +50,10 @@ public final class Manager extends Employee {
    }
 
    /**
-    * Unit tests
+    * Unit tests.
     * @param args the arguments
     */
-    public static void main(final String[] args)
-    {
+    public static void main(final String[] args) {
         Employee e1 = new Employee("Brown", 30000);
         System.out.println(e1.getName() + ": " + e1.getSalary());
         Manager m1 = new Manager("Smith", 50000, "Sales");
