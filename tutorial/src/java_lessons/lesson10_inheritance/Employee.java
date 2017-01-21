@@ -5,13 +5,14 @@ package java_lessons.lesson10_inheritance;
  * inherit.
  *
  * Inheritance is when a class inherits the features of another class.
+ * Use protected for salary since we want to set salary from Manager class.
  */
 public class Employee {
 
     /** Name of a person. */
     private final String name;
    /** The salary of the person. */
-    private double salary;
+    protected double salary;
 
     /**
      * Constructor.
@@ -37,14 +38,6 @@ public class Employee {
      */
     public double getSalary() {
         return salary;
-    }
-
-    /**
-     * Set salary.
-     * @param s salary
-     */
-    public void setSalary(final double s) {
-        this.salary = s;
     }
 
     /**
