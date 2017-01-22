@@ -2,7 +2,7 @@ package java_lessons.lesson12_arrays;
 
 import java.util.Random;
 
-public class DisplayHistrogramUsingArray
+public class DisplayHistrogram
 {
    public static void main(String[] args)
    {
