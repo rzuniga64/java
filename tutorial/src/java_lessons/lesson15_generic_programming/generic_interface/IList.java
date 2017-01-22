@@ -14,7 +14,7 @@ interface IList<T> {
     void add(T item);
 
     /**
-     * Get an item.
+     * Get the nth item from the list.
      * @param n the index of the item.
      * @return T the desired item.
      */
