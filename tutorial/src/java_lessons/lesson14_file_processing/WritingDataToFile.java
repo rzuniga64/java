@@ -5,7 +5,10 @@ import java.io.PrintWriter;
 import java.io.IOException;
 
 /**
- * WritingDataToFile class.
+ *  WritingDataToFile class.
+ *  PrintWrite is the class that allows us to write data to a file.
+ *  FileWrite opens a file for output.
+ *
  */
 public final class WritingDataToFile {
 
@@ -15,7 +18,7 @@ public final class WritingDataToFile {
     /**
      * Unit tests.
      * @param args the arguments
-     * @throws IOException
+     * @throws IOException IOException
      */
     public static void main(final String[] args) throws IOException {
 
