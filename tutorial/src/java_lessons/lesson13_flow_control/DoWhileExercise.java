@@ -16,6 +16,7 @@ public final class DoWhileExercise {
      * @param args the arguments.
      */
     public static void main(final String[] args) {
+
         Scanner inputNum = new Scanner(System.in);
         Scanner input = new Scanner(System.in);
         Random rand = new Random(System.currentTimeMillis());
@@ -23,6 +24,7 @@ public final class DoWhileExercise {
         int number, guess;
         number = rand.nextInt(11);
         char cont;
+
         do {
             System.out.print("Guess a number: ");
             guess = inputNum.nextInt();
