@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public final class arrayList {
 
-    /** Construtor. */
+    /** Constructor. */
     private arrayList() { }
 
     /**
