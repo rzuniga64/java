@@ -24,12 +24,13 @@ public final class ReadingDataFromFile {
 
        String fileName = "tutorial\\src\\java_lessons\\lesson14_file_processing"
                + "\\grades.txt";
-      Scanner inFile = new Scanner(new FileReader(fileName));
-      int grade;
+        Scanner inFile = new Scanner(new FileReader(fileName));
+        int grade;
 
-      while (inFile.hasNextLine()) {
-         grade = Integer.parseInt(inFile.nextLine());
-         System.out.println(grade);
-      }
-   }
+        // Use hasNextLine() to see if there a line to read for input.
+        while (inFile.hasNextLine()) {
+            grade = Integer.parseInt(inFile.nextLine());
+            System.out.println(grade);
+        }
+    }
 }
