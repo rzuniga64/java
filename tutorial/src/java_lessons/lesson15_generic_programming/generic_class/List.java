@@ -5,7 +5,9 @@ import java_lessons.lesson20_exception_handling.ListEmptyException;
 /**
  *  List class. We want to specify a generic data type using generic programming
  *  by using a type place holder <T>. The letter T is a placeholder for the
- *  data type that will be provided later when we use the List class.
+ *  data type that will be provided later when we use the List class. You
+ *  cannot use a primitive type for a generic data type. Instead you must use
+ *  its wrapper class.
  *  @param <T> the type parameter
  */
 public class List<T> {
