@@ -1,28 +1,30 @@
 package java_lessons.lesson15_generic_programming.generic_class;
 
 /**
- * The type Node.
- *
+ * The Node class.
  * @param <T> the type parameter
  */
 class Node<T> {
+
+    /** The data. */
     private T data;
-    public Node next;
+    /** The reference to the next Node. */
+    private Node next;
 
     /**
      * Instantiates a new Node.
-     *
-     * @param data the data
+     * @param newData the data
      */
-    Node(T data) {
-        this.data = data;
+    Node(T newData) {
+        this.data = newData;
         next = null;
     }
 
     /**
-     * Gets data of the Node
-     *
+     * Get the data of the Node.
      * @return the data of the Node
      */
-    T getData() { return data; }
+    T getData() {
+        return data;
+    }
 }
