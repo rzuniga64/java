@@ -36,3 +36,4 @@ public final class AppendingDataToFile {
         outFile.close();
     }
 }
+
