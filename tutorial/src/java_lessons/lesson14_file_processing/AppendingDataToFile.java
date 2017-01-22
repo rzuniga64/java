@@ -26,6 +26,8 @@ public final class AppendingDataToFile {
 
        String fileName = "tutorial\\src\\java_lessons\\lesson14_file_processing"
               + "\\grades.txt";
+
+        // Add true as second argument to FileWrite to append to file.
         PrintWriter outFile = new PrintWriter(new FileWriter(fileName, true));
         Scanner input = new Scanner(System.in);
         int grade;
