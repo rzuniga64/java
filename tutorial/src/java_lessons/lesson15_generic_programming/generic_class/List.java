@@ -19,10 +19,10 @@ public class List<T> {
 
     /**
      * Constructor.
-     * Generic classes and methods only work with Object data types. Data
-     * types must be Object instead of primitive data types. Create a new
-     * Object array and cast it to the data type that will be provided when
-     * we instantiate a list.
+     * Java does not allow an array of Generic object. Generic classes and
+     * methods only work with Object data types. Data types must be Object
+     * instead of primitive data types. Create a new Object array and cast it
+     * to the data type that will be provided when we instantiate a list.
      * @param numElements the num elements
      */
     public List(final int numElements) {
@@ -56,5 +56,23 @@ public class List<T> {
             elements += data[i] + " ";
         }
         return elements;
+    }
+
+    /**
+     * Unit tests for List class.
+     * @param args the input arguments
+     */
+    public static void main(final String[] args) {
+
+        List<String> groceryList = new List<>(10);
+        groceryList.add("milk");
+        groceryList.add("eggs");
+        System.out.println("Grocery list: " + groceryList.toString());
+
+        List<Integer> numbers = new List<>(5);
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        System.out.println("Numbers: " + numbers.toString());
     }
 }
