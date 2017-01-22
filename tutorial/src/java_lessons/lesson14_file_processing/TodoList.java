@@ -6,6 +6,11 @@ import java.util.ArrayList;
 
 /**
  * TodoList class.
+ *  Scanner used to get input from a file.
+ *  FileReader is to open up a file for reading.
+ *  PrintWriter is the class that allows us to write data to a file.
+ *  FileWriter opens a file for output.
+ *  Must add throws IOException to the main function.
  */
 public final class TodoList {
 
