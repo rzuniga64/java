@@ -4,10 +4,10 @@ package java_lessons.lesson18_data_structures;
  * The type Node.
  * @param <T>
  */
-public class Node<T> {
+public class Node {
 
     /** The data. */
-    protected T data;
+    protected int data;
     /** The reference to the next and previous Node. */
     protected Node left, right;
 
@@ -15,7 +15,7 @@ public class Node<T> {
      * Instantiates a new Node.
      * @param newData the data
      */
-    public Node(final T newData) {
+    public Node(final int newData) {
         this.data = newData;
         left = null;
         right = null;
@@ -31,7 +31,7 @@ public class Node<T> {
      * Get the data of the Node.
      * @return the data of the Node
      */
-    T getData() {
+    int getData() {
         return data;
     }
 }
