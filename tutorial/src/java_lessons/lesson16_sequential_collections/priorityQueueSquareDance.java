@@ -4,19 +4,25 @@ import java.util.PriorityQueue;
 import java.io.*;
 
 /**
- * The type Priority queue square dance.
+ * The priorityQueueSquareDance class.
  */
-public class priorityQueue_SquareDance {
+public final class priorityQueueSquareDance {
+
+    /** Constructor. */
+    private priorityQueueSquareDance() { }
+
     /**
-     * The entry point of application.
-     *
+     * The unit tests for priorityQueueSquareDance class.
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
+
+        final String file = "tutorial\\src\\java_lessons" +
+                "\\lesson16_sequential_collections\\dance.txt";
+
         PriorityQueue<String> men = new PriorityQueue<>();
         PriorityQueue<String> women = new PriorityQueue<>();
         String line;
-        String file = "tutorial\\src\\java_lessons\\lesson16_sequential_collections\\dance.txt";
         String sex;
         BufferedReader input;
 
@@ -30,8 +36,7 @@ public class priorityQueue_SquareDance {
                     women.add(line.substring(2));
             }
             input.close();
-        }
-        catch(IOException except) {
+        } catch (IOException except) {
             System.out.println("Error opening file");
         }
 
