@@ -16,6 +16,7 @@ public class Node {
      * @param newData the data
      */
     public Node(final int newData) {
+
         this.data = newData;
         left = null;
         right = null;
@@ -23,6 +24,7 @@ public class Node {
 
     /** Instantiates a new Node. */
     public Node() {
+
         left = null;
         right = null;
     }
@@ -32,6 +34,7 @@ public class Node {
      * @return the data of the Node
      */
     int getData() {
+
         return data;
     }
 }
