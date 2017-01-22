@@ -23,6 +23,7 @@ public final class ForEachLoopExercise {
             numbers.add(i);
         }
 
+        // Demonstrate how the foreach loop works internally.
         for (Iterator<Integer> n = numbers.iterator(); n.hasNext();) {
             int num = n.next();
             System.out.println(num);
