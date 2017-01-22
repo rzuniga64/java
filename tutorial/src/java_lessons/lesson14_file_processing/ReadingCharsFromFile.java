@@ -24,11 +24,12 @@ public final class ReadingCharsFromFile {
                 + "\\chars.txt";
         String outputFile = "tutorial\\src\\java_lessons\\lesson14_file_processing"
                 + "\\chars.bak";
+
         FileReader inFile = new FileReader(inputFile);
         FileWriter outFile = new FileWriter(outputFile);
         int ch;
-        ch = inFile.read();
 
+        ch = inFile.read();
         while (ch != -1) {
             outFile.write(ch);
             ch = inFile.read();
