@@ -39,8 +39,7 @@ public class List<T> {
      * @param element the element to add
      */
     public void add(final T element) {
-        data[capacity] = element;
-        capacity++;
+        data[capacity++] = element;
     }
 
     /**
