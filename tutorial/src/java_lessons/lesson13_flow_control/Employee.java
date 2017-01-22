@@ -1,25 +1,45 @@
 package java_lessons.lesson13_flow_control;
 
-public class Employee
-{
-   private final String name;
-   protected double salary;
+/**
+ * Employee class.
+ */
+public class Employee {
+    /** Name. */
+    private final String name;
+    /** Salary. */
+    protected double salary;
 
-   Employee(String n, double s) {
-      name = n;
-      salary = s;
-   }
- 
-   public String getName() {
+    /**
+     * Constructor.
+     * @param n name
+     * @param s salary
+     */
+    Employee(final String n, final double s) {
+        name = n;
+        salary = s;
+    }
+
+    /**
+     * Get the name.
+     * @return the name.
+     */
+    public String getName() {
       return name;
    }
 
-   public double getSalary() {
+    /**
+     * Get the salary.
+     * @return the salary
+     */
+    public double getSalary() {
       return salary;
    }
 
-   public String displayEmpInfo() {
-      return "Name: " + name + "\n" + 
-             "Salary: " + salary + "\n";
-   }
+    /**
+     * Display the employee information.
+     * @return the employee info as a string.
+     */
+    public String display() {
+        return "Name: " + name + "\n" + "Salary: " + salary + "\n";
+    }
 }
