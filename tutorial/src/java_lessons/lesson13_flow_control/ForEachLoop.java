@@ -7,6 +7,10 @@ import java.util.ArrayList;
  *  for(variable declaration : collection-name) {
  *      set of statements;
  *  }
+ *
+ *  A foreach loop uses an iterator to iterate through the array.  It starts
+ *  by pointing through the first element in the collection and moves through
+ *  each successive element in the collection.
 */
 public final class ForEachLoop {
 
