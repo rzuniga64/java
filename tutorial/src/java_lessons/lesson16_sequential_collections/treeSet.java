@@ -3,7 +3,7 @@ package java_lessons.lesson16_sequential_collections;
 import java.util.TreeSet;
 
 /**
- * treeSet class. A set is an unordered collection of unique objects.
+ * treeSet class. A TreeSet is an ordered collection of unique objects.
  * The difference between HashSet and TreeSet is that TreeSet will store data
  * in a natural order. Example, alphabetic order if data are strings or
  * ascending order if data are numbers.
