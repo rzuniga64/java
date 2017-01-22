@@ -18,6 +18,7 @@ public final class ForEachLoopExercise {
     public static void main(final String[] args) {
 
         ArrayList<Integer> numbers = new ArrayList<>();
+
         for (int i = 1; i < 11; ++i) {
             numbers.add(i);
         }
