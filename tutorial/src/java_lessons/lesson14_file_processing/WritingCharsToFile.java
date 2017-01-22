@@ -1,4 +1,5 @@
 package java_lessons.lesson14_file_processing;
+
 import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,7 +15,7 @@ public final class WritingCharsToFile {
     /**
      * Unit Tests.
      * @param args the arguments
-     * @throws IOException
+     * @throws IOException IOException
      */
    public static void main(final String[] args) throws IOException {
 
