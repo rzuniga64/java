@@ -29,6 +29,7 @@ public final class AppendingDataToFile {
 
         // Add true as second argument to FileWrite to append to file.
         PrintWriter outFile = new PrintWriter(new FileWriter(fileName, true));
+
         Scanner input = new Scanner(System.in);
         int grade;
         System.out.print("Enter a grade (-1 to quit): ");
