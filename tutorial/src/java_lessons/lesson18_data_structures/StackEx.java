@@ -3,21 +3,23 @@ package java_lessons.lesson18_data_structures;
 import java.util.Stack;
 
 /**
- * The type Stack ex. Items stored in a stack is stored as an Object data type so the data type does not need to be
- * specified.
- * Methods used:
- * - push(e)
- * - pop()
- * - empty()
- *
+ *  The StackEx class. Items stored in a stack is stored as an Object data type
+ *  so the data type does not need to be specified.
+ *  Methods used:
+ *  - push(e)
+ *  - pop()
+ *  - empty()
  */
-public class StackEx {
+public final class StackEx {
+
+    /** Constructor. */
+    private StackEx() { }
+
     /**
-     * The entry point of application.
-     *
+     * Unit tests for StackEx class.
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         Stack<String> names = new Stack<>();
 
@@ -30,15 +32,16 @@ public class StackEx {
         names.push("Cynthia");
         System.out.println("Top of stack: " + names.peek());
 
-        if (!names.empty())
+        if (!names.empty()) {
             names.pop();
-
+        }
         System.out.println("Top of stack: " + names.peek());
         names.pop();
 
-        if (!names.empty())
+        if (!names.empty()) {
             System.out.println("Top of stack: " + names.peek());
-        else
+        } else {
             System.out.println("Stack empty.");
+        }
     }
 }
