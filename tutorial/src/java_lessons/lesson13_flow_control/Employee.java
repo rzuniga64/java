@@ -40,6 +40,6 @@ public class Employee {
      * @return the employee info as a string.
      */
     public String display() {
-        return "Name: " + name + "\n" + "Salary: " + salary + "\n";
+        return "Name: " + getName() + "\n" + "Salary: " + getSalary() + "\n";
     }
 }
