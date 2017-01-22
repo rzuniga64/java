@@ -2,6 +2,7 @@ package java_lessons.lesson18_data_structures;
 
 /**
  * The type Node.
+ * @param <T>
  */
 public class Node<T> {
 
