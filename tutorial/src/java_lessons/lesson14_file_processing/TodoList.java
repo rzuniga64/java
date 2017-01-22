@@ -97,6 +97,7 @@ public final class TodoList {
      * Add a todo to the todo list.
      */
     private static void addItem() {
+
         System.out.println("\nAdd Item\n");
         try {
             Scanner input = new Scanner(System.in);
