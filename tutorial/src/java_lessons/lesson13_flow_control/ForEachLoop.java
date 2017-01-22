@@ -46,7 +46,7 @@ public final class ForEachLoop {
         emps.add(emp4);
 
         for (Employee emp : emps) {
-            System.out.println(emp.displayEmpInfo());
+            System.out.println(emp.display());
         }
     }
 }
