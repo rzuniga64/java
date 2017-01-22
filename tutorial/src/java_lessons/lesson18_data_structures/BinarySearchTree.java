@@ -11,15 +11,14 @@ package java_lessons.lesson18_data_structures;
  * - postorder()
  * - min()
  * - max()
- * @param <T>
  */
-final class BinarySearchTree<T> {
+final class BinarySearchTree {
 
     /** The root of the tree. */
     private Node root;
 
     /** Instantiates a new Binary search tree. */
-    BinarySearchTree() {
+    private BinarySearchTree() {
         root = null;
     }
 
@@ -27,7 +26,7 @@ final class BinarySearchTree<T> {
      * This methods inserts an element into the binary tree.
      * @param data the data
      */
-    void insert(final int data) {
+    private void insert(final int data) {
 
         Node newNode = new Node();
         newNode.data = data;
@@ -118,7 +117,7 @@ final class BinarySearchTree<T> {
      * This method finds the minimum element in the binary search tree.
      * @return the int
      */
-    int min() {
+    private int min() {
         Node current = root;
 
         while (current.left != null) {
@@ -131,7 +130,7 @@ final class BinarySearchTree<T> {
      *  This method finds the maximum element in the binary search tree.
      * @return the int
      */
-    int max() {
+    private int max() {
 
         Node current = root;
 
@@ -139,5 +138,30 @@ final class BinarySearchTree<T> {
             current = current.right;
         }
         return current.getData();
+    }
+
+    /**
+     * Unit tests for BinarySearchTree class.
+     * @param args the input arguments
+     */
+    public static void main(final String[] args) {
+
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.insert(8);
+        bst.insert(7);
+        bst.insert(13);
+        bst.insert(3);
+        bst.insert(10);
+        bst.insert(6);
+        bst.insert(4);
+        bst.insert(1);
+        bst.insert(14);
+        bst.inOrder();
+        System.out.println();
+        bst.preOrder();
+        System.out.println();
+        bst.postOrder();
+        System.out.println("The minimum value is: " + bst.min());
+        System.out.println("the maximum value is: " + bst.max());
     }
 }
