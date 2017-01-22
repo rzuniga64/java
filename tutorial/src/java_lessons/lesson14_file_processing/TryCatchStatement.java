@@ -3,15 +3,13 @@ package java_lessons.lesson14_file_processing;
 import java.util.Scanner;
 
 /**
- * TryCatchStatement class.
- * try {
- *  set of statements;
- *  }
- *  catch (Exception object) {
- *  set of statements;
- *  }
- *  catch (Exception object) {
- *  set of statements;
+ *  TryCatchStatement class.
+ *  try {
+ *      set of statements;
+ *  } catch (Exception object) {
+ *      set of statements;
+ *  } catch (Exception object) {
+ *      set of statements;
  *  }
 */
 public final class TryCatchStatement {
