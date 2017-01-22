@@ -7,7 +7,7 @@ package java_lessons.lesson18_data_structures;
 public class Node<T> {
 
     /** The data. */
-    private T data;
+    protected T data;
     /** The reference to the next and previous Node. */
     protected Node left, right;
 
@@ -21,9 +21,7 @@ public class Node<T> {
         right = null;
     }
 
-    /**
-     * Instantiates a new Node.
-     */
+    /** Instantiates a new Node. */
     public Node() {
         left = null;
         right = null;
