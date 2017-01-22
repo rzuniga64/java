@@ -10,6 +10,7 @@ import java.util.Scanner;
  *  FileWriter opens a file for output.
  *  PrintWrite is the class that allows us to write data to a file.
  *  Scanner used to get input from a file.
+ *  Must add throws IOException to the main function.
  */
 public final class AppendingDataToFile {
 
