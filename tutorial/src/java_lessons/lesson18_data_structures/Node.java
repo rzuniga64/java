@@ -3,19 +3,19 @@ package java_lessons.lesson18_data_structures;
 /**
  * The type Node.
  */
-public class Node {
+public class Node<T> {
 
-    public int data;
-    public Node left;
-    public Node right;
+    /** The data. */
+    private T data;
+    /** The reference to the next and previous Node. */
+    protected Node left, right;
 
     /**
      * Instantiates a new Node.
-     *
-     * @param data the data
+     * @param newData the data
      */
-    public Node(int data) {
-        this.data = data;
+    public Node(final T newData) {
+        this.data = newData;
         left = null;
         right = null;
     }
@@ -29,11 +29,10 @@ public class Node {
     }
 
     /**
-     * This method returns the data of the Node.
-     *
-     * @return the data
+     * Get the data of the Node.
+     * @return the data of the Node
      */
-    int getData() {
+    T getData() {
         return data;
     }
 }
