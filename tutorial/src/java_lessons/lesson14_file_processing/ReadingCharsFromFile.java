@@ -20,8 +20,10 @@ public final class ReadingCharsFromFile {
      */
     public static void main(final String[] args) throws IOException {
 
-        String inputFile = "chars.txt";
-        String outputFile = "chars.bak";
+        String inputFile = "tutorial\\src\\java_lessons\\lesson14_file_processing"
+                + "\\chars.txt";
+        String outputFile = "tutorial\\src\\java_lessons\\lesson14_file_processing"
+                + "\\chars.bak";
         FileReader inFile = new FileReader(inputFile);
         FileWriter outFile = new FileWriter(outputFile);
         int ch;
