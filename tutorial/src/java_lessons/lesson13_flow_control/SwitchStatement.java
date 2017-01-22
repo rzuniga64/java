@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  *  SwitchStatementClass.
+ *  An integral type is a int, char, or short data type.
  *
  *  switch(integral expression) {
  *  case (expression):
