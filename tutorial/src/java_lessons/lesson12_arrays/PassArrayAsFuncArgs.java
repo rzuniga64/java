@@ -29,7 +29,7 @@ public final class PassArrayAsFuncArgs {
      *  @param arr the array
      *  @param size the size of the arraay
      */
-    private static void displayArr(final int[] arr, final int size) {
+    private static void displayArray(final int[] arr, final int size) {
 
         for (int i = 0; i < size; ++i) {
             System.out.print(arr[i] + " ");
@@ -64,7 +64,7 @@ public final class PassArrayAsFuncArgs {
         final int size = 100;
         int[] numbers = new int[size];
         buildArray(numbers, size);
-        displayArr(numbers, size);
+        displayArray(numbers, size);
         System.out.println("The sum of the elements is: "
                 + sumArray(numbers, size));
    }
