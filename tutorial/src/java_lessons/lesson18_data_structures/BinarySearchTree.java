@@ -1,7 +1,9 @@
 package java_lessons.lesson18_data_structures;
 
 /**
- * The type Binary search tree class. One of the advantages is that it makes it easy to find data that is unsorted.
+ * The type Binary search tree class. One of the advantages is that it makes it
+ * easy to find data that is unsorted.
+ *
  * Methods:
  * - insert(e)
  * - inorder()
@@ -9,24 +11,23 @@ package java_lessons.lesson18_data_structures;
  * - postorder()
  * - min()
  * - max()
- *
+ * @param <T>
  */
-class BinarySearchTree {
+final class BinarySearchTree<T> {
+
+    /** The root of the tree. */
     private Node root;
 
-    /**
-     * Instantiates a new Binary search tree.
-     */
+    /** Instantiates a new Binary search tree. */
     BinarySearchTree() {
         root = null;
     }
 
     /**
      * This methods inserts an element into the binary tree.
-     *
      * @param data the data
      */
-    void insert(int data) {
+    void insert(final int data) {
 
         Node newNode = new Node();
         newNode.data = data;
@@ -63,7 +64,11 @@ class BinarySearchTree {
         inOrder(root);
     }
 
-    private void inOrder(Node n) {
+    /**
+     * Print out the data in order.
+     * @param n the binary search tree.
+     */
+    private void inOrder(final Node n) {
         if (n != null) {
             inOrder(n.left);
             System.out.println(n.getData());
@@ -72,13 +77,17 @@ class BinarySearchTree {
     }
 
     /**
-     * This methods prints out a binary search tree in pre-order.
+     * Print out a binary search tree in pre-order.
      */
     void preOrder() {
         preOrder(root);
     }
 
-    private void preOrder(Node n) {
+    /**
+     * Print out the data in pre-order.
+     * @param n the binary search tree.
+     */
+    private void preOrder(final Node n) {
         if (n != null) {
             System.out.println(n.getData());
             preOrder(n.left);
@@ -93,7 +102,11 @@ class BinarySearchTree {
         postOrder(root);
     }
 
-    private void postOrder(Node n) {
+    /**
+     * This methods prints out a binary search tree in post-order.
+     * @param n the binary search tree
+     */
+    private void postOrder(final Node n) {
         if (n != null) {
             postOrder(n.left);
             postOrder(n.right);
@@ -103,29 +116,28 @@ class BinarySearchTree {
 
     /**
      * This method finds the minimum element in the binary search tree.
-     *
      * @return the int
      */
     int min() {
         Node current = root;
 
-        while (current.left != null)
+        while (current.left != null) {
             current = current.left;
-
+        }
         return current.getData();
     }
 
     /**
      *  This method finds the maximum element in the binary search tree.
-     *
      * @return the int
      */
     int max() {
+
         Node current = root;
 
-        while (current.right != null)
+        while (current.right != null) {
             current = current.right;
-
+        }
         return current.getData();
     }
 }
