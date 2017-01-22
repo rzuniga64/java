@@ -8,6 +8,7 @@ import java.io.IOException;
  *  WritingDataToFile class.
  *  PrintWrite is the class that allows us to write data to a file.
  *  FileWrite opens a file for output.
+ *  Must add throws IOException to the main function.
  *
  */
 public final class WritingDataToFile {
