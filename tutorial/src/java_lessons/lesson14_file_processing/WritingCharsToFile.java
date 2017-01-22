@@ -5,7 +5,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * WritingCharsToFile class.
+ *  WritingCharsToFile class.
+ *  PrintWrite is the class that allows us to write data to a file.
+ *  FileWrite opens a file for output.
+ *  Must add throws IOException to the main function.
  */
 public final class WritingCharsToFile {
 
