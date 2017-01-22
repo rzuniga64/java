@@ -2,30 +2,40 @@ package java_lessons.lesson13_flow_control;
 
 import java.util.Scanner;
 
-/*
-   switch(integral expression) {
-      case (expression):
-         set of statements;
-         break;
-      case (expression):
-         set of statements;
-         break;
-      default:
-         set of statements;
-   }
-*/       
+/**
+ *  SwitchStatementClass.
+ *
+ *  switch(integral expression) {
+ *  case (expression):
+ *     set of statements;
+ *     break;
+ *  case (expression):
+ *     set of statements;
+ *     break;
+ *  default:
+ *     set of statements;
+ *  }
+ */
+public final class SwitchStatement {
 
-public class SwitchStatement
-{
-   public static void main(String[] args) 
-   {
+    /** Constructor.. */
+    private SwitchStatement() { }
+
+    /**
+     * Unit tests.
+     * @param args the arguments.
+     */
+   public static void main(final String[] args) {
+
       char letter;
       String letterGrade;
+
       Scanner input = new Scanner(System.in);
       System.out.print("Enter a letter grade: ");
       letterGrade = input.nextLine();
       letter = letterGrade.charAt(0);
-      switch(letter) {
+
+      switch (letter) {
          case 'A':
             System.out.println("90-100");
             break;
@@ -43,4 +53,3 @@ public class SwitchStatement
       }
    }
 }
-            
