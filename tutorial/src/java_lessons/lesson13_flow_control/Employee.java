@@ -7,7 +7,7 @@ public class Employee {
     /** Name. */
     private final String name;
     /** Salary. */
-    protected double salary;
+    private double salary;
 
     /**
      * Constructor.
