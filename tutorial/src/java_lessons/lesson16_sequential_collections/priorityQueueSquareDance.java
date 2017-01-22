@@ -17,8 +17,8 @@ public final class priorityQueueSquareDance {
      */
     public static void main(final String[] args) {
 
-        final String file = "tutorial\\src\\java_lessons" +
-                "\\lesson16_sequential_collections\\dance.txt";
+        final String file = "tutorial\\src\\java_lessons"
+                + "\\lesson16_sequential_collections\\dance.txt";
 
         PriorityQueue<String> men = new PriorityQueue<>();
         PriorityQueue<String> women = new PriorityQueue<>();
@@ -28,12 +28,13 @@ public final class priorityQueueSquareDance {
 
         try {
             input = new BufferedReader(new FileReader(file));
-            while ((line = input.readLine()) != null ) {
-                sex = line.substring(0,1);
-                if (sex.equals("M"))
+            while ((line = input.readLine()) != null) {
+                sex = line.substring(0, 1);
+                if (sex.equals("M")) {
                     men.add(line.substring(2));
-                else
+                } else {
                     women.add(line.substring(2));
+                }
             }
             input.close();
         } catch (IOException except) {
