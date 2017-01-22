@@ -45,9 +45,11 @@ public final class ShuffleDeckOfCards {
 
       int row, col;
       Random rand = new Random(System.currentTimeMillis());
+
       for (int card = 1; card <= 52; ++card) {
          row = rand.nextInt(4);
          col = rand.nextInt(13);
+
          if (arr[row][col] == 0) {
              arr[row][col] = card;
          } else {
