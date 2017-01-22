@@ -3,16 +3,24 @@ package java_lessons.lesson16_sequential_collections;
 import java.util.ArrayList;
 
 /**
- * The type A list.
+ *  ArrayList demo.
+ *  - Collection interface is the foundational interface for the sequential
+ *    collections.
+ *  - ArrayList extends the List interface.
  */
-public class arrayList {
+public final class arrayList {
+
+    /** Construtor. */
+    private arrayList() { }
+
     /**
-     * The entry point of application.
-     *
+     * Unit tests.
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
+
         ArrayList<Integer> grades = new ArrayList<>();
+
         grades.add(100);
         grades.add(90);
         grades.add(80);
@@ -20,8 +28,9 @@ public class arrayList {
         grades.add(60);
 
         int total = 0;
-        for (Integer grade : grades)
+        for (Integer grade : grades) {
             total += grade;
+        }
         double average = total / grades.size();
         System.out.println("Size of grades: " + grades.size());
         System.out.println("Average: " + average);
