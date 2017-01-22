@@ -8,6 +8,7 @@ import java_lessons.lesson20_exception_handling.ListEmptyException;
  *  @param <T> the type parameter
  */
 public class List<T> {
+
     /** An array to hold the data. */
     private T[] data;
     /** The size of the array. */
