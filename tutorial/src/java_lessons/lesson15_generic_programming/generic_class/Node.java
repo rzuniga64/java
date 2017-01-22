@@ -9,7 +9,7 @@ class Node<T> {
     /** The data. */
     private T data;
     /** The reference to the next Node. */
-    private Node next;
+    protected Node next;
 
     /**
      * Instantiates a new Node.
