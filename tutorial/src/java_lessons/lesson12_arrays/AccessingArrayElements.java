@@ -14,19 +14,21 @@ public final class AccessingArrayElements {
      */
     public static void main(final String[] args) {
 
-      final int size = 10;
-      int[] numbers = new int[size];
-      int total = 0;
+        int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        String[] names = {"Jane", "Joe", "Mary", "Bob"};
 
-      for (int i = 0; i < size; ++i) {
-          numbers[i] = i + 1;
-      }
-      // access the array
-      for (int number: numbers) {
-          System.out.print(number + " ");
-          total += number;
-      }
+        final int size = 10;
+        int[] numbers = new int[size];
+        int total = 0;
 
-      System.out.println("The total is " + total);
+        for (int i = 0; i < size; ++i) {
+            numbers[i] = i + 1;
+        }
+        // access the array
+        for (int number: numbers) {
+            System.out.print(number + " ");
+            total += number;
+        }
+        System.out.println("The total is " + total);
    }
 }
