@@ -20,9 +20,9 @@ public final class TwoDimensionalArray {
 
         int[][] nums = {{10,20,30,40}, {20,30,40,50}, {30,40,50,60}};
 
+        Random rand = new Random(System.currentTimeMillis());
         final int rows1 = 5;
         final int cols1 = 5;
-        Random rand = new Random(System.currentTimeMillis());
         int[][] numbers = new int[rows1][cols1];
 
         for (int r = 0; r < rows1; ++r) {
