@@ -6,6 +6,9 @@ import java.util.Scanner;
 
 /**
  *  ReadingDataFromFile class.
+ *  Scanner used to get input from a file.
+ *  FileReader is to open up a file for reading.
+ *  Must add throws IOException to the main function.
  */
 public final class ReadingDataFromFile {
 
@@ -19,7 +22,8 @@ public final class ReadingDataFromFile {
      */
    public static void main(final String[] args) throws IOException {
 
-      String fileName = "grades.txt";
+       String fileName = "tutorial\\src\\java_lessons\\lesson14_file_processing"
+               + "\\grades.txt";
       Scanner inFile = new Scanner(new FileReader(fileName));
       int grade;
 
