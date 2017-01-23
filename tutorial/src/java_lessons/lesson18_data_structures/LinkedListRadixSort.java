@@ -5,11 +5,18 @@ import java.util.LinkedList;
 /**
  *  This class is an example of radix sorting as an application for a queue.
  *  Radix sort creates an array of queues which will hold numbers 0-9, 10-19,
- *  20-29, etc. Then we will take the array of numbers that we are trying to
- *  sort and distribute them among the queues based on their values. Then
- *  once all the numbers have been distributed then we simply going to go back
- *  an collect them into one array. By  taking the queues in order from the
- *  0-9s, 10-19s then we'll have our numbers in sorted order.
+ *  20-29, etc. Then we will take the numbers in the array that we are
+ *  trying to sort and distribute them among the queues based on their values.
+ *  Then once all the numbers have been distributed then we simply going to
+ *  go back and collect them into one array. By taking the queues in order
+ *  from the 0-9s, 10-19s then we'll have our numbers in sorted order.
+ *
+ *  Radix sort is a non-comparative integer sorting algorithm that sorts data
+ *  with integer keys by grouping keys by the individual digits which share the
+ *  same significant position and value. A positional notation is required, but
+ *  because integers can represent strings of characters (e.g., names or dates)
+ *  and specially formatted floating point numbers, radix sort is not limited to
+ *  integers.
  */
 public final class LinkedListRadixSort {
 
@@ -78,6 +85,8 @@ public final class LinkedListRadixSort {
 
         final int size = 50;
         final int numQueues = 10;
+
+        // Create an array of queues.
         LinkedList<Integer>[] digits = new LinkedList[numQueues];
 
         for (int i = 0; i < numQueues; ++i) {
