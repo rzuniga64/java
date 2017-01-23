@@ -75,6 +75,7 @@ final class BinarySearchTree {
      * @param n the binary search tree.
      */
     private void inOrder(final Node n) {
+
         if (n != null) {
             inOrder(n.left);
             System.out.println(n.getData());
@@ -94,6 +95,7 @@ final class BinarySearchTree {
      * @param n the binary search tree.
      */
     private void preOrder(final Node n) {
+
         if (n != null) {
             System.out.println(n.getData());
             preOrder(n.left);
@@ -113,6 +115,7 @@ final class BinarySearchTree {
      * @param n the binary search tree
      */
     private void postOrder(final Node n) {
+
         if (n != null) {
             postOrder(n.left);
             postOrder(n.right);
@@ -125,6 +128,7 @@ final class BinarySearchTree {
      * @return the int
      */
     private int min() {
+
         Node current = root;
 
         while (current.left != null) {
