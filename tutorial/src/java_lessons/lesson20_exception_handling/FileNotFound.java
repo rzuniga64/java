@@ -1,6 +1,7 @@
 package java_lessons.lesson20_exception_handling;
 
 import java.io.*;
+import java.util.Scanner;
 
 /**
  * The FileNotFound class.
@@ -15,31 +16,25 @@ public final class FileNotFound {
      */
     public static void main(final String[] args) {
 
-        // String file = "C:\\mydata.dat";
-        String file = "java_lessons\\lesson20_exception_handling\\FileNotFound.java";
+        String file =
+                "java_lessons\\lesson20_exception_handling\\FileNotFound.java";
         String line;
-        BufferedReader inFile = null;
+        Scanner inFile = null;
 
         try {
-            inFile = new BufferedReader(new FileReader(file));
+            inFile = new Scanner(new FileReader(file));
             System.out.println("File found. Output to come later");
-            while ((line = inFile.readLine()) != null) {
-                System.out.println(line);
+            while (inFile.hasNextLine()) {
+                System.out.println(inFile.nextLine());
             }
         } catch (FileNotFoundException e) {
-
             System.out.print("File not found. Try again");
         } catch (IOException e) {
-
             System.out.print("Problem reading file.");
         } finally {
 
             if (inFile != null) {
-                try {
-                    inFile.close();
-                } catch (IOException e) {
-                    System.out.println("Problem with file.");
-                }
+                inFile.close();
             }
         }
     }
