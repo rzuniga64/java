@@ -3,15 +3,17 @@ package java_lessons.lesson20_exception_handling;
 import java.io.*;
 
 /**
- * The type FileNotFound.
+ * The FileNotFound class.
  */
-public class FileNotFound {
+public final class FileNotFound {
+
+    /** Constructor. */
+    private FileNotFound() { }
     /**
-     * The entry point of application.
-     *
+     * The unit tests for FileNotFound class.
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         // String file = "C:\\mydata.dat";
         String file = "java_lessons\\lesson20_exception_handling\\FileNotFound.java";
@@ -32,12 +34,13 @@ public class FileNotFound {
             System.out.print("Problem reading file.");
         } finally {
 
-            if (inFile != null)
+            if (inFile != null) {
                 try {
                     inFile.close();
                 } catch (IOException e) {
                     System.out.println("Problem with file.");
                 }
+            }
         }
     }
 }
