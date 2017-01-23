@@ -1,15 +1,19 @@
 package java_lessons.lesson20_exception_handling;
 
 /**
- * The type TryCatch.  Exceptions are errors that occur in your program at run-time.
+ * The type TryCatch.
+ * Exceptions are errors that occur in your program at run-time.
  */
-public class TryCatch {
+public final class TryCatch {
+
+    /** Constructor. */
+    private TryCatch() { }
+
     /**
-     * The entry point of application.
-     *
+     * The unit tests for TryCatch class.
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         int numer = 12;
         int denom = 0;
