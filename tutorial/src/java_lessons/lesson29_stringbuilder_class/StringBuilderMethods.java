@@ -9,13 +9,16 @@ package java_lessons.lesson29_stringbuilder_class;
  * - deleteAt(int)
  * - reverse
  */
-public class StringBuilderMethods {
+public final class StringBuilderMethods {
+
+    /** Constructor. */
+    private StringBuilderMethods() { }
+
     /**
-     * The entry point of application.
-     *
+     * The unit tests for StringBuilderMethods class.
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         //StringBuilder sentence = new StringBuilder();
         StringBuilder sentence = new StringBuilder("Now the time");
