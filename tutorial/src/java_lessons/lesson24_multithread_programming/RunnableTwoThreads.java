@@ -24,10 +24,10 @@ import java.io.*;
 /**
  * The RunnableThreads class.
  */
-public class RunnableTThreads {
+public class RunnableTwoThreads {
 
     /** Constructor. */
-    private RunnableTThreads() { }
+    private RunnableTwoThreads() { }
 
     /**
      * The unit tests for RunnableThreads class.
