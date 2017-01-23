@@ -42,9 +42,9 @@ public final class LinearSearch {
     private static int min(final int[] arr) {
 
         int minimum = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < minimum) {
-                minimum = arr[i];
+        for (int item : arr) {
+            if (item < minimum) {
+                minimum = item;
             }
         }
         return minimum;
@@ -57,6 +57,10 @@ public final class LinearSearch {
     public static void main(final String[] args) {
 
         int[] data = new int[]{5, 10, 1, 9, 4, 8, 3, 6, 2, 7};
+        for (int item : data) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
         int minimum = min(data);
         System.out.println("The minimum value is: " + minimum);
     }
