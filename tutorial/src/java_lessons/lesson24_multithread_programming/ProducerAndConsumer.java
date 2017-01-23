@@ -3,6 +3,9 @@ package java_lessons.lesson24_multithread_programming;
 /**
  *  The type Market.
  *
+ *  The synchronized keyword that when applied to a method acquires a lock to
+ *  run. That means only one thread can have access to it.
+ *
  *  To make this program work correctly we need to add two methods, wait and
  *  notify, so that one thread will know to wait until another thread is
  *  finished and the other thread will have a notify to let the waiting
@@ -11,7 +14,7 @@ package java_lessons.lesson24_multithread_programming;
 */
  class Market {
 
-    /** n. */
+    /** An integer. */
     private int n;
     /** Is the value set? */
     private boolean valSet = false;
@@ -23,7 +26,7 @@ package java_lessons.lesson24_multithread_programming;
      * Get the value.
      * @return the int
      */
-    synchronized  int get() {
+    synchronized int get() {
         if (!valSet) {
             try {
                 wait();
@@ -69,7 +72,7 @@ class Producer implements Runnable {
      * Instantiates a new Producer.
      * @param newM the market
      */
-    Producer(Market newM)  {
+    Producer(final Market newM)  {
         this.m = newM;
         new Thread(this, "Producer").start();
     }
@@ -95,7 +98,7 @@ class Consumer implements Runnable {
      * Instantiates a new Consumer.
      * @param newM the market
      */
-    Consumer(Market newM) {
+    Consumer(final Market newM) {
         this.m = newM;
         new Thread(this, "Consumer").start();
     }
@@ -116,7 +119,7 @@ public class ProducerAndConsumer {
     /** Constructor. */
     private ProducerAndConsumer() { }
     /**
-     * The unit tests for ProducerAndConsumer class
+     * The unit tests for ProducerAndConsumer class.
      * @param args the input arguments
      */
     public static void main(final String[] args) {
