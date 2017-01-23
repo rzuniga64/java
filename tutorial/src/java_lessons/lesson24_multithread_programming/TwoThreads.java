@@ -19,74 +19,84 @@ package java_lessons.lesson24_multithread_programming;
 import java.io.*;
 
 /**
- * The type TwoThreads.
+ *  The TwoThreads class.
+ *
+ *  This program is based on a similar program in Java Programming: Advanced
+ *  Topics, Wigglesworth and McMillan.
  */
 public class TwoThreads {
+
+    /** Constructor. */
+    private TwoThreads() { }
+
     /**
      * The entry point of application.
      *
      * @param args the input arguments
      * @throws InterruptedException the interrupted exception
      */
-    public static void main(String[] args) throws InterruptedException {
-      Thread firstThread = new UserInteraction();
-      firstThread.start();
-      Thread secondThread = new ComputeLog();
-      secondThread.start();
-      // The join method waits for the thread process to terminate once that thread process is terminated we go to the
-      // second thread and call end to it.
-      firstThread.join();
-      // Cast thread back to ComputeLog because the end method is part of the ComputeLog class not the thread class.
-      ((ComputeLog) secondThread).end();
-   }
+    public static void main(final String[] args) throws InterruptedException {
+
+        Thread firstThread = new UserInteraction();
+        firstThread.start();
+        Thread secondThread = new ComputeLog();
+        secondThread.start();
+        // The join method waits for the thread process to terminate.
+        // Once that thread process is terminated we go to the second thread
+        // and call end to it.
+        firstThread.join();
+        // Cast thread back to ComputeLog because the end method is part of the
+        // ComputeLog class not the thread class.
+        ((ComputeLog) secondThread).end();
+    }
 }
 
 /**
  * The type UserInteraction.
  */
 class UserInteraction extends Thread {
-   public void run() {
-      try {
-         BufferedReader userIn = new BufferedReader(
-            new InputStreamReader(System.in));
-         System.out.print("Hello, how are you? ");
-         String in = userIn.readLine();
-         System.out.print("What are you doing today? ");
-         in = userIn.readLine();
-         System.out.println(in + " sounds like fun.");
-      }
-      catch (IOException e) {
-         System.out.println("Caught I/O exception.");
-      }
-   }
+
+    /** run method. */
+    public void run() {
+        try {
+            BufferedReader userIn = new BufferedReader(
+                new InputStreamReader(System.in));
+            System.out.print("Hello, how are you? ");
+            String in = userIn.readLine();
+            System.out.print("What are you doing today? ");
+            in = userIn.readLine();
+            System.out.println(in + " sounds like fun.");
+        } catch (IOException e) {
+            System.out.println("Caught I/O exception.");
+        }
+    }
 }
 
 /**
  * The type ComputeLog.
  */
 class ComputeLog extends Thread {
-   private static boolean stop = false;
-   public void run() {
-      try {
-         int i = 1;
-         double d = 0;
-         while (!stop) {
-            d = Math.log(i++);
-            sleep(1);
-         }
-         System.out.println("The log of " + i + " is " + d);
-      } 
-      catch (InterruptedException e) {
-         System.out.println("Thread execution was interrupted.");
-      }
-   }
 
-    /**
-     * End.
-     */
+    /** Stop. */
+    private static boolean stop = false;
+
+    /** run method. */
+    public void run() {
+        try {
+            int i = 1;
+            double d = 0;
+            while (!stop) {
+                d = Math.log(i++);
+                sleep(1);
+            }
+            System.out.println("The log of " + i + " is " + d);
+        } catch (InterruptedException e) {
+            System.out.println("Thread execution was interrupted.");
+        }
+    }
+
+    /** End method.*/
     void end() {
       stop = true;
    }
-} 
-
-  
+}
