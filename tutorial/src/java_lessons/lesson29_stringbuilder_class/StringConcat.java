@@ -44,7 +44,8 @@ public final class StringConcat {
             inFile = new Scanner(new FileReader(file));
             startTime = System.nanoTime();
             while (inFile.hasNextLine()) {
-                words = words + word + ",";
+                word = inFile.nextLine();
+                words = words + word + ", ";
             }
             stopTime = System.nanoTime();
             duration = stopTime - startTime;
@@ -63,6 +64,7 @@ public final class StringConcat {
             inFile = new Scanner(new FileReader(file));
             startTime = System.nanoTime();
             while (inFile.hasNextLine()) {
+                word = inFile.nextLine();
                 sbWords.append(word + ",");
             }
             stopTime = System.nanoTime();
