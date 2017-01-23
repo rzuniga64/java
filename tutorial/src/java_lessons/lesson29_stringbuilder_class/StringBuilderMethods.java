@@ -6,7 +6,7 @@ package java_lessons.lesson29_stringbuilder_class;
  * - insert
  * - indexOf(String)
  * - delete(int, int)
- * - deleteAt(int)
+ * - deleteCharAt(int)
  * - reverse
  */
 public final class StringBuilderMethods {
