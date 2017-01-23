@@ -3,18 +3,24 @@ package java_lessons.lesson24_multithread_programming;
 /**
  *  The type Market.
  *
- *  To make this program work correctly we need to add two methods, wait and notify, so that one thread will know to
- *  wait until another thread is finished and the other thread will have a notify to let the waiting thread know that
- *  it is actually finished. we only need to modify the get and set methods of the Market class.
+ *  To make this program work correctly we need to add two methods, wait and
+ *  notify, so that one thread will know to wait until another thread is
+ *  finished and the other thread will have a notify to let the waiting
+ *  thread know that it is actually finished. we only need to modify the get
+ *  and set methods of the Market class.
 */
-
  class Market {
+
+    /** n. */
     private int n;
+    /** Is the value set? */
     private boolean valSet = false;
 
+    /** Constructor. */
+    protected Market() { }
+
     /**
-     * Get int.
-     *
+     * Get the value.
      * @return the int
      */
     synchronized  int get() {
@@ -32,11 +38,11 @@ package java_lessons.lesson24_multithread_programming;
     }
 
     /**
-     * Set.
-     *
-     * @param n the n
+     * Set the value.
+     * @param newN the value
      */
-    synchronized void set(int n) {
+    synchronized void set(final int newN) {
+
         if (valSet) {
             try {
                 wait();
@@ -44,7 +50,7 @@ package java_lessons.lesson24_multithread_programming;
                 System.out.println("Interrupted");
             }
         }
-        this.n = n;
+        n = newN;
         valSet = true;
         System.out.println("Set: " + n);
         notify();
@@ -55,22 +61,25 @@ package java_lessons.lesson24_multithread_programming;
  * The type Producer.
  */
 class Producer implements Runnable {
+
+    /** Market object.*/
     private Market m;
 
     /**
      * Instantiates a new Producer.
-     *
-     * @param m the m
+     * @param newM the market
      */
-    Producer(Market m)  {
-        this.m = m;
+    Producer(Market newM)  {
+        this.m = newM;
         new Thread(this, "Producer").start();
     }
 
+    /** The run method. */
     public void run() {
         int i = 0;
-        while (true)
+        while (true) {
             m.set(i++);
+        }
     }
 }
 
@@ -78,18 +87,20 @@ class Producer implements Runnable {
  * The type Consumer.
  */
 class Consumer implements Runnable {
+
+    /** Market object. */
     private Market m;
 
     /**
      * Instantiates a new Consumer.
-     *
-     * @param m the m
+     * @param newM the market
      */
-    Consumer(Market m) {
-        this.m = m;
-        new Thread(this,"Consumer").start();
+    Consumer(Market newM) {
+        this.m = newM;
+        new Thread(this, "Consumer").start();
     }
 
+    /** run method. */
     public void run() {
         while (true) {
             m.get();
@@ -101,12 +112,15 @@ class Consumer implements Runnable {
  * The type ProducerAndConsumer.
  */
 public class ProducerAndConsumer {
+
+    /** Constructor. */
+    private ProducerAndConsumer() { }
     /**
-     * The entry point of application.
-     *
+     * The unit tests for ProducerAndConsumer class
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
+
         Market m = new Market();
         new Producer(m);
         new Consumer(m);
