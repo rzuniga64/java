@@ -79,7 +79,7 @@ public final class BinarySearch {
         display(numbers);
 
         Scanner input = new Scanner(System.in);
-        System.out.print("\nEnter a number to search for: ");
+        System.out.print("\n\nEnter a number to search for: ");
         int num = input.nextInt();
         int found =  binarySearch(numbers, num);
         if (found >= 0) {
