@@ -1,6 +1,8 @@
 package java_lessons.lesson29_stringbuilder_class;
 
 import java.io.*;
+import java.util.Scanner;
+
 /**
  *  The type String concat.
  *
@@ -27,7 +29,7 @@ public final class StringConcat {
      */
     public static void main(final String[] args) {
 
-        BufferedReader input;
+        Scanner inFile;
         String word, words;
         word  = "";
         words = "";
@@ -39,9 +41,9 @@ public final class StringConcat {
         duration = 0;
 
         try {
-            input = new BufferedReader(new FileReader(file));
+            inFile = new Scanner(new FileReader(file));
             startTime = System.nanoTime();
-            while ((word = input.readLine()) != null) {
+            while (inFile.hasNextLine()) {
                 words = words + word + ",";
             }
             stopTime = System.nanoTime();
@@ -58,9 +60,9 @@ public final class StringConcat {
         StringBuilder sbWords = new StringBuilder();
 
         try {
-            input = new BufferedReader(new FileReader(file));
+            inFile = new Scanner(new FileReader(file));
             startTime = System.nanoTime();
-            while ((word = input.readLine()) != null) {
+            while (inFile.hasNextLine()) {
                 sbWords.append(word + ",");
             }
             stopTime = System.nanoTime();
