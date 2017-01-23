@@ -5,16 +5,18 @@ import java.util.Scanner;
 import java .util.Arrays;
 
 /**
- * The type Time search.
+ * The TimeSearch class.
  */
-public class TimeSearch {
+public final class TimeSearch {
+
+    /** Constructor. */
+    private TimeSearch() { }
 
     /**
-     * The entry point of application.
-     *
+     * Unit tests for TimeSearch class.
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         final int size = 10000;
         final int maxNums = 100000;
@@ -27,26 +29,29 @@ public class TimeSearch {
         ArrayList<Integer> nums = new ArrayList<>();
 
         for (int i = 0; i < size; i++) {
-            n = (int)(Math.random() * maxNums);
+            n = (int) (Math.random() * maxNums);
             // do not add any duplicates to the array
-            if (!nums.contains(n))
+            if (!nums.contains(n)) {
                 nums.add(n);
+            }
         }
 
         // print out the numbers
         int count = 0;
         for (Object aNum : nums) {
             System.out.print(aNum + " ");
-            if (count % 30 == 0)
+            if (count % 30 == 0) {
                 System.out.println();
+            }
             count++;
         }
         System.out.println();
 
         // put the numbers into an array
         int[] numbers = new int[size];
-        for (int i = 0; i < nums.size(); i++)
+        for (int i = 0; i < nums.size(); i++) {
             numbers[i] = nums.get(i);
+        }
 
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a number to search for: ");
@@ -58,11 +63,11 @@ public class TimeSearch {
         stopTime = System.nanoTime();
         duration = stopTime - startTime;
 
-        if (found > 0)
+        if (found > 0) {
             System.out.println("Linear search time: " + duration);
-        else
+        } else {
             System.out.println("Number not found using linear search.");
-
+        }
         // Sort the data before doing a binary search!
         Arrays.sort(numbers);
         System.out.print("Enter a number to search for: ");
@@ -74,9 +79,10 @@ public class TimeSearch {
         stopTime = System.nanoTime();
         duration = stopTime - startTime;
 
-        if (found > 0)
+        if (found > 0) {
             System.out.println("Binary search time: " + duration);
-        else
+        } else {
             System.out.println("Number not found using binary search.");
+        }
     }
 }
