@@ -16,7 +16,7 @@ package java_lessons.lesson24_multithread_programming;
 
     /** An integer. */
     private int n;
-    /** Is the value set? */
+    /** Has a value been produced? */
     private boolean valSet = false;
 
     /** Constructor. */
