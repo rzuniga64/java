@@ -19,8 +19,8 @@ public class ListEmptyException extends RuntimeException {
      * @param args the input arguments
      */
     public static void main(final String[] args) {
-        try {
 
+        try {
             List<String> names = new List<>(10);
             System.out.println(names.toString());
         } catch (ListEmptyException e) {
