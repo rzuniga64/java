@@ -22,33 +22,39 @@ package java_lessons.lesson24_multithread_programming;
 import java.io.*;
 
 /**
- * The type Runnable t threads.
+ * The RunnableThreads class.
  */
 public class RunnableTThreads {
+
+    /** Constructor. */
+    private RunnableTThreads() { }
+
     /**
-     * The entry point of application.
-     *
+     * The unit tests for RunnableThreads class.
      * @param args the input arguments
      * @throws InterruptedException the interrupted exception
      */
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(final String[] args) throws InterruptedException {
+
         Thread firstThread = new Thread(new UserInteraction2());
         firstThread.start();
         ComputeLog2 numProc = new ComputeLog2();
         Thread secondThread = new Thread(numProc);
         secondThread.start();
-        // the join method waits for the thread process to terminate once that thread process is terminated we go to
-        // the second thread and call end to it.
+        // the join method waits for the thread process to terminate once that
+        // thread process is terminated we go to the second thread and call
+        // end to it.
         firstThread.join();
-        // cast thread back to ComputeLog because the end method is part of the ComputeLog class not the thread class.
+        // cast thread back to ComputeLog because the end method is part of
+        // the ComputeLog class not the thread class.
         numProc.end();
     }
 }
 
-/**
- * The type UserInteraction2.
- */
+/** The UserInteraction2 class. */
 class UserInteraction2 implements Runnable {
+
+    /** run method. */
     public void run() {
         try {
             BufferedReader userIn = new BufferedReader(
@@ -58,8 +64,7 @@ class UserInteraction2 implements Runnable {
             System.out.print("What are you doing today? ");
             in = userIn.readLine();
             System.out.println(in + " sounds like fun.");
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("Caught I/O exception.");
         }
     }
@@ -69,7 +74,11 @@ class UserInteraction2 implements Runnable {
  * The type ComputeLog2.
  */
 class ComputeLog2 implements Runnable {
+
+    /** Is thread stopped. */
     private static boolean stop = false;
+
+    /** run method. */
     public void run() {
         try {
             int i = 1;
@@ -79,18 +88,13 @@ class ComputeLog2 implements Runnable {
                 Thread.currentThread().sleep(1);
             }
             System.out.println("The log of " + i + " is " + d);
-        }
-        catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             System.out.println("Thread execution was interrupted.");
         }
     }
 
-    /**
-     * End.
-     */
+    /** end method. */
     void end() {
         stop = true;
     }
-} 
-
-  
+}
