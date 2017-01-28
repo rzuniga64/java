@@ -1,12 +1,16 @@
 package java_lessons.lesson20_exception_handling;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
  * The FileNotFound class.
  */
 public final class FileNotFound {
+
+    List<Object> myList = new ArrayList<String>();
 
     /** Constructor. */
     private FileNotFound() { }
