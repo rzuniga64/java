@@ -1,4 +1,4 @@
-package java_lessons.lesson3_operators_and_expressions;
+package java_lessons.lesson2_operators_and_expressions;
 
 public class Operators
 {
