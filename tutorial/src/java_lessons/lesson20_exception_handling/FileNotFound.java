@@ -10,7 +10,7 @@ import java.util.Scanner;
  */
 public final class FileNotFound {
 
-    List<Object> myList = new ArrayList<String>();
+    List<Object> myList = new ArrayList<Object>();
 
     /** Constructor. */
     private FileNotFound() { }
