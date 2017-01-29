@@ -1,4 +1,4 @@
-package trees;
+package Trees;
 
 /**
  * Random data normally isn't unbalanced.  Ordered data tends to create unbalanced trees.

@@ -1,7 +1,4 @@
-package trees;
-
-import java.util.ArrayList;
-import java.util.Iterator;
+package Trees;
 
 /**
  * Random data normally isn't unbalanced.  Ordered data tends to create unbalanced trees.

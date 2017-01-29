@@ -1,4 +1,4 @@
-package trees;
+package Trees;
 
 import static java.lang.Integer.max;
 import java.util.ListIterator;
