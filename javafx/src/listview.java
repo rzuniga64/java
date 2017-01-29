@@ -7,15 +7,15 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
- *A ListView displays a horizontal or vertical list of items from which the user may select, or with which the user may
- * interact. A ListView is able to have its generic type set to represent the type of data in the backing model.
- * Doing this has the benefit of making various methods in the ListView, as well as the supporting classes (mentioned
+ *A listview displays a horizontal or vertical list of items from which the user may select, or with which the user may
+ * interact. A listview is able to have its generic type set to represent the type of data in the backing model.
+ * Doing this has the benefit of making various methods in the listview, as well as the supporting classes (mentioned
  * below), type-safe. In addition, making use of the generic supports substantially simplifies development of
- * applications making use of ListView, as all modern IDEs are able to auto-complete far more successfully with the
+ * applications making use of listview, as all modern IDEs are able to auto-complete far more successfully with the
  * additional type information.
 */
 
-public class Listview extends Application {
+public class listview extends Application {
     public static void main(String[] args) {
         // start application
         launch(args);
