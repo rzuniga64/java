@@ -8,7 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 
-public class Imageview extends Application {
+public class imageview extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
