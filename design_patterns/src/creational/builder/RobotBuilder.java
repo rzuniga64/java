@@ -1,7 +1,8 @@
 package creational.builder;
 
-// Defines the methods needed for creating parts for the robot
-
+/**
+ *  Defines the methods needed for creating parts for the robot.
+ */
 interface RobotBuilder {
 
     void buildRobotHead();

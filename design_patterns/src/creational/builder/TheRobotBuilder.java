@@ -1,7 +1,10 @@
 package creational.builder;
 
-// The concrete creational.builder class that assembles the parts of the finished Robot object
-class TheRobotBuilder implements RobotBuilder {
+/**
+ *  The concrete creational.builder class that assembles the parts of the
+ *  finished Robot object.
+ */
+ class TheRobotBuilder implements RobotBuilder {
 
     private Robot robot;
 

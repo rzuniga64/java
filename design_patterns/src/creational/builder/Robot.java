@@ -1,7 +1,8 @@
 package creational.builder;
 
-// The concrete Robot class based on the RobotPlan interface
-
+/**
+ *  The concrete Robot class based on the RobotPlan interface
+ */
 public class Robot implements RobotPlan {
 
     private String robotHead;
