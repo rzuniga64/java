@@ -1,7 +1,17 @@
 package creational.singleton;
 
-public class ScrabbleTestThreads {
-    public static void main(String[] args) {
+/**
+ *  Client to test Scrabble class.
+ */
+public final class ScrabbleTestThreads {
+
+    /** Default constructor. */
+    private ScrabbleTestThreads() { }
+    /**
+     * Unit tests for Scrabble class.
+     * @param args argumetns
+     */
+    public static void main(final String[] args) {
 
         // Create a new Thread using the Runnable interface
         Runnable getTiles = new GetTheTiles();
