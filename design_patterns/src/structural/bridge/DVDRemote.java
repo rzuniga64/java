@@ -1,0 +1,19 @@
+package structural.bridge;
+
+// Refined Abstraction
+// If I decide I want to further extend the remote I can
+
+class DVDRemote extends RemoteButton{
+
+    private boolean play = true;
+
+    DVDRemote(EntertainmentDevice newDevice) {
+        super(newDevice);
+    }
+
+    public void buttonNinePressed() {
+
+        play = !play;
+        System.out.println("DVD is Playing: " + play);
+    }
+}
