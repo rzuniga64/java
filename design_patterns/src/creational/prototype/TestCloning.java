@@ -2,10 +2,10 @@ package creational.prototype;
 
 public class TestCloning {
 
-    public static void main(String[] args){
+    public static void main(final String[] args){
 
         // Handles routing makeCopy method calls to the right subclasses of Animal
-        CloneFactory animalMaker = new CloneFactory();
+        PrototypeFactory animalMaker = new PrototypeFactory();
 
         // Creates a new Sheep instance
         Sheep sally = new Sheep();

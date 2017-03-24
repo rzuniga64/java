@@ -2,7 +2,9 @@ package creational.prototype;
 
 class Sheep implements Animal {
 
-    Sheep(){ System.out.println("Sheep is Made"); }
+    Sheep() {
+        System.out.println("Sheep is Made");
+    }
 
     public Animal makeCopy() {
 
@@ -10,10 +12,10 @@ class Sheep implements Animal {
         Sheep sheepObject = null;
 
         try {
-            // Calls the Animal super classes clone(). Then casts the results to Sheep
+            // Calls the Animal super classes clone(). Then casts the results to
+            // Sheep
             sheepObject = (Sheep) super.clone();
-        }   // If Animal didn't extend Cloneable this error is thrown
-        catch (CloneNotSupportedException e) {
+        } catch (CloneNotSupportedException e) {
 
             System.out.println("The Sheep was Turned to Mush");
             e.printStackTrace();
@@ -21,7 +23,7 @@ class Sheep implements Animal {
 
         return sheepObject;
     }
-    public String toString(){
+    public String toString() {
         return "Dolly is my Hero, Baaaaa";
     }
 }
