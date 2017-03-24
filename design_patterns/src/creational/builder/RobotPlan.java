@@ -7,9 +7,9 @@ interface RobotPlan {
 
     String getRobotHead();
     void setRobotHead(String head);
-    String getRobotTorso(();
+    String getRobotTorso();
     void setRobotTorso(String torso);
-    String getRobotArms();)
+    String getRobotArms();
     void setRobotArms(String arms);
     String getRobotLegs();
     void setRobotLegs(String legs);
