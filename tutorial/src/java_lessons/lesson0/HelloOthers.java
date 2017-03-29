@@ -1,4 +1,4 @@
-package java_lessons.DataTypes;
+package java_lessons.lesson0;
 
 public class HelloOthers
 {
