@@ -1,13 +1,21 @@
 package structural.bridge;
 
-public class TestTheRemote{
+/** Class to test the remote. */
+public final class TestTheRemote {
 
-    public static void main(String[] args){
+    /** Default constructor. */
+    private TestTheRemote() { }
+
+    /**
+     * Unit tests.
+     * @param args args
+     */
+    public static void main(final String[] args) {
 
         RemoteButton theTV = new TVRemoteMute(new TVDevice(1, 200));
         RemoteButton theTV2 = new TVRemotePause(new TVDevice(1, 200));
 
-        RemoteButton theDVD = new DVDRemote(new DVDDevice(1,14));
+        RemoteButton theDVD = new DVDRemote(new DVDDevice(1, 14));
         System.out.println("Test TV with Mute");
 
         theTV.buttonFivePressed();
