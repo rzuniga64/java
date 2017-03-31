@@ -1,4 +1,4 @@
-package structural.bridge;
+package structural.bridge.device;
 
 /** Class to test the remote. */
 public final class TestTheRemote {
