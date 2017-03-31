@@ -1,7 +1,10 @@
-package structural.adapter;
+package structural.adapter.enemy;
 
-// EnemyTank implements EnemyAttacker perfectly. Our job is to make classes with different methods from EnemyAttacker
-// to work with the EnemyAttacker interface
+/**
+ *  EnemyTank implements EnemyAttacker perfectly. Our job is to make classes
+ *  with different methods from EnemyAttacker to work with the EnemyAttacker
+ *  interface.
+ */
 
 import java.util.Random;
 
