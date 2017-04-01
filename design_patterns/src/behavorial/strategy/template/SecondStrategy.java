@@ -1,7 +1,8 @@
 package behavorial.strategy.template;
 
 /**
- * FirstStrategy class. Implements the algorithm using the strategy interface.
+ *  FirstStrategy class. Concrete Strategy.
+ *  Implements the algorithm using the strategy interface.
  */
 public class SecondStrategy implements Strategy {
 
