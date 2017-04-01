@@ -1,4 +1,4 @@
-package behavorial.strategy;
+package behavorial.strategy.animal;
 
 /**
  *  The interface Flys.

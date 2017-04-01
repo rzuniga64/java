@@ -1,16 +1,15 @@
-package behavorial.strategy;
+package behavorial.strategy.animal;
 
 /**
- * The type Test behavorial.strategy.
+ * The TestStrategy class.
  */
 public class TestStrategy {
 
     /**
      * Main.
-     *
      * @param args the args
      */
-    public static void main(String[] args){
+    public static void main(final String[] args){
 
         Animal sparky = new Dog();
         Animal tweety = new Bird();
