@@ -3,12 +3,12 @@ package behavorial.strategy;
 /**
  * The type Bird.
  */
-class Bird extends Animal{
+class Bird extends Animal {
 
     /**
      * Instantiates a new Bird.
      */
-    Bird(){
+    Bird() {
 
         super();
         setSound("Tweet");
