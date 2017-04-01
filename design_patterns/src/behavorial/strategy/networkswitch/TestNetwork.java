@@ -6,6 +6,7 @@ package behavorial.strategy.networkswitch;
 public class TestNetwork {
 
     public static void main(final String[] args) {
+
         byte[] msg = {'H', 'i'};
         LocationManager lm = new LocationManager();
         lm.doLocation();
