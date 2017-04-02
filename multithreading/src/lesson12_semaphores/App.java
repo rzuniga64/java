@@ -5,15 +5,15 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * A semaphore is an object that maintains a count. We refer to a count as
- *  the number of available permits of the semaphore.  you can get the number
- *  of available permits by using the semaphore method called availablePermits().
+ *  A semaphore is an object that maintains a count. We refer to a count as
+ *  the number of available permits of the semaphore. You can get the number of
+ *  available permits by using the semaphore method called availablePermits().
  *  The method to increase the number of available permits is the semaphore
- *  method called release().The method to decrease the number of available permits
- *  is the semaphore method called acquire(). Acquire will wait if there are no
- *  permits available. You can release from different threads where you did the
- *  acquire. With a thread you have to unlock from the same thread you locked from.
- *  It is used to control access to some resource.
+ *  method called release().The method to decrease the number of available
+ *  permits is the semaphore method called acquire(). Acquire will wait if there
+ *  are no permits available. You can release from different threads where you
+ *  did the acquire. With a thread you have to unlock from the same thread you
+ *  locked from. It is used to control access to some resource.
  * {@link java.util.concurrent.Semaphore}s
  * are mainly used to limit the number of simultaneous threads that
  * can access a resources, but you can also use them to implement deadlock
@@ -45,9 +45,18 @@ import java.util.concurrent.TimeUnit;
  * </p>
  * <br><br>
  */
-public class App {
+public final class App {
 
-    public static void main(String[] args) throws Exception {
+    /** Constructor. */
+    private App() { }
+
+    /**
+     * Unit tests.
+     * @param args args
+     * @throws Exception e
+     */
+    public static void main(final String[] args) throws Exception {
+
         ExecutorService executor = Executors.newCachedThreadPool();
 
         for (int i = 0; i < 200; i++) { //200 hundred times will be called
