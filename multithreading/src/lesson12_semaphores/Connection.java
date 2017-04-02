@@ -3,7 +3,7 @@ package lesson12_semaphores;
 import java.util.concurrent.Semaphore;
 
 /**
- *  Semaphores
+ *  Semaphores.
  *  <br><br>
  *  Codes with minor comments are from
  *  <a href="http://www.caveofprogramming.com/youtube/">
@@ -17,7 +17,7 @@ import java.util.concurrent.Semaphore;
  *
  *  @author Z.B. Celik <celik.berkay@gmail.com>
  */
-public class Connection {
+public final class Connection {
 
     private static Connection instance = new Connection();
 /**
@@ -40,8 +40,10 @@ public class Connection {
     private Semaphore sem = new Semaphore(10, true);
     private int connections = 0;
 
-    private Connection() {}
-    public static Connection getInstance() { return instance; }
+    private Connection() { }
+    public static Connection getInstance() {
+        return instance;
+    }
 
     public void connect() {
         try {
@@ -52,25 +54,35 @@ public class Connection {
         }
 
         try {
-            synchronized (this) { //atomic
-                connections++;
-                System.out.println("Current connections (max 10 allowed): " + connections);
-            }
-            try {
-                //do your job
-                System.out.println("Working on connections " + Thread.currentThread().getName());
-                Thread.sleep(2000);
-            } catch (InterruptedException ie) {
-                ie.printStackTrace();
-            }
-            //when exit doConnect method decrement number of connections
-            synchronized (this) {//atomic
-                connections--;
-                System.out.println("I'm done " + Thread.currentThread().getName() + " Connection is released , connection count: " + connections);
-            }
+            doConnect();
         }  finally {
             //release permit, increase the sem value and activate waiting thread
             sem.release();
+        }
+    }
+
+    public void doConnect() {
+
+        synchronized (this) { //atomic
+            connections++;
+            System.out.println("Current connections (max 10 allowed): "
+                    + connections);
+        }
+        try {
+            //do your job
+            System.out.println("Working on connections "
+                    + Thread.currentThread().getName());
+            Thread.sleep(2000);
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
+        }
+        //when exit doConnect method decrement number of connections
+        synchronized (this) { //atomic
+            connections--;
+            System.out.println("I'm done "
+                    + Thread.currentThread().getName()
+                    + " Connection is released , connection count: "
+                    + connections);
         }
     }
 }
