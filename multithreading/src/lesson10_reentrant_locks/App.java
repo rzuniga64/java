@@ -55,6 +55,7 @@ package lesson10_reentrant_locks;
 public class App {
 
     public static void main(String[] args) throws Exception {
+
         final Runner runner = new Runner();
         Thread t1 = new Thread(new Runnable() {
             public void run() {

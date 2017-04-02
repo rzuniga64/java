@@ -5,8 +5,8 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 /**
- * Source:<em>
- * http://www.journaldev.com/2377/java-lock-example-and-concurrency-lock-vs-synchronized</em>
+ * Source:
+ * http://www.journaldev.com/2377/java-lock-example-and-concurrency-lock-vs-synchronized
  * <p>
  * {@link java.util.concurrent.locks.Lock}:
  * This is the base interface for Lock API. It provides all the features
@@ -15,28 +15,36 @@ import java.util.concurrent.locks.ReentrantLock;
  * important methods are
  * {@link java.util.concurrent.locks.Lock#lock()} to acquire the lock,
  * {@link java.util.concurrent.locks.Lock#unlock()} to release the lock,
- * {@link java.util.concurrent.locks.Lock#tryLock()} to wait for lock for a period of time,
- * {@link java.util.concurrent.locks.Lock#newCondition()} to create the Condition etc.
+ * {@link java.util.concurrent.locks.Lock#tryLock()} to wait for lock for a
+ * period of time,
+ * {@link java.util.concurrent.locks.Lock#newCondition()} to create the
+ * Condition etc.
  * <p>
  * {@link java.util.concurrent.locks.ReentrantLock}:
  * This is the most widely used implementation class of Lock interface.
- * This class implements the Lock interface in similar way as synchronized keyword.
+ * This class implements the Lock interface in similar way as synchronized
+ * keyword.
  * (see App.java for more)
  * <p>
  * {@link java.util.concurrent.locks.Condition}:
- * Condition objects are similar to Object wait-notify model with additional feature
- * to create different sets of wait. A Condition object is always created by Lock object.
+ * Condition objects are similar to Object wait-notify model with additional
+ * feature
+ * to create different sets of wait. A Condition object is always created by
+ * Lock object.
  * Some of the important methods are
- * {@link java.util.concurrent.locks.Condition#await()} similar to {@link Object#wait()}.
+ * {@link java.util.concurrent.locks.Condition#await()} similar to
+ * {@link Object#wait()}.
  * {@link java.util.concurrent.locks.Condition#signal()} and
  * {@link java.util.concurrent.locks.Condition#signalAll()}
- * that are similar to {@link Object#notify()} and {@link Object#notifyAll()} methods.
+ * that are similar to {@link Object#notify()} and {@link Object#notifyAll()}
+ * methods.
  */
 public class Runner {
 
     private int count = 0;
     private Lock lock = new ReentrantLock();
-    // get the condition of the lock you are locking on
+
+    /** get the condition of the lock you are locking on. */
     private Condition cond = lock.newCondition();
 
     private void increment() {
@@ -60,6 +68,7 @@ public class Runner {
     }
 
     public void secondThread() throws InterruptedException {
+
         Thread.sleep(1000);
         lock.lock();
         System.out.println("Press the return key!");

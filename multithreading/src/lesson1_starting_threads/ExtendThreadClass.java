@@ -14,7 +14,7 @@ class Runner1 extends Thread {
         for (int i = 0; i < 10; i++)
             System.out.println("Hello " + i);
         try {
-            Thread.sleep(100);      // pause thread from specified number of milliseconds.
+            Thread.sleep(100);
         } catch (InterruptedException ie) {
             ie.printStackTrace();
         }

@@ -8,16 +8,24 @@ package lesson9_lowlevel_thread_synchronization;
  * the best way); but this tutorial will help you to understand how to use wait
  * and notify.
  */
-public class App {
+public final class App {
 
-    public static void main(String[] args) throws InterruptedException {
+    /** Default constructor. */
+    private App() { }
+
+    /**
+     * Unit tests.
+     * @param args args.
+     * @throws InterruptedException ie
+     */
+    public static void main(final String[] args) throws InterruptedException {
         final Processor processor = new Processor();
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     processor.produce();
-                } catch (InterruptedException ignored) {}
+                } catch (InterruptedException ignored) { }
             }
         });
 
@@ -26,7 +34,7 @@ public class App {
             public void run() {
                 try {
                     processor.consume();
-                } catch (InterruptedException ignored) {}
+                } catch (InterruptedException ignored) { }
             }
         });
 

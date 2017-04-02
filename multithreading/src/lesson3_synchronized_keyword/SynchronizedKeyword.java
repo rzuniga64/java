@@ -1,27 +1,28 @@
 package lesson3_synchronized_keyword;
 
-    /*  There are two problems when have more than one thread.
-        1. Data being cached
-        2. Threads interleaving
-
-        This example will demonstrate the use of the synchronized keyword
-        to prevent thread interleaving.  Every object in Java has an intrinsic
-        lock (mutex). If a synchronized method of an object is called you
-        have to acquire the intrinsic lock before you can call it.  Only one
-        thread can acquire the intrinsic lock at a time. When one thread
-        acquires the intrinsic lock and runs a synchronized method and then
-        if another thread tries to call the method at the same time the second
-        thread will have to wait until the first thread releases the intrinsic
-        lock by the method finishing its execution. Only one thread at a time
-        can acquire an intrinsic lock.
+    /**
+     *  There are two problems when have more than one thread.
+     *  1. Data being cached
+     *  2. Threads interleaving
+     *
+     *  This example will demonstrate the use of the synchronized keyword
+     *  to prevent thread interleaving.  Every object in Java has an intrinsic
+     *  lock (mutex). If a synchronized method of an object is called you
+     *  have to acquire the intrinsic lock before you can call it.  Only one
+     *  thread can acquire the intrinsic lock at a time. When one thread
+     *  acquires the intrinsic lock and runs a synchronized method and then
+     *  if another thread tries to call the method at the same time the second
+     *  thread will have to wait until the first thread releases the intrinsic
+     *  lock by the method finishing its execution. Only one thread at a time
+     *  can acquire an intrinsic lock.
     */
 
 public class SynchronizedKeyword {
-    /*  Doesn't need to be declared volatile because if you run code in a
-        synchronized block then it is guaranteed that the current state
-        of the shared variables will be visible to all threads.
-    */
-
+    /**
+     * Doesn't need to be declared volatile because if you run code in a
+     * synchronized block then it is guaranteed that the current state
+     * of the shared variables will be visible to all threads.
+     */
     private int count = 0;
 
     public synchronized void increment() {
@@ -33,9 +34,9 @@ public class SynchronizedKeyword {
         sk.doWork();
     }
 
-    /*  When count is incremented it likes an atomic operation
-        which happens in one step but it isn't.  It sort of
-        equivalent to: count = count + 1;
+    /**
+     * When count is incremented it likes an atomic operation which happens in
+     * one step but it isn't.  It sort of equivalent to: count = count + 1;
 
         There are three steps here which takes considerable
         time between each step in computer terms.
@@ -68,12 +69,12 @@ public class SynchronizedKeyword {
         t1.start();
         t2.start();
 
-        /*  Both threads are accessing the variable count.
-            We are accessing the value of count before the loops can get started.
-            We need to wait for both thread to finish executing before we display
-            the value of count.  To wait for the threads to finish we can use
-            the join method.
-        */
+        /**
+         *  Both threads are accessing the variable count. We are accessing the
+         *  value of count before the loops can get started. We need to wait for
+         *  both thread to finish executing before we display the value of count.
+         *  To wait for the threads to finish we can use the join method.
+         */
         try {
             t1.join();  // pauses execution of thread its called in
             t2.join();

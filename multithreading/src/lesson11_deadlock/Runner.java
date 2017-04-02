@@ -27,9 +27,10 @@ public class Runner {
     private Lock lock1 = new ReentrantLock();
     private Lock lock2 = new ReentrantLock();
 
-    //don't hold several locks at once. If you do, always acquire the locks in the same order
-    //try to get the both locks
-    private void acquireLocks(Lock firstLock, Lock secondLock) throws InterruptedException {
+    // don't hold several locks at once. If you do, always acquire the locks in
+    // the same order try to get the both locks
+    private void acquireLocks(Lock firstLock, Lock secondLock)
+            throws InterruptedException {
         while (true) {
             // Acquire locks
             boolean gotFirstLock = false;

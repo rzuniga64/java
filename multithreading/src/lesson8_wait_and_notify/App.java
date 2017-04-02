@@ -7,9 +7,17 @@ package lesson8_wait_and_notify;
  * other threads at the right moment. Extremely useful for avoiding those
  * processor-consuming "polling loops".
  */
-public class App {
+public final class App {
 
-    public static void main(String[] args) throws InterruptedException {
+    /** Constructor. */
+    private App() { }
+
+    /**
+     * Unit tests.
+     * @param args args
+     * @throws InterruptedException ie
+     */
+    public static void main(final String[] args) throws InterruptedException {
 
         final Processor processor = new Processor();
 
@@ -18,7 +26,7 @@ public class App {
             public void run() {
                 try {
                     processor.produce();
-                } catch (InterruptedException ignored) {}
+                } catch (InterruptedException ignored) { }
             }
         });
 
@@ -27,7 +35,7 @@ public class App {
             public void run() {
                 try {
                     processor.consume();
-                } catch (InterruptedException ignored) {}
+                } catch (InterruptedException ignored) { }
             }
         });
 

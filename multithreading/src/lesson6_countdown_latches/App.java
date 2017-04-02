@@ -4,20 +4,27 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/*  There are many classes in Java that are threadsafe.
-
-    This example will use a countdown latch.  A countdown
-    latch will count down from the number specified as a
-    parameter to the constructor.  It lets one or more
-    threads wait until the count is zero.  Pass the latch
-    to the Thread class via the constructor.
+/**
+ *  There are many classes in Java that are thread-safe. This example will use a
+ *  countdown latch.  A countdown latch will count down in seconds from the
+ *  number specified as a parameter to the constructor.  It lets one or more
+ *  threads wait until the count is zero.  Pass the latch to the Thread class
+ *  via the constructor.
 */
 class Processor implements Runnable {
-    // don't have to use synchronized keyword because CountDownLatch is a threadsafe class
+
+    /**
+     *  Don't have to use synchronized keyword because CountDownLatch is a
+     *  thread-safe class.
+     */
     private CountDownLatch latch;
 
-    public Processor(CountDownLatch latch) {
-        this.latch = latch;
+    /**
+     * Constructor.
+     * @param newLatch latch
+     */
+    Processor(final CountDownLatch newLatch) {
+        this.latch = newLatch;
     }
 
     // each thread will start and then call countdown after three seconds.
@@ -33,16 +40,25 @@ class Processor implements Runnable {
     }
 }
 
-public class App {
-    public static void main(String[] args) {
+public final class App {
+
+    /** Consturctor. */
+    private App() { }
+
+    /**
+     * Main method.
+     * @param args arguments
+     */
+    public static void main(final String[] args) {
         CountDownLatch latch = new CountDownLatch(3);
         ExecutorService executor = Executors.newFixedThreadPool(3);
 
-        for (int i=0;i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             executor.submit(new Processor(latch));
         }
 
-        // latch.wait() waits until countdown latch has counted down to zero
+        // latch.await() waits until countdown latch has counted down to zero.
+        // Each thread calls countdown method after three seconds.
         try {
             latch.await();
         } catch (InterruptedException ie) {

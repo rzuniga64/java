@@ -1,8 +1,8 @@
 package lesson1_starting_threads;
 
-/*
-    Sometimes you just want to run one method inside of a thread.
-    It can be done using an anonymous class.
+/**
+ * Sometimes you just want to run one method inside of a thread. It can be done
+ * using an anonymous class.
  */
 public class RunSingleMethodInThread {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class RunSingleMethodInThread {
                 for (int i = 0; i < 10; i++)
                     System.out.println("Hello " + i);
                 try {
-                    Thread.sleep(100);      // pause thread from specified number of milliseconds.
+                    Thread.sleep(100);
                 } catch (InterruptedException ie) {
                     ie.printStackTrace();
                 }

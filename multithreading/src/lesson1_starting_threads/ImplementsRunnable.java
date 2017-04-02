@@ -9,12 +9,13 @@ package lesson1_starting_threads;
  */
 
 class Runner implements Runnable {
-    // lesson1_starting_threads.Runner has a method called 'run' that we want to override
+    // lesson1_starting_threads.Runner has a method called 'run' that we want
+    // to override
     public void run() {
         for (int i = 0; i < 10; i++)
             System.out.println("Hello " + i);
         try {
-            Thread.sleep(100);      // pause thread from specified number of milliseconds.
+            Thread.sleep(100);
         } catch (InterruptedException ie) {
             ie.printStackTrace();
         }
