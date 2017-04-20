@@ -21,7 +21,7 @@ public class Buttons {
 
         label = new JLabel("");
         textField = new JTextField(10); // pass number of chars wide
-        button = new JButton("Put test in label");
+        button = new JButton("Put OutputFormatting in label");
         JFrame frame = new JFrame("Using TextFields");
 
         // provide a window management system for multiple widgets

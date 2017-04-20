@@ -21,7 +21,7 @@ public final class FileNotFound {
     public static void main(final String[] args) {
 
         String file =
-                "java_lessons\\lesson20_exception_handling\\FileNotFound.java";
+                "java\\lesson20_exception_handling\\FileNotFound.java";
         String line;
         Scanner inFile = null;
 

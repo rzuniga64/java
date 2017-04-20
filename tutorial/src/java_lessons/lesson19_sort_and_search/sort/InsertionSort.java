@@ -19,7 +19,7 @@ public class InsertionSort {
      *
      * Insertion sort is a simple sorting algorithm that is appropriate for small inputs
      * The basic action of insertion sort is to sort the elements in positions 0 through p (where p ranges from 1 through
-     * N-1). In each state p increases by 1. That is what the outer loop is controlling.
+     * N-1). In each behavorial.state p increases by 1. That is what the outer loop is controlling.
      *
      * When the body of the for loop is entered we are guaranteed that the elements in array positions 0 through p-1 have
      * already been sorted and that we need to extend this to positions 0 to p.
@@ -32,7 +32,7 @@ public class InsertionSort {
      *
      * Array Position           0   1   2   3   4   5
      * ----------------------------------------------
-     * Initial state            8|  5   9   2   6   3   temp = 5
+     * Initial behavorial.state            8|  5   9   2   6   3   temp = 5
      *                              -
      * After a[0..1] is sorted  5   8|  9   2   6   3   temp = 9
      *                                  -

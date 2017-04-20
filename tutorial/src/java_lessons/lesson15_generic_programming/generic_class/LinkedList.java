@@ -1,9 +1,7 @@
 package java_lessons.lesson15_generic_programming.generic_class;
 
-import sun.awt.image.ImageWatched;
-
 /**
- * LinkedList class.
+ * LinkList class.
  */
 public final class LinkedList {
 
@@ -11,7 +9,7 @@ public final class LinkedList {
     private LinkedList() { }
 
     /**
-     * Unit tests for LinkedList class.
+     * Unit tests for LinkList class.
      * @param args the input arguments
      */
     public static void main(final String[] args) {

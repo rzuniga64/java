@@ -22,7 +22,7 @@ public final class WritingCharsToFile {
      */
    public static void main(final String[] args) throws IOException {
 
-       String fileName = "tutorial\\src\\java_lessons\\lesson14_file_processing"
+       String fileName = "tutorial\\src\\java\\lesson14_file_processing"
                + "\\chars.txt";
 
        PrintWriter outFile = new PrintWriter(new FileWriter(fileName));

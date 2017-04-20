@@ -15,7 +15,7 @@ public class ImageApplet extends Applet{
      * Init
      */
     public void init() {
-        anImage = Toolkit.getDefaultToolkit().getImage("java_lessons\\lesson25_applets\\Java.jpg");
+        anImage = Toolkit.getDefaultToolkit().getImage("java\\lesson25_applets\\Java.jpg");
     }
 
     /**

@@ -29,9 +29,9 @@ import java.util.PriorityQueue;
  *  its capacity grows automatically. The details of the growth policy are not
  *  specified.
  *
- *  This class and its iterator implement all of the optional methods of the
+ *  This class and its behavorial.iterator implement all of the optional methods of the
  *  Collection and Iterator interfaces. The Iterator provided in method
- *  iterator() is not guaranteed to traverse the elements of the priority queue
+ *  behavorial.iterator() is not guaranteed to traverse the elements of the priority queue
  *  in any particular order. If you need ordered traversal, consider using
  *  Arrays.sort(pq.toArray()).
  */

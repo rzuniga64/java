@@ -1,7 +1,5 @@
 package java_lessons.lesson12_arrays;
 
-import com.sun.java.accessibility.util.TopLevelWindowListener;
-
 import java.util.Random;
 
 /**

@@ -62,7 +62,7 @@ public final class Palindrome {
    public static void main(final String[] args) {
 
       String palindrome;
-      System.out.print("Enter a word to test: ");
+      System.out.print("Enter a word to OutputFormatting: ");
       Scanner input = new Scanner(System.in);
       palindrome = input.nextLine();
 

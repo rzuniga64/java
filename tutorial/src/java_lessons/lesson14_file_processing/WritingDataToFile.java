@@ -23,7 +23,7 @@ public final class WritingDataToFile {
      */
     public static void main(final String[] args) throws IOException {
 
-        String fileName = "tutorial\\src\\java_lessons\\lesson14_file_processing"
+        String fileName = "tutorial\\src\\java\\lesson14_file_processing"
                 + "\\grades.txt";
         PrintWriter outFile = new PrintWriter(new FileWriter(fileName));
         outFile.println(85);

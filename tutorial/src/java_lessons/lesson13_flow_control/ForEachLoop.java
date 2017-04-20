@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *      set of statements;
  *  }
  *
- *  A foreach loop uses an iterator to iterate through the array.  It starts
+ *  A foreach loop uses an behavorial.iterator to iterate through the array.  It starts
  *  by pointing through the first element in the collection and moves through
  *  each successive element in the collection. It must loop through the
  *  entire array.

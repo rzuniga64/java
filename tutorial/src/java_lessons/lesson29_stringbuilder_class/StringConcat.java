@@ -33,7 +33,7 @@ public final class StringConcat {
         String word, words;
         word  = "";
         words = "";
-        String file = "tutorial\\src\\java_lessons\\"
+        String file = "tutorial\\src\\java\\"
                 + "lesson29_stringbuilder_class\\animals.txt";
         long startTime, stopTime, duration;
         startTime = 0;

@@ -17,7 +17,7 @@ public final class priorityQueueSquareDance {
      */
     public static void main(final String[] args) {
 
-        final String file = "tutorial\\src\\java_lessons"
+        final String file = "tutorial\\src\\java"
                 + "\\lesson16_sequential_collections\\dance.txt";
 
         PriorityQueue<String> men = new PriorityQueue<>();

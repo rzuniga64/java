@@ -39,7 +39,7 @@ public class ClientSocket {
         // turn the string into bytes and store it in a byte array.
         byte buffer[] = url.getBytes();
 
-        // send our command through the socket
+        // send our behavorial.command through the socket
         output.write(buffer);
 
         // get the input that comes back (grab chars as they come in)

@@ -1,7 +1,5 @@
 package java_lessons.lesson21_jdbc;
 
-import javafx.beans.property.SimpleStringProperty;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;

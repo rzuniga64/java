@@ -24,7 +24,7 @@ public final class AppendingDataToFile {
     */
    public static void main(final String[] args) throws IOException {
 
-       String fileName = "tutorial\\src\\java_lessons\\lesson14_file_processing"
+       String fileName = "tutorial\\src\\java\\lesson14_file_processing"
               + "\\grades.txt";
 
         // Add true as second argument to FileWrite to append to file.

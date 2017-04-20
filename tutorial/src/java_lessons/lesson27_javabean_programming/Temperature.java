@@ -1,8 +1,8 @@
 package java_lessons.lesson27_javabean_programming;
 
 /**
- *  Import needed because a javabean has to be a persistent class. That means we have to save the state of an object at
- *  any particular time. We might write out the fields of a class to disk. By that we are saving the state of an object.
+ *  Import needed because a javabean has to be a persistent class. That means we have to save the behavorial.state of an object at
+ *  any particular time. We might write out the fields of a class to disk. By that we are saving the behavorial.state of an object.
 */
 import java.io.Serializable;
 

@@ -36,7 +36,7 @@ public class QuickSort {
      *
      *  Array Position           0   1   2   3   4   5
      *  ----------------------------------------------
-     *  Initial state            6    5   3   1   8   7   2   4    3 is the pivot
+     *  Initial behavorial.state            6    5   3   1   8   7   2   4    3 is the pivot
      *
      *  After 1st pass sorted    2    5   3   1   8   7   6   4
      *                           -                        -

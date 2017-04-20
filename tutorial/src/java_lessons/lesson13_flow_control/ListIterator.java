@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * ForEachLoopExercise class.
+ * ListIterator class.
  */
-public final class ForEachLoopExercise {
+public final class ListIterator {
 
     /** Constructor. */
-    private ForEachLoopExercise() { }
+    private ListIterator() { }
 
     /**
      * Unit tests.

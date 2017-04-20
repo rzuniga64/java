@@ -26,7 +26,7 @@ public class ShowDirTree {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        String dir = "tutorial\\src\\java_lessons\\lesson28_advanced_io";
+        String dir = "tutorial\\src\\java\\lesson28_advanced_io";
 
         System.out.println("Starting directory: " + dir + ": ");
         try {

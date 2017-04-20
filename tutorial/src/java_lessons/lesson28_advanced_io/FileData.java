@@ -14,7 +14,7 @@ public class FileData {
      */
     public static void main(String[] args) {
 
-        Path filePath = Paths.get("tutorial\\src\\java_lessons\\lesson28_advanced_io\\minmax.txt");
+        Path filePath = Paths.get("tutorial\\src\\java\\lesson28_advanced_io\\minmax.txt");
         System.out.println("File name: " + filePath.getName(4));
 
         try {

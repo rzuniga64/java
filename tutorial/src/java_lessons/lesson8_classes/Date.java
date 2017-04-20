@@ -49,7 +49,7 @@ public final class  Date {
     }
 
     /**
-     * Display the state of the object at any particular time.
+     * Display the behavorial.state of the object at any particular time.
      * @return the object as a string
      */
     public String toString() {

@@ -5,7 +5,7 @@ import java.nio.*;
 import java.nio.channels.*;
 
 /**
- * The type TypeNIO. This is a utility to recreate the 'type' command in DOS that displays the contents of a file on
+ * The type TypeNIO. This is a utility to recreate the 'type' behavorial.command in DOS that displays the contents of a file on
  * the screen. In doing that we are going to demonstrate how to read data from a buffer.
  */
 public class TypeNIO {
@@ -18,7 +18,7 @@ public class TypeNIO {
     public static void main(String[] args) throws IOException {
 
         int count;  // keep track of the size of the buffer.
-        File sourceFile = new File("tutorial\\src\\java_lessons\\lesson28_advanced_io\\minmax.txt");
+        File sourceFile = new File("tutorial\\src\\java\\lesson28_advanced_io\\minmax.txt");
         FileChannel sourceChannel = new FileInputStream(sourceFile).getChannel();
 
         try {

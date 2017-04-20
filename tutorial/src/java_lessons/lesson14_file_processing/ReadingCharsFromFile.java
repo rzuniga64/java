@@ -20,9 +20,9 @@ public final class ReadingCharsFromFile {
      */
     public static void main(final String[] args) throws IOException {
 
-        String inputFile = "tutorial\\src\\java_lessons\\lesson14_file_processing"
+        String inputFile = "tutorial\\src\\java\\lesson14_file_processing"
                 + "\\chars.txt";
-        String outputFile = "tutorial\\src\\java_lessons\\lesson14_file_processing"
+        String outputFile = "tutorial\\src\\java\\lesson14_file_processing"
                 + "\\chars.bak";
 
         FileReader inFile = new FileReader(inputFile);

@@ -1,7 +1,7 @@
 package java_lessons.lesson29_stringbuilder_class;
 
 /**
- * The type String builder methods.
+ * The type String creational.builder methods.
  * - toString
  * - insert
  * - indexOf(String)

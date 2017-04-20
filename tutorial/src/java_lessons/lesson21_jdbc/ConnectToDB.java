@@ -12,10 +12,10 @@ public class ConnectToDB {
     // authentication details for the database
     private static final String username ="rzuniga64";
     private static final String password = "aggies92";
-    private static final String url = "jdbc:mysql://localhost:3306/test";
+    private static final String url = "jdbc:mysql://localhost:3306/OutputFormatting";
 
     /**
-     * This method creates a connection to a database named 'test'.
+     * This method creates a connection to a database named 'OutputFormatting'.
      *
      * @return the connection
      */

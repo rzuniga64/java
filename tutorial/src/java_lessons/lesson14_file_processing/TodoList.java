@@ -18,7 +18,7 @@ public final class TodoList {
      * File to store our todo list.
      */
     static final String fileName =
-            "tutorial\\src\\java_lessons\\lesson14_file_processing\\todo.txt";
+            "tutorial\\src\\java\\lesson14_file_processing\\todo.txt";
 
     /**
      * Constructor.

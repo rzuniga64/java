@@ -16,8 +16,8 @@ public class FileCopy {
      */
     public static void main(String[] args) throws IOException {
 
-        File sourceFile = new File("tutorial\\src\\java_lessons\\lesson28_advanced_io\\minmax.txt");
-        File destFile   = new File("tutorial\\src\\java_lessons\\lesson28_advanced_io\\minmax.bak");
+        File sourceFile = new File("tutorial\\src\\java\\lesson28_advanced_io\\minmax.txt");
+        File destFile   = new File("tutorial\\src\\java\\lesson28_advanced_io\\minmax.bak");
 
         if (!destFile.exists()) destFile.createNewFile();
 

@@ -29,7 +29,7 @@ public class MergeSort {
      *
      *  Array Position           0   1   2   3   4   5
      *  ----------------------------------------------
-     *  Initial state            6    5   3   1   8   7   2   4
+     *  Initial behavorial.state            6    5   3   1   8   7   2   4
      *
      *  After 1st pass sorted    5   5  | 1   3 | 7   8 | 2   4     sort each pair
      *
