@@ -1,4 +1,4 @@
-package bag;
+package Bag;
 
 /**
  *  BagArray: unordered collection of objects of the same type

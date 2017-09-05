@@ -1,4 +1,4 @@
-package bag;
+package Bag;
 
 import java.util.ArrayList;
 
