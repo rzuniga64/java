@@ -8,7 +8,7 @@ public final class ScrabbleTestThreads {
     /** Default constructor. */
     private ScrabbleTestThreads() { }
     /**
-     * Unit tests for Scrabble class.
+     * Test for Scrabble class.
      * @param args argumetns
      */
     public static void main(final String[] args) {
