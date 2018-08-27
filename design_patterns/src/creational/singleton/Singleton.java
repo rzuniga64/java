@@ -32,7 +32,7 @@ final class Singleton {
             "u", "u", "u", "v", "v", "w", "w", "x", "y", "y", "z"
     };
 
-    /** put arrays of strings into a linked list. */
+    /** Store letters and strings and put arrays of strings into a linked list. */
     private LinkedList<String> letterList = new LinkedList<>(Arrays.asList(scrabbleLetters));
 
 

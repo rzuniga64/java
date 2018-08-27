@@ -21,10 +21,12 @@ public final class ScrabbleTest {
 
         // Get all of the letters stored in the list
         System.out.println(newInstance.getLetterList());
+        System.out.println("Number of letters left: " + newInstance.getLetterList().size());
 
         LinkedList<String> playerOneTiles = newInstance.getTiles(7);
         System.out.println("\nPlayer 1: " + playerOneTiles + "\n");
         System.out.println(newInstance.getLetterList());
+        System.out.println("Number of letters left: " + newInstance.getLetterList().size());
 
         // Try to make another instance of Singleton
         Singleton instanceTwo = Singleton.getInstance();
@@ -32,11 +34,12 @@ public final class ScrabbleTest {
         // Get unique id for instance object
         System.out.println("\nInstance 2 ID: " + System.identityHashCode(newInstance));
 
-        // THIS RETURNS THE VALUE OF THE FIRST INSTANCE CREATED. WRONG!
+        // THIS RETURNS THE VALUE OF THE FIRST INSTANCE CREATED.
         System.out.println(newInstance.getLetterList());
 
         // Player 2 draws 7 tiles
         LinkedList<String> playerTwoTiles = newInstance.getTiles(7);
         System.out.println("\nPlayer 2: " + playerTwoTiles);
+        System.out.println("Number of letters left: " + newInstance.getLetterList().size());
     }
 }
