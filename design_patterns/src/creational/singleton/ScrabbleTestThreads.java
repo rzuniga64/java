@@ -5,8 +5,6 @@ package creational.singleton;
  */
 public final class ScrabbleTestThreads {
 
-    /** Default constructor. */
-    private ScrabbleTestThreads() { }
     /**
      * Test for Scrabble class.
      * @param args argumetns
