@@ -7,10 +7,6 @@ import java.util.LinkedList;
  */
 public final class ScrabbleTest {
 
-<<<<<<< HEAD:design_patterns/src/creational/singleton/TestScrabble.java
-=======
-    private ScrabbleTest() { }
->>>>>>> e9d753301e8155e97ac564ee18f27399dcc56b58:design_patterns/src/creational/singleton/ScrabbleTest.java
     /**
      * Units tests for Scrabble class.
      * @param args arguments

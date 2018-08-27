@@ -5,9 +5,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 /**
-<<<<<<< HEAD
  *  What is a Singleton Patter?
- *  -   It is used when you want to instantiate only one object of a class.
+ *  - It is used when you want to instantiate only one object of a class.
  *  - An object like this needs to be available on a global basis so make it static.
  *  - It uses lazy instantiation which means it if the object isn't needed it isn't created.
  *  -   A demonstration will be used that holds all the Potential Scrabble letters and spits out new ones upon request.
@@ -15,6 +14,12 @@ import java.util.LinkedList;
  *      -   Each player has their own set of letters.
  */
 final class Singleton {
+
+    /**
+     *  firstInstance will hold the one and only instance of the class Singleton. It is static because objects like this
+     *  usually need to be available on a global basis.
+     */
+    private static Singleton firstInstance = null;
 
     private String[] scrabbleLetters = {
             "a", "a", "a", "a", "a", "a", "a", "a", "a",
@@ -29,37 +34,10 @@ final class Singleton {
 
     /** put arrays of strings into a linked list. */
     private LinkedList<String> letterList = new LinkedList<>(Arrays.asList(scrabbleLetters));
-=======
- *  What is a Singleton Pattern?
- *  -   It is used when you want to eliminate the option of instantiating more than one object.
- *  -   A demonstration will be used that holds all the Potential Scrabble letters and spits out new ones upon request.
- *  -   Each player will share the same potential letter list.
- *  -   Each player has their own set of letters.
- */
-public final class Singleton {
 
-    /**
-     *  firstInstance will hold the one and only instance of the class Singleton. It is static because objects like this
-     *  usually need to be available on a global basis.
-     */
-    private static Singleton firstInstance = null;
-
-    private String[] scrabbleLetters
-            = { "a", "a", "a", "a", "a", "a", "a", "a", "a",
-                "b", "b", "c", "c", "d", "d", "d", "d", "e", "e", "e", "e", "e",
-                "e", "e", "e", "e", "e", "e", "e", "f", "f", "g", "g", "g", "h",
-                "h", "i", "i", "i", "i", "i", "i", "i", "i", "i", "j", "k", "l",
-                "l", "l", "l", "m", "m", "n", "n", "n", "n", "n", "n", "o", "o",
-                "o", "o", "o", "o", "o", "o", "p", "p", "q", "r", "r", "r", "r",
-                "r", "r", "s", "s", "s", "s", "t", "t", "t", "t", "t", "t", "u",
-                "u", "u", "u", "v", "v", "w", "w", "x", "y", "y", "z" };
-
-    /** put arrays of strings into a linked list. */
-    private LinkedList<String> letterList = new LinkedList<>(Arrays.asList(scrabbleLetters));
 
     /** used to slow down firstThread. */
     private static boolean firstThread = true;
->>>>>>> e9d753301e8155e97ac564ee18f27399dcc56b58
 
     /**
      *  The constructor is private because we want only instance of the class Singleton. If a user tries to create a new
@@ -78,12 +56,7 @@ public final class Singleton {
 
         if (firstInstance == null) {
             // This is here to test what happens if threads try to create instances of this class
-<<<<<<< HEAD
-            // Used to slow down firstThread.
-            boolean firstThread = true;
 
-=======
->>>>>>> e9d753301e8155e97ac564ee18f27399dcc56b58
             if (firstThread) {
 
                 firstThread = false;
@@ -97,11 +70,11 @@ public final class Singleton {
                 }
             }
 
-            /**
-             *  FIX THE ISSUE WITH MULTIPLE THREADS CREATING MORE THAN ONE OBJECT USING SYNCHRONIZED KEYWORD!
-             *  This makes this a synchronized method until the first object is created. Thereafter it will not be
-             *  considered a synchronized class.
-             */
+
+             //  FIX THE ISSUE WITH MULTIPLE THREADS CREATING MORE THAN ONE OBJECT USING SYNCHRONIZED KEYWORD!
+             //  This makes this a synchronized method until the first object is created. Thereafter it will not be
+             //  considered a synchronized class.
+
             synchronized (Singleton.class) {
                 // Lazy instantiation: if the instance isn't needed it isn't created
                 if (firstInstance == null) {
