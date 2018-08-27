@@ -7,7 +7,6 @@ import java.util.LinkedList;
  */
 public final class TestScrabble {
 
-    private TestScrabble() { }
     /**
      * Units tests for Scrabble class.
      * @param args arguments

@@ -6,31 +6,28 @@ import java.util.LinkedList;
 
 /**
  *  What is a Singleton Patter?
- *  -   It is used when you want to eliminate the option of instantiating more
- *      than one object.
- *  -   A demonstration will be used that holds all the Potential Scrabble
- *      letters and spits out new ones upon request.
- *  -   Each player will share the same potential letter list.
- *  -   Each player has their own set of letters.
+ *  -   It is used when you want to instantiate only one object of a class.
+ *  - An object like this needs to be available on a global basis so make it static.
+ *  - It uses lazy instantiation which means it if the object isn't needed it isn't created.
+ *  -   A demonstration will be used that holds all the Potential Scrabble letters and spits out new ones upon request.
+ *      -   Each player will share the same potential letter list.
+ *      -   Each player has their own set of letters.
  */
-public final class Singleton {
+final class Singleton {
 
-    private String[] scrabbleLetters
-            = {"a", "a", "a", "a", "a", "a", "a", "a", "a",
-                "b", "b", "c", "c", "d", "d", "d", "d", "e", "e", "e", "e", "e",
-                "e", "e", "e", "e", "e", "e", "e", "f", "f", "g", "g", "g", "h",
-                "h", "i", "i", "i", "i", "i", "i", "i", "i", "i", "j", "k", "l",
-                "l", "l", "l", "m", "m", "n", "n", "n", "n", "n", "n", "o", "o",
-                "o", "o", "o", "o", "o", "o", "p", "p", "q", "r", "r", "r", "r",
-                "r", "r", "s", "s", "s", "s", "t", "t", "t", "t", "t", "t", "u",
-                "u", "u", "u", "v", "v", "w", "w", "x", "y", "y", "z" };
+    private String[] scrabbleLetters = {
+            "a", "a", "a", "a", "a", "a", "a", "a", "a",
+            "b", "b", "c", "c", "d", "d", "d", "d", "e", "e", "e", "e", "e",
+            "e", "e", "e", "e", "e", "e", "e", "f", "f", "g", "g", "g", "h",
+            "h", "i", "i", "i", "i", "i", "i", "i", "i", "i", "j", "k", "l",
+            "l", "l", "l", "m", "m", "n", "n", "n", "n", "n", "n", "o", "o",
+            "o", "o", "o", "o", "o", "o", "p", "p", "q", "r", "r", "r", "r",
+            "r", "r", "s", "s", "s", "s", "t", "t", "t", "t", "t", "t", "u",
+            "u", "u", "u", "v", "v", "w", "w", "x", "y", "y", "z"
+    };
 
     /** put arrays of strings into a linked list. */
-    private LinkedList<String> letterList
-            = new LinkedList<>(Arrays.asList(scrabbleLetters));
-
-    /** used to slow down firstThread. */
-    private static boolean firstThread = true;
+    private LinkedList<String> letterList = new LinkedList<>(Arrays.asList(scrabbleLetters));
 
     /**
      *  firstInstance will hold the one and only instance of the class
@@ -55,8 +52,10 @@ public final class Singleton {
     static Singleton getInstance() {
 
         if (firstInstance == null) {
-            // This is here to test what happens if threads try to create
-            // instances of this class
+            // This is here to test what happens if threads try to create instances of this class
+            // Used to slow down firstThread.
+            boolean firstThread = true;
+
             if (firstThread) {
                 try {
                     // slow down the current thread to allow another thread the
@@ -87,8 +86,8 @@ public final class Singleton {
     }
 
     /**
-     * @function getLetterList
-     * @return a list of Scrabble letters
+     *  getLetterList
+     *  @return a list of Scrabble letters
      */
     LinkedList<String> getLetterList() {
 
@@ -96,9 +95,9 @@ public final class Singleton {
     }
 
     /**
-     * @function getTiles
-     * @param howManyTiles the number of letter tiles requested
-     * @return Return the number of letter tiles requested
+     *  getTiles
+     *  @param howManyTiles the number of letter tiles requested
+     *  @return Return the number of letter tiles requested
      */
     LinkedList<String> getTiles(final int howManyTiles) {
 
