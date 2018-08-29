@@ -1,8 +1,7 @@
 package creational.builder;
 
 /**
- *  The concrete creational.builder class that assembles the parts of the
- *  finished Robot object.
+ *  The concrete creational.builder class that assembles the parts of the finished Robot object.
  */
  class TheRobotBuilder implements RobotBuilder {
 
@@ -13,6 +12,6 @@ package creational.builder;
     public void buildRobotHead()  { robot.setRobotHead("Tin Head"); }
     public void buildRobotTorso() { robot.setRobotTorso("Tin Torso"); }
     public void buildRobotArms()  { robot.setRobotArms("Blowtorch Arms"); }
-    public void buildRobotLegs()  { robot.setRobotLegs("Rollar Skates"); }
+    public void buildRobotLegs()  { robot.setRobotLegs("Roller Skates"); }
     public Robot getRobot() { return this.robot; }
 }

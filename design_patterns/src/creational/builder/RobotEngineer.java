@@ -1,8 +1,7 @@
 package creational.builder;
 
 /**
- *  The director/engineer class creates a Robot using the TheRobotBuilder
- *  interface that is defined.
+ *  The director/engineer class creates a Robot using the TheRobotBuilder interface that is defined.
  */
  class RobotEngineer {
 
