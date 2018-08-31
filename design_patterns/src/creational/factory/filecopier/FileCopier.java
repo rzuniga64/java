@@ -6,5 +6,5 @@ package creational.factory.filecopier;
 public interface FileCopier {
 
     /** copy method. */
-    public void copy();
+    void copy();
 }

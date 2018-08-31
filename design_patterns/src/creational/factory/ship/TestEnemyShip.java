@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class TestEnemyShip {
 
     public static void main(String[] args){
-        // Create the creational.factory object
+
+        // Create the factory object
         EnemyShipFactory shipFactory = new EnemyShipFactory();
 
         // Enemy ship object
         EnemyShip theEnemy;
 
         Scanner userInput = new Scanner(System.in);
-        System.out.print("What type of ship? (U / R / B)");
+        System.out.print("What type of ship? (U / R / B): ");
 
         if (userInput.hasNextLine()){
 

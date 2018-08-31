@@ -1,9 +1,8 @@
 package creational.factory.filecopier;
 
 /**
- *  Use a factory design pattern to implement a client program that can call
- *  FileCopy regardless of which copier is used. For example,
- *  RTFDocument and PlainTextDocument use different formats to copy a document.
+ *  Use a factory design pattern to implement a client program that can call FileCopy regardless of which copier is
+ *  used. For example, RTFDocument and PlainTextDocument use different formats to copy a document.
  */
 public final class TestFileCopier {
 
