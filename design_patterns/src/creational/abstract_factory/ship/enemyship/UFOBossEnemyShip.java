@@ -7,14 +7,19 @@ public class UFOBossEnemyShip extends EnemyShip{
     // We define the type of ship we want to create by stating we want to use the creational.factory that makes enemy ships
     private EnemyShipFactory shipFactory;
 
-    // The enemy ship required parts list is sent to this method. They behavorial.state that the enemy ship must have a weapon and
-    // engine assigned. That object also states the specific parts needed to make a Boss UFO versus a Regular UFO
+    /**
+     *  The enemy ship required parts list is sent to this method. The enemy ship must have a weapon and engine assigned.
+     *  The specific parts needed to make a Boss UFO versus a Regular UFO.
+     * @param shipFactory
+     */
     public UFOBossEnemyShip(EnemyShipFactory shipFactory){
 
         this.shipFactory = shipFactory;
     }
 
-    // EnemyShipBuilding calls this method to build a specific UFOBossEnemyShip
+    /**
+     *  EnemyShipBuilding calls this method to build a specific UFOBossEnemyShip.
+     */
     public void makeShip() {
 
         System.out.println("Making enemy ship " + getName());
