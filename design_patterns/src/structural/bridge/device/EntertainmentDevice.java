@@ -9,9 +9,9 @@ package structural.bridge.device;
  */
 abstract class EntertainmentDevice {
 
-    private int deviceState; // current channel devices is on or current chapter if dvd.
-    private int maxSetting;  // Maximum channel number possible or maximum number of chapters.
-    private int volumeLevel = 0; // volume setting.
+    int deviceState; // current channel devices is on or current chapter if dvd.
+    int maxSetting;  // Maximum channel number possible or maximum number of chapters.
+    int volumeLevel = 0; // volume setting.
 
     public abstract void buttonFivePressed();
     public abstract void buttonSixPressed();
