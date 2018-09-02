@@ -23,7 +23,7 @@ public class Circle implements Shape {
      * @param newRadius radius
      * @param newDrawingAPI DrawingAPI
      */
-    public Circle(final double newX,
+    Circle(final double newX,
                   final double newY,
                   final double newRadius,
                   final DrawingAPI newDrawingAPI) {
