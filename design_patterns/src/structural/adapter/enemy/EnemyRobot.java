@@ -1,13 +1,12 @@
 package structural.adapter.enemy;
 
-/**
- *  This is the Adaptee. The Adapter sends method calls to objects that use the
- *  EnemyAttacker interface to the right methods defined in EnemyRobot.
- */
-
 import java.util.Random;
 
-class EnemyRobot{
+/**
+ *  This is the Adaptee. The Adapter sends method calls to objects that use the EnemyAttacker interface to the right
+ *  methods defined in EnemyRobot.
+ */
+class EnemyRobot {
 
     private Random generator = new Random();
 
