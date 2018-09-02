@@ -2,8 +2,8 @@ package structural.bridge.device;
 
 /**
  *  Concrete Implementor
- *  Here is an implementation of the EntertainmentDevice abstract class. I'm
- *  specifying what makes it different from other devices.
+ *  Here is an implementation of the EntertainmentDevice abstract class. I'm specifying what makes it different from
+ *  other devices.
  */
 class TVDevice extends EntertainmentDevice {
 
@@ -18,14 +18,18 @@ class TVDevice extends EntertainmentDevice {
         maxSetting = newMaxSetting;
     }
 
-    /** Button five lowers the channel number. */
+    /**
+     *  Button five lowers the channel number.
+     */
     public void buttonFivePressed() {
 
         System.out.println("Channel Down");
         deviceState--;
     }
 
-    /** Button six increases the channel number. */
+    /**
+     * Button six increases the channel number.
+     */
     public void buttonSixPressed() {
 
         System.out.println("Channel Up");

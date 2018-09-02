@@ -2,8 +2,8 @@ package structural.bridge.device;
 
 /**
  *  Concrete Implementor
- *  Here is an implementation of the EntertainmentDevicemabstract class. I'm
- *  specifying what makes it different from other devices
+ *  Here is an implementation of the EntertainmentDevice abstract class. I'm specifying what makes it different from
+ *  other devices
  */
 class DVDDevice extends EntertainmentDevice {
 
@@ -18,14 +18,18 @@ class DVDDevice extends EntertainmentDevice {
         super.maxSetting = newMaxSetting;
     }
 
-    /** Button five skips to previous chapter. */
+    /**
+     *  Button five skips to previous chapter.
+     */
     public void buttonFivePressed() {
 
         System.out.println("DVD Skips to Chapter");
         deviceState--;
     }
 
-    /** Button six skips to next chapter. */
+    /**
+     *  Button six skips to next chapter.
+     */
     public void buttonSixPressed() {
 
         System.out.println("DVD Skips to Next Chapter");

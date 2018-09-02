@@ -1,8 +1,7 @@
 package structural.bridge.device;
 
 /**
- *  Refined Abstraction.
- *  If I decide I want to further extend the remote I can.
+ *  Refined Abstraction. If I decide I want to further extend the remote I can.
  */
 class TVRemotePause extends RemoteButton {
 
@@ -15,7 +14,9 @@ class TVRemotePause extends RemoteButton {
         super(newDevice);
     }
 
-    /** Button nine pauses the TV. */
+    /**
+     *  Button nine pauses the TV.
+     */
     public void buttonNinePressed() {
 
         System.out.println("TV was Paused");
