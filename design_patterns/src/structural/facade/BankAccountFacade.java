@@ -1,13 +1,8 @@
 package structural.facade;
 
-// The Facade Design Pattern decouples or separates the client
-// from all of the sub components
-
-// The Facades aim is to simplify interfaces so you don't have
-// to worry about what is going on under the hood
-
 /**
- * The type Bank account structural.facade.
+ *  The Facade Design Pattern decouples or separates the client from all of the sub components.
+ *  The Facades aim is to simplify interfaces so you don't have to worry about what is going on under the hood.
  */
 class BankAccountFacade {
 
@@ -21,7 +16,6 @@ class BankAccountFacade {
 
     /**
      * Instantiates a new Bank account structural.facade.
-     *
      * @param newAcctNum the new acct num
      * @param newSecCode the new sec code
      */
@@ -36,42 +30,50 @@ class BankAccountFacade {
         fundChecker = new FundsCheck();
     }
 
+    /**
+     *  Get the account number.
+     *  @return the account number.
+     */
     private int getAccountNumber() {
+
         return accountNumber;
     }
 
+    /**
+     *  get the security code.
+     *  @return the security code.
+     */
     private int getSecurityCode() {
+
         return securityCode;
     }
 
     /**
-     * Withdraw cash.
-     *
-     * @param cashToGet the cash to get
+     *  Withdraw cash.
+     *  @param cashToGet the amount of cash to withdrawal.
      */
-    void withdrawCash(double cashToGet){
+    void withdrawCash(double cashToGet) {
 
         if(acctChecker.accountActive(getAccountNumber()) &&
                 codeChecker.isCodeCorrect(getSecurityCode()) &&
-                fundChecker.haveEnoughMoney(cashToGet)) {
-
+                fundChecker.haveEnoughMoney(cashToGet)
+        ) {
             System.out.println("Transaction Complete\n");
         } else {
+
             System.out.println("Transaction Failed\n");
         }
     }
 
-
     /**
-     * Deposit cash.
-     *
-     * @param cashToDeposit the cash to deposit
+     *  Deposit cash.
+     *  @param cashToDeposit the amount of cash to deposit.
      */
-    void depositCash(double cashToDeposit){
+    void depositCash(double cashToDeposit) {
 
         if(acctChecker.accountActive(getAccountNumber()) &&
-                codeChecker.isCodeCorrect(getSecurityCode())) {
-
+                codeChecker.isCodeCorrect(getSecurityCode())
+        ) {
             fundChecker.makeDeposit(cashToDeposit);
             System.out.println("Transaction Complete\n");
         } else {
