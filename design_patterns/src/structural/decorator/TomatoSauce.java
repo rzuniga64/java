@@ -1,5 +1,8 @@
 package structural.decorator;
 
+/**
+ *  TomatoSauce class.
+ */
 class TomatoSauce extends ToppingDecorator {
 
     TomatoSauce(Pizza newPizza) {
@@ -8,12 +11,19 @@ class TomatoSauce extends ToppingDecorator {
         System.out.println("Adding Sauce");
     }
 
-    // Returns the result of calling getDescription() for PlainPizza, Mozzarella and then TomatoSauce
+    /**
+     *  Returns the result of calling getDescription() for PlainPizza, Mozzarella and then TomatoSauce
+     *  @return
+     */
     public String getDescription(){
 
         return tempPizza.getDescription() + ", tomato sauce";
     }
 
+    /**
+     *  Get the cost of a plain pizza with mozzarella.
+     *  @return the cost of a plain pizza with tomato sauce.
+     */
     public double getCost(){
 
         System.out.println("Cost of Sauce: " + .35);
