@@ -8,7 +8,7 @@ class Television implements ElectronicDevice {
     private int volume = 0;
 
     /**
-     *  Method to turn television on
+     * Turns the television device on.
      */
     public void on() {
 
@@ -16,7 +16,7 @@ class Television implements ElectronicDevice {
     }
 
     /**
-     *  Method to turn television off
+     * Turns the television device off.
      */
     public void off() {
 
@@ -24,7 +24,7 @@ class Television implements ElectronicDevice {
     }
 
     /**
-     *  Method to turn television volume up
+     * Turns the volume up on the television.
      */
     public void volumeUp() {
 
@@ -33,7 +33,7 @@ class Television implements ElectronicDevice {
     }
 
     /**
-     *  Method to turn television volume down
+     * Turns the volume down on the television.
      */
     public void volumenDown() {
 

@@ -1,16 +1,15 @@
 package behavorial.command;
 
 /**
- * The type Turn tv up.
+ *  The type TurnTVUp.
  */
 class TurnTVUp implements Command {
 
     private ElectronicDevice theDevice;
 
     /**
-     * Instantiates a new Turn tv up.
-     *
-     * @param newDevice the new device
+     *  Instantiates a new TurnTVUp.
+     *  @param newDevice the new device
      */
     TurnTVUp(ElectronicDevice newDevice){
 
@@ -18,16 +17,18 @@ class TurnTVUp implements Command {
     }
 
     /**
-     * Method to turn the volume up on a Electronic Device
+     *  Turn the volume up on a Electronic Device
      */
     public void execute() {
+
         theDevice.volumeUp();
     }
 
     /**
-     * Method to turn down the volume on a Electronic Device
+     *  Turn down the volume on a Electronic Device
      */
     public void undo() {
+
         theDevice.volumenDown();
     }
 }
