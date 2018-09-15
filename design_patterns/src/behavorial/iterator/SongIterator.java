@@ -3,14 +3,13 @@ package behavorial.iterator;
 import java.util.Iterator;
 
 /**
- * The interface Song behavorial.iterator.
+ * The interface SongIterator.
  */
 interface SongIterator {
 
     /**
-     * Create behavorial.iterator behavorial.iterator.
-     *
-     * @return the behavorial.iterator
+     *  CreateIterator.
+     *  @return an iterator
      */
     Iterator createIterator();
 }

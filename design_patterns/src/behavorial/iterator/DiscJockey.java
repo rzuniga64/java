@@ -18,7 +18,6 @@ class DiscJockey {
 
     /**
      * Instantiates a new Disc jockey. NEW WAY Initialize the iterators
-     *
      * @param newSongs70s the new songs 70 s
      * @param newSongs80s the new songs 80 s
      * @param newSongs90s the new songs 90 s
@@ -55,7 +54,6 @@ class DiscJockey {
 
     /**
      * Print the songs.
-     *
      * @param iterator the behavorial.iterator
      */
     private void printTheSongs(Iterator iterator){

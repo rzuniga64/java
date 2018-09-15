@@ -11,7 +11,7 @@ class SongsOfThe70s implements SongIterator{
     private ArrayList<SongInfo> bestSongs;
 
     /**
-     * Instantiates a new Songs of the 70 s.
+     *  Instantiate new Songs of the 70 s.
      */
     SongsOfThe70s() {
 
@@ -23,11 +23,10 @@ class SongsOfThe70s implements SongIterator{
     }
 
     /**
-     * Add a SongInfo object to the end of the ArrayList
-     *
-     * @param songName     the song name
-     * @param bandName     the band name
-     * @param yearReleased the year released
+     *  Add a SongInfo object to the end of the ArrayList.
+     *  @param songName     the song name
+     *  @param bandName     the band name
+     *  @param yearReleased the year released
      */
     private void addSong(String songName, String bandName, int yearReleased){
 
@@ -39,7 +38,8 @@ class SongsOfThe70s implements SongIterator{
     //public ArrayList<SongInfo> getBestSongs(){ return bestSongs; }
 
     /**
-     * NEW By adding this method I'll be able to treat all collections the same
+     *  NEW By adding this method I'll be able to treat all collections the same.
+     *  Create an Iterator.
      */
     public Iterator createIterator() {
 

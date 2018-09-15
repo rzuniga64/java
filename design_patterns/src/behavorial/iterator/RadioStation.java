@@ -7,7 +7,6 @@ public class RadioStation {
 
     /**
      * Main.
-     *
      * @param args the args
      */
     public static void main(String[] args){

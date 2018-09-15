@@ -13,7 +13,7 @@ class SongsOfThe80s implements SongIterator{
     private int arrayValue = 0; // Used to increment to the next position in the array
 
     /**
-     * Instantiates a new Songs of the 80 s.
+     *  Instantiate new Songs of the 80s.
      */
     SongsOfThe80s() {
 
@@ -25,11 +25,10 @@ class SongsOfThe80s implements SongIterator{
     }
 
     /**
-     * Add song.
-     *
-     * @param songName     the song name
-     * @param bandName     the band name
-     * @param yearReleased the year released
+     *  Add song.
+     *  @param songName     the song name
+     *  @param bandName     the band name
+     *  @param yearReleased the year released
      */
     private void addSong(String songName, String bandName, int yearReleased){
 
@@ -38,8 +37,12 @@ class SongsOfThe80s implements SongIterator{
         arrayValue++;
     }
 
+    // Get rid of this
+    // public SongInfo[] getBestSongs(){ return bestSongs; }
+
     /**
-     * NEW By adding this method I'll be able to treat all collections the same
+     *  NEW By adding this method I'll be able to treat all collections the same.
+     *  Create an Iterator.
      */
     public Iterator createIterator() {
 
