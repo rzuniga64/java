@@ -10,15 +10,18 @@ class StockGrabber implements Subject{
     private ArrayList<Observer> observers;
     private double ibmPrice;
     private double aaplPrice;
-    private double googPrice;
+    private double googlPrice;
 
     /**
      * Instantiates a new Stock grabber.
      */
-    StockGrabber(){ observers = new ArrayList<Observer>(); }
+    StockGrabber() {
+
+        observers = new ArrayList<>();
+    }
 
     /**
-     * This method adds a new behavorial.observer to the ArrayList.
+     * This method adds a new Observer to the ArrayList.
      */
     public void register(Observer newObserver) {
 
@@ -26,17 +29,17 @@ class StockGrabber implements Subject{
     }
 
     /**
-     * This method removes an behavorial.observer to the ArrayList.
+     * This method removes an Observer to the ArrayList.
      */
     public void unregister(Observer deleteObserver) {
 
-        // Get the index of the behavorial.observer to delete
+        // Get the index of the Observer to delete
         int observerIndex = observers.indexOf(deleteObserver);
 
         // Print out message (Have to increment index to match)
         System.out.println("Observer " + (observerIndex + 1) + " deleted");
 
-        // Removes behavorial.observer from the ArrayList
+        // Removes Observer from the ArrayList
         observers.remove(observerIndex);
     }
 
@@ -46,13 +49,12 @@ class StockGrabber implements Subject{
     public void notifyObserver() {
 
         for(Observer observer : observers){
-            observer.update(ibmPrice, aaplPrice, googPrice);
+            observer.update(ibmPrice, aaplPrice, googlPrice);
         }
     }
 
     /**
-     * Set ibm price. Change prices for IBM stock and notifies observers of changes
-     *
+     * Set IBM price. Change prices for IBM stock and notifies observers of changes.
      * @param newIBMPrice the new ibm price
      */
     void setIBMPrice(double newIBMPrice){
@@ -62,8 +64,7 @@ class StockGrabber implements Subject{
     }
 
     /**
-     * Set aapl price. Change prices for AAPL stock and notifies observers of changes
-     *
+     * Set Apple price. Change prices for AAPL stock and notifies observers of changes.
      * @param newAAPLPrice the new aapl price
      */
     void setAAPLPrice(double newAAPLPrice){
@@ -73,13 +74,12 @@ class StockGrabber implements Subject{
     }
 
     /**
-     * Set goog price. Change prices for GOOG stock and notifies observers of changes
-     *
+     * Set Google price. Change prices for GOOGL stock and notifies observers of changes.
      * @param newGOOGPrice the new goog price
      */
     void setGOOGPrice(double newGOOGPrice){
 
-        this.googPrice = newGOOGPrice;
+        this.googlPrice = newGOOGPrice;
         notifyObserver();
     }
 }
