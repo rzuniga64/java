@@ -6,13 +6,12 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
- * The type Test behavorial.memento.
+ * The type TestMemento.
  */
 public class TestMemento extends JFrame{
 
     /**
      * The entry point of application.
-     *
      * @param args the input arguments
      */
     public static void main(String[] args) {
@@ -30,8 +29,8 @@ public class TestMemento extends JFrame{
     private Caretaker caretaker = new Caretaker();
 
     /**
-     *  The originator sets the value for the article, creates a new behavorial.memento with a new article, and gets the article
-     *  stored in the current behavorial.memento
+     *  The originator sets the value for the article, creates a new Memento with a new article, and gets the article
+     *  stored in the current Memento
      */
     private Originator originator = new Originator();
 
@@ -73,20 +72,20 @@ public class TestMemento extends JFrame{
 
         public void actionPerformed(ActionEvent e) {
 
-            if(e.getSource() == saveBut){
+            if(e.getSource() == saveBut) {
 
                 String textInTextArea = theArticle.getText();  // Get text in JTextArea
-                originator.set(textInTextArea); // Set the value for the current behavorial.memento
+                originator.set(textInTextArea); // Set the value for the current Memento
                 caretaker.addMemento( originator.storeInMemento() ); // Add new article to the ArrayList
                 saveFiles++;
                 currentArticle++;
 
                 System.out.println("Save Files " + saveFiles);
                 undoBut.setEnabled(true); // Make undo clickable
-            } else
 
-            if(e.getSource() == undoBut){
-                if(currentArticle >= 1){
+            } else if(e.getSource() == undoBut) {
+
+                if(currentArticle >= 1) {
                     currentArticle--; // Decrement to the current article displayed
 
                     // Get the older article saved and display it in JTextArea
@@ -97,10 +96,9 @@ public class TestMemento extends JFrame{
                 } else {
                     undoBut.setEnabled(false); // Don't allow user to click Undo
                 }
-            } else
+            } else if(e.getSource() == redoBut) {
 
-            if(e.getSource() == redoBut){
-                if((saveFiles - 1) > currentArticle){
+                if((saveFiles - 1) > currentArticle) {
                     currentArticle++;   // Increment to the current article displayed
 
                     // Get the newer article saved and display it in JTextArea

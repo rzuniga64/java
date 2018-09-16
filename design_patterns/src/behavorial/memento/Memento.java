@@ -2,26 +2,29 @@ package behavorial.memento;
 
 /**
  *  The type Memento.
- *
- *  Used stores an objects behavorial.state at a point in timebso it can be returned to that behavorial.state later.
+ *  Used stores an objects state at a point in time so it can be returned to that state later.
  *  It simply allows you to undo/redo changes on an Object
  */
 class Memento {
 
-    // The article stored in behavorial.memento Object
+    // The article stored in Memento Object
     private String article;
 
     /**
-     * Instantiates a new Memento. Save a new article String to the behavorial.memento Object
-     *
-     * @param articleSave the article save
+     *  Instantiates a new Memento. Save a new article String to the Memento Object.
+     *  @param newArticle the article save
      */
-    Memento(String articleSave) { article = articleSave; }
+    Memento(String newArticle) {
+
+        article = newArticle;
+    }
 
     /**
-     * Gets saved article.
-     *
-     * @return the saved article
+     *  Gets saved article.
+     *  @return the saved article
      */
-    String getSavedArticle() { return article; }
+    String getSavedArticle() {
+
+        return article;
+    }
 }
