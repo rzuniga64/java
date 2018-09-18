@@ -27,14 +27,13 @@ public class ATMMachine {
 
         atmState = noCard;
 
-        if(cashInMachine < 0)
+        if (cashInMachine < 0)
             atmState = atmOutOfMoney;
     }
 
     /**
-     * Set atm behavorial.state.
-     *
-     * @param newATMState the new atm behavorial.state
+     *  Set ATM state.
+     *  @param newATMState the new ATM state.
      */
     void setATMState(ATMState newATMState){
 
@@ -42,9 +41,8 @@ public class ATMMachine {
     }
 
     /**
-     * Set cash in machine.
-     *
-     * @param newCashInMachine the new cash in machine
+     *  Set cash in machine.
+     *  @param newCashInMachine the new cash in machine
      */
     void setCashInMachine(int newCashInMachine){
 
@@ -52,7 +50,7 @@ public class ATMMachine {
     }
 
     /**
-     * Insert card.
+     *  Insert card.
      */
     public void insertCard() {
 
@@ -60,7 +58,7 @@ public class ATMMachine {
     }
 
     /**
-     * Eject card.
+     *  Eject card.
      */
     public void ejectCard() {
 
@@ -68,9 +66,8 @@ public class ATMMachine {
     }
 
     /**
-     * Request cash.
-     *
-     * @param cashToWithdraw the cash to withdraw
+     *  Request cash.
+     *  @param cashToWithdraw the cash to withdraw.
      */
     public void requestCash(int cashToWithdraw) {
 
@@ -78,9 +75,8 @@ public class ATMMachine {
     }
 
     /**
-     * Insert pin.
-     *
-     * @param pinEntered the pin entered
+     *  Insert pin.
+     *  @param pinEntered the pin entered.
      */
     public void insertPin(int pinEntered){
 
@@ -88,30 +84,38 @@ public class ATMMachine {
     }
 
     /**
-     * Gets yes card behavorial.state.
-     *
-     * @return the yes card behavorial.state
+     *  Determine if they have a card.
+     *  @return the yes card state.
      */
-    ATMState getYesCardState() { return hasCard; }
+    ATMState getYesCardState() {
+
+        return hasCard;
+    }
 
     /**
-     * Gets no card behavorial.state.
-     *
-     * @return the no card behavorial.state
+     *  Gets no card state.
+     *  @return the no card state.
      */
-    ATMState getNoCardState() { return noCard; }
+    ATMState getNoCardState() {
+
+        return noCard;
+    }
 
     /**
-     * Gets has pin.
-     *
-     * @return the has pin
+     *  Gets has pin.
+     *  @return the has pin.
      */
-    ATMState getHasPin() { return hasCorrectPin; }
+    ATMState getHasPin() {
+
+        return hasCorrectPin;
+    }
 
     /**
-     * Gets no cash behavorial.state.
-     *
-     * @return the no cash behavorial.state
+     *  Gets no cash state.
+     *  @return the no cash state.
      */
-    ATMState getNoCashState() { return atmOutOfMoney; }
+    ATMState getNoCashState() {
+
+        return atmOutOfMoney;
+    }
 }
