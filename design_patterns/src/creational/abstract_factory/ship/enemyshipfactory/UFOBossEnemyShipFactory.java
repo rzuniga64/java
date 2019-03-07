@@ -11,14 +11,20 @@ import creational.abstract_factory.ship.weapon.ESWeapon;
 
 public class UFOBossEnemyShipFactory implements EnemyShipFactory {
 
-    // Defines the weapon object to associate with the ship
+    /**
+     *  Defines the weapon object to associate with the ship.
+     *  @return ESUFOBossGun
+     */
     public ESWeapon addESGun() {
-        return new ESUFOBossGun(); // Specific to Boss UFO
+        return new ESUFOBossGun();
     }
 
-    // Defines the engine object to associate with the ship
+    /**
+     *  Defines the engine object to associate with the ship.
+      * @return ESUFOBossEngine
+     */
     public ESEngine addESEngine() {
-        return new ESUFOBossEngine(); // Specific to Boss UFO
+        return new ESUFOBossEngine();
     }
 
 }

@@ -1,24 +1,19 @@
 package structural.flyweight;
 
-/**
- *  The Flyweight design pattern is used when you need to create a large number of similar objects.
- *  To reduce memory this pattern shares Objects that are the same rather than creating new ones.
- *  Intrinsic State: Color
- *  Extrinsic State: Size
- */
-
 import javax.swing.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
 /**
- * The type Fly weight test.
+ *  The Flyweight design pattern is used when you need to create a large number of similar objects.
+ *  To reduce memory this pattern shares Objects that are the same rather than creating new ones.
+ *  Intrinsic State: Color (means rectangles will share a color if the color is the same).
+ *  Extrinsic State: Size
  */
 public class FlyWeightTest extends JFrame{
 
@@ -29,13 +24,15 @@ public class FlyWeightTest extends JFrame{
     private int windowHeight = 800;
 
     // A new rectangle is created only if a new color is needed
-    private Color[] shapeColor = {Color.orange, Color.red, Color.yellow,
-            Color.blue, Color.pink, Color.cyan, Color.magenta,
-            Color.black, Color.gray};
+    private Color[] shapeColor =
+            {
+                    Color.orange, Color.red, Color.yellow,
+                    Color.blue, Color.pink, Color.cyan,
+                    Color.magenta, Color.black, Color.gray
+            };
 
     /**
-     * Main.
-     *
+     * Unit tests for the flyweight design pattern.
      * @param args the args
      */
     public static void main(String[] args){
@@ -51,10 +48,10 @@ public class FlyWeightTest extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Flyweight Test");
 
-        JPanel contentPane = new JPanel();
+        JPanel contentPane = new JPanel(); // holds a button and JPanel, a drawing panel.
         contentPane.setLayout(new BorderLayout());
         final JPanel  drawingPanel  = new JPanel();
-        startDrawingButton = new JButton("Create Rectangles");
+        startDrawingButton = new JButton("Draw Rectangles");
         contentPane.add(drawingPanel,  BorderLayout.CENTER);
         contentPane.add(startDrawingButton, BorderLayout.SOUTH);
 
@@ -67,13 +64,8 @@ public class FlyWeightTest extends JFrame{
 
                 for(int i=0; i < 100000; ++i) {
 
-                    // 1st try
-                    //g.setColor(getRandColor());
-                    //g.fillRect(getRandX(), getRandY(), getRandX(), getRandY());
-
-                    // 2nd try
-                    //MyRect rect = new MyRect(getRandColor());
-                    //rect.draw(g, getRandX(), getRandY(), getRandX(), getRandY());
+                    // MyRect rect = new MyRect(getRandColor());
+                    // rect.draw(g, getRandX(), getRandY(), getRandX(), getRandY());
 
                     // Uses rectangles stored in the HashMap to speed up the program
                     MyRect rect = RectFactory.getRect(getRandColor());
@@ -88,16 +80,26 @@ public class FlyWeightTest extends JFrame{
         this.setVisible(true);
     }
 
-    // Picks random x & y coordinates
+    /**
+     *  Get a X-coordinate.
+     *  @return the X-coordinate.
+     */
     private int getRandX(){
-        return (int)(Math.random()*windowWidth);
+        return (int)(Math.random() * windowWidth);
     }
 
+    /**
+     *  Get a Y-coordinate.
+     *  @return the Y-coordinate.
+     */
     private int getRandY(){
-        return (int)(Math.random()*windowHeight);
+        return (int)(Math.random() * windowHeight);
     }
 
-    // Picks a random Color from the 9 available
+    /**
+     *  Picks a random Color from the 9 available
+     *  @return a color.
+     */
     private Color getRandColor(){
 
         Random randomGenerator = new Random();

@@ -12,7 +12,6 @@ class SongInfo{
 
     /**
      * Instantiates a new Song info.
-     *
      * @param newSongName     the new song name
      * @param newBandName     the new band name
      * @param newYearReleased the new year released
@@ -25,23 +24,29 @@ class SongInfo{
     }
 
     /**
-     * Get song name string.
-     *
-     * @return the song name as a string string
+     *  Get song name string.
+     *  @return the song name as a string string.
      */
-    String getSongName(){ return songName; }
+    String getSongName(){
+
+        return songName;
+    }
 
     /**
-     * Get band name string.
-     *
-     * @return the band name as a string
+     *  Get band name string.
+     *  @return the band name as a string.
      */
-    String getBandName(){ return bandName; }
+    String getBandName(){
+
+        return bandName;
+    }
 
     /**
-     * Get year released int.
-     *
-     * @return the year a song was released as aint
+     *  Get year released int.
+     *  @return the year a song was released as int.
      */
-    int getYearReleased(){ return yearReleased; }
+    int getYearReleased(){
+
+        return yearReleased;
+    }
 }

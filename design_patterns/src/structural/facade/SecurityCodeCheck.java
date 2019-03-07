@@ -1,18 +1,25 @@
 package structural.facade;
 
 /**
- * The type Security code check.
+ *  A class to check security code.
  */
 class SecurityCodeCheck {
 
     private int securityCode = 1234;
-    private int getSecurityCode() { return securityCode; }
 
     /**
-     * Is code correct boolean.
-     *
-     * @param secCodeToCheck the sec code to check
-     * @return the boolean
+     *  Get the security code.
+     *  @return the security code.
+     */
+    private int getSecurityCode() {
+
+        return securityCode;
+    }
+
+    /**
+     *  Determine if security code is correct.
+     *  @param secCodeToCheck the sec code to check
+     *  @return the boolean
      */
     boolean isCodeCorrect(int secCodeToCheck){
 

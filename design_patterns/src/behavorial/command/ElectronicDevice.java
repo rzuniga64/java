@@ -6,22 +6,22 @@ package behavorial.command;
 public interface ElectronicDevice {
 
     /**
-     * On.
+     * Turns the electronic device on.
      */
     void on();
 
     /**
-     * Off.
+     * Turns the electronic device off.
      */
     void off();
 
     /**
-     * Volume up.
+     * Turns the volume up on the electronic device.
      */
     void volumeUp();
 
     /**
-     * Volumen down.
+     * Turns the volume down on the electronic device.
      */
     void volumenDown();
 }

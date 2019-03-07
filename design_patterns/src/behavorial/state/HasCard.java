@@ -1,19 +1,15 @@
 package behavorial.state;
 
 /**
- * The type Has card.
+ * The type HasCard.
  */
 class HasCard implements ATMState {
 
-    /**
-     * The ATM machine.
-     */
     private ATMMachine atmMachine;
 
     /**
-     * Instantiates a new Has card.
-     *
-     * @param newATMMachine the new atm machine
+     *  Instantiates a new Has card.
+     *  @param newATMMachine the new atm machine.
      */
     HasCard(ATMMachine newATMMachine){
 
@@ -21,7 +17,7 @@ class HasCard implements ATMState {
     }
 
     /**
-     * Insert card.
+     *  Insert card.
      */
     public void insertCard() {
 
@@ -29,7 +25,7 @@ class HasCard implements ATMState {
     }
 
     /**
-     * Eject card.
+     *  Eject card.
      */
     public void ejectCard() {
 
@@ -38,7 +34,8 @@ class HasCard implements ATMState {
     }
 
     /**
-     * Request cash.
+     *  Request cash.
+     *  @param cashToWithdraw the cash to withdraw.
      */
     public void requestCash(int cashToWithdraw) {
 
@@ -46,13 +43,12 @@ class HasCard implements ATMState {
     }
 
     /**
-     * Insert pin.
-     *
-     * @param pinEntered the pin entered
+     *  Insert pin.
+     *  @param pinEntered the pin entered
      */
     public void insertPin(int pinEntered) {
 
-        if(pinEntered == 1234){
+        if (pinEntered == 1234) {
 
             System.out.println("You entered the correct PIN");
             atmMachine.correctPinEntered = true;

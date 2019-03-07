@@ -1,51 +1,71 @@
 package structural.composite;
 
-// This acts as an interface for every Song (Leaf)
-// and SongGroup (Composite) we create
-
+/**
+ *  This class acts as an interface for every Song(leaf) and SongGroup(composite) we create. We throw
+ *  UnsupportedOperationException so that if it doesn't make sense for a song, or song group to inherit a method they
+ *  can just inherit the default implementation.
+ */
 abstract class SongComponent {
 
-    // We throw UnsupportedOperationException so that if it doesn't make sense for a song, or song group to inherit a
-    // method they can just inherit the default implementation.
-
-    // This allows me to add components
+    /**
+     *  Adds a new Song Component.
+     *  @param newSongComponent is a group of songs or a single song.
+     */
     public void add(SongComponent newSongComponent) {
 
         throw new UnsupportedOperationException();
     }
 
-    // This allows me to remove components
+    /**
+     *  Removes a Song Component.
+     *  @param newSongComponent is a group of songs or a single song.
+     */
     public void remove(SongComponent newSongComponent) {
 
         throw new UnsupportedOperationException();
     }
 
-    // This allows me to get components
+    /**
+     *  Gets a song component.
+     *  @param componentIndex is the index of a song in a list.
+     *  @return index of song component
+     */
     public SongComponent getComponent(int componentIndex) {
 
         throw new UnsupportedOperationException();
     }
 
-    // This allows me to retrieve song names
+    /**
+     *  Gets a song name
+     * @return a song name.
+     */
     public String getSongName() {
 
         throw new UnsupportedOperationException();
     }
 
-    // This allows me to retrieve band names
+    /**
+     *  Gets the band name.
+     * @return a band name.
+     */
     public String getBandName() {
 
         throw new UnsupportedOperationException();
     }
 
-    // This allows me to retrieve release year
+    /**
+     *  Get the year a song was released.
+     *  @return the year a song was released.
+     */
     public int getReleaseYear() {
 
         throw new UnsupportedOperationException();
     }
 
-    // When this is called by a class object that extends SongComponent it will print out information specific to the
-    // Song or SongGroup
+    /**
+     *  When this is called by a class object that extends SongComponent it will print out information specific to the
+     *  Song or SongGroup.
+     */
     public void displaySongInfo() {
 
         throw new UnsupportedOperationException();

@@ -8,7 +8,7 @@ class Radio implements ElectronicDevice {
     private int volume = 0;
 
     /**
-     * Method to turn a radio on
+     * Turns the radio device on.
      */
     public void on() {
 
@@ -16,7 +16,7 @@ class Radio implements ElectronicDevice {
     }
 
     /**
-     * Method to turn a radio off
+     * Turns the radio device off.
      */
     public void off() {
 
@@ -24,17 +24,19 @@ class Radio implements ElectronicDevice {
     }
 
     /**
-     * Method to turn the volume up on a radio
+     * Turns the volume up on the radio.
      */
     public void volumeUp() {
+
         volume++;
         System.out.println("Radio Volume is at: " + volume);
     }
 
     /**
-     * Method to turn the volume down on a radio
+     * Turns the volume down on the radio.
      */
     public void volumenDown() {
+
         volume--;
         System.out.println("Radio Volume is at: " + volume);
     }

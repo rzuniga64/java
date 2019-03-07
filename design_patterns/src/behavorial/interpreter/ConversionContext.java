@@ -1,7 +1,7 @@
 package behavorial.interpreter;
 
 /**
- * The type Conversion context.
+ * The type ConversionContext.
  */
 class ConversionContext {
 
@@ -13,7 +13,6 @@ class ConversionContext {
 
     /**
      * Instantiates a new Conversion context.
-     *
      * @param input the input
      */
     ConversionContext(String input)
@@ -28,39 +27,53 @@ class ConversionContext {
         conversionResponse = partsOfQues[0] + " "+ partsOfQues[1] + " equals ";
     }
 
-    private String getInput() { return conversionQues; }
+    /**
+     *  Get input.
+     *  @return
+     */
+    private String getInput() {
+
+        return conversionQues;
+    }
 
     /**
      * Gets from conversion.
-     *
      * @return the from conversion
      */
-    String getFromConversion() { return fromConversion; }
+    String getFromConversion() {
+
+        return fromConversion;
+    }
 
     /**
      * Gets to conversion.
-     *
      * @return the to conversion
      */
-    String getToConversion() { return toConversion; }
+    String getToConversion() {
+
+        return toConversion;
+    }
 
     /**
      * Gets response.
-     *
      * @return the response
      */
-    String getResponse() { return conversionResponse; }
+    String getResponse() {
+
+        return conversionResponse;
+    }
 
     /**
      * Gets quantity.
-     *
      * @return the quantity
      */
-    double getQuantity() { return quantity; }
+    double getQuantity() {
+
+        return quantity;
+    }
 
     /**
      * Make String lowercase
-     *
      * @return the words in lowercase
      */
     String getLowercase(String wordToLowercase){
@@ -70,7 +83,6 @@ class ConversionContext {
 
     /**
      * Capitalizes the first letter of a group of words
-     *
      * @return the group of words with first letter capitalized.
      */
     private String getCapitalized(String wordToCapitalize){

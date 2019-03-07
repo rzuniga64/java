@@ -1,19 +1,25 @@
 package structural.facade;
 
 /**
- * The type Account number check.
+ *  A class to check account number.
  */
 class AccountNumberCheck{
 
     private int accountNumber = 12345678;
 
-    private int getAccountNumber() { return accountNumber; }
+    /**
+     *  Get account number
+     *  @return the account number.
+     */
+    private int getAccountNumber() {
+
+        return accountNumber;
+    }
 
     /**
-     * Account active boolean.
-     *
-     * @param acctNumToCheck the acct num to check
-     * @return the boolean
+     *  Determine if account is active.
+     *  @param acctNumToCheck the acct num to check
+     *  @return the boolean
      */
     boolean accountActive(int acctNumToCheck){
 

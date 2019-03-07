@@ -1,30 +1,31 @@
 package behavorial.state;
 
 /**
- * The type Has pin.
+ * The type HasPin.
  */
 class HasPin implements ATMState {
 
     private ATMMachine atmMachine;
 
     /**
-     * Instantiates a new Has pin.
-     *
-     * @param newATMMachine the new atm machine
+     *  Instantiates a new Has pin.
+     *  @param newATMMachine the new atm machine.
      */
     HasPin(ATMMachine newATMMachine){
 
         atmMachine = newATMMachine;
     }
+
     /**
-     * Eject card.
+     *  Insert card.
      */
     public void insertCard() {
 
         System.out.println("You already entered a card");
     }
+
     /**
-     * Eject card.
+     *  Eject card.
      */
     public void ejectCard() {
 
@@ -34,6 +35,7 @@ class HasPin implements ATMState {
 
     /**
      * Insert pin.
+     * @param pinEntered the pin entered.
      */
     public void insertPin(int pinEntered) {
 
@@ -41,11 +43,13 @@ class HasPin implements ATMState {
     }
 
     /**
-     * Request cash.
+     *  Request cash.
+     *  @param cashToWithdraw the cash to withdraw.
      */
     public void requestCash(int cashToWithdraw) {
 
-        if(cashToWithdraw > atmMachine.cashInMachine){
+        if (cashToWithdraw > atmMachine.cashInMachine) {
+
             System.out.println("Don't have that much cash available");
             System.out.println("Your card is ejected");
             atmMachine.setATMState(atmMachine.getNoCardState());
@@ -57,7 +61,7 @@ class HasPin implements ATMState {
             System.out.println("Your card is ejected");
             atmMachine.setATMState(atmMachine.getNoCardState());
 
-            if(atmMachine.cashInMachine <= 0){
+            if(atmMachine.cashInMachine <= 0) {
                 atmMachine.setATMState(atmMachine.getNoCashState());
             }
         }

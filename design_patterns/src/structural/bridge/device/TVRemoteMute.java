@@ -1,8 +1,7 @@
 package structural.bridge.device;
 
 /**
- *  Refined Abstraction.
- *  If I decide I want to further extend the remote I can.
+ *  Refined Abstraction. If I decide I want to further extend the remote I can.
  */
 class TVRemoteMute extends RemoteButton {
 
@@ -15,7 +14,9 @@ class TVRemoteMute extends RemoteButton {
         super(newDevice);
     }
 
-    /** Button nine mutes the TV. */
+    /**
+     *  Button nine mutes the TV.
+     */
     public void buttonNinePressed() {
 
         System.out.println("TV was Muted");

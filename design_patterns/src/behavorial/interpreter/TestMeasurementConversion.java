@@ -10,7 +10,6 @@ public class TestMeasurementConversion {
 
     /**
      * Main.
-     *
      * @param args the args
      */
     public static void main(String[] args){
@@ -45,7 +44,7 @@ public class TestMeasurementConversion {
 
             // Print the results
             String answerToQues = question.getResponse() + toQuantity + " " + toConversion;
-            JOptionPane.showMessageDialog(null,answerToQues);
+            JOptionPane.showMessageDialog(null, answerToQues);
             frame.dispose();    // Closes the frame after OK is clicked
 
         } catch (ClassNotFoundException e) {

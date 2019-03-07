@@ -1,13 +1,11 @@
 package structural.adapter.enemy;
 
-/**
- *  EnemyTank implements EnemyAttacker perfectly. Our job is to make classes
- *  with different methods from EnemyAttacker to work with the EnemyAttacker
- *  interface.
- */
-
 import java.util.Random;
 
+/**
+ *  EnemyTank implements EnemyAttacker perfectly. Our job is to make classes with different methods from EnemyAttacker
+ *  to work with the EnemyAttacker interface.
+ */
 class EnemyTank implements EnemyAttacker{
 
     private Random generator = new Random();

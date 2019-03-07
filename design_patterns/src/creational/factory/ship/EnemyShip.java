@@ -12,14 +12,17 @@ public abstract class EnemyShip {
     void setDamage(double newDamage) { amtDamage = newDamage; }
 
     void followHeroShip(){
+
         System.out.println(getName() + " is following the hero");
     }
 
     void displayEnemyShip(){
+
         System.out.println(getName() + " is on the screen");
     }
 
     void enemyShipShoots() {
+
         System.out.println(getName() + " attacks and does " + getDamage() + " damage to hero");
     }
 }

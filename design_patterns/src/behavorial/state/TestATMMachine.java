@@ -1,13 +1,12 @@
 package behavorial.state;
 
 /**
- * The type Test atm machine.
+ * The type TestATMMachine.
  */
 public class TestATMMachine {
 
     /**
      * Main.
-     *
      * @param args the args
      */
     public static void main(String[] args){

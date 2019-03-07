@@ -1,14 +1,12 @@
 package structural.bridge.device;
 
 /**
- *  Abstraction
- *  This is an abstract class that will represent numerous ways to work with
- *  each device
+ *  Abstraction Layer
+ *  This is an abstract class that will represent numerous ways for the remote to work with each device.
  */
 abstract class RemoteButton{
 
-    /** A reference to a generic device using composition. */
-    private EntertainmentDevice theDevice;
+    private EntertainmentDevice theDevice;  // A reference to a generic device using composition.
 
     /**
      * Constructor
@@ -19,27 +17,32 @@ abstract class RemoteButton{
         theDevice = newDevice;
     }
 
-    /** Button five is pressed on the remote. */
+    /**
+     *  Button five is pressed on the remote.
+     */
     void buttonFivePressed() {
 
         theDevice.buttonFivePressed();
     }
 
-    /** Button six is pressed on the remote. */
+    /**
+     *  Button six is pressed on the remote.
+     */
     void buttonSixPressed() {
 
         theDevice.buttonSixPressed();
     }
 
-    /** Specifies what channel or chapter device is on. */
+    /**
+     * Specifies what channel or chapter device is on.
+     */
     void deviceFeedback(){
 
         theDevice.deviceFeedback();
     }
 
     /**
-     *  Define those things the remotes that are going to implement this
-     *  abstract class are going to need to extend.
+     *  Define the things that those remotes that are going to implement this abstract class are going to need to extend.
      */
     public abstract void buttonNinePressed();
 }

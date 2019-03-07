@@ -20,10 +20,16 @@ class MultNumbers implements Chain{
      */
     public void calculate(Numbers request) {
 
-        if(request.getCalcWanted().equals("mult"))
+        if(request.getCalcWanted().equals("mult")) {
 
-            System.out.print(request.getNumber1() + " * " + request.getNumber2() + " = "+
-                    (request.getNumber1()*request.getNumber2()));
+            System.out.print(
+                    request.getNumber1()
+                    + " * "
+                    + request.getNumber2()
+                    + " = "
+                    + (request.getNumber1() * request.getNumber2())
+            );
+        }
         else
             nextInChain.calculate(request);
     }

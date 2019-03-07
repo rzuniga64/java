@@ -1,5 +1,8 @@
 package structural.proxy;
 
+/**
+ *  Class determines the state of a PIN typed into an ATM machine.
+ */
 public class HasPin implements ATMState {
 
     ATMMachine atmMachine;
@@ -9,17 +12,27 @@ public class HasPin implements ATMState {
         atmMachine = newATMMachine;
     }
 
+    /**
+     *  Determines if the client's card was inserted correctly.
+     */
     public void insertCard() {
 
         System.out.println("You already entered a card");
     }
 
+    /**
+     *  Eject the client's card.
+     */
     public void ejectCard() {
 
         System.out.println("Your card is ejected");
         atmMachine.setATMState(atmMachine.getNoCardState());
     }
 
+    /**
+     *  Determines if the user can withdrawal an amount of cash.
+     *  @param cashToWithdraw
+     */
     public void requestCash(int cashToWithdraw) {
 
         if(cashToWithdraw > atmMachine.cashInMachine){
@@ -40,6 +53,10 @@ public class HasPin implements ATMState {
         }
     }
 
+    /**
+     *  Determines if the client's PIN number is inserted correctly.
+     *  @param pinEntered
+     */
     public void insertPin(int pinEntered) {
 
         System.out.println("You already entered a PIN");

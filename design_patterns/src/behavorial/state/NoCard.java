@@ -1,16 +1,15 @@
 package behavorial.state;
 
 /**
- * The type No card.
+ * The type NoCard.
  */
 class NoCard implements ATMState {
 
     private ATMMachine atmMachine;
 
     /**
-     * Instantiates a new No card.
-     *
-     * @param newATMMachine the new atm machine
+     *  Instantiates a new No card.
+     *  @param newATMMachine the new atm machine.
      */
     NoCard(ATMMachine newATMMachine){
 
@@ -31,22 +30,24 @@ class NoCard implements ATMState {
      */
     public void ejectCard() {
 
-        System.out.println("You didn't enter a card");
+        System.out.println("ou have not entered your card.");
     }
 
     /**
-     *  Request cash.
+     *  Reqeust cash.
+     *  @param cashToWithdraw the cash to withdraw.
      */
     public void requestCash(int cashToWithdraw) {
 
-        System.out.println("You have not entered your card");
+        System.out.println("You have not entered your card.");
     }
 
     /**
      *  Insert pin.
+     *  @param pinEntered the pin entered.
      */
     public void insertPin(int pinEntered) {
 
-        System.out.println("You have not entered your card");
+        System.out.println("You have not entered your card.");
     }
 }

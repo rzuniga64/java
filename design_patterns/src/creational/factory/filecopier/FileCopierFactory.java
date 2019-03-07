@@ -3,17 +3,17 @@ package creational.factory.filecopier;
 /**
  * FileCopierFactory class.
  */
-public final class FileCopierFactory {
+final class FileCopierFactory {
 
     /** Constructor. */
-    public FileCopierFactory() { }
+    FileCopierFactory() { }
 
     /**
      * getFactoryCopier method.
      * @param protocol protocol
      * @return FileCopier
      */
-    public FileCopier getFactoryCopier(final String protocol) {
+    FileCopier getFactoryCopier(final String protocol) {
 
         if ("scp".equals(protocol)) {
             return new ScpFileCopier();

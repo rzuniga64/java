@@ -20,14 +20,17 @@ public abstract class EnemyShip {
     // on the screen
 
     public void followHeroShip(){
+
         System.out.println(getName() + " is following the hero at " + engine );
     }
 
     public void displayEnemyShip(){
+
         System.out.println(getName() + " is on the screen");
     }
 
     public void enemyShipShoots(){
+
         System.out.println(getName() + " attacks and does " + weapon);
     }
 

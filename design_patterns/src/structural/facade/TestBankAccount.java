@@ -1,14 +1,13 @@
 package structural.facade;
 
 /**
- * The type Test bank account.
+ *  Test bank account.
  */
 public class TestBankAccount {
 
     /**
-     * Main.
-     *
-     * @param args the args
+     *  Unit tests.
+     *  @param args the args
      */
     public static void main(String[] args){
 

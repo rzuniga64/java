@@ -20,10 +20,16 @@ public class AddNumbers implements Chain{
      */
     public void calculate(Numbers request) {
 
-        if(request.getCalcWanted().equals("add"))
+        if(request.getCalcWanted().equals("add")) {
 
-            System.out.print(request.getNumber1() + " + " + request.getNumber2() + " = "+
-                    (request.getNumber1()+request.getNumber2()));
+            System.out.print(
+                    request.getNumber1()
+                    + " + "
+                    + request.getNumber2()
+                    + " = "
+                    + (request.getNumber1() + request.getNumber2())
+            );
+        }
         else
             nextInChain.calculate(request);
     }

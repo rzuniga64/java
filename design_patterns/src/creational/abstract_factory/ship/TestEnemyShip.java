@@ -4,11 +4,13 @@ import creational.abstract_factory.ship.enemyship.EnemyShip;
 import creational.abstract_factory.ship.enemyshipbuilding.EnemyShipBuilding;
 import creational.abstract_factory.ship.enemyshipbuilding.UFOEnemyShipBuilding;
 
+/**
+ *  EnemyShipBuilding handles orders for new EnemyShips. You send it a code using the orderTheShip method & it sends
+ *  the order to the right creational.factory for creation
+ */
 public class TestEnemyShip {
 
     public static void main(String[] args) {
-        // EnemyShipBuilding handles orders for new EnemyShips. You send it a code using the orderTheShip method &
-        // it sends the order to the right creational.factory for creation
 
         EnemyShipBuilding MakeUFOs = new UFOEnemyShipBuilding();
 

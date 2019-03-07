@@ -1,5 +1,8 @@
 package structural.proxy;
 
+/**
+ *  The Type ATMState.
+ */
 public interface ATMState {
 
     void insertCard();

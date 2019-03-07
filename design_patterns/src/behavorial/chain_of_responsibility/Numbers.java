@@ -1,21 +1,19 @@
 package behavorial.chain_of_responsibility;
 
 /**
- * This object will contain 2 numbers and a calculation to perform in the form of a String
+ * This object will contain 2 numbers and a calculation to perform in the form of a String.
  */
 class Numbers {
 
     private int number1;
     private int number2;
-
     private String calculationWanted;
 
     /**
-     * Instantiates a new Numbers.
-     *
-     * @param newNumber1 the new number 1
-     * @param newNumber2 the new number 2
-     * @param calcWanted the calc wanted
+     *  Instantiates a new Numbers.
+     *  @param newNumber1 a number.
+     *  @param newNumber2 a number.
+     *  @param calcWanted the calculationed wanted.
      */
     Numbers(int newNumber1, int newNumber2, String calcWanted){
 
@@ -25,23 +23,29 @@ class Numbers {
     }
 
     /**
-     * Get number 1 int.
-     *
-     * @return the int
+     *  Get first int.
+     *  @return the int
      */
-    int getNumber1(){ return number1; }
+    int getNumber1(){
+
+        return number1;
+    }
 
     /**
-     * Get number 2 int.
-     *
-     * @return the int
+     *  Get second int.
+     *  @return the int
      */
-    int getNumber2(){ return number2; }
+    int getNumber2(){
+
+        return number2;
+    }
 
     /**
-     * Get calc wanted string.
-     *
-     * @return the string
+     *  Get calculation wanted string.
+     *  @return the string
      */
-    String getCalcWanted(){ return calculationWanted; }
+    String getCalcWanted(){
+
+        return calculationWanted;
+    }
 }

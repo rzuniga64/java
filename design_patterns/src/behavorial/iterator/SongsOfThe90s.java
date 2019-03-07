@@ -4,14 +4,14 @@ import java.util.Hashtable;
 import java.util.Iterator;
 
 /**
- * The type SongsOfThe90s.
+ *  The type SongsOfThe90s.
  */
 class SongsOfThe90s implements SongIterator{
 
     // Create a Hashtable with an int as a key and SongInfo Objects
     private Hashtable<Integer, SongInfo> bestSongs = new Hashtable<>();
 
-    private int hashKey = 0;    // Will increment the Hashtable key
+    private int hashKey = 0;    // Increment the Hashtable key
 
     /**
      * Instantiates a new Songs of the 90 s.
@@ -25,7 +25,6 @@ class SongsOfThe90s implements SongIterator{
 
     /**
      * Add a new SongInfo Object to the Hashtable and then increment the Hashtable key
-     *
      * @param songName     the song name
      * @param bandName     the band name
      * @param yearReleased the year released
@@ -37,11 +36,12 @@ class SongsOfThe90s implements SongIterator{
         hashKey++;
     }
 
-    // Get rid of this.
-    // public Hashtable<Integer, SongInfo> getBestSongs(){ return bestSongs; }
+    //  Get rid of this.
+    //  public Hashtable<Integer, SongInfo> getBestSongs(){ return bestSongs; }
 
     /**
-     *  NEW By adding this method I'll be able to treat all collections the same
+     *  NEW By adding this method I'll be able to treat all collections the same.
+     *  Create an iterator.
      */
     public Iterator createIterator() {
 

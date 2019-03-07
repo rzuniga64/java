@@ -7,16 +7,14 @@ package behavorial.chain_of_responsibility;
 interface Chain {
 
     /**
-     * Defines the next Object to receive the data if this Object can't process it
-     *
-     * @param nextChain the next chain
+     *  Defines the next Object to receive the data if this Object can't process it.
+     *  @param nextChain the next chain
      */
     void setNextChain(Chain nextChain);
 
     /**
-     * Either solves the problem or passes the data to the next Object in the chain
-     *
-     * @param request the request
+     *  Either solves the problem or passes the data to the next Object in the chain.
+     *  @param request the request
      */
     void calculate(Numbers request);
 }
