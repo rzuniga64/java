@@ -58,6 +58,7 @@ public class StackDynamicArray {
         top = -1;
     }
 
+    @SuppressWarnings("Duplicates")
     private void push(String input){
 
         if(top+1 < stackSize){
@@ -70,6 +71,7 @@ public class StackDynamicArray {
         System.out.println("PUSH " + input + " Was Added to the stack.StackArray\n");
     }
 
+    @SuppressWarnings("Duplicates")
     private String pop(){
 
         if(top >= 0){
@@ -105,6 +107,7 @@ public class StackDynamicArray {
             pop();
     }
 
+    @SuppressWarnings("Duplicates")
     private void popDisplayAll(){
         String theReverse = "";
 
@@ -115,6 +118,7 @@ public class StackDynamicArray {
         popAll();
     }
 
+    @SuppressWarnings("Duplicates")
     private void displayTheStack(){
 
         for(int n = 0; n < 61; n++)System.out.print("-");
@@ -134,6 +138,7 @@ public class StackDynamicArray {
         System.out.println();
     }
 
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args){
         StackDynamicArray theStack = new StackDynamicArray(10);
 
