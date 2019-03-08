@@ -40,21 +40,21 @@ public class StackLinkedList {
      *   -----------------------------------
      *   40 bytes per stack node
      */
-    private class Link {
+    private class Node {
 
         Object value;
-        Link next = null;
+        Node next = null;
 
-        Link() {}
-        Link(Object value){ this.value = value; }
+        Node() {}
+        Node(Object value){ this.value = value; }
 
         public String toString(){return value.toString(); }
         public void display(){ System.out.println(value); }
         public Object getValue() { return value; }
-        public Link getNext() { return next; }
+        public Node getNext() { return next; }
     }
 
-    private Link head;    // Reference to first Link in list
+    private Node head;    // Reference to first Link in list
     private StackLinkedList(){ head = null; }
 
     /**
@@ -63,7 +63,7 @@ public class StackLinkedList {
      */
     private void push(Object value) {
 
-        Link first = new Link();
+        Node first = new Node();
         first.value = value;
         first.next = head; // insert at head of list
 
@@ -117,7 +117,7 @@ public class StackLinkedList {
      */
     private void display(){
 
-        StackLinkedList.Link theLink = head;
+        StackLinkedList.Node theLink = head;
 
         while(theLink != null){
             System.out.println(theLink.toString());
