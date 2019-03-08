@@ -43,14 +43,14 @@ package stack;
  */
 import java.util.Arrays;
 
-public class StackArray {
+public class StackArray<Item> {
 
-    private String[] stackArray;
+    private Item[] stackArray;
     private int top;
 
     private StackArray(){
 
-        stackArray = new String[1];
+        stackArray = (Item[]) new Object[1];
         top = -1;   // stack is empty
 
         // Assigns the value of -1 to every value in the array so I control what gets printed to screen
@@ -73,7 +73,7 @@ public class StackArray {
      *  Add a value to the top of the stack.
      */
     @SuppressWarnings("Duplicates")
-    private void push(String input){
+    private void push(Item input){
 
         if (top + 1 == stackArray.length) {
             resize(2 * stackArray.length);
@@ -99,22 +99,22 @@ public class StackArray {
      *  Invariant: Stack is between 24% and 100% full.
      */
     @SuppressWarnings("Duplicates")
-    private String pop(){
+    private Item pop(){
 
         if(top >= 0){
             displayTheStack();
             System.out.println("POP " + stackArray[top] + " Was Removed From the stack.StackArray\n");
 
-            String item = stackArray[top];
-            stackArray[top--] = "-1"; // release the reference to the object so no loitering.
-            if (top > 0 && top == stackArray.length/4) {
-                resize(stackArray.length / 2);
-            }
+            Item item = stackArray[top];
+            stackArray[top--] = (Item)"-1"; // release the reference to the object so no loitering.
+//            if (top > 0 && top == stackArray.length/4) {
+//                resize(stackArray.length/2);
+//            }
             return item;
         } else {
             displayTheStack();
             System.out.println("Sorry But the stack.StackArray is Empty");
-            return "-1";
+            return (Item) "-1";
         }
     }
 
@@ -129,27 +129,27 @@ public class StackArray {
      */
     private void resize(int capacity) {
 
-        String[] copy = new String[capacity];
+        Item[] copy = (Item[]) new Object[capacity];
         Arrays.fill(copy, "-1");
-        //for (int i = 0; i < stackArray.length; i++) {
-        //    copy[i] = stackArray[i];
-        //}
-        System.arraycopy(stackArray, 0, copy, 0, stackArray.length);
+        for (int i = 0; i < stackArray.length; i++) {
+            copy[i] = stackArray[i];
+        }
+        //System.arraycopy(stackArray, 0, copy, 0, stackArray.length);
         stackArray = copy;
     }
 
-    private String peek(){
+    private Item peek(){
 
         displayTheStack();
         System.out.println("PEEK " + stackArray[top] + " Is at the Top of the stack.StackArray\n");
         return stackArray[top];
     }
 
-    private void pushMany(String multipleValues){
+    private void pushMany(Item multipleValues){
 
-        String[] tempString = multipleValues.split(" ");
+        String[] tempString = multipleValues.toString().split(" ");
 
-        for (String s : tempString) push(s);
+        for (String s : tempString) push((Item) s);
         //Arrays.stream(tempString).forEach(this::push);
     }
 
@@ -184,9 +184,9 @@ public class StackArray {
         for(int n = 0; n < 61; n++)System.out.print("-");
         System.out.println();
 
-        for (String s : stackArray) {
-            if (s.equals("-1")) System.out.print("|     ");
-            else System.out.print(String.format("| %2s " + " ", s));
+        for (Item s : stackArray) {
+            if (s.toString().equals("-1")) System.out.print("|     ");
+            else System.out.print(String.format("| %2s " + " ", s.toString()));
         }
         System.out.println("|");
         for(int n = 0; n < 61; n++)System.out.print("-");
