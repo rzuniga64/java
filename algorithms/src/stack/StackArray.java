@@ -58,10 +58,19 @@ public class StackArray<Item> implements Iterable<Item> {
         Arrays.fill(stackArray, "-1");
     }
 
+    /**
+     *  Iterator method must return an Iterator because the StackArray class implements Iterable.
+     *  @return ListIterator
+     */
     public Iterator<Item> iterator() {
         return new ReverseArrayIterator();
     }
 
+    /**
+     *  An Iterator or class that implements hasNext() and next methods because the StackArray class
+     *  implements Iterable.  The iterator() method returns a ListIterator.
+     *  @return the current item
+     */
     private class ReverseArrayIterator implements Iterator<Item> {
 
         private int i = stackArray.length;
