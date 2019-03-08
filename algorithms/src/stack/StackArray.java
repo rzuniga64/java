@@ -107,7 +107,7 @@ public class StackArray<Item> implements Iterable<Item> {
             resize(2 * stackArray.length);
         }
 
-        if(top + 1 < stackArray.length){
+        if (top + 1 < stackArray.length){
             top++;
             stackArray[top] = input;
         } else
@@ -155,6 +155,7 @@ public class StackArray<Item> implements Iterable<Item> {
      *  many items into the stack.
      *  Cost of inserting first N items. N + (2 + 4 + 8 + ... + N) ~ 3N.
      */
+    @SuppressWarnings("Duplicates")
     private void resize(int capacity) {
 
         Item[] copy = (Item[]) new Object[capacity];
