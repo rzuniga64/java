@@ -1,12 +1,15 @@
-package bag;
+package Bag;
+
+import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  *  BagArray: unordered collection of objects of the same type
- *  Implemented using a fixed size array. When adding more elements than fit in the bag, the program exist.
+ *  Implemented using a fixed size array.
  *  Solutions:
  *  - Use a dynamically allocated array.
  *  - When its capacity is reached, allocate a new, bigger array.
- *  Can contain multiple values of the same type.
+ *  - Can contain multiple values of the same type.
  *
  *
  *  Advantages of array over linked list:
@@ -29,71 +32,158 @@ package bag;
  *  Deletion:    O(n)
  *
  *  constructor:        creates an empty list
+ *  iterator:           Iterator method must return an Iterator because the StackArray class implements Iterable
  *  isEmpty():          is the bag empty
  *  size()              returns the number of values
  *  add(value):         add a value to the bag
  *  remove(value:       removes an value from the bag (if it exists)
- *  occurences(value):  how many times is value in the bag
- *
+ *  occurrences(value): how many times is value in the bag
+ *  display:            display the contents of the bag
  */
-public class BagArray {
-    private static int INCREMENT = 20;
-    private int[] data;
+public class BagArray<Item> implements Iterable<Item> {
+
+    private Item[] bagArray;
     private int count;
 
-    public static void main(String[] args){
-        BagArray b = new BagArray();
-        System.out.println("Is bag empty? " + b.isEmpty());
-        b.add(4);
-        b.add(8);
-        b.add(4);
+    private BagArray() {
+        count = -1;
+        bagArray = (Item[]) new Object[1];
 
-        System.out.println("size " + b.size());
-        System.out.println("how many 4's? " + b.occurrences(4));
-        b.remove(4);
-        System.out.println("removed a 4");
-        System.out.println("size " + b.size());
-        System.out.println("how many 4's? " + b.occurrences(4));
+        // Assigns the value of -1 to every value in the array so I control what gets printed to screen
+        Arrays.fill(bagArray, "-1");
     }
 
-    BagArray() {
-        count = 0;
-        data = new int[INCREMENT];
+    /**
+     *  Iterator method must return an Iterator because the StackArray class implements Iterable.
+     *  @return ListIterator
+     */
+    public Iterator<Item> iterator() {
+        return new ReverseArrayIterator();
     }
 
-    boolean isEmpty() {
-        return (count == 0);
+    /**
+     *  An Iterator or class that implements hasNext() and next methods because the StackArray class
+     *  implements Iterable.  The iterator() method returns a ListIterator.
+     */
+    private class ReverseArrayIterator implements Iterator<Item> {
+
+        private int i = bagArray.length;
+
+        public boolean hasNext() {
+            return i > 0;
+        }
+
+        public Item next() {
+
+            return bagArray[--i];
+        }
     }
 
-    int size() {
+    private boolean isEmpty() {
+        return (count == -1);
+    }
+
+    private int size() {
         return count;
     }
 
-    void add(int value) {
-        assert(count < INCREMENT);
-        data[count] = value;
-        count++;
+    private void add(Item item) {
+
+        if (count + 1 == bagArray.length) {
+            resize(2 * bagArray.length);
+        }
+
+        if (count + 1 < bagArray.length) {
+            count++;
+            bagArray[count] = item;
+        } else
+            System.out.println("Sorry But the BagArray is Full");
+
+        display();
+        System.out.println("ADD " + item + " Was Added to the BagArray\n");
     }
 
-    void remove(int value) {
+    /**
+     *  If stack is full, create a new stack of twice the size, and copy items.
+     *  @param capacity the size of the stack
+     *
+     *  Consequence. Inserting First N items takes time proportional to N (not N*N).
+     *  The reason is you only create a new array every time it doubles but by the time it doubles you've inserted that
+     *  many items into the stack.
+     *  Cost of inserting first N items. N + (2 + 4 + 8 + ... + N) ~ 3N.
+     */
+    @SuppressWarnings("Duplicates")
+    private void resize(int capacity) {
+
+        Item[] copy = (Item[]) new Object[capacity];
+        Arrays.fill(copy, "-1");
+//        for (int i = 0; i < bagArray.length; i++) {
+//            copy[i] = bagArray[i];
+//        }
+        System.arraycopy(bagArray, 0, copy, 0, bagArray.length);
+        bagArray = copy;
+    }
+
+    private void remove(Item item) {
+
         int index = -1;
-        for (int i=0; i < count && index == -1; i++) {
-            if (data[i] == value)
+
+        for (int i = 0; i < count && index == -1; i++) {
+            if (bagArray[i] == item)
                 index = i;
             if (index != -1) {
-                data[index] = data[count-1];
+                bagArray[index] = bagArray[count - 1];
                 count--;
             }
         }
     }
 
-    int occurrences(int value){
+   private int occurrences(Item item){
+
         int occurrences = 0;
+
         for (int i = 0; i < count; i++) {
-            if (data[i] == value)
+            if (bagArray[i] == item)
                 occurrences++;
         }
         return occurrences;
+    }
+
+    @SuppressWarnings("Duplicates")
+    private void display(){
+
+        for(int n = 0; n < 61; n++)System.out.print("-");
+        System.out.println();
+        for(int n = 0; n < bagArray.length; n++)
+            System.out.format("| %2s "+ " ", n);
+
+        System.out.println("|");
+        for(int n = 0; n < 61; n++)System.out.print("-");
+        System.out.println();
+
+        for (Item s : bagArray) {
+            if (s.toString().equals("-1")) System.out.print("|     ");
+            else System.out.print(String.format("| %2s " + " ", s.toString()));
+        }
+        System.out.println("|");
+        for(int n = 0; n < 61; n++)System.out.print("-");
+        System.out.println();
+    }
+
+    public static void main(String[] args){
+
+        BagArray b = new BagArray();
+        System.out.println("Is bag empty? " + b.isEmpty());
+        b.add(10);
+        b.add(17);
+        b.add(13);
+
+        System.out.println("size " + b.size());
+        System.out.println("how many 10's? " + b.occurrences(10));
+        b.remove(10);
+        System.out.println("removed a 10");
+        System.out.println("size " + b.size());
+        System.out.println("how many 10's? " + b.occurrences(4));
     }
 }
 
