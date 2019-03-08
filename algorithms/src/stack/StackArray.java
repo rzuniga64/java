@@ -69,6 +69,9 @@ public class StackArray {
         top = -1;
     }
 
+    /**
+     *  Add a value to the top of the stack.
+     */
     @SuppressWarnings("Duplicates")
     private void push(String input){
 
