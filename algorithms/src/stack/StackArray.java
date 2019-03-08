@@ -49,7 +49,7 @@ public class StackArray<Item> implements Iterable<Item> {
     private Item[] stackArray;
     private int top;
 
-    private StackArray(){
+    public StackArray(){
 
         stackArray = (Item[]) new Object[1];
         top = -1;   // stack is empty
