@@ -1,5 +1,8 @@
 package stack;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
  *  Stacks are used to complete a task and are soon after discarded.
  *
@@ -30,7 +33,10 @@ package stack;
  *  Analysis includes memory for the stack but not the strings themselves, which the client owns.
  */
 
-public class StackLinkedList<Item> {
+public class StackLinkedList<Item> implements Iterable<Item> {
+
+    private Node head;    // Reference to first Link in list
+    private StackLinkedList(){ head = null; }
 
     /**
      *  16 bytes (object overhead)
@@ -54,8 +60,35 @@ public class StackLinkedList<Item> {
         public Node getNext() { return next; }
     }
 
-    private Node head;    // Reference to first Link in list
-    private StackLinkedList(){ head = null; }
+    /**
+     *  Iterator method must return an Iterator because the StackedLinkedList class implements Iterable.
+     *  @return ListIterator
+     */
+    public Iterator<Item> iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<Item> {
+
+        private Node current = head;
+
+        public boolean hasNext() {
+            return head != null;
+        }
+
+        /**
+         *  An Iterator or class that implements hasNext() and next methods because the StackedLinkedList class
+         *  implements Iterable.  The iterator() method returns a ListIterator.
+         *  @return the current item
+         *  @throws NoSuchElementException
+         */
+        public Item next() throws NoSuchElementException {
+
+            Item item = current.item;
+            current = current.next;
+            return item;
+        }
+    }
 
     /**
      *  Add a value to the top of the stack.
