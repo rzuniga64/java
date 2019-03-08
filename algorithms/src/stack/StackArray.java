@@ -42,8 +42,9 @@ package stack;
  *   40 + 8 bytes * array size
  */
 import java.util.Arrays;
+import java.util.Iterator;
 
-public class StackArray<Item> {
+public class StackArray<Item> implements Iterable<Item> {
 
     private Item[] stackArray;
     private int top;
@@ -55,6 +56,24 @@ public class StackArray<Item> {
 
         // Assigns the value of -1 to every value in the array so I control what gets printed to screen
         Arrays.fill(stackArray, "-1");
+    }
+
+    public Iterator<Item> iterator() {
+        return new ReverseArrayIterator();
+    }
+
+    private class ReverseArrayIterator implements Iterator<Item> {
+
+        private int i = stackArray.length;
+
+        public boolean hasNext() {
+            return i > 0;
+        }
+
+        public Item next() {
+
+            return stackArray[--i];
+        }
     }
 
     private boolean isEmpty() {
