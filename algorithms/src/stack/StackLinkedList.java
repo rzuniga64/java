@@ -30,7 +30,7 @@ package stack;
  *  Analysis includes memory for the stack but not the strings themselves, which the client owns.
  */
 
-public class StackLinkedList {
+public class StackLinkedList<Item> {
 
     /**
      *  16 bytes (object overhead)
@@ -42,15 +42,15 @@ public class StackLinkedList {
      */
     private class Node {
 
-        Object value;
+        Item item;
         Node next = null;
 
         Node() {}
-        Node(Object value){ this.value = value; }
+        Node(Item item){ this.item = item; }
 
-        public String toString(){return value.toString(); }
-        public void display(){ System.out.println(value); }
-        public Object getValue() { return value; }
+        public String toString(){return item.toString(); }
+        public void display(){ System.out.println(item); }
+        public Object getValue() { return item; }
         public Node getNext() { return next; }
     }
 
@@ -61,10 +61,10 @@ public class StackLinkedList {
      *  Add a value to the top of the stack.
      *  Average time complexity: O(1)
      */
-    private void push(Object value) {
+    private void push(Item item) {
 
         Node first = new Node();
-        first.value = value;
+        first.item = item;
         first.next = head; // insert at head of list
 
         head = first;
@@ -75,9 +75,9 @@ public class StackLinkedList {
      *  Remove a value from the top of the stack.
      *  Average time complexity: O(1)
      */
-     private Object pop() {
+     private Item pop() {
 
-        Object value = head.value;
+        Item value = head.item;
         head = head.next;
 
         return value;
