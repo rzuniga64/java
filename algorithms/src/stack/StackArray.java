@@ -85,15 +85,15 @@ public class StackArray<Item> implements Iterable<Item> {
         }
     }
 
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return (top == -1);
     }
 
-    private boolean isFull() {
+    public boolean isFull() {
         return top == stackArray.length - 1;
     }
 
-    private void makeEmpty() {
+    public void makeEmpty() {
         top = -1;
     }
 
@@ -101,7 +101,7 @@ public class StackArray<Item> implements Iterable<Item> {
      *  Add a value to the top of the stack.
      */
     @SuppressWarnings("Duplicates")
-    private void push(Item input){
+    public void push(Item input){
 
         if (top + 1 == stackArray.length) {
             resize(2 * stackArray.length);
@@ -127,7 +127,7 @@ public class StackArray<Item> implements Iterable<Item> {
      *  Invariant: Stack is between 24% and 100% full.
      */
     @SuppressWarnings("Duplicates")
-    private Item pop(){
+    public Item pop(){
 
         if(top >= 0){
             displayTheStack();
@@ -167,14 +167,14 @@ public class StackArray<Item> implements Iterable<Item> {
         stackArray = copy;
     }
 
-    private Item peek(){
+    public Item peek(){
 
         displayTheStack();
         System.out.println("PEEK " + stackArray[top] + " Is at the Top of the stack.StackArray\n");
         return stackArray[top];
     }
 
-    private void pushMany(Item multipleValues){
+    public void pushMany(Item multipleValues){
 
         String[] tempString = multipleValues.toString().split(" ");
 
@@ -182,7 +182,7 @@ public class StackArray<Item> implements Iterable<Item> {
         //Arrays.stream(tempString).forEach(this::push);
     }
 
-    private void popAll(){
+    public void popAll(){
 
         for(int i = top; i >= 0; i--)
             pop();
@@ -191,7 +191,7 @@ public class StackArray<Item> implements Iterable<Item> {
     }
 
     @SuppressWarnings("Duplicates")
-    private void reverseString(){
+    public void reverseString(){
 
         StringBuilder theReverse = new StringBuilder();
 
