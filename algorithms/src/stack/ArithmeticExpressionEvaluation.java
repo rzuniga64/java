@@ -5,6 +5,19 @@ import stack.StackArray;
 import java.util.Scanner;
 
 /**
+ *  Dijkstgra's two stack algorithm.
+ *  Value: push onto the value stack.
+ *  Operator: push onto the operator stack.
+ *  Left parenthesis: ignore.
+ *  Right paranthesis: pop operator and two values; push the result of the applying that operator to those values onto
+ *  the operand stack.
+ *
+ *  value   operand
+ *  stack   stack
+ *  20
+ *  5         *
+ *  1         +
+ *
  *  Input an arithmetic expression such as ( 1 + 1 ) /
  *  ( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) ) /
  */
