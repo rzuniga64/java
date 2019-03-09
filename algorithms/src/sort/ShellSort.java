@@ -1,8 +1,13 @@
 package sort;
 
+import jdk.nashorn.tools.Shell;
+
 import java.util.Arrays;
 
 import static sort.SortUtility.generateRandomArray;
+import static sort.SortUtility.generateRandomArray;
+import static sort.SortUtility.printHorizontalArray;
+
 import static sort.SortUtility.printHorzArray;
 
 /**
@@ -32,46 +37,127 @@ import static sort.SortUtility.printHorzArray;
  */
 
 public class ShellSort {
-    private static long startTime;
-    private static long endTime;
 
-    private int[] theArray;
-    private int arraySize;
+    private static Integer[] theArray = new Integer[10];
 
-    private ShellSort(int arraySize) {
-        this.arraySize = arraySize;
-        theArray = new int[arraySize];
-        generateRandomArray(this.theArray, this.arraySize);
-    }
+    // this class should not be instantiated
+    private ShellSort() {}
 
-    private void shellsort() {
-        startTime = System.currentTimeMillis();
-        int temp;
-        int j;
+    private static void shellsort(Comparable[] a) {
 
-        // Keep looping until the interval is 1. Then this becomes an insertion sort
-        for (int gap = arraySize/2; gap > 0; gap = (gap == 2) ? 1 : (new Double(gap/2.2)).intValue()) {
-            for (int i = gap; i < arraySize; i++) {
-                temp = theArray[i];
+        long startTime = System.currentTimeMillis();
+        long endTime;
 
-                // While there is a number bigger than temp move it further up in the array
-                for (j = i; j >= gap && temp < theArray[j - gap]; j -= gap)
-                    theArray[j] = theArray[j - gap];
-                theArray[j] = temp;
+        int N = a.length;
 
-                System.out.println("inner= " + (i-gap) + " outer= " + i + " temp= " + temp + " interval= " + gap);
-                printHorzArray(theArray, arraySize, j, i, gap);
+        // 3x + 1 increment sequence: 1, 4, 13, 40, 121, 364, 1093, ...
+        int h = 1;
+        while (h < N/3) h = 3*h + 1;
+
+        while ( h >= 1) { // h-sort the array
+
+            // h-sort the array. Keep looping until h is 1. Then this becomes an insertion sort
+            for (int i = h; i < N; i++) {
+
+                for (int j = i; j >= h && less(a[j], a[j-h]); j -= h) {
+                    exch(a, j, j-h);
+
+                    //System.out.println("inner= " + (i-h) + " outer= " + i + " interval= " + h);
+                    //printHorizontalArray((Integer[]) a, a.length, -1,-1);
+                }
             }
+            assert isHsorted(a, h);
+            h /= 3;
         }
 
+        assert(isSorted(a));
         endTime = System.currentTimeMillis();
         System.out.println("Shellsort took " + (endTime - startTime) + " milliseconds.");
     }
 
+    /**
+     *  Creates a sequene of integers; Shell sorts them;
+     *  and prints them to standard output in ascending order.
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        ShellSort theSort = new ShellSort(10);
-        System.out.println(Arrays.toString(theSort.theArray));
-        theSort.shellsort();
-        System.out.println(Arrays.toString(theSort.theArray));
+
+        generateRandomArray(ShellSort.theArray, ShellSort.theArray.length);
+        //printHorizontalArray(ShellSort.theArray,  ShellSort.theArray.length, -1,-1);
+
+        display(ShellSort.theArray);
+        ShellSort.shellsort(ShellSort.theArray);
+        display(ShellSort.theArray);
+    }
+
+    /*******************************************************************************************************************
+     *  Helper sorting functions
+     ******************************************************************************************************************/
+
+    /**
+     *  Is v < w?
+     *  @param v a Comparable
+     *  @param w a Comparable
+     *  @return true if v < w
+     */
+    private static boolean less(Comparable v, Comparable w) {
+        return v.compareTo(w) < 0;
+    }
+
+    /**
+     *  Exchange a[i] and a[j]
+     * @param a the array to sort
+     * @param i index into array
+     * @param j index into array
+     */
+    private static void exch(Object[] a, int i, int j){
+
+        Object swap = a[i];
+        a[i] = a[j];
+        a[j] = swap;
+    }
+
+    /**
+     *  print array to standard output
+     */
+    private static void display(Comparable[] a) {
+        System.out.println(Arrays.toString(a));
+    }
+
+    /*******************************************************************************************************************
+     *  Check if array is sorted - useful for debugging.
+     ******************************************************************************************************************/
+
+    /**
+     *  Is the array a[] sorted?
+     *  @param a the array
+     *  @return true if sorted
+     */
+    private static boolean isSorted(Comparable[] a) {
+        return isSorted(a, 0, a.length - 1);
+    }
+
+    /**
+     *  Is the array a[] h-sorted?
+     *  @param a the array
+     *  @return true if h-sorted
+     */
+    private static boolean isHsorted(Comparable[] a, int h) {
+
+        for (int i = h; i < a.length; i++) {
+            if (less(a[i], a[i-h])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @SuppressWarnings("Duplicates")
+    private static boolean isSorted(Comparable[] a, int lo, int hi) {
+
+        for (int i = lo + 1; i <= hi; i++) {
+            if (less(a[i], a[i-1])) return false;
+        }
+        return true;
     }
 }
