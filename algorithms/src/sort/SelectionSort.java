@@ -57,6 +57,14 @@ public class SelectionSort {
         }
     }
 
+    public static void main(String[] args){
+
+        generateRandomArray(SelectionSort.theArray, SelectionSort.theArray.length);
+        printHorizontalArray(SelectionSort.theArray, SelectionSort.theArray.length, -1,-1);
+        SelectionSort.sort(SelectionSort.theArray);
+        System.out.println("The array is sorted: " + SelectionSort.isSorted(SelectionSort.theArray));
+    }
+
     /*******************************************************************************************************************
      *  Helper sorting functions
      ******************************************************************************************************************/
@@ -97,19 +105,12 @@ public class SelectionSort {
         return isSorted(a, 0, a.length - 1);
     }
 
+    @SuppressWarnings("Duplicates")
     private static boolean isSorted(Comparable[] a, int lo, int hi) {
 
         for (int i = lo + 1; i <= hi; i++) {
             if (less(a[i], a[i-1])) return false;
         }
         return true;
-    }
-
-    public static void main(String[] args){
-
-        generateRandomArray(SelectionSort.theArray, SelectionSort.theArray.length);
-        printHorizontalArray(SelectionSort.theArray, SelectionSort.theArray.length, -1,-1);
-        SelectionSort.sort(SelectionSort.theArray);
-        System.out.println("The array is sorted: " + SelectionSort.isSorted(SelectionSort.theArray));
     }
 }
