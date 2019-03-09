@@ -3,7 +3,7 @@ package sort;
 class SortUtility {
 
     // Fills the Array with random values
-    static public void generateRandomArray(int[] theArray, int arraySize){
+    static public void generateRandomArray(Integer[] theArray, int arraySize){
 
         for(int i = 0; i < arraySize; i++)
             theArray[i] = (int)(Math.random()*90)+10;
@@ -20,7 +20,7 @@ class SortUtility {
         }
     }
 
-    static void printHorizontalArray(int[] theArray, int arraySize, int i, int j){
+    static void printHorizontalArray(Integer[] theArray, int arraySize, int i, int j){
 
         for(int n = 0; n < 51; n++)System.out.print("-");
         System.out.println();
@@ -54,7 +54,7 @@ class SortUtility {
         System.out.println();
     }
 
-    static void printHorzArray(int[] theArray, int arraySize, int i, int j, int h) {
+    static void printHorzArray(Integer[] theArray, int arraySize, int i, int j, int h) {
         if (i == j)
             i = i - h;
 
