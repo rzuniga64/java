@@ -4,8 +4,7 @@ import static sort.SortUtility.generateRandomArray;
 import static sort.SortUtility.printHorizontalArray;
 
 /**
- * 	Selection Sort is normally the best of the elementary sorts.
- *	There is a pass for each position (0..size-1)
+ * 	Selection Sort is normally the best of the elementary sorts. There is a pass for each position (0..size-1)
  *	On each pass, the smallest (minimum) element in the rest of the list is exchanged (swapped) with element at the
  *	current position. The first part of the list (already processed) is always sorted. Each pass increases the size
  *	of the sorted portion
@@ -24,46 +23,91 @@ import static sort.SortUtility.printHorizontalArray;
  *	N is the number of elements in the list
  *	Outer loop executes N-1 times
  *	Inner loop executes N-1, then N-2, then N-3, ... then once.
- *	Total number of comparisons (in inner loop) is the sum of 1 to N-1 is N(N + 1) /2
- *	Efficiency of algorith is O(N2)
+ *
+ *	Total number of comparisons (in inner loop) is the sum of 1 to N-1 is N(N + 1) /2 ~ N*N/2 compares and N exchanges.
+ *	Efficiency of algorithm is O(N2)
+ *  Running time is insensitive to input. Quadratic time, even if input is sorted.
+ *  Data movement is minimal. Linear number of exchanges.
  */
 
 public class SelectionSort {
 
-    private int[] theArray = new int[50];
-    private int arraySize = 10;
+    private static Integer[] theArray = new Integer[10];
 
-    private void swapValues(int indexOne, int indexTwo){
-
-        int temp = theArray[indexOne];
-        theArray[indexOne] = theArray[indexTwo];
-        theArray[indexTwo] = temp;
-    }
+    // This class should not be instantiated.
+    private SelectionSort() { }
 
     /** On each pass, the smallest (minimum) element in the rest of the list is exchanged (swapped) with element at the
      *	current position. and then repeats searching through the entire array each time */
+    public static void sort(Comparable[] a){
 
-    private void selectionSort(){
+        for(int i = 0; i < theArray.length; i++){
 
-        for(int x=0; x < arraySize; x++){
-            int minimum = x;
+            int min = i;
 
-            for(int y=x; y < arraySize; y++){
-                // To change direction of sort just change this from > to <
-                if( theArray[y] < theArray[minimum])
-                    minimum = y;
+            for(int j = i + 1; j < theArray.length; j++) {
+                if( less(theArray[j], theArray[min]))
+                    min = j;
             }
 
-            swapValues(x, minimum);
-            printHorizontalArray(theArray, arraySize, x, -1);
+            exch(a, i, min);
+            printHorizontalArray(theArray, theArray.length, i, -1);
         }
+    }
+
+    /*******************************************************************************************************************
+     *  Helper sorting functions
+     ******************************************************************************************************************/
+
+    /**
+     *  Is v < w?
+     *  @param v a Comparable
+     *  @param w a Comparable
+     *  @return true if v < w
+     */
+    private static boolean less(Comparable v, Comparable w) {
+        return v.compareTo(w) < 0;
+    }
+
+    /**
+     *  Exchange a[i] and a[j]
+     * @param a the array to sort
+     * @param i index into array
+     * @param j index into array
+     */
+    private static void exch(Object[] a, int i, int j){
+
+        Object swap = a[i];
+        a[i] = a[j];
+        a[j] = swap;
+    }
+
+    /*******************************************************************************************************************
+     *  Check if array is sorted - useful for debugging.
+     ******************************************************************************************************************/
+
+    /**
+     *  Is the array a[] sorted?
+     *  @param a the array
+     *  @return true if sorted
+     */
+    private static boolean isSorted(Comparable[] a) {
+        return isSorted(a, 0, a.length - 1);
+    }
+
+    private static boolean isSorted(Comparable[] a, int lo, int hi) {
+
+        for (int i = lo + 1; i <= hi; i++) {
+            if (less(a[i], a[i-1])) return false;
+        }
+        return true;
     }
 
     public static void main(String[] args){
 
-        SelectionSort newArray = new SelectionSort();
-        generateRandomArray(newArray.theArray, newArray.arraySize);
-        printHorizontalArray(newArray.theArray, newArray.arraySize, -1,-1);
-        newArray.selectionSort();
+        generateRandomArray(SelectionSort.theArray, SelectionSort.theArray.length);
+        printHorizontalArray(SelectionSort.theArray, SelectionSort.theArray.length, -1,-1);
+        SelectionSort.sort(SelectionSort.theArray);
+        System.out.println("The array is sorted: " + SelectionSort.isSorted(SelectionSort.theArray));
     }
 }
