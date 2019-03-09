@@ -86,6 +86,14 @@ public class InsertionSort {
         }
     }
 
+    public static void main(String[] args){
+
+        generateRandomArray(InsertionSort.theArray, InsertionSort.theArray.length);
+        printHorizontalArray(InsertionSort.theArray,  InsertionSort.theArray.length, -1,-1);
+
+        InsertionSort.insertionSort(InsertionSort.theArray);
+    }
+
     /*******************************************************************************************************************
      *  Helper sorting functions
      ******************************************************************************************************************/
@@ -133,13 +141,5 @@ public class InsertionSort {
             if (less(a[i], a[i-1])) return false;
         }
         return true;
-    }
-
-    public static void main(String[] args){
-
-        generateRandomArray(InsertionSort.theArray, InsertionSort.theArray.length);
-        printHorizontalArray(InsertionSort.theArray,  InsertionSort.theArray.length, -1,-1);
-
-        InsertionSort.insertionSort(InsertionSort.theArray);
     }
 }
