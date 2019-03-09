@@ -41,17 +41,19 @@ public class SelectionSort {
      *	current position. and then repeats searching through the entire array each time */
     public static void sort(Comparable[] a){
 
-        for(int i = 0; i < theArray.length; i++){
+        int N = a.length;
+
+        for(int i = 0; i < a.length; i++){
 
             int min = i;
 
-            for(int j = i + 1; j < theArray.length; j++) {
-                if( less(theArray[j], theArray[min]))
+            for(int j = i + 1; j < N; j++) {
+                if( less(a[j], a[min]))
                     min = j;
             }
 
             exch(a, i, min);
-            printHorizontalArray(theArray, theArray.length, i, -1);
+            printHorizontalArray((Integer[]) a, a.length, i, -1);
         }
     }
 
