@@ -43,7 +43,7 @@ public class SelectionSort {
 
         int N = a.length;
 
-        for(int i = 0; i < a.length; i++){
+        for(int i = 0; i < N; i++){
 
             int min = i;
 
@@ -53,7 +53,7 @@ public class SelectionSort {
             }
 
             exch(a, i, min);
-            printHorizontalArray((Integer[]) a, a.length, i, -1);
+            printHorizontalArray((Integer[]) a, N, i, -1);
         }
     }
 
