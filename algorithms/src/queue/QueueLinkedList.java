@@ -1,7 +1,7 @@
-package Queue;
+package queue;
 
 /**
- *  Queue: a data structure that holds a collection of elements of the same type.
+ *  queue: a data structure that holds a collection of elements of the same type.
  *  - The elements are accessed according to FIFO order: first in, first out
  *  - No random access to other elements
  *
@@ -10,11 +10,11 @@ package Queue;
  *  - restocking perishable inventory
  *
  *  OPERATIONS
- *  - enqueue: add a value onto the rear of the Queue (the end of the line). Make sure it is not full first.
- *  - dequeue: remove a value from the front of the Queue(the front of the line) Next! Make sure it is not empty first.
- *  - isEmpty: true if the Queue currently contains no elements.
+ *  - enqueue: add a value onto the rear of the queue (the end of the line). Make sure it is not full first.
+ *  - dequeue: remove a value from the front of the queue(the front of the line) Next! Make sure it is not empty first.
+ *  - isEmpty: true if the queue currently contains no elements.
  *  - makeEmpty: removes all the elements his is allowed to take longer than constant time.
- *  - How do we define isFull and isEmpty?  use a counter variable to keep track of the total number of items in the Queue.
+ *  - How do we define isFull and isEmpty?  use a counter variable to keep track of the total number of items in the queue.
  *
  *  These operations should take constant time: O(1)
  *
@@ -29,7 +29,7 @@ package Queue;
  *  QUEUE APPLICATIONS
  *
  *  The best examples of applications of queues involve managing multiple processes.
- *  For example, imagine the print Queue for a computer lab. Any computer can add a new print job to the Queue
+ *  For example, imagine the print queue for a computer lab. Any computer can add a new print job to the queue
  *  (enqueue). The printer performs the dequeue operation and starts printing that job. While it is printing, more jobs
  *  are added to the Q. When the printer finishes, it pulls the next job from the Q, continuing until the Q is empty
  *
@@ -74,7 +74,7 @@ package Queue;
  *  r		f						   rf									r	f
  *
  *  - How do we define isFull and isEmpty?
- *  - Use a counter variable, numItems, to keep track of the total number of items in the Queue.
+ *  - Use a counter variable, numItems, to keep track of the total number of items in the queue.
  *  - enqueue: numItems++
  *  - dequeue: numItems--
  *  - isEmpty is true when numItems == 0
