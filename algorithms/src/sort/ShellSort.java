@@ -34,6 +34,13 @@ import static sort.SortUtility.printHorzArray;
  *  After 3-sort    28  12  11  35  15  41  58  17  94  75  81  96  95
  *                  --          --          --          --          --
  *  After 1-sort    11  12  15  17  28  35  41  58  75  81  94  95  96
+ *
+ *  The analysis of shell sort is still open.
+ *  Proposition. The worst case number of compares used by shell sort with the 3x+1 increments is O(pow(N, 3/2).
+ *
+ *  Property. Actually in practice it's much less than that. Number of compares used by shell sort with the 3x + 1
+ *  increments is at most by a small multiple of N times the # of increments used.  The problem is nobody knows an
+ *  accurate model for describing the number of compares taken by shell sort for any interesting increment sequence.
  */
 
 public class ShellSort {
