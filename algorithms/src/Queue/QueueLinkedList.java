@@ -1,9 +1,4 @@
-package QueueArray;
-
-import sun.awt.windows.ThemeReader;
-
-import java.util.Queue;
-import java.util.Stack;
+package Queue;
 
 /**
  *  Queue: a data structure that holds a collection of elements of the same type.
@@ -15,11 +10,11 @@ import java.util.Stack;
  *  - restocking perishable inventory
  *
  *  OPERATIONS
- *  - enqueue: add a value onto the rear of the QueueArray (the end of the line). Make sure it is not full first.
- *  - dequeue: remove a value from the front of the QueueArray(the front of the line) Next! Make sure it is not empty first.
- *  - isEmpty: true if the QueueArray currently contains no elements.
+ *  - enqueue: add a value onto the rear of the Queue (the end of the line). Make sure it is not full first.
+ *  - dequeue: remove a value from the front of the Queue(the front of the line) Next! Make sure it is not empty first.
+ *  - isEmpty: true if the Queue currently contains no elements.
  *  - makeEmpty: removes all the elements his is allowed to take longer than constant time.
- *  - How do we define isFull and isEmpty?  use a counter variable to keep track of the total number of items in the QueueArray.
+ *  - How do we define isFull and isEmpty?  use a counter variable to keep track of the total number of items in the Queue.
  *
  *  These operations should take constant time: O(1)
  *
@@ -34,7 +29,7 @@ import java.util.Stack;
  *  QUEUE APPLICATIONS
  *
  *  The best examples of applications of queues involve managing multiple processes.
- *  For example, imagine the print QueueArray for a computer lab. Any computer can add a new print job to the QueueArray
+ *  For example, imagine the print Queue for a computer lab. Any computer can add a new print job to the Queue
  *  (enqueue). The printer performs the dequeue operation and starts printing that job. While it is printing, more jobs
  *  are added to the Q. When the printer finishes, it pulls the next job from the Q, continuing until the Q is empty
  *
@@ -79,7 +74,7 @@ import java.util.Stack;
  *  r		f						   rf									r	f
  *
  *  - How do we define isFull and isEmpty?
- *  - Use a counter variable, numItems, to keep track of the total number of items in the QueueArray.
+ *  - Use a counter variable, numItems, to keep track of the total number of items in the Queue.
  *  - enqueue: numItems++
  *  - dequeue: numItems--
  *  - isEmpty is true when numItems == 0
@@ -107,7 +102,7 @@ import java.util.Stack;
  *  - linked list is probably better for large objects if space is scarce or copying is expensive (resizing)
  */
 
-public class QueueArray {
+public class QueueLinkedList {
 
     private Node first, last;
 
@@ -191,7 +186,7 @@ public class QueueArray {
      */
     private void display(){
 
-        QueueArray.Node theLink = first;
+        QueueLinkedList.Node theLink = first;
 
         while(theLink != null){
             System.out.println(theLink.toString());
@@ -202,7 +197,7 @@ public class QueueArray {
 
     public static void main(String[] args) {
 
-        QueueArray theLinkedList = new QueueArray();
+        QueueLinkedList theLinkedList = new QueueLinkedList();
 
         // Insert Link and add a reference to the book Link added just prior to the field next
         theLinkedList.enqueue("Don Quixote");
