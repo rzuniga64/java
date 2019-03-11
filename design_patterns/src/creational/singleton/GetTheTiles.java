@@ -13,8 +13,8 @@ public class GetTheTiles implements Runnable {
         Singleton newInstance = Singleton.getInstance();
 
         // Get unique id for instance object
-        System.out.println("Instance ID: "
-                + System.identityHashCode(newInstance));
+        System.out.println("Instance ID: " + System.identityHashCode(newInstance));
+
         // Get all of the letters stored in the list
         System.out.println(newInstance.getLetterList());
 
