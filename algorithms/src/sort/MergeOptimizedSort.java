@@ -83,6 +83,8 @@ public class MergeOptimizedSort {
     @SuppressWarnings("Duplicates")
     private static void sort(Comparable[] a, Comparable[] aux, int low, int high) {
 
+        // Use insertion sort for small subarrays. Merge sort has too much overhead for tiny sub arrays.
+        // Cutoff to insertion sort of for ~7 items.
         if (high <= low + CUTOFF) {
             insertionSort(aux, low, high);
             return;
@@ -90,6 +92,9 @@ public class MergeOptimizedSort {
         int middle = low + (high - low)/2;
         sort(a, aux, low, middle);
         sort(a, aux, middle + 1, high);
+        // Stop if already sorted. Is biggest item in first half <= smallest item in second half?.
+        // Helps for partially-ordered arrays.
+        if (!less(a[middle + 1], a[middle])) return;
         merge(a, aux, low, middle, high);
     }
 
