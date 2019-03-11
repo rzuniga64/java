@@ -51,7 +51,7 @@ import static sort.SortUtility.printHorizontalArray;
 
 public class BubbleSort {
 
-    private int[] theArray = new int[50];   // Creates an array with 50 indexes
+    private Integer[] theArray = new Integer[50];   // Creates an array with 50 indexes
     private int arraySize = 10;             // Elements in theArray
 
     // This bubble sort will sort everything from smallest to largest
