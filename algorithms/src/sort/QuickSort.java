@@ -2,151 +2,198 @@ package sort;
 
 import java.util.Arrays;
 
+import static sort.SortUtility.generateRandomArray;
+import static sort.SortUtility.printHorizontalArray;
+
 /**
- * In most situations the sort.QuickSort is the fastest sorting algorithm.
- * The sort.QuickSort works by partioning arrays that the smaller numbers
- * are on the left and the larger are on the right.  It then recursively
- * sends small parts of larger arrays to itself and partitions again.
+ *  In most situations the sort.QuickSort is the fastest sorting algorithm. The sort.QuickSort works by partitioning
+ *  arrays that the smaller numbers are on the left and the larger are on the right.  It then recursively sends small
+ *  parts of larger arrays to itself and partitions again. This method performs a Quick sort. It’s a recursive method
+ *  but the basic idea behind Quick sort is that it does the recursion after it does the the work.
  *
+ *  Basic Plan
+ *  - Shuffle the array.
+ *  - Partition, so that, for some j
+ *    - entry a[j] is in place in the array
+ *    - no larger entry to the left of j
+ *    - no smaller entry to the right of j
+ *  - Sort each piece recursively
+ *
+ *  Phase 1. repeat until i and j pointers cross.
+ *  - Pick a partitioning element as a[0]
+ *  - Scan i from left to right so long as (a[i] < a[l0]).
+ *  - Scan j from right to left so long as (a[j] > a[0]).
+ *  - Exchange a[i] with a[j]
+ *
+ *  K    R    A    T    E   L    E    P    U    I    M    Q    C    X    O    S	    stop i scan because a[i] > a=[0]
+ *  lo   i                                                                    j
+ *  K    R    A    T    E   L    E    P    U    I    M    Q    C    X    O    S	    stop j scan and exchange a[i] with a[j]
+ *  lo   i                                                     j
+ *  K    C    A    T    E   L    E    P    U    I    M    Q    R    X    O    S
+ *       i                                                     j
+ *  K    C    A    T    E   L    E    P    U    I    M    Q    R    X    O    S	    stop i scan because a[i] >= a [lo]
+ *                 i                                           j
+ *  K    C    A    T    E   L    E    P    U    I    M    Q    R    X    O    S	    decrement j as long as it points to
+ *                 i                            j                                   something that's bigger than K
+ *
+ *  K    C    A    T    E   L    E    P    U    I    M    Q    R    X    O    S	    stop j scan and exchange a[i] with a[j]
+ *                 i                            j
+ *  K    C    A    I    E   L    E    P    U    T    M    Q    R    X    O    S
+ *                 i                            j
+ *  K    C    A    I    E   L    E    P    U    T    M    Q    R    X    O    S	    stop i scan because a[i] >= a [lo]
+ *                          i                   j
+ *  K    C    A    I    E   L    E    P    U    T    M    Q    R    X    O    S	    stop j scan and exchange a[i] with a[j]
+ *                          i    j
+ *  K    C    A    I    E   E    L    P    U    T    M    Q    R    X    O    S
+ *                          i    j
+ *  K    C    A    I    E   E    L    P    U    T    M    Q    R    X    O    S	    i stops at L > K, j stops at E < K,
+ *                          j    i                                                  j stop at E < K, Now at this point
+ *                                                                                  the partitioning process complete
+ *  Phase 2. When pointers cross
+ *  - Exchange a[lo] with a[j]
+ *
+ *  E    C    A    I    E   K    L    P    U    T    M    Q    R    X    O    S
+ *  lo                      j                                            hi
+ *
+ *  Runtime analysis
+ *  Best        Average     Worst
+ *  O(n log n)  O(1/3 n log n)  O(1/2 N * N)
+ *
+ *  Random shuffle.
+ *  - Probabilistic guarantee against worst case. Basis for math model that can be validated with experiments
+ *
+ *  Caveat emptor. Many textbooks implementations go quadratic if array
+ *  - Is sorted or reverse sorted.
+ *  - Has many duplicates (even if randomized!)
+ *
+ *  Quick sort properties
+ *
+ *  Proposition. Quick sort is an in-place sorting algorithm.
+ *  Pf.
+ *  - Partitioning: constant extra space
+ *  - Depth of recursion: logarithmic extra space (with high probability).<-can guarantee logarithmic depth by recurring
+ *                                                                          on smaller sub-array before large sub-array
+ *  Proposition. Quick sort is not stable.
+ *  Partitioning does one of those long range exchanges that might but a key with equal value over another key of the
+ *  same value. it’s a little more work to make quick sort stable with a little extra space.
  */
 public class QuickSort {
 
-    private static int[] theArray;
-    private static int arraySize;
+    private static Integer[] theArray = new Integer[10];
 
-    public static void main(String[] args) {
-        QuickSort theSort = new QuickSort(10);
-        theSort.generateRandomArray();
-        System.out.println(Arrays.toString(QuickSort.theArray));
-        theSort.quickSort(0, 9);
-        System.out.println(Arrays.toString(QuickSort.theArray));
+    // this class should not be instantiated
+    private QuickSort() {}
+
+    /**
+     *  Rearranges the array in ascending order, using the natural order.
+     *  @param a the array to be sorted.
+     */
+    public static void sort(Comparable a[]) {
+
+        StdRandom.shuffle(a); // shuffle needed for performance guarantee
+        sort(a, 0, a.length - 1);
+        assert isSorted(a);
     }
 
-    private QuickSort(int newArraySize) {
+    /**
+     *  Quick sort the array from a[low] to a[high].
+     *  @param a the array to be sorted
+     *  @param low index of the array
+     *  @param high index of the array
+     */
+    private static void sort(Comparable a[], int low, int high) {
 
-        arraySize = newArraySize;
-        theArray = new int[arraySize];
-        generateRandomArray();
+        if (high <= low) return;
+        int j = partition(a, low, high);
+        sort(a, low, j - 1);
+        sort(a, j + 1, high);
+        assert isSorted(a);
     }
 
-    private void quickSort(int left, int right) {
+    /**
+     *  Partition the sub-array a[low..high] to that a[low..j-1] <= a[j+1..high] and return the array index j.
+     *  @param a the array to be sorted
+     *  @param low index of the array
+     *  @param high index of the array
+     *  @return the array index j
+     */
+    private static int partition(Comparable[] a, int low, int high) {
 
-        if (right - left <= 0)
-            return; // Everything is sorted
-        else {
-            // It doesn't matter what the pivot is, but it must be a value in the array
-            int pivot = theArray[right];
-            System.out.println("Value in right " + theArray[right]
-                    + " is made the pivot");
-
-            System.out.println("left = " + left + " right= " + right
-                    + " pivot= " + pivot + " sent to be partitioned");
-
-            int pivotLocation = partitionArray(left, right, pivot);
-            System.out.println("Value in left " + theArray[left]
-                    + " is made the pivot");
-
-            quickSort(left, pivotLocation - 1); // Sorts the left side
-            quickSort(pivotLocation + 1, right);
-        }
-    }
-
-    private int partitionArray(int left, int right, int pivot) {
-
-        int leftPointer = left - 1;
-        int rightPointer = right;
+        int i = low; int j = high + 1;
 
         while (true) {
-            while (theArray[++leftPointer] < pivot) ;
 
-            printHorzArray(leftPointer, rightPointer);
-            System.out.println(theArray[leftPointer] + " in index "
-                    + leftPointer + " is bigger than the pivot value " + pivot);
+            while (less(a[++i], a[low])) // find item on left to swap
+                if (i == high) break;
 
-            while (rightPointer > 0 && theArray[--rightPointer] > pivot) ;
+            while (less(a[low], a[--j])) // find item on right to swap, redundant since a[low] acts as a sentinel
+                if (j == low) break;
 
-            printHorzArray(leftPointer, rightPointer);
-            System.out.println(theArray[rightPointer] + " in index "
-                    + rightPointer + " is smaller than the pivot value "
-                    + pivot);
+            if (i >= j) break;           // check if pointers cross
 
-            printHorzArray(leftPointer, rightPointer);
-
-            if (leftPointer >= rightPointer) {
-
-                System.out.println("left is >= right so start again");
-                break;
-            } else {
-                swapValues(leftPointer, rightPointer);
-                System.out.println(theArray[leftPointer] + " was swapped for "
-                        + theArray[rightPointer]);
-            }
+            exch(a, i, j);               // swap
         }
 
-        swapValues(leftPointer, right);
-        return leftPointer;
+        exch(a, low, j);                 // swap a[j] with partitioning item
+        return j;                        // return index of item now known to be in place, now a[low..j-1] <= a[j+1..hi]
     }
 
-    private void swapValues(int indexOne, int indexTwo) {
+    public static void main(String[] args) {
 
-        int temp = theArray[indexOne];
-        theArray[indexOne] = theArray[indexTwo];
-        theArray[indexTwo] = temp;
+        generateRandomArray(QuickSort.theArray, QuickSort.theArray.length);
+        System.out.println("Before quick sort: ");
+        printHorizontalArray(QuickSort.theArray, QuickSort.theArray.length, -1,-1);
+        QuickSort.sort(QuickSort.theArray);
+        System.out.println("\nAfter quick sort: ");
+        printHorizontalArray(QuickSort.theArray, QuickSort.theArray.length, -1,-1);
     }
 
-    private void generateRandomArray() {
+    /*******************************************************************************************************************
+     *  Helper sorting functions
+     ******************************************************************************************************************/
 
-        for (int i = 0; i < arraySize; i++) {
-            // Generate a random array with values between 10 and 59
-            theArray[i] = (int) (Math.random() * 50) + 10;
+    /**
+     *  Is v < w?
+     *  @param v a Comparable
+     *  @param w a Comparable
+     *  @return true if v < w
+     */
+    private static boolean less(Comparable v, Comparable w) {
+        return v.compareTo(w) < 0;
+    }
+
+    /**
+     *  Exchange a[i] and a[j]
+     * @param a the array to sort
+     * @param i index into array
+     * @param j index into array
+     */
+    private static void exch(Object[] a, int i, int j){
+
+        Object swap = a[i];
+        a[i] = a[j];
+        a[j] = swap;
+    }
+
+    /*******************************************************************************************************************
+     *  Check if array is sorted - useful for debugging.
+     ******************************************************************************************************************/
+
+    /**
+     *  Is the array a[] sorted?
+     *  @param a the array
+     *  @return true if sorted
+     */
+    private static boolean isSorted(Comparable[] a) {
+        return isSorted(a, 0, a.length - 1);
+    }
+
+    @SuppressWarnings("Duplicates")
+    private static boolean isSorted(Comparable[] a, int lo, int hi) {
+
+        for (int i = lo + 1; i <= hi; i++) {
+            if (less(a[i], a[i-1])) return false;
         }
-    }
-
-    private static void printHorzArray(int i, int j) {
-
-        for (int n = 0; n < 61; n++)
-            System.out.print("-");
-
-        System.out.println();
-
-        for (int n = 0; n < arraySize; n++)
-            System.out.format("| %2s " + " ", n);
-
-        System.out.println("|");
-
-        for (int n = 0; n < 61; n++)
-            System.out.print("-");
-
-        System.out.println();
-
-        for (int n = 0; n < arraySize; n++)
-            System.out.print(String.format("| %2s " + " ", theArray[n]));
-
-        System.out.println("|");
-
-        for (int n = 0; n < 61; n++)
-            System.out.print("-");
-
-        System.out.println();
-
-        if (i != -1) {
-
-            // Number of spaces to put before the F
-            int spacesBeforeFront = 6 * (i + 1) - 5;
-
-            for (int k = 0; k < spacesBeforeFront; k++)
-                System.out.print(" ");
-
-            System.out.print("L" + i);
-
-            // Number of spaces to put before the R
-            int spacesBeforeRear = 5 * (j + 1) - spacesBeforeFront;
-
-            for (int l = 0; l < spacesBeforeRear; l++)
-                System.out.print(" ");
-
-            System.out.print("R" + j);
-            System.out.println("\n");
-        }
+        return true;
     }
 }
