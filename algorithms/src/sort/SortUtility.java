@@ -20,7 +20,7 @@ class SortUtility {
         }
     }
 
-    static void printHorizontalArray(Integer[] theArray, int arraySize, int i, int j){
+    static public void printHorizontalArray(Integer[] theArray, int arraySize, int i, int j){
 
         for(int n = 0; n < 51; n++)System.out.print("-");
         System.out.println();
@@ -54,7 +54,7 @@ class SortUtility {
         System.out.println();
     }
 
-    static void printHorzArray(Integer[] theArray, int arraySize, int i, int j, int h) {
+    static public void printHorzArray(Integer[] theArray, int arraySize, int i, int j, int h) {
         if (i == j)
             i = i - h;
 
