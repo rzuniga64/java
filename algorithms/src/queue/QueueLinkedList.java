@@ -16,11 +16,17 @@ import java.util.NoSuchElementException;
  *  - restocking perishable inventory
  *
  *  OPERATIONS
+ *  - QueueLinkedList: constructor
+ *  - isEmpty: returns true if queue is empty.
+ *  - size: returns the number of items in the queue.
+ *  - peek: returns the item least recently added to the queue.
  *  - enqueue: add a value onto the rear of the queue (the end of the line). Make sure it is not full first.
  *  - dequeue: remove a value from the front of the queue(the front of the line) Next! Make sure it is not empty first.
  *  - isEmpty: true if the queue currently contains no elements.
  *  - makeEmpty: removes all the elements his is allowed to take longer than constant time.
- *  - How do we define isFull and isEmpty?  use a counter variable to keep track of the total number of items in the queue.
+ *  - toString:
+ *
+ *  How do we define isFull and isEmpty?  use a counter variable to keep track of the total number of items in the queue.
  *
  *  These operations should take constant time: O(1)
  *
