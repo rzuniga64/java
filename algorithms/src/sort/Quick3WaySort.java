@@ -3,7 +3,66 @@ package sort;
 import static sort.SortUtility.generateRandomArray;
 import static sort.SortUtility.printHorizontalArray;
 
-
+/**
+ *  Goal. Partition array into 3 parts so that:
+ *  - Entries between lt and gt equal to partition item v.
+ *  - No larger entries to left of lt.
+ *  - No smaller entries to right of gt.
+ *
+ *  lt 	i												gt
+ *  P 	A	B	X	W	P	P	V	P	D	P	C	Y	Z
+ *
+ *  lt 	i											gt
+ *  A 	P	B	X	W	P	P	V	P	D	P	C	Y	Z
+ *
+ *  lt 	i										gt
+ *  A 	B	P	X	W	P	P	V	P	D	P	C	Y	Z
+ *
+ *  lt 	i									gt
+ *  A 	B	P	Z	W	P	P	V	P	D	P	C	Y	X
+ *
+ *  lt 	i								gt
+ *  A 	B	P	Y	W	P	P	V	P	D	P	C	Z	X
+ *
+ *  lt 	i							gt
+ *  A 	B	P	C	W	P	P	V	P	D	P	Y	Z	X
+ *
+ *  lt 	i						gt
+ *  A 	B	C	P	W	P	P	V	P	D	P	Y	Z	X
+ *
+ *  lt 	i					gt
+ *  A 	B	C	P	P	P	P	V	P	D	W	Y	Z	X
+ *
+ *  lt 		i				gt
+ *  A 	B	C	P	P	P	P	V	P	D	W	Y	Z	X
+ *
+ *  lt 			i			gt
+ *  A 	B	C	P	P	P	P	V	P	D	W	Y	Z	X
+ *
+ *  lt 				i		gt
+ *  A 	B	C	P	P	P	P	V	P	D	W	Y	Z	X
+ *
+ *  lt 				i	gt
+ *  A 	B	C	P	P	P	P	D	P	V	W	Y	Z	X
+ *
+ *  lt 				i gt
+ *  A 	B	C	D	P	P	P	P	P	V	W	Y	Z	X
+ *
+ *  lt 				gt
+ *  A 	B	C	D	P	P	P	P	P	V	W	Y	Z	X
+ *  lo													hi
+ *
+ *  Duplicate keys: lower bound
+ *
+ *  Sorting lower bound: If there are n distinct keys and the ith one occurs xi  times, any compare-based sorting
+ *  algorithm must use at least
+ *  - N lg N when all distinct
+ *  - linear when only a constant number of distinct keys
+ *  compares in the worst case.
+ *
+ *  Bottom line. Randomized quick sort with 3-way partitioning reduces running time from linearithmic to linear in
+ *  broad case of applications.
+ */
 public class Quick3WaySort {
 
     private static Comparable[] theArray = new Comparable[13];
