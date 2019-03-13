@@ -1,5 +1,11 @@
 package queue;
 
+import sort.StdOut;
+
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
+
 /**
  *  queue: a data structure that holds a collection of elements of the same type.
  *  - The elements are accessed according to FIFO order: first in, first out
@@ -102,9 +108,11 @@ package queue;
  *  - linked list is probably better for large objects if space is scarce or copying is expensive (resizing)
  */
 
-public class QueueLinkedList {
+public class QueueLinkedList<Item> implements Iterable<Item> {
 
-    private Node first, last;
+    private Node<Item> first;   // beginning of queue
+    private Node<Item> last;    // end of queue
+    private int n;              // number of elements in queue
 
     /**
      *  16 bytes (object overhead)
@@ -114,26 +122,52 @@ public class QueueLinkedList {
      *   -----------------------------------
      *   40 bytes per stack node
      */
-    private class Node {
+    private class Node<Item> {
 
-        Object item;
-        Node next = null;
+        Item item;
+        Node<Item> next;
 
         Node() {}
-        Node(Object value){ this.item = value; }
+        Node(Item item){ this.item = item; }
 
-        public String toString(){return item.toString(); }
-        public void display(){ System.out.println(item); }
-        public Object getValue() { return item; }
-        public Node getNext() { return next; }
+        public Item getItem() { return item; }
+        public Node<Item> getNext() { return next; }
     }
 
     /**
-     *  Test if queue is empty.
+     *  Initializes an empty queue.
+     */
+    public QueueLinkedList() {
+
+        first = null;
+        last = null;
+        n = 0;
+    }
+
+    /**
+     *  Returns true if queue is empty.
      *  Average time complexity: O(1)
      */
-    private boolean isEmpty(){
+    public boolean isEmpty(){
         return(first == null);
+    }
+
+    /**
+     *  Returns the number of items in the queue.
+     *  @return true if this queue is empty; false otherwise.
+     */
+    public int size() {
+        return n;
+    }
+
+    /**
+     *  Returns the item least recently added to the queue.
+     *  @return the item least recently added to the queue.
+     *  @throws NoSuchElementException if this queue is empty
+     */
+    public Item peek() {
+        if (isEmpty()) throw new NoSuchElementException("Queue underflow");
+        return first.item;
     }
 
     /**
@@ -141,30 +175,29 @@ public class QueueLinkedList {
      *  @param item
      *  Average time complexity: O(1)
      */
-    public void enqueue(Object item) {
+    public void enqueue(Item item) {
 
-        Node oldLast = last;
-        last = new Node(0);
+        Node<Item> oldLast = last;
+        last = new Node<Item>();
         last.item = item;
         last.next =  null;
-        if (isEmpty()) {
-            first = last;
-        } else {
-            oldLast.next = last;
-        }
+        if (isEmpty()) first = last;
+        else           oldLast.next = last;
+        n++;
     }
 
     /**
-     * Remove an item from the queue (FIFO).
-     * @return item which is the value removed from the queue.
+     *  Removes and returns the item from the queue that was least recently added (FIFO).
+     *  @return the item on this queue that was least recently added.
+     * @throws NoSuchElementException if this queue is empty.
      */
-    public Object dequeue() {
+    public Item dequeue() {
 
-        Object item = first.item;
+        if (isEmpty()) throw new NoSuchElementException("Queue underflow");
+        Item item = first.item;
         first = first.next;
-        if (isEmpty()) {
-            last = null;
-        }
+        n--;
+        if (isEmpty()) last = null; // to avoid loitering
         return item;
     }
 
@@ -179,42 +212,84 @@ public class QueueLinkedList {
     }
 
     /**
-     *  Display the linked list
-     *  Average time complexity for traversing list: O(n)
-     *  Start at the reference stored in firstLink and keep getting the references stored in next for every Link until
-     *  next returns null
+     *  Returns a string representation of this queue.
+     *  @return the sequence of items in FIFO order, separated by a new line.
      */
-    private void display(){
+    public String toString() {
 
-        QueueLinkedList.Node theLink = first;
-
-        while(theLink != null){
-            System.out.println(theLink.toString());
-            theLink = theLink.next;
+        StringBuilder s = new StringBuilder();
+        for (Item item: this) {
+            s.append(item);
+            s.append('\n');
         }
-        System.out.println();
+        return s.toString();
     }
 
+    /**
+     *  Returns an iterator that iterates over the items in this queue in FIFO order.
+     *  @return an iterator that iterates over the items in this queue in FIFO order.
+     */
+    public Iterator<Item> iterator() {
+
+        return new ListIterator<>(first);
+    }
+
+    private class ListIterator<Item> implements Iterator<Item> {
+
+        private Node<Item> current;
+
+        public ListIterator(Node<Item> first) {
+            current = first;
+        }
+
+        public boolean hasNext() {
+
+            return current != null;
+        }
+
+        /**
+         *  an iterator doesn't implement remove() since it's optional.
+         */
+        public void remove() {
+
+            throw new UnsupportedOperationException();
+        }
+
+        public Item next() {
+
+            if (!hasNext()) throw new NoSuchElementException();
+            Item item = current.item;
+            current = current.next;
+            return item;
+        }
+    }
+
+    /**
+     *  Unit tests the Queue data type.
+     * @param args the command-line arguments.
+     */
     public static void main(String[] args) {
 
-        QueueLinkedList theLinkedList = new QueueLinkedList();
+        QueueLinkedList<String> queue = new QueueLinkedList<>();
 
         // Insert Link and add a reference to the book Link added just prior to the field next
-        theLinkedList.enqueue("Don Quixote");
-        theLinkedList.enqueue("A Tale of Two Cities");
-        theLinkedList.enqueue("The Lord of the Rings");
-        theLinkedList.enqueue("Harry Potter and the Sorcerer's Stone");
+        queue.enqueue("Don Quixote");
+        queue.enqueue("A Tale of Two Cities");
+        queue.enqueue("The Lord of the Rings");
+        queue.enqueue("Harry Potter and the Sorcerer's Stone");
 
-        theLinkedList.display();
-        System.out.println("Value of first item in the stack is " + theLinkedList.first + "\n");
+        if (!queue.isEmpty())
+            StdOut.println(queue.toString());
 
-        theLinkedList.dequeue();
-        theLinkedList.dequeue();
-        theLinkedList.dequeue();
-        theLinkedList.display();
-        System.out.println("Value of first item in the stack is " + theLinkedList.first + "\n");
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
 
-        theLinkedList.makeEmpty();
-        theLinkedList.display();
+        if (!queue.isEmpty())
+            StdOut.println(queue.toString());
+
+        queue.makeEmpty();
+        if (!queue.isEmpty())
+            StdOut.print(queue.dequeue() + " ");
     }
 }
