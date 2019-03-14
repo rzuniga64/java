@@ -1,7 +1,8 @@
 package sort;
 
-import static sort.SortUtility.generateRandomArray;
-import static sort.SortUtility.printHorizontalArray;
+import sort.utility.StdRandom;
+
+import static sort.utility.SortUtility.printHorizontalArray;
 
 /**
  *  Goal. Partition array into 3 parts so that:

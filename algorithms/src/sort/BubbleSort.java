@@ -1,7 +1,7 @@
 package sort;
 
-import static sort.SortUtility.generateRandomArray;
-import static sort.SortUtility.printHorizontalArray;
+import static sort.utility.SortUtility.generateRandomArray;
+import static sort.utility.SortUtility.printHorizontalArray;
 
 /**
 *	Bubble Sort

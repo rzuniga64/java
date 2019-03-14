@@ -1,5 +1,8 @@
 package sort;
 
+import sort.utility.StdIn;
+import sort.utility.StdOut;
+
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;

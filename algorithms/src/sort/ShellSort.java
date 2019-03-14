@@ -1,14 +1,8 @@
 package sort;
 
-import jdk.nashorn.tools.Shell;
-
 import java.util.Arrays;
 
-import static sort.SortUtility.generateRandomArray;
-import static sort.SortUtility.generateRandomArray;
-import static sort.SortUtility.printHorizontalArray;
-
-import static sort.SortUtility.printHorzArray;
+import static sort.utility.SortUtility.generateRandomArray;
 
 /**
  *  Shell sort is a sub quadratic algorithm whose code is only slightly longer than the insertion sort, making it the

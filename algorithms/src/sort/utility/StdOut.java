@@ -1,4 +1,4 @@
-package sort;
+package sort.utility;
 
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;

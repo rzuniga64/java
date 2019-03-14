@@ -1,7 +1,9 @@
 package sort;
 
-import static sort.SortUtility.generateRandomArray;
-import static sort.SortUtility.printHorizontalArray;
+import sort.utility.StdRandom;
+
+import static sort.utility.SortUtility.generateRandomArray;
+import static sort.utility.SortUtility.printHorizontalArray;
 
 /**
  *  The class provides a client for reading in a sequence of strings and shuffling them using the Knuth (or Fisher-Yates)

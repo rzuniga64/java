@@ -7,9 +7,7 @@
  *
  ******************************************************************************/
 
-package sort;
-
-import sort.StdOut;
+package sort.utility;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;

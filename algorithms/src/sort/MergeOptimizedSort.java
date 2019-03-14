@@ -1,7 +1,7 @@
 package sort;
 
-import static sort.SortUtility.generateRandomArray;
-import static sort.SortUtility.printHorizontalArray;
+import static sort.utility.SortUtility.generateRandomArray;
+import static sort.utility.SortUtility.printHorizontalArray;
 
 /**
  *  This method performs a Merge sort. It recursively splits the list into sub arrays until sub array size is 1, then

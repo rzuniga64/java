@@ -1,7 +1,9 @@
 package sort;
 
-import static sort.SortUtility.generateRandomArray;
-import static sort.SortUtility.printHorizontalArray;
+import sort.utility.StdRandom;
+
+import static sort.utility.SortUtility.generateRandomArray;
+import static sort.utility.SortUtility.printHorizontalArray;
 
 /**
  *  In most situations the sort.QuickSort is the fastest sorting algorithm. The sort.QuickSort works by partitioning

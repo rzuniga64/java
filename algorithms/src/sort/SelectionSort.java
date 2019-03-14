@@ -1,7 +1,7 @@
 package sort;
 
-import static sort.SortUtility.generateRandomArray;
-import static sort.SortUtility.printHorizontalArray;
+import static sort.utility.SortUtility.generateRandomArray;
+import static sort.utility.SortUtility.printHorizontalArray;
 
 /**
  * 	Selection Sort is normally the best of the elementary sorts. There is a pass for each position (0..size-1)
