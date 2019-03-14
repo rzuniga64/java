@@ -1,6 +1,6 @@
 package sort;
 
-class SortUtility {
+public class SortUtility {
 
     // Fills the Array with random values
     static public void generateRandomArray(Integer[] theArray, int arraySize){
