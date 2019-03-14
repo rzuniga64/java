@@ -1,4 +1,4 @@
-package sort.utility;
+package sort;
 
 public class SortUtility {
 

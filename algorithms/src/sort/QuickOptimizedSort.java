@@ -2,8 +2,8 @@ package sort;
 
 import edu.princeton.cs.algs4.StdRandom;
 
-import static sort.utility.SortUtility.generateRandomArray;
-import static sort.utility.SortUtility.printHorizontalArray;
+import static sort.SortUtility.generateRandomArray;
+import static sort.SortUtility.printHorizontalArray;
 
 /**
  *  In most situations the sort.QuickSort is the fastest sorting algorithm. The sort.QuickSort works by partitioning

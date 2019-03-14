@@ -2,7 +2,7 @@ package sort;
 
 import java.util.Arrays;
 
-import static sort.utility.SortUtility.generateRandomArray;
+import static sort.SortUtility.generateRandomArray;
 
 /**
  *  Shell sort is a sub quadratic algorithm whose code is only slightly longer than the insertion sort, making it the

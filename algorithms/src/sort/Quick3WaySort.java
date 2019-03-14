@@ -2,7 +2,7 @@ package sort;
 
 import edu.princeton.cs.algs4.StdRandom;
 
-import static sort.utility.SortUtility.printHorizontalArray;
+import static sort.SortUtility.printHorizontalArray;
 
 /**
  *  Goal. Partition array into 3 parts so that:

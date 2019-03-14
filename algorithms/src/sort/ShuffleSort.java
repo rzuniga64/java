@@ -2,8 +2,8 @@ package sort;
 
 import edu.princeton.cs.algs4.StdRandom;
 
-import static sort.utility.SortUtility.generateRandomArray;
-import static sort.utility.SortUtility.printHorizontalArray;
+import static sort.SortUtility.generateRandomArray;
+import static sort.SortUtility.printHorizontalArray;
 
 /**
  *  The class provides a client for reading in a sequence of strings and shuffling them using the Knuth (or Fisher-Yates)
