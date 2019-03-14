@@ -7,7 +7,7 @@
  *
  ******************************************************************************/
 
-package edu.princeton.cs.algs4;
+package sort;
 
 import sort.StdOut;
 
