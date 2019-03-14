@@ -1,6 +1,6 @@
 package sort;
 
-import sort.utility.StdRandom;
+import edu.princeton.cs.algs4.StdRandom;
 
 import static sort.utility.SortUtility.printHorizontalArray;
 

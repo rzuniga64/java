@@ -1,7 +1,7 @@
 package sort;
 
-import sort.utility.StdIn;
-import sort.utility.StdOut;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Comparator;
 import java.util.Iterator;
