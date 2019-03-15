@@ -3,6 +3,11 @@ package sort;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.util.Scanner;
+import java.util.stream.Stream;
+
 /******************************************************************************
  *  Compilation:  javac HeapSort.java
  *  Execution:    java HeapSort < input.txt
@@ -40,7 +45,6 @@ public class HeapSort {
 
         int N = pq.length;
         for (int k = N/2; k >= 1; k--) {
-
             sink(pq, k, N);
         }
         while (N > 1) {
@@ -49,9 +53,25 @@ public class HeapSort {
         }
     }
 
-    public static void main(String[] args) {
+    public static String[] getArray(String path) throws IOException {
 
-        String[] a = StdIn.readAllStrings();
+        FileReader fr = new FileReader(path);
+        BufferedReader br  = new BufferedReader(fr);
+        String currentLine = br.readLine();
+        String[] content = null;
+        while (currentLine != null) {
+            //parse the data
+            content = currentLine.split(" ");
+            currentLine = br.readLine();
+        }
+        br.close();
+        return content;
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        //String[] a = StdIn.readAllStrings();
+        String [] a = HeapSort.getArray(args[0]);
         HeapSort.heapSort(a);
         show(a);
     }
@@ -61,8 +81,8 @@ public class HeapSort {
      ******************************************************************************************************************/
 
     private static void sink(Comparable[] pq, int k, int N) {
-        while (2*k < N) {
 
+        while (2*k <= N) {
             int j = 2 * k;
             if (j < N && less(pq, j, j + 1)) j++;
             if (!less(pq, k, j)) break;
@@ -77,6 +97,7 @@ public class HeapSort {
      ******************************************************************************************************************/
 
     private static boolean less(Comparable[] pq, int i , int j) {
+
         return pq[i-1].compareTo(pq[j-1]) < 0;
     }
 
