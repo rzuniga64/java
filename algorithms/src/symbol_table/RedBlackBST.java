@@ -27,12 +27,19 @@
  *
  ******************************************************************************/
 
-package edu.princeton.cs.algs4;
+package symbol_table;
 
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.Queue;
+import edu.princeton.cs.algs4.StdOut;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.NoSuchElementException;
 
 /**
- *  The BST class represents an ordered symbol table of generi key-value pairs.
+ *  The BST class represents an ordered symbol table of generic key-value pairs.
  *  It supports the operations
  *  - put
  *  - get
@@ -601,7 +608,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
 
     // add the keys between lo and hi in the subtree rooted at x
     // to the queue
-    private void keys(Node x, Queue<Key> queue, Key lo, Key hi) { 
+    private void keys(Node x, Queue<Key> queue, Key lo, Key hi) {
         if (x == null) return; 
         int cmplo = lo.compareTo(x.key); 
         int cmphi = hi.compareTo(x.key); 
@@ -702,46 +709,48 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         if (x == null) return black == 0;
         if (!isRed(x)) black--;
         return isBalanced(x.left, black) && isBalanced(x.right, black);
-    } 
+    }
 
+    public static String[] getArray(String path) throws IOException {
+
+        FileReader fr = new FileReader(path);
+        BufferedReader br  = new BufferedReader(fr);
+        String currentLine = br.readLine();
+        String[] content = null;
+        while (currentLine != null) {
+            //parse the data
+            content = currentLine.split(" ");
+            currentLine = br.readLine();
+        }
+        br.close();
+        return content;
+    }
 
     /**
      * Unit tests the {@code RedBlackBST} data type.
      *
      * @param args the command-line arguments
      */
-    public static void main(String[] args) { 
+    public static void main(String[] args) throws IOException {
+
         RedBlackBST<String, Integer> st = new RedBlackBST<String, Integer>();
-        for (int i = 0; !StdIn.isEmpty(); i++) {
-            String key = StdIn.readString();
-            st.put(key, i);
+
+        In in = new In(args[0]);
+        int i = 0;
+        while (!in.isEmpty()) {
+            String key = in.readString();
+            st.put(key, i++);
         }
+
+//        String [] a = RedBlackBST.getArray(args[0]);
+
+//        for (int i = 0; i < a.length; i++) {
+//            String key = a[i];
+//            st.put(key, i);
+//        }
+
         for (String s : st.keys())
             StdOut.println(s + " " + st.get(s));
         StdOut.println();
     }
 }
-
-/******************************************************************************
- *  Copyright 2002-2018, Robert Sedgewick and Kevin Wayne.
- *
- *  This file is part of algs4.jar, which accompanies the textbook
- *
- *      Algorithms, 4th edition by Robert Sedgewick and Kevin Wayne,
- *      Addison-Wesley Professional, 2011, ISBN 0-321-57351-X.
- *      http://algs4.cs.princeton.edu
- *
- *
- *  algs4.jar is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  algs4.jar is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with algs4.jar.  If not, see http://www.gnu.org/licenses.
- ******************************************************************************/
