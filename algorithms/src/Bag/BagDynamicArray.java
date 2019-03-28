@@ -20,51 +20,40 @@ import java.util.ArrayList;
  *  Deletion
  *  Merging
  *
- *  Average Time Complexity
- *  Indexing:    O(1)
- *  Search:      O(n)
- *  Insertion:   O(n)
- *  Deletion:    O(n)
+ *              Average     Worst
+ *              Time        Time
+ *              Complexity  Complexity
+ *  Indexing:    O(1)       O(1)
+ *  Search:      O(n)       O(n)
+ *  Insertion:   O(n)       O(n)
+ *  Deletion:    O(n)       O(n)
  *
  *  constructor:        creates an empty list
  *  isEmpty():          is the bag empty
  *  size()              returns the number of values
  *  add(value):         add a value to the bag
  *  remove(value:       removes an value from the bag (if it exists)
- *  occurences(value):  how many times is value in the bag
+ *  occurrences(value):  how many times is value in the bag
  *
  */
 public class BagDynamicArray {
 
     private ArrayList<Object> data;
 
-    public static void main(String[] args){
-        BagDynamicArray b = new BagDynamicArray();
-        System.out.println("Is bag empty? " + b.isEmpty());
-        b.add(4);
-        b.add(8);
-        b.add(4);
-
-        System.out.println("size " + b.size());
-        System.out.println("how many 4's? " + b.occurrences(4));
-        b.remove(4);
-        System.out.println("removed a 4");
-        System.out.println("size " + b.size());
-        System.out.println("how many 4's? " + b.occurrences(4));
-    }
-
     private BagDynamicArray() {
         data = new ArrayList<>();
     }
 
-    private ArrayList<Object> getData() { return this.data; }
-
-    public int size() {
-        return this.getData().size();
+    public ArrayList<Object> getData() {
+        return data;
     }
 
     public boolean isEmpty() {
         return ( this.size() == 0);
+    }
+
+    public int size() {
+        return this.getData().size();
     }
 
     public void add(Integer value) {
@@ -85,5 +74,21 @@ public class BagDynamicArray {
                 occurrences++;
         }
         return occurrences;
+    }
+
+    public static void main(String[] args){
+
+        BagDynamicArray b = new BagDynamicArray();
+        System.out.println("Is bag empty? " + b.isEmpty());
+        b.add(4);
+        b.add(8);
+        b.add(4);
+
+        System.out.println("size " + b.size());
+        System.out.println("how many 4's? " + b.occurrences(4));
+        b.remove(4);
+        System.out.println("removed a 4");
+        System.out.println("size " + b.size());
+        System.out.println("how many 4's? " + b.occurrences(4));
     }
 }
