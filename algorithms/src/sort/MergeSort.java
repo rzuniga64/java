@@ -7,10 +7,6 @@ import static sort.SortUtility.printHorizontalArray;
  *  This method performs a Merge sort. It recursively splits the list into sub arrays until sub array size is 1, then
  *  merges those sub arrays to produce a sorted array. It is an abstract in-place merge.
  *
- *  Runtime analysis
- *  Best        Average     Worst
- *  O(n log n)  O(n log n)      O(n log n)
- *
  *  Merge sort has fewer comparisons compared with Quick sort but more swapping (copying).
  *  In Java, comparing objects can be expensive while swapping (copying) objects is relatively cheap.
  *  Therefore, Merge sort is the sorting routine commonly used in Java libraries.
@@ -58,6 +54,9 @@ import static sort.SortUtility.printHorizontalArray;
  *
  *  After 9th pass sorted    A   C   E   E   E   G   M   R   R   T      E   E   G   M   R | A   C   E   R   T
  *                                                               k                      i                   j
+ *  Runtime analysis                        Worst case auxiliary
+ *  Best        Average         Worst       space complexity
+ *  O(n log n)  O(n log n)      O(n log n)  O(n)
  **/
 public class MergeSort {
 
