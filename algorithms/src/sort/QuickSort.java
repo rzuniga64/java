@@ -56,7 +56,7 @@ import static sort.SortUtility.printHorizontalArray;
  *  lo                      j                                            hi
  *
  *  Time complexity
- *  Best        Average     Worst
+ *  Best        Average         Worst
  *  O(n log n)  O(1/3 n log n)  O(1/2 N * N)
  *
  *  Random shuffle.
