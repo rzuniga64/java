@@ -21,39 +21,39 @@ import static sort.SortUtility.printHorizontalArray;
  *
  *  Phase 1. repeat until i and j pointers cross.
  *  - Pick a partitioning element as a[0]
- *  - Scan i from left to right so long as (a[i] < a[l0]).
+ *  - Scan i from left to right so long as (a[i] < a[0]).
  *  - Scan j from right to left so long as (a[j] > a[0]).
  *  - Exchange a[i] with a[j]
  *
- *  K    R    A    T    E   L    E    P    U    I    M    Q    C    X    O    S	    stop i scan because a[i] > a=[0]
+ *  K    R    A    T    E   L    E    P    U    I    M    Q    C    X    O    S	    stop i scan because a[i] > a[0]
  *  lo   i                                                                    j
  *  K    R    A    T    E   L    E    P    U    I    M    Q    C    X    O    S	    stop j scan and exchange a[i] with a[j]
  *  lo   i                                                     j
  *  K    C    A    T    E   L    E    P    U    I    M    Q    R    X    O    S
  *       i                                                     j
- *  K    C    A    T    E   L    E    P    U    I    M    Q    R    X    O    S	    stop i scan because a[i] >= a [lo]
+ *  K    C    A    T    E   L    E    P    U    I    M    Q    R    X    O    S	    stop i scan because a[i] >= a [0]
  *                 i                                           j
  *  K    C    A    T    E   L    E    P    U    I    M    Q    R    X    O    S	    decrement j as long as it points to
- *                 i                            j                                   something that's bigger than K
+ *                 i                            j                                   something that's bigger than a[0]
  *
  *  K    C    A    T    E   L    E    P    U    I    M    Q    R    X    O    S	    stop j scan and exchange a[i] with a[j]
  *                 i                            j
  *  K    C    A    I    E   L    E    P    U    T    M    Q    R    X    O    S
  *                 i                            j
- *  K    C    A    I    E   L    E    P    U    T    M    Q    R    X    O    S	    stop i scan because a[i] >= a [lo]
+ *  K    C    A    I    E   L    E    P    U    T    M    Q    R    X    O    S	    stop i scan because a[i] > a [0]
  *                          i                   j
  *  K    C    A    I    E   L    E    P    U    T    M    Q    R    X    O    S	    stop j scan and exchange a[i] with a[j]
  *                          i    j
  *  K    C    A    I    E   E    L    P    U    T    M    Q    R    X    O    S
  *                          i    j
  *  K    C    A    I    E   E    L    P    U    T    M    Q    R    X    O    S	    i stops at L > K, j stops at E < K,
- *                          j    i                                                  j stop at E < K, Now at this point
- *                                                                                  the partitioning process complete
+ *                          j    i                                                  Now at this point the partitioning
+ *                                                                                  process complete
  *  Phase 2. When pointers cross
- *  - Exchange a[lo] with a[j]
+ *  - Exchange a[0] with a[j]
  *
  *  E    C    A    I    E   K    L    P    U    T    M    Q    R    X    O    S
- *  lo                      j                                            hi
+ *  lo                      j
  *
  *  Time complexity                             Worst case auxiliary
  *  Best        Average         Worst           space complexity
