@@ -6,10 +6,10 @@ import static sort.SortUtility.generateRandomArray;
 import static sort.SortUtility.printHorizontalArray;
 
 /**
- *  In most situations the sort.QuickSort is the fastest sorting algorithm. The sort.QuickSort works by partitioning
- *  arrays that the smaller numbers are on the left and the larger are on the right.  It then recursively sends small
- *  parts of larger arrays to itself and partitions again. This method performs a Quick sort. It’s a recursive method
- *  but the basic idea behind Quick sort is that it does the recursion after it does the the work.
+ *  In most situations the QuickSort is the fastest sorting algorithm. The QuickSort works by partitioning
+ *  arrays so that the smaller numbers are on the left and the larger are on the right.  It then recursively sends small
+ *  parts of larger arrays to itself and partitions again. It’s a recursive method but the basic idea behind Quick sort
+ *  is that it does the recursion after it does the the work.
  *
  *  Basic Plan
  *  - Shuffle the array.
@@ -55,12 +55,12 @@ import static sort.SortUtility.printHorizontalArray;
  *  E    C    A    I    E   K    L    P    U    T    M    Q    R    X    O    S
  *  lo                      j                                            hi
  *
- *  Runtime analysis
+ *  Time complexity
  *  Best        Average     Worst
  *  O(n log n)  O(1/3 n log n)  O(1/2 N * N)
  *
  *  Random shuffle.
- *  - Probabilistic guarantee against worst case. Basis for math model that can be validated with experiments
+ *  - Probabilistic guarantee against worst case. Basis for math model that can be validated with experiments.
  *
  *  Caveat emptor. Many textbooks implementations go quadratic if array
  *  - Is sorted or reverse sorted.
@@ -72,10 +72,11 @@ import static sort.SortUtility.printHorizontalArray;
  *  Pf.
  *  - Partitioning: constant extra space
  *  - Depth of recursion: logarithmic extra space (with high probability).<-can guarantee logarithmic depth by recurring
- *                                                                          on smaller sub-array before large sub-array
+ *    on smaller sub-array before large sub-array.
+ *
  *  Proposition. Quick sort is not stable.
  *  Partitioning does one of those long range exchanges that might but a key with equal value over another key of the
- *  same value. it’s a little more work to make quick sort stable with a little extra space.
+ *  same value. It’s a little more work to make quick sort stable with a little extra space.
  */
 public class QuickSort {
 
@@ -88,7 +89,7 @@ public class QuickSort {
      *  Rearranges the array in ascending order, using the natural order.
      *  @param a the array to be sorted.
      */
-    public static void sort(Comparable a[]) {
+    public static void sort(Comparable[] a) {
 
         StdRandom.shuffle(a); // shuffle needed for performance guarantee
         sort(a, 0, a.length - 1);
@@ -101,7 +102,7 @@ public class QuickSort {
      *  @param low index of the array
      *  @param high index of the array
      */
-    private static void sort(Comparable a[], int low, int high) {
+    private static void sort(Comparable[] a, int low, int high) {
 
         if (high <= low) return;
         int j = partition(a, low, high);
