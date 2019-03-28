@@ -118,6 +118,7 @@ public class QuickSort {
      *  @param high index of the array
      *  @return the array index j
      */
+    @SuppressWarnings("Duplicates")
     private static int partition(Comparable[] a, int low, int high) {
 
         int i = low; int j = high + 1;
