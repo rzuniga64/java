@@ -10,7 +10,7 @@ public class FileReading {
 
 	public static void main(String[] args) {
 
-	       ArrayList<ZStudent> studlist = new ArrayList<ZStudent>();
+	       ArrayList<ZStudent> studlist = new ArrayList<>();
 
 	        try {
 	            FileReader fr = new FileReader("examples\\src\\FileRead\\student.txt");
@@ -20,7 +20,7 @@ public class FileReading {
 	            while (currentLine != null) {
 	               String[] content = currentLine.split("\\$");
 	               for (String s: content) {
-	            	    System.out.println(s);
+	               		System.out.println(s);
 	               }
 
 	               ZStudent stud = new ZStudent();
@@ -38,6 +38,10 @@ public class FileReading {
 	            System.err.println("input file not found.");
 	        } catch (IOException ex) {
 	            System.err.println(ex.toString());
-	        }
+	        } finally {
+//				for (ZStudent s : studlist) {
+//					System.out.println(s);
+//				}
+			}
 	}
 }
