@@ -6,9 +6,8 @@ package behavorial.template_method;
 public class SandwichSculptor {
 
     /**
-     * Main.
-     *
-     * @param args the args
+     *  Main.
+     *  @param args the args
      */
     public static void main(String[] args){
 

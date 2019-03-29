@@ -16,7 +16,6 @@ class ItalianHoagie extends Hoagie{
     public void addMeat(){
 
         System.out.print("Adding the Meat: ");
-
         for (String meat : meatUsed)
             System.out.print(meat + " ");
     }
@@ -27,7 +26,6 @@ class ItalianHoagie extends Hoagie{
     public void addCheese(){
 
         System.out.print("Adding the Cheese: ");
-
         for (String cheese : cheeseUsed)
             System.out.print(cheese + " ");
     }
@@ -38,7 +36,6 @@ class ItalianHoagie extends Hoagie{
     public void addVegetables(){
 
         System.out.print("Adding the Vegetables: ");
-
         for (String vegetable : veggiesUsed)
             System.out.print(vegetable + " ");
     }
@@ -49,7 +46,6 @@ class ItalianHoagie extends Hoagie{
     public void addCondiments(){
 
         System.out.print("Adding the Condiments: ");
-
         for (String condiment : condimentsUsed)
             System.out.print(condiment + " ");
     }

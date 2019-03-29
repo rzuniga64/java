@@ -1,17 +1,15 @@
 package behavorial.template_method;
 
 /**
- * The type Hoagie.
- * A Template Pattern contains a method that provides the steps of the algorithm. It allows subclasses to override
- * some of the methods
+ * The type Hoagie. A Template Pattern contains a method that provides the steps of the algorithm.
+ * It allows subclasses to override some of the methods.
  */
 abstract class Hoagie {
 
     private boolean afterFirstCondiment = false;
 
     /**
-     *  Make sandwich.
-     *  This is the Template Method
+     *  Make sandwich. This is the Template Method
      *  Declare this method final to keep subclasses from changing the algorithm.
      */
     final void makeSandwich(){
@@ -46,7 +44,15 @@ abstract class Hoagie {
     }
 
     /**
-     * Add meat. These methods must be overridden by the extending subclasses
+     *  Cut bun.
+     */
+    private void cutBun(){
+
+        System.out.println("The Hoagie is Cut");
+    }
+
+    /**
+     *  Add meat. These methods must be overridden by the extending subclasses
      */
     abstract void addMeat();
 
@@ -56,68 +62,46 @@ abstract class Hoagie {
     abstract void addCheese();
 
     /**
-     * Add vegetables.
+     *  Add vegetables.
      */
     abstract void addVegetables();
 
     /**
-     * Add condiments.
+     *  Add condiments.
      */
     abstract void addCondiments();
 
     /**
-     *  Cut bun.
+     *  Wrap the Hoagie.
      */
-    private void cutBun(){
+    private void wrapTheHoagie(){ System.out.println("\nWrap the Hoagie"); }
 
-        System.out.println("The Hoagie is Cut");
-    }
-
-    /*
-     *  These are called hooks.
-     *  If the user wants to override these they can.
-     *
+    /*******************************************************************************************************************
+     *  These are called hooks. If the user wants to override these they can.
      *  Use abstract methods when you want to force the user to override and use a hook when you want it to be optional
-     */
+     ******************************************************************************************************************/
 
     /**
-     * Customer wants meat boolean.
-     *
-     * @return the boolean
+     *  Customer wants meat boolean.
+     *  @return the boolean
      */
     boolean customerWantsMeat() { return true; }
 
     /**
-     * Customer wants meat boolean.
-     *
-     * @return the boolean
+     *  Customer wants meat boolean.
+     *  @return the boolean
      */
     boolean customerWantsCheese() { return true; }
 
     /**
-     * Customer wants cheese boolean.
-     *
-     * @return the boolean
+     *  Customer wants cheese boolean.
+     *  @return the boolean
      */
     private boolean customerWantsVegetables() { return true; }
 
     /**
-     * Customer wants Condiments boolean.
-     *
-     * @return the boolean
+     *  Customer wants Condiments boolean.
+     *  @return the boolean
      */
     private boolean customerWantsCondiments() { return true; }
-
-    /**
-     * Wrap the Hoagie.
-     */
-    private void wrapTheHoagie(){ System.out.println("\nWrap the Hoagie"); }
-
-    /**
-     * After first condiment.
-     */
-    public void afterFirstCondiment(){
-
-        System.out.println("\n");
-    }
 }

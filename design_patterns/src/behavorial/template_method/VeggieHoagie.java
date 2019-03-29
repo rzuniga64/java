@@ -24,7 +24,6 @@ class VeggieHoagie extends Hoagie{
     public void addVegetables(){
 
         System.out.print("Adding the Vegetables: ");
-
         for (String vegetable : veggiesUsed)
             System.out.print(vegetable + " ");
     }
@@ -35,7 +34,6 @@ class VeggieHoagie extends Hoagie{
     public void addCondiments(){
 
         System.out.print("Adding the Condiments: ");
-
         for (String condiment : condimentsUsed)
             System.out.print(condiment + " ");
     }
