@@ -5,11 +5,13 @@ import view.CalculatorView;
 import view.JFrameView;
 
 public class CalculatorController extends AbstractController {
+
 	public CalculatorController(){
 		setModel(new CalculatorModel());
 		setView(new CalculatorView((CalculatorModel)getModel(), this));
 		((JFrameView)getView()).setVisible(true);
 	}
+
 	public void operation(String option){
 
 		switch (option) {
