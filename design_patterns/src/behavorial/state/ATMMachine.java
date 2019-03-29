@@ -1,7 +1,8 @@
 package behavorial.state;
 
 /**
- * The type Atm machine (Context).
+ *  The type ATM machine. Context(Account).  Maintains an instance of a Concrete State subclass that defines the current
+ *  state.
  */
 public class ATMMachine {
 
@@ -27,8 +28,9 @@ public class ATMMachine {
 
         atmState = noCard;
 
-        if (cashInMachine < 0)
+        if (cashInMachine < 0) {
             atmState = atmOutOfMoney;
+        }
     }
 
     /**

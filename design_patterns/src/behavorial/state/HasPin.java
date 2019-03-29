@@ -1,7 +1,7 @@
 package behavorial.state;
 
 /**
- * The type HasPin.
+ * The type HasPin. Implements a behavior associated with a state of the Context.
  */
 class HasPin implements ATMState {
 
@@ -21,7 +21,7 @@ class HasPin implements ATMState {
      */
     public void insertCard() {
 
-        System.out.println("You already entered a card");
+        System.out.println("You can't enter more than one card.");
     }
 
     /**
@@ -46,6 +46,7 @@ class HasPin implements ATMState {
      *  Request cash.
      *  @param cashToWithdraw the cash to withdraw.
      */
+    @SuppressWarnings("Duplicates")
     public void requestCash(int cashToWithdraw) {
 
         if (cashToWithdraw > atmMachine.cashInMachine) {

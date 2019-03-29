@@ -9,6 +9,7 @@ public class TestATMMachine {
      * Main.
      * @param args the args
      */
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args){
 
         ATMMachine atmMachine = new ATMMachine();

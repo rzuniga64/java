@@ -1,7 +1,7 @@
 package behavorial.state;
 
 /**
- * The type No cash.
+ * The type No cash. Implements a behavior associated with a state of the Context.
  */
 public class NoCash implements ATMState {
 

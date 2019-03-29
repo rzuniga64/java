@@ -1,7 +1,8 @@
 package behavorial.state;
 
 /**
- * The type NoCard.
+ *  The type NoCard. Implements a behavior associated with a state of the Context. When there is no card and the user
+ *  enters a card.
  */
 class NoCard implements ATMState {
 
@@ -30,11 +31,11 @@ class NoCard implements ATMState {
      */
     public void ejectCard() {
 
-        System.out.println("ou have not entered your card.");
+        System.out.println("You have not entered your card.");
     }
 
     /**
-     *  Reqeust cash.
+     *  Request cash.
      *  @param cashToWithdraw the cash to withdraw.
      */
     public void requestCash(int cashToWithdraw) {

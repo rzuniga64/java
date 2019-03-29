@@ -1,7 +1,8 @@
 package behavorial.state;
 
 /**
- * The interface ATMState. Different states expected: HasCard, NoCard, HasPin, NoCash
+ *  The interface ATMState. Defines an interface for encapsulating the behavior associated with a particular state of
+ *  the Context. Different states expected: HasCard, NoCard, HasPin, NoCash
  */
 public interface ATMState {
 

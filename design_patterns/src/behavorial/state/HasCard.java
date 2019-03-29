@@ -1,14 +1,14 @@
 package behavorial.state;
 
 /**
- * The type HasCard.
+ * The type HasCard. Implements a behavior associated with a state of the Context.
  */
 class HasCard implements ATMState {
 
     private ATMMachine atmMachine;
 
     /**
-     *  Instantiates a new Has card.
+     *  Instantiates a new HasCard.
      *  @param newATMMachine the new atm machine.
      */
     HasCard(ATMMachine newATMMachine){
@@ -46,6 +46,7 @@ class HasCard implements ATMState {
      *  Insert pin.
      *  @param pinEntered the pin entered
      */
+    @SuppressWarnings("Duplicates")
     public void insertPin(int pinEntered) {
 
         if (pinEntered == 1234) {
