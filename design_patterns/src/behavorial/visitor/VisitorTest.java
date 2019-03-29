@@ -1,6 +1,10 @@
 package behavorial.visitor;
 
+/**
+ *  VisitorTest.
+ */
 public class VisitorTest {
+
     public static void main(String[] args) {
 
         TaxVisitor taxCalc = new TaxVisitor();

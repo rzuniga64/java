@@ -8,9 +8,8 @@ class Tobacco implements Visitable {
     private double price;
 
     /**
-     * Instantiates a new Tobacco.
-     *
-     * @param item the item
+     *  Constructor.
+     *  @param item the item
      */
     Tobacco(double item) {
 
@@ -18,22 +17,20 @@ class Tobacco implements Visitable {
     }
 
     /**
-     * Accept
-     *
-     * @param visitor the behavorial.visitor
-     */
-    public double accept(Visitor visitor) {
-
-        return visitor.visit(this);
-    }
-
-    /**
-     * Gets price.
-     *
-     * @return the price
+     *  Gets price.
+     *  @return the price
      */
     public double getPrice() {
 
         return price;
+    }
+
+    /**
+     *  Accept method.
+     *  @param visitor the visitor
+     */
+    public double accept(Visitor visitor) {
+
+        return visitor.visit(this);
     }
 }

@@ -3,7 +3,8 @@ package behavorial.visitor;
 import java.text.DecimalFormat;
 
 /**
- * The type Tax behavorial.visitor.
+ *  The TaxVisitor class. Provides us an easy way to calculate the tax on products in a completely different way without
+ *  altering the class themselves.
  */
 class TaxVisitor implements Visitor {
 
@@ -11,12 +12,14 @@ class TaxVisitor implements Visitor {
 
     /**
      *  This is created so that each item is sent to the right version of visit() which is required by the Visitor
-     *  interface and defined below
-    */
+     *  interface and defined below.
+     */
      TaxVisitor() { }
 
     /**
-     *  Calculates total price based on this being taxed as a liquor item
+     *  Calculates total price based on this being taxed as a liquor item.
+     *  @param liquorItem the liquor item
+     *  @return the total price for liquor item.
      */
     public double visit(Liquor liquorItem) {
 
@@ -25,7 +28,9 @@ class TaxVisitor implements Visitor {
     }
 
     /**
-     *  Calculates total price based on this being taxed as a tobacco item
+     *  Calculates total price based on this being taxed as a tobacco item.
+     *  @param tobaccoItem the tobacco item
+     *  @return the total price for tobacco item.
      */
     public double visit(Tobacco tobaccoItem) {
 
@@ -34,7 +39,9 @@ class TaxVisitor implements Visitor {
     }
 
     /**
-     *  Calculates total price based on this being taxed as a necessity item
+     *  Calculates total price based on this being taxed as a necessity item.
+     *  @param necessityItem the necessity item
+     *  @return the total price for necessity item.
      */
     public double visit(Necessity necessityItem) {
 
