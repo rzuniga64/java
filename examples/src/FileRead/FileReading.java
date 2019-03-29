@@ -13,7 +13,7 @@ public class FileReading {
 	       ArrayList<ZStudent> studlist = new ArrayList<ZStudent>();
 
 	        try {
-	            FileReader fr = new FileReader("src\\student.txt");
+	            FileReader fr = new FileReader("examples\\src\\FileRead\\student.txt");
 	            BufferedReader br  = new BufferedReader(fr);
 	            String currentLine = br.readLine();
 
