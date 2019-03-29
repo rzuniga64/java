@@ -1,9 +1,9 @@
-package mvc2;
+package mvc;
 
 /**
  * The type Mvc calculator.
  */
-public class MVCCalculator {
+public class CalculatorApp {
 
     /**
      * The entry point of application.

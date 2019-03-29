@@ -1,4 +1,4 @@
-package mvc2;
+package mvc;
 
 import java.awt.event.ActionListener;
 
