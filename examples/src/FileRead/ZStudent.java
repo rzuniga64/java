@@ -1,6 +1,7 @@
 package FileRead;
 
 public class ZStudent {
+
     private int no;
     private String fname;
     private String mi;
