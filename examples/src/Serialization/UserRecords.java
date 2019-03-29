@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-
-
 public class UserRecords {
+
 	private static int userIdCounter = 0;
     private final Map<Integer, ZStudent> users;
 
     public UserRecords() {
+
         users = new HashMap<Integer, ZStudent>();
     }
 
@@ -55,24 +55,24 @@ public class UserRecords {
 	    }
 
 	 public static void main(String[] args) {
-		 UserRecords usr = new UserRecords();
-		    usr.addZStudent(50, "Ngu", "M", "Monday", 50.0F);
-			usr.addZStudent(100, "Gray", "G", "Tuesday", 60.0F);
-			usr.addZStudent(150, "Green", "G", "Wednesday", 70.0F);
-			usr.addZStudent(200, "Purple", "P", "Thursday", 80.0F);
-			usr.addZStudent(300, "Red", "R", "Friday", 90.0F);
-			
-			System.out.println("Enter the name of student you want to search");
-			Scanner in = new Scanner(System.in);
-	        String name = in.nextLine();
-	        ZStudent ss = usr.findUserByName(name);
-	        if (ss != null) {
-	        System.out.println("Found " + ss.getFirst() + "!");
-	        System.out.println(ss.toString());
-	        }
-	        else {
-	        	System.out.println("User" + name + " not found");
-	        }
-	        
+
+    	UserRecords usr = new UserRecords();
+		usr.addZStudent(50, "Ngu", "M", "Monday", 50.0F);
+		usr.addZStudent(100, "Gray", "G", "Tuesday", 60.0F);
+		usr.addZStudent(150, "Green", "G", "Wednesday", 70.0F);
+		usr.addZStudent(200, "Purple", "P", "Thursday", 80.0F);
+		usr.addZStudent(300, "Red", "R", "Friday", 90.0F);
+
+		System.out.println("Enter the name of student you want to search");
+		Scanner in = new Scanner(System.in);
+		String name = in.nextLine();
+		ZStudent ss = usr.findUserByName(name);
+		if (ss != null) {
+		System.out.println("Found " + ss.getFirst() + "!");
+		System.out.println(ss.toString());
+		}
+		else {
+			System.out.println("User" + name + " not found");
+		}
 	 }
 }

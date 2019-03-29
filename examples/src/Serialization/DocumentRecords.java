@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DocumentRecords {
+
 	private static int docIdCounter = 0;
     private final Map<Integer, Document> docs;
     public DocumentRecords() {
-      docs = new HashMap<Integer, Document>();
+
+      docs = new HashMap<>();
     }
 
     public Map<Integer, Document> getDocs() {
@@ -30,12 +32,11 @@ public class DocumentRecords {
      * @param author
      * @param cp
      */
-   
     public Document addDocument(String title, String publisher, String date,String author, int cp) {
     
         int docId = docIdCounter++;
         Document doc = new Document(title, publisher, date, author, cp);
-       docs.put(docId, doc);
+        docs.put(docId, doc);
         return doc;
     }
     

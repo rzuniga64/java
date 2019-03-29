@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 
 	public class Document implements Serializable{
+
 		private String title;
 		private String publisher;
 		private String date;
