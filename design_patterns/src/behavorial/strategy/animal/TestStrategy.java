@@ -7,7 +7,7 @@ public class TestStrategy {
 
     /**
      * Main.
-     * @param args the args
+     * @param args the command line arguments.
      */
     public static void main(final String[] args){
 
