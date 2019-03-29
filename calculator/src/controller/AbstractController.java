@@ -11,28 +11,24 @@ public abstract class AbstractController implements Controller {
 
 	/**
 	 * Set model.
-	 *
 	 * @param model the model
 	 */
 	public void setModel(Model model){this.model = model;}
 
 	/**
 	 * Get model model.
-	 *
 	 * @return the model
 	 */
 	public Model getModel(){return model;}
 
 	/**
 	 * Get view view.
-	 *
 	 * @return the view
 	 */
 	public View getView(){return view;}
 
 	/**
 	 * Set view.
-	 *
 	 * @param view the view
 	 */
 	public void setView(View view){this.view = view;}

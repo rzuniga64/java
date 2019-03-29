@@ -11,21 +11,30 @@ public class CalculatorController extends AbstractController {
 		((JFrameView)getView()).setVisible(true);
 	}
 	public void operation(String option){
-		if(option.equals(CalculatorView.MINUS)){
-			((CalculatorModel)getModel()).subtract();
-		} else if(option.equals(CalculatorView.MULP)){
-			((CalculatorModel)getModel()).mulp();
-		}else if(option.equals(CalculatorView.PLUS)){
-			try{
-				((CalculatorModel)getModel()).add();
-			}catch(Digit5 ex)
-			{System.out.println(ex.getMessage());}
-		}else if(option.equals(CalculatorView.CLEAR)){
-			((CalculatorModel)getModel()).clear();
-		}else if(option.equals(CalculatorView.EQUALS)){
-			((CalculatorModel)getModel()).equals();
-		}else {
-			((CalculatorModel)getModel()).store(Integer.parseInt(option));
+
+		switch (option) {
+			case CalculatorView.MINUS:
+				((CalculatorModel) getModel()).subtract();
+				break;
+			case CalculatorView.MULP:
+				((CalculatorModel) getModel()).mulp();
+				break;
+			case CalculatorView.PLUS:
+				try {
+					((CalculatorModel) getModel()).add();
+				} catch (Digit5 ex) {
+					System.out.println(ex.getMessage());
+				}
+				break;
+			case CalculatorView.CLEAR:
+				((CalculatorModel) getModel()).clear();
+				break;
+			case CalculatorView.EQUALS:
+				((CalculatorModel) getModel()).equals();
+				break;
+			default:
+				((CalculatorModel) getModel()).store(Integer.parseInt(option));
+				break;
 		}
 	}
 }
