@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class FileReading {
+
 	public static void main(String[] args) {
 
 	       ArrayList<ZStudent> studlist = new ArrayList<ZStudent>();
@@ -15,12 +16,13 @@ public class FileReading {
 	            FileReader fr = new FileReader("src\\student.txt");
 	            BufferedReader br  = new BufferedReader(fr);
 	            String currentLine = br.readLine();
+
 	            while (currentLine != null) {
-	            //parse the data
 	               String[] content = currentLine.split("\\$");
 	               for (String s: content) {
 	            	    System.out.println(s);
 	               }
+
 	               ZStudent stud = new ZStudent();
 	               stud.setNo(Integer.parseInt(content[0]));
 	               stud.setFirst(content[1]);
@@ -37,6 +39,5 @@ public class FileReading {
 	        } catch (IOException ex) {
 	            System.err.println(ex.toString());
 	        }
-
-	} // end of main
+	}
 }
