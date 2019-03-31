@@ -1,4 +1,4 @@
-package model;
+package calculator.model;
 
 public class Digit5 extends Exception {
 

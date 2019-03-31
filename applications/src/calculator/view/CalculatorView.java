@@ -1,11 +1,11 @@
-package view;
+package calculator.view;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import controller.CalculatorController;
-import model.CalculatorModel;
-import model.ModelEvent;
+import calculator.controller.CalculatorController;
+import calculator.model.CalculatorModel;
+import calculator.model.ModelEvent;
 
 public class CalculatorView extends JFrameView {
 	public static final String PLUS = "+";

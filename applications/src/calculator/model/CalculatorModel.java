@@ -1,4 +1,4 @@
-package model;
+package calculator.model;
 
 public class CalculatorModel extends AbstractModel {
 	private int total = 0;

@@ -1,6 +1,5 @@
-package model;
+package calculator.model;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public abstract class AbstractModel implements Model {
 

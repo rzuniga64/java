@@ -1,9 +1,9 @@
-package view;
+package calculator.view;
 import javax.swing.*;
-import model.Model;
-import model.AbstractModel;
-import model.ModelListener;
-import controller.Controller;
+import calculator.model.Model;
+import calculator.model.AbstractModel;
+import calculator.model.ModelListener;
+import calculator.controller.Controller;
 
 abstract public class JFrameView extends JFrame implements View, ModelListener {
 	private Model model;

@@ -1,8 +1,8 @@
-package controller;
-import model.Digit5;
-import model.CalculatorModel;
-import view.CalculatorView;
-import view.JFrameView;
+package calculator.controller;
+import calculator.model.Digit5;
+import calculator.model.CalculatorModel;
+import calculator.view.CalculatorView;
+import calculator.view.JFrameView;
 
 public class CalculatorController extends AbstractController {
 

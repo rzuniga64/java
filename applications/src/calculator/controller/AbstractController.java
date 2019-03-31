@@ -1,6 +1,6 @@
-package controller;
-import model.Model;
-import view.View;
+package calculator.controller;
+import calculator.model.Model;
+import calculator.view.View;
 
 /**
  *  The type Abstract controller.

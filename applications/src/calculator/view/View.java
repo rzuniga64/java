@@ -1,6 +1,6 @@
-package view;
-import model.Model;
-import controller.Controller;
+package calculator.view;
+import calculator.model.Model;
+import calculator.controller.Controller;
 
 public interface View {
 	Controller getController();
