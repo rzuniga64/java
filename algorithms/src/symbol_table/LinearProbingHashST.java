@@ -8,7 +8,11 @@
  *
  ******************************************************************************/
 
-package edu.princeton.cs.algs4;
+package symbol_table;
+
+import edu.princeton.cs.algs4.*;
+import edu.princeton.cs.algs4.RedBlackBST;
+import edu.princeton.cs.algs4.SeparateChainingHashST;
 
 /**
  *  The {@code LinearProbingHashST} class represents a symbol table of generic
