@@ -13,10 +13,9 @@ public abstract class Colleague{
      *  @param newMediator
      */
     public Colleague(Mediator newMediator){
+
         mediator = newMediator;
-
         mediator.addColleague(this);
-
     }
 
     /**

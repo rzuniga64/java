@@ -23,7 +23,7 @@ public interface Mediator {
 
     /**
      *  addColleague method.
-     * @param colleague the colleague.
+     *  @param colleague the colleague.
      */
     public void addColleague(Colleague colleague);
 }

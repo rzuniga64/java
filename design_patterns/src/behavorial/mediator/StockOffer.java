@@ -37,7 +37,7 @@ public class StockOffer{
 
     /**
      *  getCollcode method.
-     * @return colleague code.
+     *  @return colleague code.
      */
     public int getCollCode() { return colleagueCode; }
 }

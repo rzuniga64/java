@@ -21,17 +21,6 @@ public class StockMediator implements Mediator{
     }
 
     /**
-     *  addColleague method.
-     * @param newColleague new colleague.
-     */
-    public void addColleague(Colleague newColleague){
-
-        colleagues.add(newColleague);
-        colleagueCodes++;
-        newColleague.setCollCode(colleagueCodes);
-    }
-
-    /**
      *  saleOffer method.
      *  @param stock the stock.
      *  @param shares the number of stock shares.
@@ -86,6 +75,17 @@ public class StockMediator implements Mediator{
             StockOffer newOffering = new StockOffer(shares, stock, collCode);
             stockBuyOffers.add(newOffering);
         }
+    }
+
+    /**
+     *  addColleague method.
+     * @param newColleague new colleague.
+     */
+    public void addColleague(Colleague newColleague){
+
+        colleagues.add(newColleague);
+        colleagueCodes++;
+        newColleague.setCollCode(colleagueCodes);
     }
 
     /**
