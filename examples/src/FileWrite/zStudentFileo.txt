@@ -1,6 +1,0 @@
-no = 50, first name = Blue, mi = M, last name = Monday, ave = 50.0]
-no = 100, first name = Gray, mi = G, last name = Tuesday, ave = 60.0]
-no = 150, first name = Green, mi = G, last name = Wednesday, ave = 70.0]
-no = 200, first name = Pink, mi = P, last name = Thursday, ave = 80.0]
-no = 300, first name = Red, mi = R, last name = Friday, ave = 90.0]
-no = 400, first name = Orange, mi = R, last name = Friday, ave = 95.0]
