@@ -1,7 +1,7 @@
 package behavorial.mediator;
 
 /**
- *
+ *  StockOffer class.
  */
 public class StockOffer{
 

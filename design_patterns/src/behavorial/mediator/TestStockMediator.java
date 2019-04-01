@@ -12,9 +12,7 @@ public class TestStockMediator{
     public static void main(String[] args){
 
         StockMediator nyse = new StockMediator();
-
         GormanSlacks broker = new GormanSlacks(nyse);
-
         JTPoorman broker2 = new JTPoorman(nyse);
 
         broker.saleOffer("MSFT", 100);

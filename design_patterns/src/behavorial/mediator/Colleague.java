@@ -1,7 +1,7 @@
 package behavorial.mediator;
 
 /**
- *  Colleague class.
+ *  Colleague class. Represents people that will be putting through stock offers.
  */
 public abstract class Colleague{
 
